@@ -65,7 +65,7 @@
     "postcss": "^8.5.6",
     "storybook": "^9.1.2",
     "typescript": "^5.9.2",
-    "vite": "^7.1.2"
+    "vite": "^7.1.11"
   },
   "engines": {
     "node": ">=20"
