@@ -5,7 +5,11 @@
 
 version: 2
 updates:
-  - package-ecosystem: "npm"
-    directory: "/" # Location of package manifests
+  - package-ecosystem: 'npm'
+    directory: '/' # Location of package manifests
     schedule:
-      interval: "weekly"
+      interval: 'monthly'
+    ignore:
+      - dependency-name: 'tailwindcss'
+        update-types: ['version-update:semver-major']
+        versions: ['4.x']

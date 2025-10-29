@@ -3,8 +3,7 @@ import { create } from 'storybook/theming/create';
 export default create({
   base: 'light',
 
-  brandTitle: 'デジタル庁デザインシステム',
-  brandImage: 'logo.svg',
+  brandTitle: 'デジタル庁デザインシステム　コードスニペット（React版）',
   brandTarget: '_self',
 
   fontBase: "var(--font-family-sans), sans-serif",

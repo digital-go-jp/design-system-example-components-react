@@ -403,7 +403,7 @@
   }
 }
 .prose .sbdocs-a:active {
-  color: var(--color-primitive-orange-700);
+  color: var(--color-primitive-orange-800);
   text-decoration-thickness: calc(1 / 16 * 1rem);
 }
 .prose .sbdocs-a:focus-visible {
