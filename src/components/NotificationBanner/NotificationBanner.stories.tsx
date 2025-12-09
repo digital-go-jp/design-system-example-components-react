@@ -3,8 +3,6 @@ import { Button } from '../';
 import { NotificationBanner } from './NotificationBanner';
 import { NotificationBannerBody } from './parts/Body';
 import { NotificationBannerClose } from './parts/Close';
-import { NotificationBannerHeader } from './parts/Header';
-import { NotificationBannerHeading } from './parts/Heading';
 import { NotificationBannerMobileClose } from './parts/MobileClose';
 
 const meta = {
@@ -39,20 +37,17 @@ export const Playground: Story = {
   args: {
     bannerStyle: 'standard',
     type: 'info2',
+    headingLevel: 'h2',
+    title: 'バナータイトル',
     children: (
-      <>
-        <NotificationBannerHeader>
-          <NotificationBannerHeading level='h2'>バナータイトル</NotificationBannerHeading>
-        </NotificationBannerHeader>
-        <NotificationBannerBody>
-          <p>
-            <time dateTime='2024-07-01'>2024年7月1日</time>
-          </p>
-          <p className='mt-2'>
-            ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。
-          </p>
-        </NotificationBannerBody>
-      </>
+      <NotificationBannerBody>
+        <p>
+          <time dateTime='2024-07-01'>2024年7月1日</time>
+        </p>
+        <p className='mt-2'>
+          ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。
+        </p>
+      </NotificationBannerBody>
     ),
   },
 };
@@ -61,57 +56,57 @@ export const StandardWithClose = {
   render: () => {
     return (
       <div className='flex flex-col gap-8'>
-        <NotificationBanner bannerStyle='standard' type='info1'>
-          <NotificationBannerHeader>
-            <NotificationBannerHeading level='h2'>
-              登録期間が延長されました
-            </NotificationBannerHeading>
-            <NotificationBannerClose onClick={() => console.log('Clicked close')} />
-          </NotificationBannerHeader>
+        <NotificationBanner
+          bannerStyle='standard'
+          type='info1'
+          headingLevel='h2'
+          title='登録期間が延長されました'
+        >
+          <NotificationBannerClose onClick={() => console.log('Clicked close')} />
           <NotificationBannerBody>
             ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。
           </NotificationBannerBody>
         </NotificationBanner>
-        <NotificationBanner bannerStyle='standard' type='info2'>
-          <NotificationBannerHeader>
-            <NotificationBannerHeading level='h2'>
-              登録期間が延長されました
-            </NotificationBannerHeading>
-            <NotificationBannerClose onClick={() => console.log('Clicked close')} />
-          </NotificationBannerHeader>
+        <NotificationBanner
+          bannerStyle='standard'
+          type='info2'
+          headingLevel='h2'
+          title='登録期間が延長されました'
+        >
+          <NotificationBannerClose onClick={() => console.log('Clicked close')} />
           <NotificationBannerBody>
             ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。
           </NotificationBannerBody>
         </NotificationBanner>
-        <NotificationBanner bannerStyle='standard' type='warning'>
-          <NotificationBannerHeader>
-            <NotificationBannerHeading level='h2'>
-              偽SNSアカウントにご注意ください
-            </NotificationBannerHeading>
-            <NotificationBannerClose onClick={() => console.log('Clicked close')} />
-          </NotificationBannerHeader>
+        <NotificationBanner
+          bannerStyle='standard'
+          type='warning'
+          headingLevel='h2'
+          title='偽SNSアカウントにご注意ください'
+        >
+          <NotificationBannerClose onClick={() => console.log('Clicked close')} />
           <NotificationBannerBody>
             ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。
           </NotificationBannerBody>
         </NotificationBanner>
-        <NotificationBanner bannerStyle='standard' type='error'>
-          <NotificationBannerHeader>
-            <NotificationBannerHeading level='h2'>
-              操作を完了できませんでした
-            </NotificationBannerHeading>
-            <NotificationBannerClose onClick={() => console.log('Clicked close')} />
-          </NotificationBannerHeader>
+        <NotificationBanner
+          bannerStyle='standard'
+          type='error'
+          headingLevel='h2'
+          title='操作を完了できませんでした'
+        >
+          <NotificationBannerClose onClick={() => console.log('Clicked close')} />
           <NotificationBannerBody>
             ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。
           </NotificationBannerBody>
         </NotificationBanner>
-        <NotificationBanner bannerStyle='standard' type='success'>
-          <NotificationBannerHeader>
-            <NotificationBannerHeading level='h2'>
-              登録手続きは全て完了しました
-            </NotificationBannerHeading>
-            <NotificationBannerClose onClick={() => console.log('Clicked close')} />
-          </NotificationBannerHeader>
+        <NotificationBanner
+          bannerStyle='standard'
+          type='success'
+          headingLevel='h2'
+          title='登録手続きは全て完了しました'
+        >
+          <NotificationBannerClose onClick={() => console.log('Clicked close')} />
           <NotificationBannerBody>
             ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。
           </NotificationBannerBody>
@@ -125,57 +120,57 @@ export const ColorChipWithClose = {
   render: () => {
     return (
       <div className='flex flex-col gap-8'>
-        <NotificationBanner bannerStyle='color-chip' type='info1'>
-          <NotificationBannerHeader>
-            <NotificationBannerHeading level='h2'>
-              登録期間が延長されました
-            </NotificationBannerHeading>
-            <NotificationBannerClose onClick={() => console.log('Clicked close')} />
-          </NotificationBannerHeader>
+        <NotificationBanner
+          bannerStyle='color-chip'
+          type='info1'
+          headingLevel='h2'
+          title='登録期間が延長されました'
+        >
+          <NotificationBannerClose onClick={() => console.log('Clicked close')} />
           <NotificationBannerBody>
             ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。
           </NotificationBannerBody>
         </NotificationBanner>
-        <NotificationBanner bannerStyle='color-chip' type='info2'>
-          <NotificationBannerHeader>
-            <NotificationBannerHeading level='h2'>
-              登録期間が延長されました
-            </NotificationBannerHeading>
-            <NotificationBannerClose onClick={() => console.log('Clicked close')} />
-          </NotificationBannerHeader>
+        <NotificationBanner
+          bannerStyle='color-chip'
+          type='info2'
+          headingLevel='h2'
+          title='登録期間が延長されました'
+        >
+          <NotificationBannerClose onClick={() => console.log('Clicked close')} />
           <NotificationBannerBody>
             ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。
           </NotificationBannerBody>
         </NotificationBanner>
-        <NotificationBanner bannerStyle='color-chip' type='warning'>
-          <NotificationBannerHeader>
-            <NotificationBannerHeading level='h2'>
-              偽SNSアカウントにご注意ください
-            </NotificationBannerHeading>
-            <NotificationBannerClose onClick={() => console.log('Clicked close')} />
-          </NotificationBannerHeader>
+        <NotificationBanner
+          bannerStyle='color-chip'
+          type='warning'
+          headingLevel='h2'
+          title='偽SNSアカウントにご注意ください'
+        >
+          <NotificationBannerClose onClick={() => console.log('Clicked close')} />
           <NotificationBannerBody>
             ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。
           </NotificationBannerBody>
         </NotificationBanner>
-        <NotificationBanner bannerStyle='color-chip' type='error'>
-          <NotificationBannerHeader>
-            <NotificationBannerHeading level='h2'>
-              操作を完了できませんでした
-            </NotificationBannerHeading>
-            <NotificationBannerClose onClick={() => console.log('Clicked close')} />
-          </NotificationBannerHeader>
+        <NotificationBanner
+          bannerStyle='color-chip'
+          type='error'
+          headingLevel='h2'
+          title='操作を完了できませんでした'
+        >
+          <NotificationBannerClose onClick={() => console.log('Clicked close')} />
           <NotificationBannerBody>
             ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。
           </NotificationBannerBody>
         </NotificationBanner>
-        <NotificationBanner bannerStyle='color-chip' type='success'>
-          <NotificationBannerHeader>
-            <NotificationBannerHeading level='h2'>
-              登録手続きは全て完了しました
-            </NotificationBannerHeading>
-            <NotificationBannerClose onClick={() => console.log('Clicked close')} />
-          </NotificationBannerHeader>
+        <NotificationBanner
+          bannerStyle='color-chip'
+          type='success'
+          headingLevel='h2'
+          title='登録手続きは全て完了しました'
+        >
+          <NotificationBannerClose onClick={() => console.log('Clicked close')} />
           <NotificationBannerBody>
             ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。
           </NotificationBannerBody>
@@ -189,15 +184,15 @@ export const StandardWithButton = {
   render: () => {
     return (
       <div className='flex flex-col gap-8'>
-        <NotificationBanner bannerStyle='standard' type='info1'>
-          <NotificationBannerHeader>
-            <NotificationBannerHeading level='h2'>
-              登録期間が延長されました
-            </NotificationBannerHeading>
-          </NotificationBannerHeader>
+        <NotificationBanner
+          bannerStyle='standard'
+          type='info1'
+          headingLevel='h2'
+          title='登録期間が延長されました'
+        >
           <NotificationBannerBody>
             ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。
-            <div className='grid mt-4 gap-2 desktop:grid-flow-col desktop:gap-4 desktop:justify-end'>
+            <div className='grid mt-2 gap-2 desktop:grid-flow-col desktop:gap-4 desktop:justify-end'>
               <Button type='button' size='md' variant='outline'>
                 アクションボタン
               </Button>
@@ -207,15 +202,15 @@ export const StandardWithButton = {
             </div>
           </NotificationBannerBody>
         </NotificationBanner>
-        <NotificationBanner bannerStyle='standard' type='info2'>
-          <NotificationBannerHeader>
-            <NotificationBannerHeading level='h2'>
-              登録期間が延長されました
-            </NotificationBannerHeading>
-          </NotificationBannerHeader>
+        <NotificationBanner
+          bannerStyle='standard'
+          type='info2'
+          headingLevel='h2'
+          title='登録期間が延長されました'
+        >
           <NotificationBannerBody>
             ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。
-            <div className='grid mt-4 gap-2 desktop:grid-flow-col desktop:gap-4 desktop:justify-end'>
+            <div className='grid mt-2 gap-2 desktop:grid-flow-col desktop:gap-4 desktop:justify-end'>
               <Button
                 className='text-solid-gray-800 hover:text-solid-gray-900 hover:bg-solid-gray-200 active:!text-black active:bg-solid-gray-300'
                 size='md'
@@ -235,15 +230,15 @@ export const StandardWithButton = {
             </div>
           </NotificationBannerBody>
         </NotificationBanner>
-        <NotificationBanner bannerStyle='standard' type='warning'>
-          <NotificationBannerHeader>
-            <NotificationBannerHeading level='h2'>
-              偽SNSアカウントにご注意ください
-            </NotificationBannerHeading>
-          </NotificationBannerHeader>
+        <NotificationBanner
+          bannerStyle='standard'
+          type='warning'
+          headingLevel='h2'
+          title='偽SNSアカウントにご注意ください'
+        >
           <NotificationBannerBody>
             ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。
-            <div className='grid mt-4 gap-2 desktop:grid-flow-col desktop:gap-4 desktop:justify-end'>
+            <div className='grid mt-2 gap-2 desktop:grid-flow-col desktop:gap-4 desktop:justify-end'>
               <Button
                 className='text-warning-yellow-2 hover:text-yellow-1000 hover:bg-yellow-200 active:text-yellow-1200 active:bg-yellow-300'
                 size='md'
@@ -263,15 +258,15 @@ export const StandardWithButton = {
             </div>
           </NotificationBannerBody>
         </NotificationBanner>
-        <NotificationBanner bannerStyle='standard' type='error'>
-          <NotificationBannerHeader>
-            <NotificationBannerHeading level='h2'>
-              操作を完了できませんでした
-            </NotificationBannerHeading>
-          </NotificationBannerHeader>
+        <NotificationBanner
+          bannerStyle='standard'
+          type='error'
+          headingLevel='h2'
+          title='操作を完了できませんでした'
+        >
           <NotificationBannerBody>
             ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。
-            <div className='grid mt-4 gap-2 desktop:grid-flow-col desktop:gap-4 desktop:justify-end'>
+            <div className='grid mt-2 gap-2 desktop:grid-flow-col desktop:gap-4 desktop:justify-end'>
               <Button
                 className='text-error-1 hover:text-red-1000 hover:bg-red-200 active:text-red-1200 active:bg-red-300'
                 size='md'
@@ -291,15 +286,15 @@ export const StandardWithButton = {
             </div>
           </NotificationBannerBody>
         </NotificationBanner>
-        <NotificationBanner bannerStyle='standard' type='success'>
-          <NotificationBannerHeader>
-            <NotificationBannerHeading level='h2'>
-              登録手続きは全て完了しました
-            </NotificationBannerHeading>
-          </NotificationBannerHeader>
+        <NotificationBanner
+          bannerStyle='standard'
+          type='success'
+          headingLevel='h2'
+          title='登録手続きは全て完了しました'
+        >
           <NotificationBannerBody>
             ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。
-            <div className='grid mt-4 gap-2 desktop:grid-flow-col desktop:gap-4 desktop:justify-end'>
+            <div className='grid mt-2 gap-2 desktop:grid-flow-col desktop:gap-4 desktop:justify-end'>
               <Button
                 className='text-success-2 hover:text-green-1000 hover:bg-green-200 active:text-green-1200 active:bg-green-300'
                 size='md'
@@ -328,15 +323,15 @@ export const ColorChipWithButton = {
   render: () => {
     return (
       <div className='flex flex-col gap-8'>
-        <NotificationBanner bannerStyle='color-chip' type='info1'>
-          <NotificationBannerHeader>
-            <NotificationBannerHeading level='h2'>
-              登録期間が延長されました
-            </NotificationBannerHeading>
-          </NotificationBannerHeader>
+        <NotificationBanner
+          bannerStyle='color-chip'
+          type='info1'
+          headingLevel='h2'
+          title='登録期間が延長されました'
+        >
           <NotificationBannerBody>
             ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。
-            <div className='grid mt-4 gap-2 desktop:grid-flow-col desktop:gap-4 desktop:justify-end'>
+            <div className='grid mt-2 gap-2 desktop:grid-flow-col desktop:gap-4 desktop:justify-end'>
               <Button type='button' size='md' variant='outline'>
                 アクションボタン
               </Button>
@@ -346,15 +341,15 @@ export const ColorChipWithButton = {
             </div>
           </NotificationBannerBody>
         </NotificationBanner>
-        <NotificationBanner bannerStyle='color-chip' type='info2'>
-          <NotificationBannerHeader>
-            <NotificationBannerHeading level='h2'>
-              登録期間が延長されました
-            </NotificationBannerHeading>
-          </NotificationBannerHeader>
+        <NotificationBanner
+          bannerStyle='color-chip'
+          type='info2'
+          headingLevel='h2'
+          title='登録期間が延長されました'
+        >
           <NotificationBannerBody>
             ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。
-            <div className='grid mt-4 gap-2 desktop:grid-flow-col desktop:gap-4 desktop:justify-end'>
+            <div className='grid mt-2 gap-2 desktop:grid-flow-col desktop:gap-4 desktop:justify-end'>
               <Button
                 className='text-solid-gray-800 hover:text-solid-gray-900 hover:bg-solid-gray-200 active:text-black active:bg-solid-gray-300'
                 size='md'
@@ -374,15 +369,15 @@ export const ColorChipWithButton = {
             </div>
           </NotificationBannerBody>
         </NotificationBanner>
-        <NotificationBanner bannerStyle='color-chip' type='warning'>
-          <NotificationBannerHeader>
-            <NotificationBannerHeading level='h2'>
-              偽SNSアカウントにご注意ください
-            </NotificationBannerHeading>
-          </NotificationBannerHeader>
+        <NotificationBanner
+          bannerStyle='color-chip'
+          type='warning'
+          headingLevel='h2'
+          title='偽SNSアカウントにご注意ください'
+        >
           <NotificationBannerBody>
             ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。
-            <div className='grid mt-4 gap-2 desktop:grid-flow-col desktop:gap-4 desktop:justify-end'>
+            <div className='grid mt-2 gap-2 desktop:grid-flow-col desktop:gap-4 desktop:justify-end'>
               <Button
                 className='text-warning-yellow-2 hover:text-yellow-1000 hover:bg-yellow-200 active:text-yellow-1200 active:bg-yellow-300'
                 size='md'
@@ -402,15 +397,15 @@ export const ColorChipWithButton = {
             </div>
           </NotificationBannerBody>
         </NotificationBanner>
-        <NotificationBanner bannerStyle='color-chip' type='error'>
-          <NotificationBannerHeader>
-            <NotificationBannerHeading level='h2'>
-              操作を完了できませんでした
-            </NotificationBannerHeading>
-          </NotificationBannerHeader>
+        <NotificationBanner
+          bannerStyle='color-chip'
+          type='error'
+          headingLevel='h2'
+          title='操作を完了できませんでした'
+        >
           <NotificationBannerBody>
             ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。
-            <div className='grid mt-4 gap-2 desktop:grid-flow-col desktop:gap-4 desktop:justify-end'>
+            <div className='grid mt-2 gap-2 desktop:grid-flow-col desktop:gap-4 desktop:justify-end'>
               <Button
                 className='text-error-1 hover:text-red-1000 hover:bg-red-200 active:text-red-1200 active:bg-red-300'
                 size='md'
@@ -430,15 +425,15 @@ export const ColorChipWithButton = {
             </div>
           </NotificationBannerBody>
         </NotificationBanner>
-        <NotificationBanner bannerStyle='color-chip' type='success'>
-          <NotificationBannerHeader>
-            <NotificationBannerHeading level='h2'>
-              登録手続きは全て完了しました
-            </NotificationBannerHeading>
-          </NotificationBannerHeader>
+        <NotificationBanner
+          bannerStyle='color-chip'
+          type='success'
+          headingLevel='h2'
+          title='登録手続きは全て完了しました'
+        >
           <NotificationBannerBody>
             ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。
-            <div className='grid mt-4 gap-2 desktop:grid-flow-col desktop:gap-4 desktop:justify-end'>
+            <div className='grid mt-2 gap-2 desktop:grid-flow-col desktop:gap-4 desktop:justify-end'>
               <Button
                 className='text-success-2 hover:text-green-1000 hover:bg-green-200 active:text-green-1200 active:bg-green-300'
                 size='md'
@@ -467,15 +462,15 @@ export const StandardWithButtonMobileHoriz = {
   render: () => {
     return (
       <div className='flex flex-col gap-8'>
-        <NotificationBanner bannerStyle='standard' type='info1'>
-          <NotificationBannerHeader>
-            <NotificationBannerHeading level='h2'>
-              登録期間が延長されました
-            </NotificationBannerHeading>
-          </NotificationBannerHeader>
+        <NotificationBanner
+          bannerStyle='standard'
+          type='info1'
+          headingLevel='h2'
+          title='登録期間が延長されました'
+        >
           <NotificationBannerBody>
             ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。
-            <div className='grid mt-4 gap-2 grid-flow-col grid-cols-2 desktop:grid-cols-none desktop:gap-4 desktop:justify-end'>
+            <div className='grid mt-2 gap-2 grid-flow-col grid-cols-2 desktop:grid-cols-none desktop:gap-4 desktop:justify-end'>
               <Button className='!px-3 desktop:!px-4' type='button' size='md' variant='outline'>
                 アクションボタン
               </Button>
@@ -485,15 +480,15 @@ export const StandardWithButtonMobileHoriz = {
             </div>
           </NotificationBannerBody>
         </NotificationBanner>
-        <NotificationBanner bannerStyle='standard' type='info2'>
-          <NotificationBannerHeader>
-            <NotificationBannerHeading level='h2'>
-              登録期間が延長されました
-            </NotificationBannerHeading>
-          </NotificationBannerHeader>
+        <NotificationBanner
+          bannerStyle='standard'
+          type='info2'
+          headingLevel='h2'
+          title='登録期間が延長されました'
+        >
           <NotificationBannerBody>
             ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。
-            <div className='grid mt-4 gap-2 grid-flow-col grid-cols-2 desktop:grid-cols-none desktop:gap-4 desktop:justify-end'>
+            <div className='grid mt-2 gap-2 grid-flow-col grid-cols-2 desktop:grid-cols-none desktop:gap-4 desktop:justify-end'>
               <Button
                 className='!px-3 text-solid-gray-800 hover:text-solid-gray-900 hover:bg-solid-gray-200 active:text-black active:bg-solid-gray-300 desktop:!px-4'
                 size='md'
@@ -513,15 +508,15 @@ export const StandardWithButtonMobileHoriz = {
             </div>
           </NotificationBannerBody>
         </NotificationBanner>
-        <NotificationBanner bannerStyle='standard' type='warning'>
-          <NotificationBannerHeader>
-            <NotificationBannerHeading level='h2'>
-              偽SNSアカウントにご注意ください
-            </NotificationBannerHeading>
-          </NotificationBannerHeader>
+        <NotificationBanner
+          bannerStyle='standard'
+          type='warning'
+          headingLevel='h2'
+          title='偽SNSアカウントにご注意ください'
+        >
           <NotificationBannerBody>
             ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。
-            <div className='grid mt-4 gap-2 grid-flow-col grid-cols-2 desktop:grid-cols-none desktop:gap-4 desktop:justify-end'>
+            <div className='grid mt-2 gap-2 grid-flow-col grid-cols-2 desktop:grid-cols-none desktop:gap-4 desktop:justify-end'>
               <Button
                 className='!px-3 text-warning-yellow-2 hover:text-yellow-1000 hover:bg-yellow-200 active:text-yellow-1200 active:bg-yellow-300 desktop:!px-4'
                 size='md'
@@ -541,15 +536,15 @@ export const StandardWithButtonMobileHoriz = {
             </div>
           </NotificationBannerBody>
         </NotificationBanner>
-        <NotificationBanner bannerStyle='standard' type='error'>
-          <NotificationBannerHeader>
-            <NotificationBannerHeading level='h2'>
-              操作を完了できませんでした
-            </NotificationBannerHeading>
-          </NotificationBannerHeader>
+        <NotificationBanner
+          bannerStyle='standard'
+          type='error'
+          headingLevel='h2'
+          title='操作を完了できませんでした'
+        >
           <NotificationBannerBody>
             ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。
-            <div className='grid mt-4 gap-2 grid-flow-col grid-cols-2 desktop:grid-cols-none desktop:gap-4 desktop:justify-end'>
+            <div className='grid mt-2 gap-2 grid-flow-col grid-cols-2 desktop:grid-cols-none desktop:gap-4 desktop:justify-end'>
               <Button
                 className='!px-3 text-error-1 hover:text-red-1000 hover:bg-red-200 active:text-red-1200 active:bg-red-300 desktop:!px-4'
                 size='md'
@@ -569,15 +564,15 @@ export const StandardWithButtonMobileHoriz = {
             </div>
           </NotificationBannerBody>
         </NotificationBanner>
-        <NotificationBanner bannerStyle='standard' type='success'>
-          <NotificationBannerHeader>
-            <NotificationBannerHeading level='h2'>
-              登録手続きは全て完了しました
-            </NotificationBannerHeading>
-          </NotificationBannerHeader>
+        <NotificationBanner
+          bannerStyle='standard'
+          type='success'
+          headingLevel='h2'
+          title='登録手続きは全て完了しました'
+        >
           <NotificationBannerBody>
             ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。
-            <div className='grid mt-4 gap-2 grid-flow-col grid-cols-2 desktop:grid-cols-none desktop:gap-4 desktop:justify-end'>
+            <div className='grid mt-2 gap-2 grid-flow-col grid-cols-2 desktop:grid-cols-none desktop:gap-4 desktop:justify-end'>
               <Button
                 className='!px-3 text-success-2 hover:text-green-1000 hover:bg-green-200 active:text-green-1200 active:bg-green-300 desktop:!px-4'
                 size='md'
@@ -606,15 +601,15 @@ export const ColorChipWithButtonMobileHoriz = {
   render: () => {
     return (
       <div className='flex flex-col gap-8'>
-        <NotificationBanner bannerStyle='color-chip' type='info1'>
-          <NotificationBannerHeader>
-            <NotificationBannerHeading level='h2'>
-              登録期間が延長されました
-            </NotificationBannerHeading>
-          </NotificationBannerHeader>
+        <NotificationBanner
+          bannerStyle='color-chip'
+          type='info1'
+          headingLevel='h2'
+          title='登録期間が延長されました'
+        >
           <NotificationBannerBody>
             ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。
-            <div className='grid mt-4 gap-2 grid-flow-col grid-cols-2 desktop:grid-cols-none desktop:gap-4 desktop:justify-end'>
+            <div className='grid mt-2 gap-2 grid-flow-col grid-cols-2 desktop:grid-cols-none desktop:gap-4 desktop:justify-end'>
               <Button className='!px-3 desktop:!px-4' type='button' size='md' variant='outline'>
                 アクションボタン
               </Button>
@@ -624,15 +619,15 @@ export const ColorChipWithButtonMobileHoriz = {
             </div>
           </NotificationBannerBody>
         </NotificationBanner>
-        <NotificationBanner bannerStyle='color-chip' type='info2'>
-          <NotificationBannerHeader>
-            <NotificationBannerHeading level='h2'>
-              登録期間が延長されました
-            </NotificationBannerHeading>
-          </NotificationBannerHeader>
+        <NotificationBanner
+          bannerStyle='color-chip'
+          type='info2'
+          headingLevel='h2'
+          title='登録期間が延長されました'
+        >
           <NotificationBannerBody>
             ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。
-            <div className='grid mt-4 gap-2 grid-flow-col grid-cols-2 desktop:grid-cols-none desktop:gap-4 desktop:justify-end'>
+            <div className='grid mt-2 gap-2 grid-flow-col grid-cols-2 desktop:grid-cols-none desktop:gap-4 desktop:justify-end'>
               <Button
                 className='!px-3 text-solid-gray-800 hover:text-solid-gray-900 hover:bg-solid-gray-200 active:text-black active:bg-solid-gray-300 desktop:!px-4'
                 size='md'
@@ -652,15 +647,15 @@ export const ColorChipWithButtonMobileHoriz = {
             </div>
           </NotificationBannerBody>
         </NotificationBanner>
-        <NotificationBanner bannerStyle='color-chip' type='warning'>
-          <NotificationBannerHeader>
-            <NotificationBannerHeading level='h2'>
-              偽SNSアカウントにご注意ください
-            </NotificationBannerHeading>
-          </NotificationBannerHeader>
+        <NotificationBanner
+          bannerStyle='color-chip'
+          type='warning'
+          headingLevel='h2'
+          title='偽SNSアカウントにご注意ください'
+        >
           <NotificationBannerBody>
             ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。
-            <div className='grid mt-4 gap-2 grid-flow-col grid-cols-2 desktop:grid-cols-none desktop:gap-4 desktop:justify-end'>
+            <div className='grid mt-2 gap-2 grid-flow-col grid-cols-2 desktop:grid-cols-none desktop:gap-4 desktop:justify-end'>
               <Button
                 className='!px-3 text-warning-yellow-2 hover:text-yellow-1000 hover:bg-yellow-200 active:text-yellow-1200 active:bg-yellow-300 desktop:!px-4'
                 size='md'
@@ -680,15 +675,15 @@ export const ColorChipWithButtonMobileHoriz = {
             </div>
           </NotificationBannerBody>
         </NotificationBanner>
-        <NotificationBanner bannerStyle='color-chip' type='error'>
-          <NotificationBannerHeader>
-            <NotificationBannerHeading level='h2'>
-              操作を完了できませんでした
-            </NotificationBannerHeading>
-          </NotificationBannerHeader>
+        <NotificationBanner
+          bannerStyle='color-chip'
+          type='error'
+          headingLevel='h2'
+          title='操作を完了できませんでした'
+        >
           <NotificationBannerBody>
             ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。
-            <div className='grid mt-4 gap-2 grid-flow-col grid-cols-2 desktop:grid-cols-none desktop:gap-4 desktop:justify-end'>
+            <div className='grid mt-2 gap-2 grid-flow-col grid-cols-2 desktop:grid-cols-none desktop:gap-4 desktop:justify-end'>
               <Button
                 className='!px-3 text-error-1 hover:text-red-1000 hover:bg-red-200 active:text-red-1200 active:bg-red-300 desktop:!px-4'
                 size='md'
@@ -708,15 +703,15 @@ export const ColorChipWithButtonMobileHoriz = {
             </div>
           </NotificationBannerBody>
         </NotificationBanner>
-        <NotificationBanner bannerStyle='color-chip' type='success'>
-          <NotificationBannerHeader>
-            <NotificationBannerHeading level='h2'>
-              登録手続きは全て完了しました
-            </NotificationBannerHeading>
-          </NotificationBannerHeader>
+        <NotificationBanner
+          bannerStyle='color-chip'
+          type='success'
+          headingLevel='h2'
+          title='登録手続きは全て完了しました'
+        >
           <NotificationBannerBody>
             ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。
-            <div className='grid mt-4 gap-2 grid-flow-col grid-cols-2 desktop:grid-cols-none desktop:gap-4 desktop:justify-end'>
+            <div className='grid mt-2 gap-2 grid-flow-col grid-cols-2 desktop:grid-cols-none desktop:gap-4 desktop:justify-end'>
               <Button
                 className='!px-3 text-success-2 hover:text-green-1000 hover:bg-green-200 active:text-green-1200 active:bg-green-300 desktop:!px-4'
                 size='md'
@@ -744,13 +739,26 @@ export const ColorChipWithButtonMobileHoriz = {
 /** 改行が多くなる場合に備えてモバイルでコンパクトタイプの閉じるボタンを使用している例 */
 export const MobileCompact: StoryObj = {
   render: () => (
-    <NotificationBanner bannerStyle='standard' type='info1'>
-      <NotificationBannerHeader>
-        <NotificationBannerHeading level='h2'>登録期間が延長されました</NotificationBannerHeading>
-        <NotificationBannerMobileClose onClick={() => console.log('Clicked close')} />
-      </NotificationBannerHeader>
+    <NotificationBanner
+      bannerStyle='standard'
+      type='info1'
+      headingLevel='h2'
+      title='iPhoneのマイナンバーカードは利用準備中です'
+    >
+      <NotificationBannerMobileClose onClick={() => console.log('Clicked close')} />
       <NotificationBannerBody>
-        ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。
+        <p>
+          <time dateTime='2024-07-01'>2024年7月1日</time>
+        </p>
+        <p>ダミーテキストは、デザインの作成時に使用される仮の文章です。</p>
+        <div className='grid mt-2 gap-2 desktop:grid-flow-col desktop:gap-4 desktop:justify-end'>
+          <Button type='button' size='md' variant='outline'>
+            アクションボタン
+          </Button>
+          <Button type='button' size='md' variant='solid-fill'>
+            アクションボタン
+          </Button>
+        </div>
       </NotificationBannerBody>
     </NotificationBanner>
   ),
