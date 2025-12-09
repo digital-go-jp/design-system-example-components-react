@@ -7,19 +7,17 @@ const InfoIcon = (props: IconProps) => {
   const { ...rest } = props;
   return (
     <svg
-      aria-label='情報提示'
+      aria-label='インフォメーション'
       fill='none'
-      height='36'
+      height='24'
       role='img'
-      viewBox='0 0 36 36'
-      width='36'
+      viewBox='0 0 24 24'
+      width='24'
       {...rest}
     >
-      <circle cx='18' cy='18' fill='Canvas' r='18' />
-      <path
-        d='M18 0C8.064 0 0 8.064 0 18C0 27.936 8.064 36 18 36C27.936 36 36 27.936 36 18C36 8.064 27.936 0 18 0ZM19.8 27H16.2V16.2H19.8V27ZM19.8 12.6H16.2V9H19.8V12.6Z'
-        fill='currentColor'
-      />
+      <circle cx='12' cy='12' r='10' fill='currentcolor' />
+      <circle cx='12' cy='8' r='1' fill='Canvas' />
+      <path d='M11 11h2v6h-2z' fill='Canvas' />
     </svg>
   );
 };
@@ -30,17 +28,15 @@ const WarningIcon = (props: IconProps) => {
     <svg
       aria-label='警告'
       fill='none'
-      height='36'
+      height='24'
       role='img'
-      viewBox='0 0 36 36'
-      width='36'
+      viewBox='0 0 24 24'
+      width='24'
       {...rest}
     >
-      <path d='M18 3.00098L36 34.091H0L18 3.00098Z' fill='Canvas' />
-      <path
-        d='M0 34.0909H36L18 3L0 34.0909ZM19.6364 29.1818H16.3636V25.9091H19.6364V29.1818ZM19.6364 22.6364H16.3636V16.0909H19.6364V22.6364Z'
-        fill='currentColor'
-      />
+      <path d='M1 21 12 2l11 19H1Z' fill='currentcolor' />
+      <path d='M13 15h-2v-5h2v5Z' fill='Canvas' />
+      <circle cx='12' cy='17' r='1' fill='Canvas' />
     </svg>
   );
 };
@@ -51,32 +47,17 @@ const ErrorIcon = (props: IconProps) => {
     <svg
       aria-label='エラー'
       fill='none'
-      height='36'
+      height='24'
       role='img'
-      viewBox='0 0 36 36'
-      width='36'
+      viewBox='0 0 24 24'
+      width='24'
       {...rest}
     >
-      <g>
-        <path
-          d='M24.2525 33H11.7475L3 24.2525V11.7475L11.7475 3H24.2525L33 11.7475V24.2525L24.2525 33Z'
-          fill='currentColor'
-          stroke='currentColor'
-          strokeWidth='2'
-        />
-        <rect
-          width='2'
-          height='18.5341'
-          transform='matrix(0.7071, -0.707113, 0.7071, 0.707113, 11, 12.4142)'
-          fill='Canvas'
-        />
-        <rect
-          width='2'
-          height='18.5341'
-          transform='matrix(-0.7071, -0.707113, 0.7071, -0.707113, 12.4141, 25.52)'
-          fill='Canvas'
-        />
-      </g>
+      <path d='M8.25 21 3 15.75v-7.5L8.25 3h7.5L21 8.25v7.5L15.75 21h-7.5Z' fill='currentcolor' />
+      <path
+        d='m12 13.4-2.85 2.85-1.4-1.4L10.6 12 7.75 9.15l1.4-1.4L12 10.6l2.85-2.85 1.4 1.4L13.4 12l2.85 2.85-1.4 1.4L12 13.4Z'
+        fill='Canvas'
+      />
     </svg>
   );
 };
@@ -87,19 +68,14 @@ const SuccessIcon = (props: IconProps) => {
     <svg
       aria-label='成功'
       fill='none'
-      height='36'
+      height='24'
       role='img'
-      viewBox='0 0 36 36'
-      width='36'
+      viewBox='0 0 24 24'
+      width='24'
       {...rest}
     >
-      <g>
-        <circle cx='18' cy='18' r='18' fill='Canvas' />
-        <path
-          d='M18 0C8.064 0 0 8.064 0 18C0 27.936 8.064 36 18 36C27.936 36 36 27.936 36 18C36 8.064 27.936 0 18 0ZM14.4 27L5.4 18L7.938 15.462L14.4 21.906L28.062 8.244L30.6 10.8L14.4 27Z'
-          fill='currentColor'
-        />
-      </g>
+      <circle cx='12' cy='12' r='10' fill='currentcolor' />
+      <path d='m17.6 9.6-7 7-4.3-4.3L7.7 11l2.9 2.9 5.7-5.6 1.3 1.4Z' fill='Canvas' />
     </svg>
   );
 };

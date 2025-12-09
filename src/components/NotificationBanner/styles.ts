@@ -1,15 +1,13 @@
-import type { NotificationBannerStyle, NotificationBannerType } from './types';
+export const bannerStyleClasses = `
+  data-[style=standard]:border-[calc(3/16*1rem)] data-[style=standard]:rounded-12
+  data-[style=color-chip]:[--color-chip-color:currentColor] data-[style=color-chip]:border-[calc(2/16*1rem)] data-[style=color-chip]:!pl-6 data-[style=color-chip]:shadow-[inset_calc(8/16*1rem)_0_0_0_var(--color-chip-color)]
+  data-[style=color-chip]:desktop:!pl-10 data-[style=color-chip]:desktop:shadow-[inset_calc(16/16*1rem)_0_0_0_var(--color-chip-color)]
+`;
 
-export const bannerStyleClasses: { [key in NotificationBannerStyle]: string } = {
-  standard: ' border-[3px] rounded-12',
-  'color-chip':
-    'border-2 !pl-6 shadow-[inset_8px_0_0_0_var(--color-chip-color)] desktop:!pl-10 desktop:shadow-[inset_16px_0_0_0_var(--color-chip-color)]',
-};
-
-export const bannerTypeClasses: { [key in NotificationBannerType]: string } = {
-  info1: 'text-blue-900 [--color-chip-color:currentColor]',
-  info2: 'text-solid-gray-536 [--color-chip-color:currentColor]',
-  warning: 'text-warning-yellow-2 [--color-chip-color:theme(colors.yellow.400)]',
-  error: 'text-error-1 [--color-chip-color:currentColor]',
-  success: 'text-success-2 [--color-chip-color:currentColor]',
-};
+export const bannerTypeClasses = `
+  data-[type=info1]:text-blue-900
+  data-[type=info2]:text-solid-gray-536
+  data-[type=warning]:text-warning-yellow-2 data-[type=warning]:[--color-chip-color:theme(colors.yellow.400)]
+  data-[type=error]:text-error-1
+  data-[type=success]:text-success-2
+`;
