@@ -54,7 +54,7 @@
     "@storybook/addon-a11y": "^9.1.2",
     "@storybook/addon-docs": "^9.1.2",
     "@storybook/addon-links": "^9.1.2",
-    "@storybook/react-vite": "^9.1.2",
+    "@storybook/react-vite": "^10.0.0",
     "@tsconfig/node20": "^20.1.6",
     "@types/node": "^24.3.0",
     "@types/react": "^18.3.20",
