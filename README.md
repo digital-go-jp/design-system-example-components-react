@@ -1,6 +1,6 @@
 # デジタル庁デザインシステム コードスニペット（React版）
 
-[デジタル庁デザインシステム](https://design.digital.go.jp/)をReact/Tailwind CSSで実装したサンプル集です。
+[デジタル庁デザインシステム](https://design.digital.go.jp/dads/)をReact/Tailwind CSSで実装したサンプル集です。
 
 各コンポーネントの動作やスタイル、使用方法や実装上の注意点等は[コードスニペット（React版）Storybook](https://design.digital.go.jp/dads/react/)でもご確認いただけます。
 
@@ -30,7 +30,7 @@ npm run storybook
 
 [@digital-go-jp/tailwind-theme-plugin](https://www.npmjs.com/package/@digital-go-jp/tailwind-theme-plugin) は、デジタル庁デザインシステムのデザイントークンをベースにしたTailwind CSSのプラグインです。
 
-プラグインで定義されるトークン一覧は、[トークン一覧](https://github.com/digital-go-jp/design-system-example-components/tree/main/src/tokens) をご確認ください。
+プラグインで定義されるトークン一覧は、[トークン一覧](https://github.com/digital-go-jp/design-system-example-components-react/tree/main/src/tokens) をご確認ください。
 
 プロジェクト固有のトークン等については `tailwind.config.js` の extend で拡張してください。
 
