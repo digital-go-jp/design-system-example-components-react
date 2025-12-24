@@ -10,6 +10,7 @@ export {
   buttonBaseStyle,
   buttonSizeStyle,
   buttonVariantStyle,
+  Carousel,
   Checkbox,
   DatePicker,
   Dd,

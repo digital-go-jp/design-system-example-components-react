@@ -4,5 +4,8 @@ export default {
   theme: {
     extend: {},
   },
-  plugins: [require('@digital-go-jp/tailwind-theme-plugin')],
+  plugins: [
+    require('@digital-go-jp/tailwind-theme-plugin'),
+    require('@tailwindcss/container-queries'),
+  ],
 };
