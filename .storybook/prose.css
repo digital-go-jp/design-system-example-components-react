@@ -385,6 +385,12 @@
   text-wrap: pretty;
 }
 
+/*　ドキュメント内の各Storyの見出し後の説明文段落の上下マージン */
+.prose .sb-anchor > h3 + div > p {
+  margin-top: calc(16 / 16 * 1rem);
+  margin-bottom: calc(16 / 16 * 1rem);
+}
+
 /* リンク */
 .prose .sbdocs-a:any-link {
   color: var(--color-primitive-blue-1000);
