@@ -27,6 +27,7 @@ export {
   HamburgerMenuButton,
   HamburgerWithLabelIcon,
 } from './HamburgerMenuButton';
+export { Heading, HeadingShoulder, HeadingTitle } from './Heading';
 export { Input } from './Input';
 export { Label } from './Label';
 export {
