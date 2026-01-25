@@ -54,7 +54,7 @@
     "@storybook/addon-a11y": "^9.1.17",
     "@storybook/addon-docs": "^9.1.17",
     "@storybook/addon-links": "^9.1.17",
-    "@storybook/react-vite": "^9.1.17",
+    "@storybook/react-vite": "^10.1.11",
     "@tailwindcss/container-queries": "^0.1.1",
     "@tsconfig/node20": "^20.1.6",
     "@types/node": "^24.3.0",
