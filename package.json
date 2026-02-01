@@ -49,7 +49,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^2.2.0",
-    "@markuplint/jsx-parser": "^4.7.20",
+    "@markuplint/jsx-parser": "^4.7.22",
     "@markuplint/react-spec": "^4.5.20",
     "@storybook/addon-a11y": "^9.1.17",
     "@storybook/addon-docs": "^9.1.17",
