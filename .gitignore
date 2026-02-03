@@ -23,3 +23,8 @@ dist-ssr
 *.sw?
 
 storybook-static
+
+test-results/
+playwright-report/
+
+src/**/*-snapshots/
