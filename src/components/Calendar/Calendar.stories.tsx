@@ -41,7 +41,11 @@ export const Static: Story = {
           <option value={2030}>2030年(令和12年)</option>
         </Select>
         <div className='flex items-center'>
-          <Button className='!min-w-0 !size-11' size='sm' variant='outline'>
+          <Button
+            className='!min-w-0 !size-11 !p-0 hover:border-[3px] hover:bg-white'
+            size='sm'
+            variant='outline'
+          >
             <svg className='mx-auto' width='16' height='16' role='img' aria-label='前の月'>
               <path
                 d='m5.27 8 5.33-5.33-.93-.94L3.4 8l6.27 6.27.93-.94L5.27 8Z'
@@ -50,7 +54,11 @@ export const Static: Story = {
             </svg>
           </Button>
           <p className='w-14 text-center'>2月</p>
-          <Button className='!min-w-0 !size-11' size='sm' variant='outline'>
+          <Button
+            className='!min-w-0 !size-11 !p-0 hover:border-[3px] hover:bg-white'
+            size='sm'
+            variant='outline'
+          >
             <svg className='mx-auto' width='16' height='16' role='img' aria-label='次の月'>
               <path
                 d='m6 1.73-.93.94L10.4 8l-5.33 5.33.93.94L12.27 8 6 1.73Z'
@@ -422,7 +430,7 @@ export const UsingReactAriaComponents: Story = {
             </Select>
             <div className='flex items-center'>
               <Button
-                className='!min-w-0 !size-11'
+                className='!min-w-0 !size-11 !p-0 hover:border-[3px] hover:bg-white'
                 slot='previous'
                 size='sm'
                 variant='outline'
@@ -437,7 +445,7 @@ export const UsingReactAriaComponents: Story = {
               </Button>
               <p className='w-14 text-center'>{focusedDate?.month}月</p>
               <Button
-                className='!min-w-0 !size-11'
+                className='!min-w-0 !size-11 !p-0 hover:border-[3px] hover:bg-white'
                 slot='next'
                 size='sm'
                 variant='outline'
