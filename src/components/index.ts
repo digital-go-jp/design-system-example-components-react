@@ -21,6 +21,20 @@ export {
 } from './EmergencyBanner';
 export { ErrorText } from './ErrorText';
 export {
+  FileUpload,
+  FileUploadDropArea,
+  FileUploadFileInfo,
+  FileUploadFileItem,
+  FileUploadFileList,
+  FileUploadFileMarker,
+  FileUploadFileMeta,
+  FileUploadFileName,
+  FileUploadInput,
+  FileUploadViewportOverlay,
+  FileUploadViewportOverlayMessage,
+  fileUploadDefaultMessages,
+} from './FileUpload';
+export {
   CloseIcon,
   CloseWithLabelIcon,
   HamburgerIcon,
