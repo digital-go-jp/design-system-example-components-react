@@ -12,6 +12,7 @@ export {
   buttonVariantStyle,
   Carousel,
   Checkbox,
+  ChipLabel,
   DatePicker,
   Dd,
   Disclosure,

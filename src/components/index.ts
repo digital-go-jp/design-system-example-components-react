@@ -9,6 +9,7 @@ export { BreadcrumbItem, BreadcrumbList, Breadcrumbs, BreadcrumbsLabel } from '.
 export { Button, buttonBaseStyle, buttonSizeStyle, buttonVariantStyle } from './Button';
 export { Carousel } from './Carousel';
 export { Checkbox } from './Checkbox';
+export { ChipLabel } from './ChipLabel';
 export * from './DatePicker';
 export { Disclosure, DisclosureBackLink, DisclosureSummary } from './Disclosure';
 export { Divider } from './Divider';
