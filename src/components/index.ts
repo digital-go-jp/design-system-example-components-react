@@ -9,6 +9,7 @@ export { BreadcrumbItem, BreadcrumbList, Breadcrumbs, BreadcrumbsLabel } from '.
 export { Button, buttonBaseStyle, buttonSizeStyle, buttonVariantStyle } from './Button';
 export { Carousel } from './Carousel';
 export { Checkbox } from './Checkbox';
+export { ChipLabel } from './ChipLabel';
 export * from './DatePicker';
 export { Disclosure, DisclosureBackLink, DisclosureSummary } from './Disclosure';
 export { Divider } from './Divider';
@@ -20,6 +21,20 @@ export {
   EmergencyBannerHeading,
 } from './EmergencyBanner';
 export { ErrorText } from './ErrorText';
+export {
+  FileUpload,
+  FileUploadDropArea,
+  FileUploadFileInfo,
+  FileUploadFileItem,
+  FileUploadFileList,
+  FileUploadFileMarker,
+  FileUploadFileMeta,
+  FileUploadFileName,
+  FileUploadInput,
+  FileUploadViewportOverlay,
+  FileUploadViewportOverlayMessage,
+  fileUploadDefaultMessages,
+} from './FileUpload';
 export {
   CloseIcon,
   CloseWithLabelIcon,

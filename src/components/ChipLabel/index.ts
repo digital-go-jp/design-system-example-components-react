@@ -1,0 +1,1 @@
+export { ChipLabel } from './ChipLabel';

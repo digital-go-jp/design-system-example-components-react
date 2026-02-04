@@ -336,7 +336,7 @@ export const WithCalendar: Story = {
                               </Select>
                               <div className='flex items-center'>
                                 <Button
-                                  className='!min-w-0 !size-11'
+                                  className='!min-w-0 !size-11 !p-0 hover:border-[3px] hover:bg-white'
                                   size='sm'
                                   variant='outline'
                                   onClick={() => calendarState.focusPreviousPage()}
@@ -358,7 +358,7 @@ export const WithCalendar: Story = {
                                   {calendarState.focusedDate.month}月
                                 </p>
                                 <Button
-                                  className='!min-w-0 !size-11'
+                                  className='!min-w-0 !size-11 !p-0 hover:border-[3px] hover:bg-white'
                                   slot='next'
                                   size='sm'
                                   variant='outline'
