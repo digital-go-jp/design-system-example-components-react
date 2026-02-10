@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Ul } from '../';
+import { List } from '../';
 import { Disclosure, DisclosureBackLink, DisclosureSummary } from './Disclosure';
 
 const meta = {
@@ -43,7 +43,7 @@ export const WithLongContent: Story = {
           <p>
             これはダミーテキストです。ダミーテキストは、デザインやレイアウトの作成時に使用される仮の文章です。ダミーテキストを使用すると、デザインの全体像を評価したり、テキストの配置や長さを確認したりすることができます。
           </p>
-          <Ul>
+          <List spacing='4'>
             <li>リストアイテム</li>
             <li>リストアイテム</li>
             <li>リストアイテム</li>
@@ -57,11 +57,11 @@ export const WithLongContent: Story = {
             <li>リストアイテム</li>
             <li>リストアイテム</li>
             <li>リストアイテム</li>
-          </Ul>
+          </List>
           <p>
             これはダミーテキストです。ダミーテキストは、デザインやレイアウトの作成時に使用される仮の文章です。ダミーテキストを使用すると、デザインの全体像を評価したり、テキストの配置や長さを確認したりすることができます。
           </p>
-          <Ul>
+          <List spacing='4'>
             <li>リストアイテム</li>
             <li>リストアイテム</li>
             <li>リストアイテム</li>
@@ -75,7 +75,7 @@ export const WithLongContent: Story = {
             <li>リストアイテム</li>
             <li>リストアイテム</li>
             <li>リストアイテム</li>
-          </Ul>
+          </List>
           <DisclosureBackLink
             className='mt-4 [text-spacing-trim:trim-start]'
             href='#disclosure-with-long-content'
@@ -96,13 +96,13 @@ export const MultipleLineTitle: Story = {
           複数行にまたがるディスクロージャータイトル
         </DisclosureSummary>
         <div className='pl-8 my-4'>
-          <Ul>
+          <List spacing='4'>
             <li>リストアイテム</li>
             <li>リストアイテム</li>
             <li>リストアイテム</li>
             <li>リストアイテム</li>
             <li>リストアイテム</li>
-          </Ul>
+          </List>
           <DisclosureBackLink
             className='mt-4 [text-spacing-trim:trim-start]'
             href='#disclosure-multiple-line-title'

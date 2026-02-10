@@ -3,12 +3,11 @@ import { type ChangeEvent, useEffect, useRef, useState } from 'react';
 import {
   Checkbox,
   Link,
+  List,
   linkActiveStyle,
   linkDefaultStyle,
   linkHoverStyle,
   linkVisitedStyle,
-  Ol,
-  Ul,
 } from '../';
 
 const meta = {
@@ -1214,14 +1213,14 @@ export const LinkedTextInCell = {
         </tr>
         <tr className='border-b border-solid-gray-420'>
           <td className='px-4 py-5 align-top'>
-            <Ul>
+            <List spacing='4'>
               <li>
                 <Link href='#'>デジタル庁</Link>
               </li>
               <li>
                 <Link href='#'>デジタル庁デザインシステム</Link>
               </li>
-            </Ul>
+            </List>
           </td>
           <td className='px-4 py-5 align-top'>データ</td>
           <td className='px-4 py-5 align-top'>データ</td>
@@ -1338,13 +1337,28 @@ export const OverflowOnMobile = {
                 <tr className='border-b border-solid-gray-420'>
                   <td className='px-4 py-5 align-top'>サービスを提供する地域</td>
                   <td className='px-4 py-5 align-top'>
-                    <Ol>
-                      <li>りんご区</li>
-                      <li>みかん区</li>
-                      <li>ぶどう区</li>
-                      <li>いちご区</li>
-                      <li>なし区</li>
-                    </Ol>
+                    <List marker='number' spacing='4'>
+                      <li>
+                        <span>1. </span>
+                        <span>りんご区</span>
+                      </li>
+                      <li>
+                        <span>2. </span>
+                        <span>みかん区</span>
+                      </li>
+                      <li>
+                        <span>3. </span>
+                        <span>ぶどう区</span>
+                      </li>
+                      <li>
+                        <span>4. </span>
+                        <span>いちご区</span>
+                      </li>
+                      <li>
+                        <span>5. </span>
+                        <span>なし区</span>
+                      </li>
+                    </List>
                   </td>
                   <td className='px-4 py-5 align-top'>
                     特有のニーズに応えながら、高品質かつ効率的なサポートを目指しています。地元のコミュニティと密接に連携し、信頼性とアクセシビリティを大切にしています。
