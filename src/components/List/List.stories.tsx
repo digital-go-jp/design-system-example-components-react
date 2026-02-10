@@ -4,7 +4,7 @@ import { List } from './List';
 
 const meta = {
   id: 'Component/DADS v2/List',
-  title: 'Component/箇条書きリスト/List',
+  title: 'Component/箇条書きリスト',
   component: List,
   tags: ['autodocs'],
   argTypes: {
