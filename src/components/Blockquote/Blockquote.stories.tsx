@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Ul } from '../';
+import { List } from '../';
 import { Blockquote } from './Blockquote';
 
 const meta = {
@@ -38,11 +38,11 @@ export const WithList: Story = {
     return (
       <Blockquote>
         <p className='my-4'>デジタル庁デザインシステムは、以下の理念を追求して作成されています。</p>
-        <Ul>
+        <List spacing='4'>
           <li>アクセシビリティファースト</li>
           <li>行政機関にとって高い汎用性と利便性</li>
           <li>継続的かつ持続可能な改善活動および研究と実践</li>
-        </Ul>
+        </List>
         <p className='my-4'>
           これにより、デジタル化の恩恵をすべての人に届けられる日本のデジタル化社会の構築に寄与します。
         </p>
