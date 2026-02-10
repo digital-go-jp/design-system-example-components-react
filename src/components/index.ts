@@ -65,13 +65,13 @@ export {
   linkStyle,
   linkVisitedStyle,
 } from './Link';
+export { List, listBaseStyle, listDefaultStyle, listNumberedStyle } from './List';
 export {
   NotificationBanner,
   NotificationBannerBody,
   NotificationBannerClose,
   NotificationBannerMobileClose,
 } from './NotificationBanner';
-export { Ol, olStyle } from './Ol';
 export { Radio } from './Radio';
 export { RequirementBadge } from './RequirementBadge';
 export { Select } from './Select';
@@ -80,5 +80,4 @@ export { Slot } from './Slot';
 export { StatusBadge } from './StatusBadge';
 export { SupportText } from './SupportText';
 export { Textarea } from './Textarea';
-export { Ul, ulStyle } from './Ul';
 export { UtilityLink, UtilityLinkExternalLinkIcon, utilityLinkStyle } from './UtilityLink';
