@@ -6,25 +6,18 @@ import { Disclosure, DisclosureSummary } from '../Disclosure';
 
 type CarouselImage = {
   src: string;
+  srcSet?: string;
   alt: string;
   width: number;
   height: number;
 };
 
-type CarouselImageSource = {
-  srcSet: string;
-  width?: number;
-  height?: number;
-  media: string;
-};
-
 export type CarouselSlide = {
   id: string;
   label: string;
-  href: string;
+  href?: string;
   target?: string;
   image: CarouselImage;
-  imageSources?: CarouselImageSource[];
 };
 
 // Carousel Sub Components
@@ -163,34 +156,24 @@ const CarouselPageNav = (props: CarouselPageNavProps) => {
 type CarouselBackgroundLayerProps = {
   className?: string;
   image: CarouselImage;
-  imageSources?: CarouselImageSource[];
 };
 
 const CarouselBackgroundLayer = (props: CarouselBackgroundLayerProps) => {
-  const { className, image, imageSources } = props;
+  const { className, image } = props;
+
   return (
     <div
       aria-hidden={true}
       className={`absolute -inset-1/2 blur-[25px] transform-gpu pointer-events-none ${className ?? ''}`}
     >
-      <picture>
-        {imageSources?.map((source) => (
-          <source
-            key={source.media}
-            srcSet={source.srcSet}
-            media={source.media}
-            width={source.width}
-            height={source.height}
-          />
-        ))}
-        <img
-          className='h-full w-full object-cover'
-          src={image.src}
-          alt=''
-          width={image.width}
-          height={image.height}
-        />
-      </picture>
+      <img
+        className='h-full w-full object-cover'
+        src={image.src}
+        srcSet={image.srcSet}
+        alt=''
+        width={image.width}
+        height={image.height}
+      />
       <div className='absolute inset-0 bg-white mix-blend-soft-light' />
     </div>
   );
@@ -240,38 +223,30 @@ const CarouselExpandList = (props: CarouselExpandListProps) => {
                   <a
                     className={`
                       block relative
-                      hover:outline hover:outline-4 hover:outline-blue-900 hover:-outline-offset-1
-                      focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:rounded-4 focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300
-                      hover:after:absolute hover:after:inset-[1px] hover:after:ring-[calc(2/16*1rem)] hover:after:ring-inset hover:after:ring-white hover:after:pointer-events-none
+                      ${slide.href ? `
+                        hover:outline hover:outline-4 hover:outline-blue-900 hover:-outline-offset-1
+                        focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:rounded-4 focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300
+                        hover:after:absolute hover:after:inset-[1px] hover:after:ring-[calc(2/16*1rem)] hover:after:ring-inset hover:after:ring-white hover:after:pointer-events-none
+                      ` : ''}
                     `}
                     href={slide.href}
                     target={slide.target}
                   >
                     <span className='sr-only'>{slide.label}</span>
                     <div className='grid place-content-center h-full rounded-[inherit] outline outline-2 outline-black -outline-offset-2'>
-                      <picture>
-                        {slide.imageSources?.map((source) => (
-                          <source
-                            key={source.media}
-                            srcSet={source.srcSet}
-                            media={source.media}
-                            width={source.width}
-                            height={source.height}
-                          />
-                        ))}
-                        <img
-                          className='block max-w-full size-auto'
-                          src={slide.image.src}
-                          alt={slide.image.alt}
-                          width={slide.image.width}
-                          height={slide.image.height}
-                        />
-                      </picture>
+                      <img
+                        className='block max-w-full size-auto'
+                        src={slide.image.src}
+                        srcSet={slide.image.srcSet}
+                        alt={slide.image.alt}
+                        width={slide.image.width}
+                        height={slide.image.height}
+                      />
                     </div>
                   </a>
                 </div>
                 <div className='[grid-area:main] relative -z-10 overflow-clip'>
-                  <CarouselBackgroundLayer image={slide.image} imageSources={slide.imageSources} />
+                  <CarouselBackgroundLayer image={slide.image} />
                 </div>
               </li>
             );
@@ -324,35 +299,27 @@ const CarouselPanelArea = (props: CarouselPanelAreaProps) => {
           <a
             className={`
               block relative
-              after:absolute after:pointer-events-none
-              hover:outline hover:outline-4 hover:outline-blue-900 hover:-outline-offset-2
-              focus-visible:overflow-hidden focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:-outline-offset-[calc(2/16*1rem)] focus-visible:rounded-8 focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300
-              hover:after:inset-[2px] hover:after:ring-[calc(2/16*1rem)] hover:after:ring-inset hover:after:ring-white
-              focus-visible:after:inset-[2px] focus-visible:after:ring-[calc(2/16*1rem)] focus-visible:after:ring-inset focus-visible:after:ring-yellow-300 focus-visible:after:rounded-6
+              ${currentSlide.href ? `
+                after:absolute after:pointer-events-none
+                hover:outline hover:outline-4 hover:outline-blue-900 hover:-outline-offset-2
+                focus-visible:overflow-hidden focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:-outline-offset-[calc(2/16*1rem)] focus-visible:rounded-8 focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300
+                hover:after:inset-[2px] hover:after:ring-[calc(2/16*1rem)] hover:after:ring-inset hover:after:ring-white
+                focus-visible:after:inset-[2px] focus-visible:after:ring-[calc(2/16*1rem)] focus-visible:after:ring-inset focus-visible:after:ring-yellow-300 focus-visible:after:rounded-6
+              ` : ''}
             `}
             href={currentSlide.href}
             target={currentSlide.target}
           >
             <span className='sr-only'>{mainLabel}</span>
             <div className='grid place-content-center h-full rounded-[inherit] outline outline-2 outline-black -outline-offset-2'>
-              <picture>
-                {currentSlide.imageSources?.map((source) => (
-                  <source
-                    key={source.media}
-                    srcSet={source.srcSet}
-                    media={source.media}
-                    width={source?.width}
-                    height={source?.height}
-                  />
-                ))}
-                <img
-                  className='block max-w-full size-auto'
-                  src={currentSlide.image.src}
-                  alt={currentSlide.image.alt}
-                  width={currentSlide.image.width}
-                  height={currentSlide.image.height}
-                />
-              </picture>
+              <img
+                className='block max-w-full size-auto'
+                src={currentSlide.image.src}
+                srcSet={currentSlide.image.srcSet}
+                alt={currentSlide.image.alt}
+                width={currentSlide.image.width}
+                height={currentSlide.image.height}
+              />
             </div>
           </a>
         </div>
@@ -374,24 +341,14 @@ const CarouselPanelArea = (props: CarouselPanelAreaProps) => {
             focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:rounded-[calc(4/16*1rem)] focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300
           `}
         >
-          <picture>
-            {nextSlide.imageSources?.map((source) => (
-              <source
-                key={source.media}
-                srcSet={source.srcSet}
-                media={source.media}
-                width={source?.width}
-                height={source?.height}
-              />
-            ))}
-            <img
-              className='block max-w-full size-auto'
-              src={nextSlide.image.src}
-              alt=''
-              width={nextSlide.image.width}
-              height={nextSlide.image.height}
-            />
-          </picture>
+          <img
+            className='block max-w-full size-auto'
+            src={nextSlide.image.src}
+            srcSet={nextSlide.image.srcSet}
+            alt=''
+            width={nextSlide.image.width}
+            height={nextSlide.image.height}
+          />
 
           <span className='block border-t border-solid-gray-420 p-4 text-std-16B-170 decoration-inherit'>
             次の{unit}
@@ -400,10 +357,7 @@ const CarouselPanelArea = (props: CarouselPanelAreaProps) => {
       </p>
 
       <div className='[grid-area:main] relative -z-10 overflow-clip'>
-        <CarouselBackgroundLayer
-          image={currentSlide.image}
-          imageSources={currentSlide.imageSources}
-        />
+        <CarouselBackgroundLayer image={currentSlide.image} />
       </div>
 
       <div
@@ -412,7 +366,7 @@ const CarouselPanelArea = (props: CarouselPanelAreaProps) => {
           group-has-[[open]]/carousel:!hidden @[64rem]:block
         `}
       >
-        <CarouselBackgroundLayer image={nextSlide.image} imageSources={nextSlide.imageSources} />
+        <CarouselBackgroundLayer image={nextSlide.image} />
       </div>
     </div>
   );
@@ -435,6 +389,7 @@ export type CarouselProps = ComponentProps<'section'> & {
 export const Carousel = (props: CarouselProps) => {
   const {
     className,
+    children,
     slides,
     currentIndex,
     unit = 'スライド',
@@ -461,11 +416,12 @@ export const Carousel = (props: CarouselProps) => {
     <section className={`@container group/carousel block ${className ?? ''}`} {...rest}>
       <div
         className={`
-          relative z-0 max-w-[calc(1440/16*1rem)] text-solid-gray-800 text-std-16N-170
+          relative z-0 max-w-[calc(1024/16*1rem)] text-solid-gray-800 text-std-16N-170
           @[64rem]:px-12
         `}
         ref={innerRef}
       >
+        {children}
         <CarouselPanelArea
           currentSlide={currentSlide}
           nextSlide={nextSlide}
@@ -506,3 +462,4 @@ export const Carousel = (props: CarouselProps) => {
     </section>
   );
 };
+
