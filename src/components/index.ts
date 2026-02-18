@@ -7,7 +7,7 @@ export {
 export { Blockquote } from './Blockquote';
 export { BreadcrumbItem, BreadcrumbList, Breadcrumbs, BreadcrumbsLabel } from './Breadcrumbs';
 export { Button, buttonBaseStyle, buttonSizeStyle, buttonVariantStyle } from './Button';
-export { Carousel } from './Carousel';
+export { Carousel, CarouselSingle, CarouselSingleImage, CarouselSingleLink } from './Carousel';
 export { Checkbox } from './Checkbox';
 export { ChipLabel } from './ChipLabel';
 export * from './DatePicker';
