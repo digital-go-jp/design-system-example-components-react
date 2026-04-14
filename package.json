@@ -57,6 +57,7 @@
     "@storybook/addon-docs": "^10.3.5",
     "@storybook/addon-links": "^10.3.5",
     "@storybook/addon-mcp": "^0.5.0",
+    "@storybook/addon-vitest": "^10.3.5",
     "@storybook/react-vite": "^10.3.5",
     "@tailwindcss/container-queries": "^0.1.1",
     "@tsconfig/node22": "^22.0.5",
