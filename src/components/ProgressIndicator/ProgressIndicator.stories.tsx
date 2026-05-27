@@ -817,7 +817,6 @@ const LoopDemo = () => {
         <ProgressIndicatorSpinner size='lg' />
         <span id={labelId}>読み込み中</span>
       </ProgressIndicator>
-      {/* biome-ignore lint/a11y/useSemanticElements: HTML版と同様の span role=status を踏襲 */}
       <span role='status' className='sr-only'>
         {announceText}
       </span>
@@ -876,7 +875,6 @@ const FillDemo = () => {
           <span className='inline-block min-w-[2ch] text-right tabular-nums'>{percentage}</span>%)
         </span>
       </ProgressIndicator>
-      {/* biome-ignore lint/a11y/useSemanticElements: HTML版と同様の span role=status を使用 */}
       <span role='status' className='sr-only'>
         {announceText}
       </span>
