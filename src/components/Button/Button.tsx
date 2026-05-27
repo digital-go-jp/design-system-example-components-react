@@ -1,5 +1,5 @@
 import { type ComponentProps, forwardRef } from 'react';
-import { Slot } from '..';
+import { Slot } from '../Slot';
 
 export type ButtonVariant = 'solid-fill' | 'outline' | 'text';
 export type ButtonSize = 'lg' | 'md' | 'sm' | 'xs';

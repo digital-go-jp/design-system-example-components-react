@@ -46,7 +46,9 @@ const preview: Preview = {
             '日付ピッカー',
             'ファイルアップロード／ドロップエリア',
             'フォームコントロールラベル',
+            'プログレスインジケーター',
             'ボタン',
+            'メニューリスト',
             '見出し',
             'ユーティリティリンク',
             'ラジオボタン',
@@ -66,6 +68,13 @@ const preview: Preview = {
       codePanel: true,
       page: DocsTemplate,
     },
+
+    a11y: {
+      // 'todo' - show a11y violations in the test UI only
+      // 'error' - fail CI on a11y violations
+      // 'off' - skip a11y checks entirely
+      test: 'todo'
+    }
   },
 };
 

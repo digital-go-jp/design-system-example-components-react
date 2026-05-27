@@ -1,5 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { ErrorText, Legend, RequirementBadge, SupportText } from '../';
+import { ErrorText } from '../ErrorText';
+import { Legend } from '../Legend';
+import { RequirementBadge } from '../RequirementBadge';
+import { SupportText } from '../SupportText';
 import { Radio } from './Radio';
 
 const meta = {

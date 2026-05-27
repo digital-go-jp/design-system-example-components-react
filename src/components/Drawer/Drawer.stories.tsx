@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useId, useRef } from 'react';
-import { CloseIcon, Divider, HamburgerIcon, HamburgerMenuButton } from '../';
+import { Divider } from '../Divider';
+import { CloseIcon, HamburgerIcon, HamburgerMenuButton } from '../HamburgerMenuButton';
 
 const meta = {
   id: 'Component/DADS v2/Drawer',

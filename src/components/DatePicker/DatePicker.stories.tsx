@@ -13,19 +13,19 @@ import {
   Popover,
   DatePicker as ReactAriaDatePicker,
 } from 'react-aria-components';
+import { Button } from '../Button';
 import {
-  Button,
   DatePicker,
   DatePickerCalendarButton,
   DatePickerDate,
   DatePickerMonth,
   DatePickerYear,
-  ErrorText,
-  Legend,
-  RequirementBadge,
-  Select,
-  SupportText,
-} from '..';
+} from '../DatePicker';
+import { ErrorText } from '../ErrorText';
+import { Legend } from '../Legend';
+import { RequirementBadge } from '../RequirementBadge';
+import { Select } from '../Select';
+import { SupportText } from '../SupportText';
 
 /**
  * Defaultタイプのデートピッカー。
@@ -252,8 +252,11 @@ export const Readonly: Story = {
 /** カレンダーで日付を選択できるようにした例 */
 export const WithCalendar: Story = {
   render({ size, ...args }) {
+    // biome-ignore lint/correctness/useHookAtTopLevel: Storybook render is effectively a React component
     const [yearInput, setYearInput] = useState('');
+    // biome-ignore lint/correctness/useHookAtTopLevel: Storybook render is effectively a React component
     const [monthInput, setMonthInput] = useState('');
+    // biome-ignore lint/correctness/useHookAtTopLevel: Storybook render is effectively a React component
     const [dayInput, setDayInput] = useState('');
 
     function handleCalendarChange(newDate: DateValue | null) {
@@ -272,9 +275,9 @@ export const WithCalendar: Story = {
       <ReactAriaDatePicker className='flex gap-4'>
         {({ state }) => {
           const updateCalendarDate = () => {
-            const year = Number.parseInt(yearInput);
-            const month = Number.parseInt(monthInput);
-            const day = Number.parseInt(dayInput);
+            const year = Number.parseInt(yearInput, 10);
+            const month = Number.parseInt(monthInput, 10);
+            const day = Number.parseInt(dayInput, 10);
 
             if (!Number.isNaN(year) && !Number.isNaN(month) && !Number.isNaN(day)) {
               state.setValue(new CalendarDate(year, month, day));

@@ -4,40 +4,95 @@
 
 各コンポーネントの動作やスタイル、使用方法や実装上の注意点等は[コードスニペット（React版）Storybook](https://design.digital.go.jp/dads/react/)でもご確認いただけます。
 
-## 未実装コンポーネント
+## 特長
 
-このリポジトリでは全てのコンポーネントは実装していません。  
-（定期的にサンプルは追加予定です。）  
-未実装のコンポーネントについてはスクラッチで書かずに、ヘッドレスUIライブラリの利用を推奨します。
+- デジタル庁デザインシステムに準拠
+- 最小限の依存関係
+- カスタマイズ可能
+- シンプルな実装
 
-スクラッチで書く必要がある場合は、[ARIA Authoring Practices Guide (APG)](https://www.w3.org/WAI/ARIA/apg/)の[Patterns](https://www.w3.org/WAI/ARIA/apg/patterns/)を参考にして実装を進める事を推奨します。
+## 技術スタック
 
-## サンプルコード
+本コードスニペットは以下の技術をベースに実装しています。
 
-### 動作確認
+- React（v18）
+- Tailwind CSS（v3）
+- TypeScript
 
-以下のコマンドでStorybookを実行してください。
+### デザイントークンについて
 
-```sh
+本コードスニペットは、デジタル庁デザインシステムのデザイントークンをベースにしたTailwind CSSのプラグインを使用しています。コードスニペット使用の際は、下記のパッケージをプロジェクトにインストールしてください。
+
+- [@digital-go-jp/tailwind-theme-plugin](https://www.npmjs.com/package/@digital-go-jp/tailwind-theme-plugin)
+
+### React v19 での利用について
+
+本コードスニペットは React v18 上に実装しています。React v19 のプロジェクトに取り込む場合は軽微な型エラーが表示されることがあります。必要に応じて修正を行なってください。
+
+なお、コードスニペットの React v19 へのアップデートも検討しています。
+
+## ローカルでコンポーネントを確認する
+
+各コンポーネントの動作やスタイルは、リポジトリをクローンしてローカルで Storybook を起動することでも確認できます。
+
+### 1. リポジトリのクローン
+
+任意の方法でリポジトリをクローンしてください。
+
+<https://github.com/digital-go-jp/design-system-example-components-react>
+
+### 2. 依存関係のインストール
+
+```bash
 npm install
+```
+
+### 3. Storybookを起動
+
+```bash
 npm run storybook
 ```
 
-### スタイリング
+ブラウザで `http://localhost:6006` にアクセスすると、すべてのコンポーネントを確認できます。
 
-- [Tailwind CSS](https://www.npmjs.com/package/tailwindcss)
-- [@digital-go-jp/tailwind-theme-plugin](https://www.npmjs.com/package/@digital-go-jp/tailwind-theme-plugin)
+## ディレクトリ構成
 
-[@digital-go-jp/tailwind-theme-plugin](https://www.npmjs.com/package/@digital-go-jp/tailwind-theme-plugin) は、デジタル庁デザインシステムのデザイントークンをベースにしたTailwind CSSのプラグインです。
+```
+src/
+├── components/         # 各コンポーネント
+│   ├── Accordion/
+│   ├── Blockquote/
+│   └── ...
+├── docs/               # ドキュメント
+├── tokens/             # デザイントークン
+└── index.ts            # 全コンポーネントのexport
+```
 
-プラグインで定義されるトークン一覧は、[トークン一覧](https://github.com/digital-go-jp/design-system-example-components-react/tree/main/src/tokens) をご確認ください。
+各コンポーネントディレクトリには以下のファイルが含まれています：
 
-プロジェクト固有のトークン等については `tailwind.config.js` の extend で拡張してください。
+- `*.tsx` - コンポーネント本体
+- `*.stories.ts` - Storybookストーリー
+- `index.ts` - コンポーネントのexport
 
-### 注意事項
+## スクリプト
 
-- サンプルコードは Google Chrome / Microsoft Edge / Safari / Firefox の最新版で動作を確認しています。
-- サンプルコードはプロジェクトの特性に合わせて自由に拡張してください。
+```bash
+# Storybookを起動（開発用）
+npm run storybook
+
+# Storybookをビルド
+npm run storybook:build
+
+# テストを実行
+npm test
+
+# コードフォーマット
+npm run format
+```
+
+## ライセンス
+
+本コードスニペットはMITライセンスの下で公開されています。
 
 ## 不具合報告・機能要望について
 

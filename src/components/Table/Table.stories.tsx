@@ -1,14 +1,8 @@
 import { Description, Stories, Subtitle, Title } from '@storybook/addon-docs/blocks';
 import { type ChangeEvent, useEffect, useRef, useState } from 'react';
-import {
-  Checkbox,
-  Link,
-  List,
-  linkActiveStyle,
-  linkDefaultStyle,
-  linkHoverStyle,
-  linkVisitedStyle,
-} from '../';
+import { Checkbox } from '../Checkbox';
+import { Link, linkActiveStyle, linkDefaultStyle, linkHoverStyle, linkVisitedStyle } from '../Link';
+import { List } from '../List';
 
 const meta = {
   id: 'Component/DADS v2/Table',
