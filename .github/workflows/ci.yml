@@ -25,3 +25,7 @@ jobs:
       - name: Lint
         run: |
           npm run lint
+      - name: Install Playwright browsers
+        run: npm run test:setup
+      - name: Test
+        run: npm test

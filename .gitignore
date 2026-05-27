@@ -24,7 +24,7 @@ dist-ssr
 
 storybook-static
 
-test-results/
-playwright-report/
+.vitest-attachments/
+src/**/__screenshots__/
 
 src/**/*-snapshots/
