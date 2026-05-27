@@ -36,15 +36,17 @@
     "lint:markup": "markuplint \"./src/**/*.{jsx,tsx}\"",
     "storybook": "storybook dev -p 6006",
     "storybook:build": "storybook build",
-    "storybook:test": "test-storybook",
-    "test": "playwright test"
+    "test": "vitest --run",
+    "test:setup": "playwright install chromium",
+    "test:storybook": "vitest --project=storybook --run",
+    "test:unit": "vitest --project=unit --run"
   },
   "dependencies": {
     "@digital-go-jp/design-tokens": "^1.1.9",
     "@digital-go-jp/tailwind-theme-plugin": "^0.3.4",
     "@internationalized/date": "^3.10.1",
     "react": "^18.3.1",
-    "react-aria-components": "^1.14.0",
+    "react-aria-components": "^1.17.0",
     "react-dom": "^18.3.1",
     "tailwindcss": "^3.4.19"
   },
@@ -52,26 +54,33 @@
     "@biomejs/biome": "^2.3.13",
     "@markuplint/jsx-parser": "^4.7.20",
     "@markuplint/react-spec": "^4.5.20",
-    "@playwright/test": "^1.58.0",
-    "@storybook/addon-a11y": "^10.2.4",
-    "@storybook/addon-docs": "^10.2.4",
-    "@storybook/addon-links": "^10.2.4",
-    "@storybook/react-vite": "^10.2.4",
+    "@storybook/addon-a11y": "^10.3.6",
+    "@storybook/addon-docs": "^10.3.6",
+    "@storybook/addon-links": "^10.3.6",
+    "@storybook/addon-vitest": "^10.3.6",
+    "@storybook/react-vite": "^10.3.6",
     "@tailwindcss/container-queries": "^0.1.1",
     "@tsconfig/node22": "^22.0.5",
     "@types/node": "^24.3.0",
     "@types/react": "^18.3.20",
     "@types/react-dom": "^18.3.5",
-    "@vitejs/plugin-react-swc": "^4.2.3",
+    "@vitejs/plugin-react-swc": "^4.3.0",
+    "@vitest/browser-playwright": "^4.1.5",
     "autoprefixer": "^10.4.24",
     "markuplint": "^4.14.0",
+    "playwright": "^1.59.1",
     "postcss": "^8.5.6",
-    "storybook": "^10.2.4",
+    "storybook": "^10.3.6",
     "typescript": "^5.9.3",
-    "vite": "^7.3.1"
+    "vite": "^8.0.10",
+    "vitest": "^4.1.5",
+    "vitest-browser-react": "^2.2.0"
   },
   "engines": {
     "node": ">=22"
   },
-  "engineStrict": true
+  "engineStrict": true,
+  "overrides": {
+    "minimatch": ">=10.2.3"
+  }
 }

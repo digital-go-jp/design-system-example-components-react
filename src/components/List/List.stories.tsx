@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Link } from '../';
+import { Link } from '../Link';
 import { List } from './List';
 
 const meta = {
