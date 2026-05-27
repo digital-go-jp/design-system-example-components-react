@@ -1,0 +1,31 @@
+@keyframes dads-spinner-rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes dads-spinner-group-rotate {
+  0% { transform: rotate(0deg); }
+  30% { transform: rotate(135deg); }
+  100% { transform: rotate(180deg); }
+}
+
+@keyframes dads-spinner-bar-rotate {
+  0% { transform: rotate(0deg); }
+  4% { transform: rotate(0deg); }
+  30% {
+    transform: rotate(360deg);
+    animation-timing-function: cubic-bezier(0.5, 0.4, 0.3, 0.9);
+  }
+  100% { transform: rotate(540deg); }
+}
+
+@keyframes dads-spinner-bar-dash {
+  0% { stroke-dasharray: 8 92; stroke-dashoffset: 4; }
+  30% { stroke-dasharray: 80 20; stroke-dashoffset: 40; }
+  100% { stroke-dasharray: 8 92; stroke-dashoffset: 4; }
+}
+
+@keyframes dads-linear-rotate {
+  0% { stroke-dashoffset: 100; }
+  100% { stroke-dashoffset: -100; }
+}
