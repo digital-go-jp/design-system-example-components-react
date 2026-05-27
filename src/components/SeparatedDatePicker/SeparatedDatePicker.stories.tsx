@@ -13,19 +13,19 @@ import {
   Popover,
   DatePicker as ReactAriaDatePicker,
 } from 'react-aria-components';
+import { Button } from '../Button';
+import { ErrorText } from '../ErrorText';
+import { Legend } from '../Legend';
+import { RequirementBadge } from '../RequirementBadge';
+import { Select } from '../Select';
 import {
-  Button,
-  ErrorText,
-  Legend,
-  RequirementBadge,
-  Select,
   SeparatedDatePicker,
   SeparatedDatePickerCalendarButton,
   SeparatedDatePickerDate,
   SeparatedDatePickerMonth,
   SeparatedDatePickerYear,
-  SupportText,
-} from '..';
+} from '../SeparatedDatePicker';
+import { SupportText } from '../SupportText';
 
 /**
  * Separatedタイプのデートピッカー。

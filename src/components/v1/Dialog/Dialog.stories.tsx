@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useRef } from 'react';
-import { Button } from '../../';
+import { Button } from '../../Button';
 import { Dialog, DialogBody } from './Dialog';
 
 const meta = {

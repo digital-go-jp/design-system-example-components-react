@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Button } from '../';
+import { Button } from '../Button';
 import { NotificationBanner } from './NotificationBanner';
 import { NotificationBannerBody } from './parts/Body';
 import { NotificationBannerClose } from './parts/Close';

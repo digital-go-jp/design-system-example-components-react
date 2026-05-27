@@ -9,7 +9,12 @@ import {
 } from '@storybook/addon-docs/blocks';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useId } from 'react';
-import { Button, Checkbox, Label, Link, RequirementBadge, SupportText } from '../';
+import { Button } from '../Button';
+import { Checkbox } from '../Checkbox';
+import { Label } from '../Label';
+import { Link } from '../Link';
+import { RequirementBadge } from '../RequirementBadge';
+import { SupportText } from '../SupportText';
 import {
   FileUpload,
   FileUploadDropArea,

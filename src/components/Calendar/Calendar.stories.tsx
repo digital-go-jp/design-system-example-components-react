@@ -9,7 +9,8 @@ import {
   CalendarGridHeader,
   CalendarHeaderCell,
 } from 'react-aria-components';
-import { Button, Select } from '../';
+import { Button } from '../Button';
+import { Select } from '../Select';
 
 const meta = {
   id: 'Component/DADS v2/Calendar',
