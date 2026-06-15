@@ -28,7 +28,7 @@ export const Radio = forwardRef<HTMLInputElement, RadioProps>((props, ref) => {
           appearance-none size-[calc(5/6*100%)] rounded-full border-solid-gray-600 bg-white
           hover:border-black
           focus:outline focus:outline-4 focus:outline-black focus:outline-offset-[calc(2/16*1rem)] focus:ring-[calc(2/16*1rem)] focus:ring-yellow-300
-          checked:border-blue-900 checked:before:bg-blue-900 checked:hover:border-blue-1100 checked:hover:before:bg-blue-1100
+          checked:border-key-900 checked:before:bg-key-900 checked:hover:border-key-1100 checked:hover:before:bg-key-1100
           before:hidden before:size-full before:bg-white before:[clip-path:circle(calc(5/16*100%))]
           checked:before:block
           data-[size=sm]:border-[calc(2/16*1rem)]

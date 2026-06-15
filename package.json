@@ -42,8 +42,8 @@
     "test:unit": "vitest --project=unit --run"
   },
   "dependencies": {
-    "@digital-go-jp/design-tokens": "^1.1.9",
-    "@digital-go-jp/tailwind-theme-plugin": "^0.3.4",
+    "@digital-go-jp/design-tokens": "^2.0.1",
+    "@digital-go-jp/tailwind-theme-plugin": "^1.0.0",
     "@internationalized/date": "^3.10.1",
     "react": "^18.3.1",
     "react-aria-components": "^1.17.0",

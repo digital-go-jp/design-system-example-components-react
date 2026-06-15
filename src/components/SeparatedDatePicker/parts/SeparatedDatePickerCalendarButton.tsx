@@ -13,7 +13,7 @@ export const SeparatedDatePickerCalendarButton = forwardRef<
 
   return (
     <button
-      className={`group flex h-14 items-center justify-center gap-x-1 rounded-6 border border-blue-900 bg-white px-3 text-blue-900 hover:border-[calc(3/16*1rem)] hover:px-2.5 focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:outline-black focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300 data-[size=md]:h-12 data-[size=sm]:h-10 ${className ?? ''}`}
+      className={`group flex h-14 items-center justify-center gap-x-1 rounded-6 border border-key-900 bg-white px-3 text-key-900 hover:border-[calc(3/16*1rem)] hover:px-2.5 focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:outline-black focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300 data-[size=md]:h-12 data-[size=sm]:h-10 ${className ?? ''}`}
       type='button'
       data-size={size}
       ref={ref}

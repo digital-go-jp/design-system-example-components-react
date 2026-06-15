@@ -30,7 +30,7 @@ export const DisclosureSummary = (props: DisclosureSummaryProps) => {
       <svg
         aria-hidden={true}
         className={`
-          flex-none text-blue-1000 mt-[calc((1lh-24px)/2)]
+          flex-none text-key-1000 mt-[calc((1lh-24px)/2)]
           group-open/disclosure:rotate-180
           forced-colors:text-inherit
         `}

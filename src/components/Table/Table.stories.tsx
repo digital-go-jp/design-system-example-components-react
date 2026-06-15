@@ -734,7 +734,7 @@ export const HighlightHoveredRow = {
           </tr>
         </thead>
         <tbody>
-          <tr className='border-b border-solid-gray-500 even:bg-solid-gray-50 hover:bg-blue-50'>
+          <tr className='border-b border-solid-gray-500 even:bg-solid-gray-50 hover:bg-key-50'>
             <td className='px-4 py-5 align-top'>データ</td>
             <td className='px-4 py-5 align-top'>データ</td>
             <td className='px-4 py-5 align-top'>データ</td>
@@ -742,7 +742,7 @@ export const HighlightHoveredRow = {
             <td className='px-4 py-5 align-top'>データ</td>
             <td className='px-4 py-5 align-top'>データ</td>
           </tr>
-          <tr className='border-b border-solid-gray-500 even:bg-solid-gray-50 hover:bg-blue-50'>
+          <tr className='border-b border-solid-gray-500 even:bg-solid-gray-50 hover:bg-key-50'>
             <td className='px-4 py-5 align-top'>データ</td>
             <td className='px-4 py-5 align-top'>データ</td>
             <td className='px-4 py-5 align-top'>データ</td>
@@ -750,7 +750,7 @@ export const HighlightHoveredRow = {
             <td className='px-4 py-5 align-top'>データ</td>
             <td className='px-4 py-5 align-top'>データ</td>
           </tr>
-          <tr className='border-b border-solid-gray-500 even:bg-solid-gray-50 hover:bg-blue-50'>
+          <tr className='border-b border-solid-gray-500 even:bg-solid-gray-50 hover:bg-key-50'>
             <td className='px-4 py-5 align-top'>データ</td>
             <td className='px-4 py-5 align-top'>データ</td>
             <td className='px-4 py-5 align-top'>データ</td>
@@ -758,7 +758,7 @@ export const HighlightHoveredRow = {
             <td className='px-4 py-5 align-top'>データ</td>
             <td className='px-4 py-5 align-top'>データ</td>
           </tr>
-          <tr className='border-b border-solid-gray-500 even:bg-solid-gray-50 hover:bg-blue-50'>
+          <tr className='border-b border-solid-gray-500 even:bg-solid-gray-50 hover:bg-key-50'>
             <td className='px-4 py-5 align-top'>データ</td>
             <td className='px-4 py-5 align-top'>データ</td>
             <td className='px-4 py-5 align-top'>データ</td>
@@ -766,7 +766,7 @@ export const HighlightHoveredRow = {
             <td className='px-4 py-5 align-top'>データ</td>
             <td className='px-4 py-5 align-top'>データ</td>
           </tr>
-          <tr className='border-b border-solid-gray-500 even:bg-solid-gray-50 hover:bg-blue-50'>
+          <tr className='border-b border-solid-gray-500 even:bg-solid-gray-50 hover:bg-key-50'>
             <td className='px-4 py-5 align-top'>データ</td>
             <td className='px-4 py-5 align-top'>データ</td>
             <td className='px-4 py-5 align-top'>データ</td>
@@ -774,7 +774,7 @@ export const HighlightHoveredRow = {
             <td className='px-4 py-5 align-top'>データ</td>
             <td className='px-4 py-5 align-top'>データ</td>
           </tr>
-          <tr className='border-b border-solid-gray-500 even:bg-solid-gray-50 hover:bg-blue-50'>
+          <tr className='border-b border-solid-gray-500 even:bg-solid-gray-50 hover:bg-key-50'>
             <td className='px-4 py-5 align-top'>データ</td>
             <td className='px-4 py-5 align-top'>データ</td>
             <td className='px-4 py-5 align-top'>データ</td>
@@ -843,7 +843,7 @@ export const SelectableTable = {
           </tr>
         </thead>
         <tbody>
-          <tr className='border-b border-solid-gray-500 [&:has(input:checked)]:bg-blue-100'>
+          <tr className='border-b border-solid-gray-500 [&:has(input:checked)]:bg-key-100'>
             <td className='relative'>
               <label className='absolute inset-0 grid justify-center pt-2.5'>
                 <Checkbox
@@ -863,7 +863,7 @@ export const SelectableTable = {
             <td className='px-4 py-3 align-top'>公開中</td>
             <td className='px-4 py-3 align-top'>10</td>
           </tr>
-          <tr className='border-b border-solid-gray-500 [&:has(input:checked)]:bg-blue-100'>
+          <tr className='border-b border-solid-gray-500 [&:has(input:checked)]:bg-key-100'>
             <td className='relative'>
               <label className='absolute inset-0 grid justify-center pt-2.5'>
                 <Checkbox
@@ -883,7 +883,7 @@ export const SelectableTable = {
             <td className='px-4 py-3 align-top'>下書き</td>
             <td className='px-4 py-3 align-top'>0</td>
           </tr>
-          <tr className='border-b border-solid-gray-500 [&:has(input:checked)]:bg-blue-100'>
+          <tr className='border-b border-solid-gray-500 [&:has(input:checked)]:bg-key-100'>
             <td className='relative'>
               <label className='absolute inset-0 grid justify-center pt-2.5'>
                 <Checkbox

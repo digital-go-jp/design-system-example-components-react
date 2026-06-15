@@ -572,9 +572,9 @@ export const Playground: StoryObj<FileUploadPlaygroundProps> = {
           data-dragover={!droppable ? isDragOver : undefined}
           className={`
             shrink-0
-            group-data-[dragover=true]/drop-area:bg-blue-300 group-data-[dragover=true]/drop-area:text-blue-1200 group-data-[dragover=true]/drop-area:underline
+            group-data-[dragover=true]/drop-area:bg-key-300 group-data-[dragover=true]/drop-area:text-key-1200 group-data-[dragover=true]/drop-area:underline
             group-data-[has-error=true]/file-upload:border-error-1
-            data-[dragover=true]:bg-blue-300 data-[dragover=true]:text-blue-1200 data-[dragover=true]:underline
+            data-[dragover=true]:bg-key-300 data-[dragover=true]:text-key-1200 data-[dragover=true]:underline
           `}
           onClick={handleSelectButtonClick}
           ref={selectButtonRef}
@@ -870,7 +870,7 @@ export const WithExistingFiles: Story = {
                   type='button'
                   variant='outline'
                   size='md'
-                  className='shrink-0 group-data-[dragover=true]/drop-area:bg-blue-300 group-data-[dragover=true]/drop-area:text-blue-1200 group-data-[dragover=true]/drop-area:underline group-data-[has-error=true]/file-upload:border-error-1'
+                  className='shrink-0 group-data-[dragover=true]/drop-area:bg-key-300 group-data-[dragover=true]/drop-area:text-key-1200 group-data-[dragover=true]/drop-area:underline group-data-[has-error=true]/file-upload:border-error-1'
                   onClick={handleSelectButtonClick}
                   ref={selectButtonRef}
                   aria-labelledby={`${labelId} ${buttonId}`}

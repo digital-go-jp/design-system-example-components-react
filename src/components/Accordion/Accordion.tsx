@@ -37,7 +37,7 @@ export const AccordionSummary = (props: AccordionSummaryProps) => {
     >
       <span
         className={`
-          absolute top-2 left-0.5 inline-flex items-center justify-center size-[var(--icon-size)] mt-[calc((1lh-var(--icon-size))/2)] border border-current bg-white text-blue-1000 rounded-full
+          absolute top-2 left-0.5 inline-flex items-center justify-center size-[var(--icon-size)] mt-[calc((1lh-var(--icon-size))/2)] border border-current bg-white text-key-1000 rounded-full
           desktop:top-3.5 desktop:left-1.5
           group-hover/summary:outline group-hover/summary:outline-2 group-hover/summary:outline-current
           group-open/accordion:rotate-180

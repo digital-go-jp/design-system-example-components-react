@@ -15,11 +15,11 @@ export const buttonVariantStyle: { [key in ButtonVariant]: string } = {
     border-4
     border-double
     border-transparent
-    bg-blue-900
+    bg-key-900
     text-white
-    hover:bg-blue-1000
+    hover:bg-key-1000
     hover:underline
-    active:bg-blue-1200
+    active:bg-key-1200
     active:underline
     aria-disabled:bg-solid-gray-300
     aria-disabled:text-solid-gray-50
@@ -28,24 +28,24 @@ export const buttonVariantStyle: { [key in ButtonVariant]: string } = {
     border
     border-current
     bg-white
-    text-blue-900
-    hover:bg-blue-200
-    hover:text-blue-1000
+    text-key-900
+    hover:bg-key-200
+    hover:text-key-1000
     hover:underline
-    active:bg-blue-300
-    active:text-blue-1200
+    active:bg-key-300
+    active:text-key-1200
     active:underline
     aria-disabled:bg-white
     aria-disabled:text-solid-gray-300
   `,
   text: `
-    text-blue-900
+    text-key-900
     underline
-    hover:bg-blue-50
-    hover:text-blue-1000
+    hover:bg-key-50
+    hover:text-key-1000
     hover:decoration-[calc(3/16*1rem)]
-    active:bg-blue-100
-    active:text-blue-1200
+    active:bg-key-100
+    active:text-key-1200
     focus-visible:bg-yellow-300
     aria-disabled:bg-transparent
     aria-disabled:focus-visible:bg-yellow-300

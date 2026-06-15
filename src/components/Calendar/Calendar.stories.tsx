@@ -107,7 +107,7 @@ export const Static: Story = {
               <button
                 type='button'
                 aria-label='2025年2月1日 土曜日'
-                className='m-1 flex items-center justify-center size-10 rounded-full underline-offset-[calc(3/16*1rem)] hover:bg-solid-gray-50 hover:underline focus-visible:bg-yellow-300 focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300 data-[selected]:!bg-blue-900 data-[selected]:border data-[selected]:border-transparent data-[selected]:text-white'
+                className='m-1 flex items-center justify-center size-10 rounded-full underline-offset-[calc(3/16*1rem)] hover:bg-solid-gray-50 hover:underline focus-visible:bg-yellow-300 focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300 data-[selected]:!bg-key-900 data-[selected]:border data-[selected]:border-transparent data-[selected]:text-white'
               >
                 1
               </button>
@@ -118,7 +118,7 @@ export const Static: Story = {
               <button
                 type='button'
                 aria-label='2025年2月2日 日曜日'
-                className='m-1 flex items-center justify-center size-10 rounded-full underline-offset-[calc(3/16*1rem)] hover:bg-solid-gray-50 hover:underline focus-visible:bg-yellow-300 focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300 data-[selected]:!bg-blue-900 data-[selected]:border data-[selected]:border-transparent data-[selected]:text-white'
+                className='m-1 flex items-center justify-center size-10 rounded-full underline-offset-[calc(3/16*1rem)] hover:bg-solid-gray-50 hover:underline focus-visible:bg-yellow-300 focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300 data-[selected]:!bg-key-900 data-[selected]:border data-[selected]:border-transparent data-[selected]:text-white'
               >
                 2
               </button>
@@ -127,7 +127,7 @@ export const Static: Story = {
               <button
                 type='button'
                 aria-label='2025年2月3日 月曜日'
-                className='m-1 flex items-center justify-center size-10 rounded-full underline-offset-[calc(3/16*1rem)] hover:bg-solid-gray-50 hover:underline focus-visible:bg-yellow-300 focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300 data-[selected]:!bg-blue-900 data-[selected]:border data-[selected]:border-transparent data-[selected]:text-white'
+                className='m-1 flex items-center justify-center size-10 rounded-full underline-offset-[calc(3/16*1rem)] hover:bg-solid-gray-50 hover:underline focus-visible:bg-yellow-300 focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300 data-[selected]:!bg-key-900 data-[selected]:border data-[selected]:border-transparent data-[selected]:text-white'
               >
                 3
               </button>
@@ -136,7 +136,7 @@ export const Static: Story = {
               <button
                 type='button'
                 aria-label='2025年2月4日 火曜日'
-                className='m-1 flex items-center justify-center size-10 rounded-full underline-offset-[calc(3/16*1rem)] hover:bg-solid-gray-50 hover:underline focus-visible:bg-yellow-300 focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300 data-[selected]:!bg-blue-900 data-[selected]:border data-[selected]:border-transparent data-[selected]:text-white'
+                className='m-1 flex items-center justify-center size-10 rounded-full underline-offset-[calc(3/16*1rem)] hover:bg-solid-gray-50 hover:underline focus-visible:bg-yellow-300 focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300 data-[selected]:!bg-key-900 data-[selected]:border data-[selected]:border-transparent data-[selected]:text-white'
                 data-focused='true'
                 data-focus-visible='true'
               >
@@ -147,7 +147,7 @@ export const Static: Story = {
               <button
                 type='button'
                 aria-label='2025年2月5日 水曜日'
-                className='m-1 flex items-center justify-center size-10 rounded-full underline-offset-[calc(3/16*1rem)] hover:bg-solid-gray-50 hover:underline focus-visible:bg-yellow-300 focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300 data-[selected]:!bg-blue-900 data-[selected]:border data-[selected]:border-transparent data-[selected]:text-white'
+                className='m-1 flex items-center justify-center size-10 rounded-full underline-offset-[calc(3/16*1rem)] hover:bg-solid-gray-50 hover:underline focus-visible:bg-yellow-300 focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300 data-[selected]:!bg-key-900 data-[selected]:border data-[selected]:border-transparent data-[selected]:text-white'
               >
                 5
               </button>
@@ -156,7 +156,7 @@ export const Static: Story = {
               <button
                 type='button'
                 aria-label='2025年2月6日 木曜日'
-                className='m-1 flex items-center justify-center size-10 rounded-full underline-offset-[calc(3/16*1rem)] hover:bg-solid-gray-50 hover:underline focus-visible:bg-yellow-300 focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300 data-[selected]:!bg-blue-900 data-[selected]:border data-[selected]:border-transparent data-[selected]:text-white'
+                className='m-1 flex items-center justify-center size-10 rounded-full underline-offset-[calc(3/16*1rem)] hover:bg-solid-gray-50 hover:underline focus-visible:bg-yellow-300 focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300 data-[selected]:!bg-key-900 data-[selected]:border data-[selected]:border-transparent data-[selected]:text-white'
               >
                 6
               </button>
@@ -165,7 +165,7 @@ export const Static: Story = {
               <button
                 type='button'
                 aria-label='2025年2月7日 金曜日'
-                className='m-1 flex items-center justify-center size-10 rounded-full underline-offset-[calc(3/16*1rem)] hover:bg-solid-gray-50 hover:underline focus-visible:bg-yellow-300 focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300 data-[selected]:!bg-blue-900 data-[selected]:border data-[selected]:border-transparent data-[selected]:text-white'
+                className='m-1 flex items-center justify-center size-10 rounded-full underline-offset-[calc(3/16*1rem)] hover:bg-solid-gray-50 hover:underline focus-visible:bg-yellow-300 focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300 data-[selected]:!bg-key-900 data-[selected]:border data-[selected]:border-transparent data-[selected]:text-white'
               >
                 7
               </button>
@@ -174,7 +174,7 @@ export const Static: Story = {
               <button
                 type='button'
                 aria-label='2025年2月8日 土曜日'
-                className='m-1 flex items-center justify-center size-10 rounded-full underline-offset-[calc(3/16*1rem)] hover:bg-solid-gray-50 hover:underline focus-visible:bg-yellow-300 focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300 data-[selected]:!bg-blue-900 data-[selected]:border data-[selected]:border-transparent data-[selected]:text-white'
+                className='m-1 flex items-center justify-center size-10 rounded-full underline-offset-[calc(3/16*1rem)] hover:bg-solid-gray-50 hover:underline focus-visible:bg-yellow-300 focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300 data-[selected]:!bg-key-900 data-[selected]:border data-[selected]:border-transparent data-[selected]:text-white'
               >
                 8
               </button>
@@ -185,7 +185,7 @@ export const Static: Story = {
               <button
                 type='button'
                 aria-label='2025年2月9日 日曜日'
-                className='m-1 flex items-center justify-center size-10 rounded-full underline-offset-[calc(3/16*1rem)] hover:bg-solid-gray-50 hover:underline focus-visible:bg-yellow-300 focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300 data-[selected]:!bg-blue-900 data-[selected]:border data-[selected]:border-transparent data-[selected]:text-white'
+                className='m-1 flex items-center justify-center size-10 rounded-full underline-offset-[calc(3/16*1rem)] hover:bg-solid-gray-50 hover:underline focus-visible:bg-yellow-300 focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300 data-[selected]:!bg-key-900 data-[selected]:border data-[selected]:border-transparent data-[selected]:text-white'
               >
                 9
               </button>
@@ -194,7 +194,7 @@ export const Static: Story = {
               <button
                 type='button'
                 aria-label='2025年2月10日 月曜日'
-                className='m-1 flex items-center justify-center size-10 rounded-full underline-offset-[calc(3/16*1rem)] hover:bg-solid-gray-50 hover:underline focus-visible:bg-yellow-300 focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300 data-[selected]:!bg-blue-900 data-[selected]:border data-[selected]:border-transparent data-[selected]:text-white'
+                className='m-1 flex items-center justify-center size-10 rounded-full underline-offset-[calc(3/16*1rem)] hover:bg-solid-gray-50 hover:underline focus-visible:bg-yellow-300 focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300 data-[selected]:!bg-key-900 data-[selected]:border data-[selected]:border-transparent data-[selected]:text-white'
               >
                 10
               </button>
@@ -203,7 +203,7 @@ export const Static: Story = {
               <button
                 type='button'
                 aria-label='2025年2月11日 火曜日'
-                className='m-1 flex items-center justify-center size-10 rounded-full underline-offset-[calc(3/16*1rem)] hover:bg-solid-gray-50 hover:underline focus-visible:bg-yellow-300 focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300 data-[selected]:!bg-blue-900 data-[selected]:border data-[selected]:border-transparent data-[selected]:text-white'
+                className='m-1 flex items-center justify-center size-10 rounded-full underline-offset-[calc(3/16*1rem)] hover:bg-solid-gray-50 hover:underline focus-visible:bg-yellow-300 focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300 data-[selected]:!bg-key-900 data-[selected]:border data-[selected]:border-transparent data-[selected]:text-white'
               >
                 11
               </button>
@@ -212,7 +212,7 @@ export const Static: Story = {
               <button
                 type='button'
                 aria-label='2025年2月12日 水曜日'
-                className='m-1 flex items-center justify-center size-10 rounded-full underline-offset-[calc(3/16*1rem)] hover:bg-solid-gray-50 hover:underline focus-visible:bg-yellow-300 focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300 data-[selected]:!bg-blue-900 data-[selected]:border data-[selected]:border-transparent data-[selected]:text-white'
+                className='m-1 flex items-center justify-center size-10 rounded-full underline-offset-[calc(3/16*1rem)] hover:bg-solid-gray-50 hover:underline focus-visible:bg-yellow-300 focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300 data-[selected]:!bg-key-900 data-[selected]:border data-[selected]:border-transparent data-[selected]:text-white'
               >
                 12
               </button>
@@ -221,7 +221,7 @@ export const Static: Story = {
               <button
                 type='button'
                 aria-label='2025年2月13日 木曜日'
-                className='m-1 flex items-center justify-center size-10 rounded-full underline-offset-[calc(3/16*1rem)] hover:bg-solid-gray-50 hover:underline focus-visible:bg-yellow-300 focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300 data-[selected]:!bg-blue-900 data-[selected]:border data-[selected]:border-transparent data-[selected]:text-white'
+                className='m-1 flex items-center justify-center size-10 rounded-full underline-offset-[calc(3/16*1rem)] hover:bg-solid-gray-50 hover:underline focus-visible:bg-yellow-300 focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300 data-[selected]:!bg-key-900 data-[selected]:border data-[selected]:border-transparent data-[selected]:text-white'
               >
                 13
               </button>
@@ -230,7 +230,7 @@ export const Static: Story = {
               <button
                 type='button'
                 aria-label='2025年2月14日 金曜日'
-                className='m-1 flex items-center justify-center size-10 rounded-full underline-offset-[calc(3/16*1rem)] hover:bg-solid-gray-50 hover:underline focus-visible:bg-yellow-300 focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300 data-[selected]:!bg-blue-900 data-[selected]:border data-[selected]:border-transparent data-[selected]:text-white'
+                className='m-1 flex items-center justify-center size-10 rounded-full underline-offset-[calc(3/16*1rem)] hover:bg-solid-gray-50 hover:underline focus-visible:bg-yellow-300 focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300 data-[selected]:!bg-key-900 data-[selected]:border data-[selected]:border-transparent data-[selected]:text-white'
               >
                 14
               </button>
@@ -239,7 +239,7 @@ export const Static: Story = {
               <button
                 type='button'
                 aria-label='2025年2月15日 土曜日'
-                className='m-1 flex items-center justify-center size-10 rounded-full underline-offset-[calc(3/16*1rem)] hover:bg-solid-gray-50 hover:underline focus-visible:bg-yellow-300 focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300 data-[selected]:!bg-blue-900 data-[selected]:border data-[selected]:border-transparent data-[selected]:text-white'
+                className='m-1 flex items-center justify-center size-10 rounded-full underline-offset-[calc(3/16*1rem)] hover:bg-solid-gray-50 hover:underline focus-visible:bg-yellow-300 focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300 data-[selected]:!bg-key-900 data-[selected]:border data-[selected]:border-transparent data-[selected]:text-white'
               >
                 15
               </button>
@@ -250,7 +250,7 @@ export const Static: Story = {
               <button
                 type='button'
                 aria-label='2025年2月16日 日曜日'
-                className='m-1 flex items-center justify-center size-10 rounded-full underline-offset-[calc(3/16*1rem)] hover:bg-solid-gray-50 hover:underline focus-visible:bg-yellow-300 focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300 data-[selected]:!bg-blue-900 data-[selected]:border data-[selected]:border-transparent data-[selected]:text-white'
+                className='m-1 flex items-center justify-center size-10 rounded-full underline-offset-[calc(3/16*1rem)] hover:bg-solid-gray-50 hover:underline focus-visible:bg-yellow-300 focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300 data-[selected]:!bg-key-900 data-[selected]:border data-[selected]:border-transparent data-[selected]:text-white'
               >
                 16
               </button>
@@ -259,7 +259,7 @@ export const Static: Story = {
               <button
                 type='button'
                 aria-label='2025年2月17日 月曜日'
-                className='m-1 flex items-center justify-center size-10 rounded-full underline-offset-[calc(3/16*1rem)] hover:bg-solid-gray-50 hover:underline focus-visible:bg-yellow-300 focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300 data-[selected]:!bg-blue-900 data-[selected]:border data-[selected]:border-transparent data-[selected]:text-white'
+                className='m-1 flex items-center justify-center size-10 rounded-full underline-offset-[calc(3/16*1rem)] hover:bg-solid-gray-50 hover:underline focus-visible:bg-yellow-300 focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300 data-[selected]:!bg-key-900 data-[selected]:border data-[selected]:border-transparent data-[selected]:text-white'
               >
                 17
               </button>
@@ -269,7 +269,7 @@ export const Static: Story = {
                 type='button'
                 aria-label='2025年2月18日 火曜日 選択中'
                 data-selected
-                className='m-1 flex items-center justify-center size-10 rounded-full underline-offset-[calc(3/16*1rem)] hover:bg-solid-gray-50 hover:underline focus-visible:bg-yellow-300 focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300 data-[selected]:!bg-blue-900 data-[selected]:border data-[selected]:border-transparent data-[selected]:text-white'
+                className='m-1 flex items-center justify-center size-10 rounded-full underline-offset-[calc(3/16*1rem)] hover:bg-solid-gray-50 hover:underline focus-visible:bg-yellow-300 focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300 data-[selected]:!bg-key-900 data-[selected]:border data-[selected]:border-transparent data-[selected]:text-white'
               >
                 18
               </button>
@@ -278,7 +278,7 @@ export const Static: Story = {
               <button
                 type='button'
                 aria-label='本日、2025年2月19日 水曜日'
-                className='m-1 flex items-center justify-center size-10 rounded-full underline-offset-[calc(3/16*1rem)] hover:bg-solid-gray-50 hover:underline focus-visible:bg-yellow-300 focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300 data-[selected]:!bg-blue-900 data-[selected]:border data-[selected]:border-transparent data-[selected]:text-white'
+                className='m-1 flex items-center justify-center size-10 rounded-full underline-offset-[calc(3/16*1rem)] hover:bg-solid-gray-50 hover:underline focus-visible:bg-yellow-300 focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300 data-[selected]:!bg-key-900 data-[selected]:border data-[selected]:border-transparent data-[selected]:text-white'
               >
                 19
               </button>
@@ -287,7 +287,7 @@ export const Static: Story = {
               <button
                 type='button'
                 aria-label='2025年2月20日 木曜日'
-                className='m-1 flex items-center justify-center size-10 rounded-full underline-offset-[calc(3/16*1rem)] hover:bg-solid-gray-50 hover:underline focus-visible:bg-yellow-300 focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300 data-[selected]:!bg-blue-900 data-[selected]:border data-[selected]:border-transparent data-[selected]:text-white'
+                className='m-1 flex items-center justify-center size-10 rounded-full underline-offset-[calc(3/16*1rem)] hover:bg-solid-gray-50 hover:underline focus-visible:bg-yellow-300 focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300 data-[selected]:!bg-key-900 data-[selected]:border data-[selected]:border-transparent data-[selected]:text-white'
               >
                 20
               </button>
@@ -296,7 +296,7 @@ export const Static: Story = {
               <button
                 type='button'
                 aria-label='2025年2月21日 金曜日'
-                className='m-1 flex items-center justify-center size-10 rounded-full underline-offset-[calc(3/16*1rem)] hover:bg-solid-gray-50 hover:underline focus-visible:bg-yellow-300 focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300 data-[selected]:!bg-blue-900 data-[selected]:border data-[selected]:border-transparent data-[selected]:text-white'
+                className='m-1 flex items-center justify-center size-10 rounded-full underline-offset-[calc(3/16*1rem)] hover:bg-solid-gray-50 hover:underline focus-visible:bg-yellow-300 focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300 data-[selected]:!bg-key-900 data-[selected]:border data-[selected]:border-transparent data-[selected]:text-white'
               >
                 21
               </button>
@@ -305,7 +305,7 @@ export const Static: Story = {
               <button
                 type='button'
                 aria-label='2025年2月22日 土曜日'
-                className='m-1 flex items-center justify-center size-10 rounded-full underline-offset-[calc(3/16*1rem)] hover:bg-solid-gray-50 hover:underline focus-visible:bg-yellow-300 focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300 data-[selected]:!bg-blue-900 data-[selected]:border data-[selected]:border-transparent data-[selected]:text-white'
+                className='m-1 flex items-center justify-center size-10 rounded-full underline-offset-[calc(3/16*1rem)] hover:bg-solid-gray-50 hover:underline focus-visible:bg-yellow-300 focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300 data-[selected]:!bg-key-900 data-[selected]:border data-[selected]:border-transparent data-[selected]:text-white'
               >
                 22
               </button>
@@ -316,7 +316,7 @@ export const Static: Story = {
               <button
                 type='button'
                 aria-label='2025年2月23日 日曜日'
-                className='m-1 flex items-center justify-center size-10 rounded-full underline-offset-[calc(3/16*1rem)] hover:bg-solid-gray-50 hover:underline focus-visible:bg-yellow-300 focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300 data-[selected]:!bg-blue-900 data-[selected]:border data-[selected]:border-transparent data-[selected]:text-white'
+                className='m-1 flex items-center justify-center size-10 rounded-full underline-offset-[calc(3/16*1rem)] hover:bg-solid-gray-50 hover:underline focus-visible:bg-yellow-300 focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300 data-[selected]:!bg-key-900 data-[selected]:border data-[selected]:border-transparent data-[selected]:text-white'
               >
                 23
               </button>
@@ -325,7 +325,7 @@ export const Static: Story = {
               <button
                 type='button'
                 aria-label='2025年2月24日 月曜日'
-                className='m-1 flex items-center justify-center size-10 rounded-full underline-offset-[calc(3/16*1rem)] hover:bg-solid-gray-50 hover:underline focus-visible:bg-yellow-300 focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300 data-[selected]:!bg-blue-900 data-[selected]:border data-[selected]:border-transparent data-[selected]:text-white'
+                className='m-1 flex items-center justify-center size-10 rounded-full underline-offset-[calc(3/16*1rem)] hover:bg-solid-gray-50 hover:underline focus-visible:bg-yellow-300 focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300 data-[selected]:!bg-key-900 data-[selected]:border data-[selected]:border-transparent data-[selected]:text-white'
               >
                 24
               </button>
@@ -334,7 +334,7 @@ export const Static: Story = {
               <button
                 type='button'
                 aria-label='2025年2月25日 火曜日'
-                className='m-1 flex items-center justify-center size-10 rounded-full underline-offset-[calc(3/16*1rem)] hover:bg-solid-gray-50 hover:underline focus-visible:bg-yellow-300 focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300 data-[selected]:!bg-blue-900 data-[selected]:border data-[selected]:border-transparent data-[selected]:text-white'
+                className='m-1 flex items-center justify-center size-10 rounded-full underline-offset-[calc(3/16*1rem)] hover:bg-solid-gray-50 hover:underline focus-visible:bg-yellow-300 focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300 data-[selected]:!bg-key-900 data-[selected]:border data-[selected]:border-transparent data-[selected]:text-white'
               >
                 25
               </button>
@@ -343,7 +343,7 @@ export const Static: Story = {
               <button
                 type='button'
                 aria-label='2025年2月26日 水曜日'
-                className='m-1 flex items-center justify-center size-10 rounded-full underline-offset-[calc(3/16*1rem)] hover:bg-solid-gray-50 hover:underline focus-visible:bg-yellow-300 focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300 data-[selected]:!bg-blue-900 data-[selected]:border data-[selected]:border-transparent data-[selected]:text-white'
+                className='m-1 flex items-center justify-center size-10 rounded-full underline-offset-[calc(3/16*1rem)] hover:bg-solid-gray-50 hover:underline focus-visible:bg-yellow-300 focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300 data-[selected]:!bg-key-900 data-[selected]:border data-[selected]:border-transparent data-[selected]:text-white'
               >
                 26
               </button>
@@ -352,7 +352,7 @@ export const Static: Story = {
               <button
                 type='button'
                 aria-label='2025年2月27日 木曜日'
-                className='m-1 flex items-center justify-center size-10 rounded-full underline-offset-[calc(3/16*1rem)] hover:bg-solid-gray-50 hover:underline focus-visible:bg-yellow-300 focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300 data-[selected]:!bg-blue-900 data-[selected]:border data-[selected]:border-transparent data-[selected]:text-white'
+                className='m-1 flex items-center justify-center size-10 rounded-full underline-offset-[calc(3/16*1rem)] hover:bg-solid-gray-50 hover:underline focus-visible:bg-yellow-300 focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300 data-[selected]:!bg-key-900 data-[selected]:border data-[selected]:border-transparent data-[selected]:text-white'
               >
                 27
               </button>
@@ -361,7 +361,7 @@ export const Static: Story = {
               <button
                 type='button'
                 aria-label='2025年2月28日 金曜日'
-                className='m-1 flex items-center justify-center size-10 rounded-full underline-offset-[calc(3/16*1rem)] hover:bg-solid-gray-50 hover:underline focus-visible:bg-yellow-300 focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300 data-[selected]:!bg-blue-900 data-[selected]:border data-[selected]:border-transparent data-[selected]:text-white'
+                className='m-1 flex items-center justify-center size-10 rounded-full underline-offset-[calc(3/16*1rem)] hover:bg-solid-gray-50 hover:underline focus-visible:bg-yellow-300 focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300 data-[selected]:!bg-key-900 data-[selected]:border data-[selected]:border-transparent data-[selected]:text-white'
               >
                 28
               </button>
@@ -472,7 +472,7 @@ export const UsingReactAriaComponents: Story = {
             <CalendarGridBody className='[&_td]:p-0'>
               {(date) => (
                 <CalendarCell
-                  className='m-1 flex items-center justify-center size-10 rounded-full underline-offset-[calc(3/16*1rem)] aria-disabled:hidden hover:bg-solid-gray-50 hover:underline focus:outline-0 data-[focus-visible]:bg-yellow-300 data-[focus-visible]:outline data-[focus-visible]:outline-4 data-[focus-visible]:outline-black data-[focus-visible]:outline-offset-[calc(2/16*1rem)] data-[focus-visible]:ring-[calc(2/16*1rem)] data-[focus-visible]:ring-yellow-300 data-[selected]:!bg-blue-900 data-[selected]:border data-[selected]:border-transparent data-[selected]:text-white'
+                  className='m-1 flex items-center justify-center size-10 rounded-full underline-offset-[calc(3/16*1rem)] aria-disabled:hidden hover:bg-solid-gray-50 hover:underline focus:outline-0 data-[focus-visible]:bg-yellow-300 data-[focus-visible]:outline data-[focus-visible]:outline-4 data-[focus-visible]:outline-black data-[focus-visible]:outline-offset-[calc(2/16*1rem)] data-[focus-visible]:ring-[calc(2/16*1rem)] data-[focus-visible]:ring-yellow-300 data-[selected]:!bg-key-900 data-[selected]:border data-[selected]:border-transparent data-[selected]:text-white'
                   date={date}
                 />
               )}
