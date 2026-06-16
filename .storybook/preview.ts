@@ -19,9 +19,9 @@ const preview: Preview = {
       storySort: {
         order: [
           'Documents',
-          [
-            'はじめに'
-          ],
+          [ 'はじめに', 'React版の開発方針' ],
+          'Foundations',
+          ['カラー', 'タイポグラフィ', 'エレベーション'],
           'Component',
           [
             'アコーディオン',
@@ -58,7 +58,6 @@ const preview: Preview = {
             'Parts',
             'DADS v1',
           ],
-          'tokens',
         ],
       },
     },

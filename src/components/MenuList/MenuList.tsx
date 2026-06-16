@@ -40,16 +40,16 @@ const menuListItemBaseStyle = `
   data-[type=standard]:data-[size=regular]:rounded-8
   data-[type=standard]:data-[size=small]:rounded-4
   data-[type=box]:pl-[calc(1rem+1rem*var(--menu-list-indentation,0))]
-  data-[current]:bg-blue-100 data-[current]:text-blue-1000 data-[current]:font-bold
-  [&:has(+_*_[data-current])]:bg-blue-50 [&:has(+_*_[data-current])]:text-blue-1000
+  data-[current]:bg-key-100 data-[current]:text-key-1000 data-[current]:font-bold
+  [&:has(+_*_[data-current])]:bg-key-50 [&:has(+_*_[data-current])]:text-key-1000
   hover:bg-solid-gray-50 hover:underline hover:underline-offset-[calc(3/16*1rem)]
-  data-[current]:hover:bg-blue-50 data-[current]:hover:text-blue-900
-  [&:has(+_*_[data-current]):hover]:bg-blue-50 [&:has(+_*_[data-current]):hover]:text-blue-900
+  data-[current]:hover:bg-key-50 data-[current]:hover:text-key-900
+  [&:has(+_*_[data-current]):hover]:bg-key-50 [&:has(+_*_[data-current]):hover]:text-key-900
   focus-visible:relative focus-visible:z-[1] focus-visible:bg-yellow-300
   data-[type=standard]:focus-visible:outline data-[type=standard]:focus-visible:outline-4 data-[type=standard]:focus-visible:outline-black data-[type=standard]:focus-visible:outline-offset-[calc(2/16*1rem)] data-[type=standard]:focus-visible:ring-[calc(2/16*1rem)] data-[type=standard]:focus-visible:ring-yellow-300
   data-[type=box]:focus-visible:outline data-[type=box]:focus-visible:outline-4 data-[type=box]:focus-visible:outline-black data-[type=box]:focus-visible:-outline-offset-4 data-[type=box]:focus-visible:ring-[calc(6/16*1rem)] data-[type=box]:focus-visible:ring-inset data-[type=box]:focus-visible:ring-yellow-300
-  data-[current]:focus-visible:bg-blue-100
-  [&:has(+_*_[data-current]):focus-visible]:bg-blue-50
+  data-[current]:focus-visible:bg-key-100
+  [&:has(+_*_[data-current]):focus-visible]:bg-key-50
 `;
 
 type MenuListItemSharedAttrs = {
