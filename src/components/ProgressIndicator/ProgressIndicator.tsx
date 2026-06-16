@@ -92,7 +92,7 @@ export const ProgressIndicatorSpinner = (props: ProgressIndicatorSpinnerProps) =
       {...rest}
     >
       <circle
-        className='stroke-current text-blue-100 forced-colors:text-[Canvas]'
+        className='stroke-current text-key-100 forced-colors:text-[Canvas]'
         cx={center}
         cy={center}
         r={radius}
@@ -102,7 +102,7 @@ export const ProgressIndicatorSpinner = (props: ProgressIndicatorSpinnerProps) =
         <g className={`[transform-origin:center] ${spinnerInnerGroupAnimationClass}`}>
           <circle
             className={`
-              text-blue-1200 [stroke-dasharray:100] [transform:rotate(-90deg)] [transform-origin:center]
+              text-key-1200 [stroke-dasharray:100] [transform:rotate(-90deg)] [transform-origin:center]
               [stroke-dashoffset:calc(100-clamp(0,var(--value,35),100))]
               forced-colors:text-[CanvasText]
               ${spinnerBarAnimationClass}
@@ -116,7 +116,7 @@ export const ProgressIndicatorSpinner = (props: ProgressIndicatorSpinnerProps) =
         </g>
       </g>
       <circle
-        className='text-blue-1200 forced-colors:text-[CanvasText]'
+        className='text-key-1200 forced-colors:text-[CanvasText]'
         cx={center}
         cy={center}
         r={outerRadius}
@@ -156,7 +156,7 @@ export const ProgressIndicatorLinear = (props: ProgressIndicatorLinearProps) => 
       {...rest}
     >
       <line
-        className='stroke-current text-blue-100 forced-colors:text-[Canvas]'
+        className='stroke-current text-key-100 forced-colors:text-[Canvas]'
         x1={0}
         y1={2}
         x2={width}
@@ -165,7 +165,7 @@ export const ProgressIndicatorLinear = (props: ProgressIndicatorLinearProps) => 
       />
       <line
         className={`
-          text-blue-1200 forced-colors:text-[CanvasText]
+          text-key-1200 forced-colors:text-[CanvasText]
           [stroke-dashoffset:calc(100-clamp(0,var(--value,35),100))]
           ${linearBarClass}
         `}
@@ -177,7 +177,7 @@ export const ProgressIndicatorLinear = (props: ProgressIndicatorLinearProps) => 
         pathLength={100}
       />
       <line
-        className='text-blue-1200 forced-colors:text-[CanvasText]'
+        className='text-key-1200 forced-colors:text-[CanvasText]'
         x1={0}
         y1={3.5}
         x2={width}
@@ -206,7 +206,7 @@ export const ProgressIndicatorStatic = (props: ProgressIndicatorStaticProps) => 
         fill='none'
         aria-hidden={true}
         data-indicator='static'
-        className={`text-blue-1200 forced-colors:text-[CanvasText] ${className ?? ''}`}
+        className={`text-key-1200 forced-colors:text-[CanvasText] ${className ?? ''}`}
         {...rest}
       >
         <path
@@ -233,7 +233,7 @@ export const ProgressIndicatorStatic = (props: ProgressIndicatorStaticProps) => 
       fill='none'
       aria-hidden={true}
       data-indicator='static'
-      className={`text-blue-1200 forced-colors:text-[CanvasText] ${className ?? ''}`}
+      className={`text-key-1200 forced-colors:text-[CanvasText] ${className ?? ''}`}
       {...rest}
     >
       <path

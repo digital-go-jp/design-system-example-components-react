@@ -33,7 +33,7 @@ const ruleClasses: Record<RuleSize, string> = {
 
 const chipClasses = `
   relative pl-[calc(1em/3+0.5em)]
-  before:content-[''] before:absolute before:left-0 before:w-[calc(1em/3)] before:bg-blue-900 before:top-[0.2em] before:bottom-[0.1em]
+  before:content-[''] before:absolute before:left-0 before:w-[calc(1em/3)] before:bg-key-900 before:top-[0.2em] before:bottom-[0.1em]
   supports-[top:1lh]:before:top-[calc(0.5lh-0.45em)] supports-[top:1lh]:before:bottom-[calc(0.5lh-0.55em)]
   forced-colors:before:bg-[CanvasText]
 `;
@@ -94,7 +94,7 @@ export const Heading = forwardRef<HTMLElement, HeadingProps>((props, ref) => {
         ${sizeClasses[size]}
         ${hasChip ? chipClasses : ''}
         ${hasChip && hasShoulder ? chipShoulderClasses : ''}
-        ${rule ? `border-solid border-blue-900 ${ruleClasses[rule]}` : ''}
+        ${rule ? `border-solid border-key-900 ${ruleClasses[rule]}` : ''}
         ${className ?? ''}
       `}
       {...rest}

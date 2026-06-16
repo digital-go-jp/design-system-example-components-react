@@ -116,7 +116,7 @@ const CarouselPageNav = (props: CarouselPageNavProps) => {
         type='button'
         onClick={onPrev}
         className='
-          relative flex h-6 w-6 items-center justify-center rounded-full border border-blue-1000 bg-white p-0 text-blue-1000
+          relative flex h-6 w-6 items-center justify-center rounded-full border border-key-1000 bg-white p-0 text-key-1000
           after:absolute after:-inset-full after:m-auto after:h-11 after:w-11
           focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:shadow-[0_0_0_calc(2/16*1rem)_#fce16b]
         '
@@ -136,7 +136,7 @@ const CarouselPageNav = (props: CarouselPageNavProps) => {
         type='button'
         onClick={onNext}
         className={`
-          relative flex h-6 w-6 items-center justify-center rounded-full border border-blue-1000 bg-white p-0 text-blue-1000
+          relative flex h-6 w-6 items-center justify-center rounded-full border border-key-1000 bg-white p-0 text-key-1000
           after:absolute after:-inset-full after:m-auto after:h-11 after:w-11
           focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300
         `}
@@ -224,7 +224,7 @@ const CarouselExpandList = (props: CarouselExpandListProps) => {
                     className={`
                       block relative
                       ${slide.href ? `
-                        hover:outline hover:outline-4 hover:outline-blue-900 hover:-outline-offset-1
+                        hover:outline hover:outline-4 hover:outline-key-900 hover:-outline-offset-1
                         focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:rounded-4 focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300
                         hover:after:absolute hover:after:inset-[1px] hover:after:ring-[calc(2/16*1rem)] hover:after:ring-inset hover:after:ring-white hover:after:pointer-events-none
                       ` : ''}
@@ -301,7 +301,7 @@ const CarouselPanelArea = (props: CarouselPanelAreaProps) => {
               block relative
               ${currentSlide.href ? `
                 after:absolute after:pointer-events-none
-                hover:outline hover:outline-4 hover:outline-blue-900 hover:-outline-offset-2
+                hover:outline hover:outline-4 hover:outline-key-900 hover:-outline-offset-2
                 focus-visible:overflow-hidden focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:-outline-offset-[calc(2/16*1rem)] focus-visible:rounded-8 focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300
                 hover:after:inset-[2px] hover:after:ring-[calc(2/16*1rem)] hover:after:ring-inset hover:after:ring-white
                 focus-visible:after:inset-[2px] focus-visible:after:ring-[calc(2/16*1rem)] focus-visible:after:ring-inset focus-visible:after:ring-yellow-300 focus-visible:after:rounded-6
@@ -336,7 +336,7 @@ const CarouselPanelArea = (props: CarouselPanelAreaProps) => {
           onClick={onNext}
           className={`
             relative border border-solid-gray-420 bg-white p-0 text-left underline underline-offset-[calc(3/16*1rem)] decoration-[calc(1/16*1rem)] cursor-pointer touch-manipulation
-            hover:outline hover:outline-4 hover:outline-blue-900 hover:-outline-offset-1 hover:decoration-[calc(3/16*1rem)]
+            hover:outline hover:outline-4 hover:outline-key-900 hover:-outline-offset-1 hover:decoration-[calc(3/16*1rem)]
             hover:after:absolute hover:after:inset-0 hover:after:ring-[calc(2/16*1rem)] hover:after:ring-inset hover:after:ring-white hover:after:pointer-events-none
             focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:rounded-[calc(4/16*1rem)] focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300
           `}

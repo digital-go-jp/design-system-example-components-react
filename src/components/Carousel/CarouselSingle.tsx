@@ -22,7 +22,7 @@ export const CarouselSingleLink = (props: CarouselSingleLinkProps) => {
         className={`
           relative block w-fit
           after:absolute after:pointer-events-none
-          hover:outline hover:outline-4 hover:outline-blue-900 hover:-outline-offset-[calc(2/16*1rem)]
+          hover:outline hover:outline-4 hover:outline-key-900 hover:-outline-offset-[calc(2/16*1rem)]
           hover:after:inset-[2px] hover:after:ring-[calc(2/16*1rem)] hover:after:ring-inset hover:after:ring-white
           focus-visible:overflow-hidden focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:-outline-offset-[calc(2/16*1rem)] focus-visible:rounded-8
           focus-visible:after:inset-[2px] focus-visible:after:ring-[calc(2/16*1rem)] focus-visible:after:ring-inset focus-visible:after:ring-yellow-300 focus-visible:after:rounded-6 focus-visible:after:pointer-events-none
