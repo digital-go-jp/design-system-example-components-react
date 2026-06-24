@@ -24,6 +24,7 @@ export * from './components/Link';
 export * from './components/List';
 export * from './components/MenuList';
 export * from './components/MenuListBox';
+export * from './components/ModalDialog';
 export * from './components/NotificationBanner';
 export * from './components/ProgressIndicator';
 export * from './components/Radio';
