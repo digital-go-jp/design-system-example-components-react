@@ -10,10 +10,10 @@ const meta = {
     variant: {
       description: 'ラベルのスタイルを以下から選択します。',
       control: 'radio',
-      options: ['text', 'outline', 'filled-outline', 'fill'],
+      options: ['text', 'outlined', 'filled-1', 'filled-2'],
       table: {
         defaultValue: { summary: 'text' },
-        type: { summary: "'text' | 'outline' | 'filled-outline' | 'fill'" },
+        type: { summary: "'text' | 'outlined' | 'filled-1' | 'filled-2'" },
       },
     },
     color: {
@@ -98,7 +98,7 @@ export const Playground: StoryObj<PlaygroundProps> = {
   },
 };
 
-const variants: ChipLabelVariant[] = ['text', 'outline', 'filled-outline', 'fill'];
+const variants: ChipLabelVariant[] = ['text', 'outlined', 'filled-1', 'filled-2'];
 const colors: ChipLabelColor[] = [
   'gray',
   'blue',

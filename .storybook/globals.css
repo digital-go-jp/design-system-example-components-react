@@ -8,13 +8,18 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
+  html {
     scrollbar-gutter: stable;
   }
 
-  :root:has(dialog[open]) {
+  html:has(:modal) {
     overflow: clip;
     scrollbar-gutter: auto;
+  }
+
+  body:has(:modal) {
+    overflow: auto;
+    scrollbar-gutter: stable;
   }
 
   body {
