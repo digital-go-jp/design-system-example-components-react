@@ -33,5 +33,6 @@ export * from './components/Select';
 export * from './components/SeparatedDatePicker';
 export * from './components/StatusBadge';
 export * from './components/SupportText';
+export * from './components/Tab';
 export * from './components/Textarea';
 export * from './components/UtilityLink';
