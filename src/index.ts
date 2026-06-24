@@ -14,6 +14,7 @@ export * from './components/ErrorText';
 export * from './components/FileUpload';
 export * from './components/HamburgerMenuButton';
 export * from './components/Heading';
+export * from './components/HorizontalMenu';
 export * from './components/Input';
 export * from './components/Label';
 export * from './components/LanguageSelector';
