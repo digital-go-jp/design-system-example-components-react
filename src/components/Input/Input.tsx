@@ -2,9 +2,10 @@ import { type ComponentProps, forwardRef } from 'react';
 
 export type InputBlockSize = 'lg' | 'md' | 'sm';
 
-export type InputProps = ComponentProps<'input'> & {
+export type InputProps = Omit<ComponentProps<'input'>, 'placeholder'> & {
   isError?: boolean;
   blockSize?: InputBlockSize;
+  placeholder?: never;
 };
 
 export const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
