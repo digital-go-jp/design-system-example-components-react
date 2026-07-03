@@ -50,7 +50,7 @@ description: "Port a component from the HTML reference (digital-go-jp/design-sys
 
    **Defaults to bake into the plan:**
    - Start with everything in `<Name>.tsx`. Do not split files preemptively.
-   - **Don't componentize placeholder icons.** When the HTML reference shows decorative or example SVGs at icon slots (front/tail/end icons, illustrative glyphs in demos), do not create wrapper components like `<FooFrontIcon>` for them. Consumers bring their own icons of unknown shape/size, so the component can't usefully fix `width`/`viewBox`/`fill`. Instead, the component contributes only the layout / behavior classes via the slot's container, and the Story renders raw `<svg>` elements with the required slot classes attached directly. Document the required classes for each slot in the autodocs page so consumers know what to attach.
+   - **Don't componentize placeholder icons.** When the HTML reference shows decorative or example SVGs at icon slots (front/tail/end icons, illustrative glyphs in demos), do not create wrapper components like `<FooFrontIcon>` for them. Consumers bring their own icons of unknown shape/size, so the component can't usefully fix `width`/`viewBox`/`fill`. Instead, the component contributes only the layout / behavior classes via the slot's container, and the Story renders raw `<svg>` elements with the required slot classes attached directly. Document the required classes for each slot in the `<Name>.mdx` docs page so consumers know what to attach.
    - **Don't create pass-through wrapper components.** If an HTML reference element only carries a BEM class for styling (e.g. `<span class="dads-menu-list__label">`) and that class is replaced by Tailwind utilities in the React port, the wrapper has nothing left to do. Don't expose it as a sub-component (`<MenuListItemLabel>`) — apply the Tailwind classes directly on the parent's children, or have consumers pass the inner content as a prop / `children`. A wrapper is only justified when it owns layout / `data-*` / behavior that consumers can't sensibly attach themselves.
 
 4. **Implement the React component** (only after the user approves the plan from Step 3)
@@ -58,9 +58,9 @@ description: "Port a component from the HTML reference (digital-go-jp/design-sys
    - Reproduce HTML markup, classes, and behavior **as-is**. Do not introduce improvements.
 
 5. **Build the Storybook entries**
-   - Follow [`component-rules`](../component-rules/SKILL.md) § _Storybook conventions_ for the basics (Playground Story, `tags: ['autodocs']`, export-name → HTML-file-name mapping).
+   - Follow [`component-rules`](../component-rules/SKILL.md) § _Storybook conventions_ for the basics (Playground Story, export-name → HTML-file-name mapping).
    - Mirror the HTML Storybook layout: one Story per HTML file. Display `name` in Japanese.
-   - Author the autodocs page (description or `docs.page`) following the [`write-component-docs`](../write-component-docs/SKILL.md) skill.
+   - Author the `<Name>.mdx` docs file following the [`write-component-docs`](../write-component-docs/SKILL.md) skill.
    - **Register the component in `.storybook/preview.ts` story sort order**, in Japanese 50音順 (gojūon). The list under `parameters.options.storySort.order > 'Component'` is ordered by each title's kana reading — insert the new title at the right position (e.g. `ボタン` falls after `プログレスインジケーター` (ぷ) and before `見出し` (み), not next to `パンくずリスト`). Re-read the surrounding entries to confirm placement.
    - **Add the component to `src/index.ts`** with `export * from './components/<Name>';`, keeping the list alphabetized.
 
@@ -91,7 +91,7 @@ This checklist covers only the port-specific items. The general rules in [`compo
 
 - [ ] Markup matches the HTML reference (element names, structure, ARIA attributes).
 - [ ] Behavior matches the HTML reference. No "improvements" introduced during the port.
-- [ ] No wrapper components were created for placeholder icons; the Story renders raw `<svg>` with the slot classes documented in the autodocs page.
+- [ ] No wrapper components were created for placeholder icons; the Story renders raw `<svg>` with the slot classes documented in the `<Name>.mdx` docs page.
 - [ ] No pass-through wrapper components were created for HTML elements that only carried a BEM class (and whose Tailwind classes can sit on the parent or on `children`).
 - [ ] Reset CSS from the HTML reference was _not_ ported (Preflight covers it — see [`component-rules`](../component-rules/SKILL.md) § _Don't re-implement Preflight_).
 - [ ] `prefers-reduced-motion: reduce` and `forced-colors` handling mirror the HTML reference.
@@ -144,7 +144,7 @@ Write this at `src/components/<Name>/component-spec.md` after Steps 1–2 and be
 
 - HTML 版にある Story 一覧 → React 版の export 名と表示名
 - 追加で必要な Story（`Playground` など）
-- autodocs ページに載せる項目（仕様表、必要クラス一覧など）
+- `<Name>.mdx` に載せる項目（仕様表、必要クラス一覧など）
 
 ## テスト方針
 
