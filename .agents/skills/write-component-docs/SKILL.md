@@ -207,6 +207,8 @@ import { Foo } from './Foo';
 
 Markuplint enforces no heading-level skips — verify with `npm run lint:markup`.
 
+**Don't hand-write a table of contents.** This project enables Storybook's built-in docs table of contents.
+
 ## Addendum: migrating docs from the HTML reference
 
 When the component was ported from the HTML reference (digital-go-jp/design-system-example-components-html), its `.mdx` file is a useful source of **content** — variant tables, behavior descriptions, usage recipes — but not of structure. Fit that content into the section order above; do not follow the HTML MDX's section order or layout.

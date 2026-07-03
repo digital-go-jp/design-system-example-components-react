@@ -1,8 +1,8 @@
 import type { Preview } from '@storybook/react-vite';
 import { DocsTemplate } from './DocsTemplate';
-import dadsTheme from "./dadsTheme";
+import dadsTheme from './dadsTheme';
 import './globals.css';
-import "./prose.css";
+import './prose.css';
 
 const preview: Preview = {
   parameters: {
@@ -19,7 +19,7 @@ const preview: Preview = {
       storySort: {
         order: [
           'Documents',
-          [ 'はじめに', 'React版の開発方針' ],
+          ['はじめに', 'React版の開発方針'],
           'Foundations',
           ['カラー', 'タイポグラフィ', 'エレベーション'],
           'Component',
@@ -71,6 +71,11 @@ const preview: Preview = {
       theme: dadsTheme,
       codePanel: true,
       page: DocsTemplate,
+      toc: {
+        headingSelector: 'h2, h3:not(#stories + div h3)',
+        ignoreSelector: '.docs-story :is(h1, h2, h3, h4, h5, h6)',
+        title: '目次',
+      },
     },
 
     a11y: {
