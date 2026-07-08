@@ -251,12 +251,9 @@ export const Readonly: Story = {
 
 /** カレンダーで日付を選択できるようにした例 */
 export const WithCalendar: Story = {
-  render({ size, ...args }) {
-    // biome-ignore lint/correctness/useHookAtTopLevel: Storybook render is effectively a React component
+  render: ({ size, ...args }) => {
     const [yearInput, setYearInput] = useState('');
-    // biome-ignore lint/correctness/useHookAtTopLevel: Storybook render is effectively a React component
     const [monthInput, setMonthInput] = useState('');
-    // biome-ignore lint/correctness/useHookAtTopLevel: Storybook render is effectively a React component
     const [dayInput, setDayInput] = useState('');
 
     function handleCalendarChange(newDate: DateValue | null) {

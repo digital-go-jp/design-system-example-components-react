@@ -51,7 +51,7 @@
     "tailwindcss": "^3.4.19"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.3.13",
+    "@biomejs/biome": "^2.5.0",
     "@markuplint/jsx-parser": "^4.7.20",
     "@markuplint/react-spec": "^4.5.20",
     "@storybook/addon-a11y": "^10.3.6",
