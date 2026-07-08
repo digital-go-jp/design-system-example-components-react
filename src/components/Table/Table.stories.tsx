@@ -1334,23 +1334,23 @@ export const OverflowOnMobile = {
                     <List marker='number' spacing='4'>
                       <li>
                         <span>1. </span>
-                        <span>りんご区</span>
+                        りんご区
                       </li>
                       <li>
                         <span>2. </span>
-                        <span>みかん区</span>
+                        みかん区
                       </li>
                       <li>
                         <span>3. </span>
-                        <span>ぶどう区</span>
+                        ぶどう区
                       </li>
                       <li>
                         <span>4. </span>
-                        <span>いちご区</span>
+                        いちご区
                       </li>
                       <li>
                         <span>5. </span>
-                        <span>なし区</span>
+                        なし区
                       </li>
                     </List>
                   </td>
