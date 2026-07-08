@@ -28,20 +28,18 @@ export const AllLists: Story = {
           <List marker='number' spacing={args.spacing}>
             <li>
               <span>1. </span>
-              <span>番号付きリストの最初の項目</span>
+              番号付きリストの最初の項目
             </li>
             <li>
               <Link href='#'>
                 <span>2. </span>
-                <span>
-                  二番目の項目で、これは比較的長い説明文を含んでいます。ネストされた構造の例として作成されました。
-                </span>
+                二番目の項目で、これは比較的長い説明文を含んでいます。ネストされた構造の例として作成されました。
               </Link>
             </li>
             <li>
               <Link href='#'>
                 <span>3. </span>
-                <span>三番目</span>
+                三番目
               </Link>
             </li>
           </List>
@@ -55,14 +53,12 @@ export const AllLists: Story = {
               <List marker='number' spacing={args.spacing}>
                 <li>
                   <span>①　</span>
-                  <span>番号付きサブアイテム1</span>
+                  番号付きサブアイテム1
                 </li>
                 <li>
                   <span>②　</span>
-                  <span>
-                    <Link href='#'>番号付きサブアイテム2</Link>
-                    （長めの説明付き：この項目は複数レベルの入れ子構造を示すために作成されています）
-                  </span>
+                  <Link href='#'>番号付きサブアイテム2</Link>
+                  （長めの説明付き：この項目は複数レベルの入れ子構造を示すために作成されています）
                 </li>
               </List>
             </li>
@@ -74,17 +70,15 @@ export const AllLists: Story = {
       <List marker='number' spacing={args.spacing}>
         <li>
           <span>１　</span>
-          <span>最初</span>
+          最初
         </li>
         <li>
           <span>２　</span>
-          <span>
-            二番目の項目として、長めの文章を含む例です。番号付きリストの中での文章の長さの違いを示しています。
-          </span>
+          二番目の項目として、長めの文章を含む例です。番号付きリストの中での文章の長さの違いを示しています。
         </li>
         <li>
           <span>３　</span>
-          <span>三番目（ネスト含む）</span>
+          三番目（ネスト含む）
           <List spacing={args.spacing}>
             <li>無順序サブリスト項目A</li>
             <li>無順序サブリスト項目B</li>
@@ -93,15 +87,13 @@ export const AllLists: Story = {
               <List marker='number' spacing={args.spacing}>
                 <li>
                   <span>（１）</span>
-                  <span>再び番号付きリスト</span>
+                  再び番号付きリスト
                 </li>
                 <li>
                   <span>（２）</span>
-                  <span>
-                    非常に長いテキストの例：この項目は
-                    <b>複数レベルの入れ子構造</b>
-                    における文章の長さの違いを示すために作成されたサンプルテキストです。実際の使用場面では、このような長い説明文が含まれることもあります。
-                  </span>
+                  非常に長いテキストの例：この項目は
+                  <b>複数レベルの入れ子構造</b>
+                  における文章の長さの違いを示すために作成されたサンプルテキストです。実際の使用場面では、このような長い説明文が含まれることもあります。
                 </li>
               </List>
             </li>

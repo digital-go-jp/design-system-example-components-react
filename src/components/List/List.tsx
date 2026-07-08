@@ -17,13 +17,10 @@ export const listBaseStyle = `
 export const listDefaultStyle = 'pl-8 list-[revert]';
 
 export const listNumberedStyle = `
-  grid grid-cols-[minmax(2rem,auto)_1fr]
-  [&>li]:grid [&>li]:col-span-full [&>li]:grid-cols-[inherit] [&>li]:items-baseline
-  [&>li>a]:grid [&>li>a]:col-span-full [&>li>a]:grid-cols-[inherit] [&>li>a]:items-baseline
-  [&>li>a>span]:[text-decoration-thickness:inherit]
-  [&>li>:not(a):not(span)]:col-start-2
-  supports-[grid-template-columns:subgrid]:[&>li]:grid-cols-subgrid
-  supports-[grid-template-columns:subgrid]:[&>li>a]:grid-cols-subgrid
+  [&>li]:pl-8
+  [&>li>a:only-child]:-ml-8 [&>li>a:only-child]:pl-8
+  [&>li>span:first-child]:-ml-8 [&>li>span:first-child]:inline-block [&>li>span:first-child]:min-w-8 [&>li>span:first-child]:whitespace-nowrap
+  [&>li>a:only-child>span:first-child]:-ml-8 [&>li>a:only-child>span:first-child]:inline-block [&>li>a:only-child>span:first-child]:min-w-8 [&>li>a:only-child>span:first-child]:whitespace-nowrap [&>li>a:only-child>span:first-child]:[text-decoration:inherit]
 `;
 
 export const List = (props: ListProps) => {
