@@ -223,11 +223,15 @@ const CarouselExpandList = (props: CarouselExpandListProps) => {
                   <a
                     className={`
                       block relative
-                      ${slide.href ? `
+                      ${
+                        slide.href
+                          ? `
                         hover:outline hover:outline-4 hover:outline-key-900 hover:-outline-offset-1
                         focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:rounded-4 focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300
                         hover:after:absolute hover:after:inset-[1px] hover:after:ring-[calc(2/16*1rem)] hover:after:ring-inset hover:after:ring-white hover:after:pointer-events-none
-                      ` : ''}
+                      `
+                          : ''
+                      }
                     `}
                     href={slide.href}
                     target={slide.target}
@@ -299,13 +303,17 @@ const CarouselPanelArea = (props: CarouselPanelAreaProps) => {
           <a
             className={`
               block relative
-              ${currentSlide.href ? `
+              ${
+                currentSlide.href
+                  ? `
                 after:absolute after:pointer-events-none
                 hover:outline hover:outline-4 hover:outline-key-900 hover:-outline-offset-2
                 focus-visible:overflow-hidden focus-visible:outline focus-visible:outline-4 focus-visible:outline-black focus-visible:-outline-offset-[calc(2/16*1rem)] focus-visible:rounded-8 focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300
                 hover:after:inset-[2px] hover:after:ring-[calc(2/16*1rem)] hover:after:ring-inset hover:after:ring-white
                 focus-visible:after:inset-[2px] focus-visible:after:ring-[calc(2/16*1rem)] focus-visible:after:ring-inset focus-visible:after:ring-yellow-300 focus-visible:after:rounded-6
-              ` : ''}
+              `
+                  : ''
+              }
             `}
             href={currentSlide.href}
             target={currentSlide.target}
@@ -462,4 +470,3 @@ export const Carousel = (props: CarouselProps) => {
     </section>
   );
 };
-
