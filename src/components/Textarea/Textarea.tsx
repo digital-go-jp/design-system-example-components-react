@@ -1,7 +1,8 @@
 import { type ComponentProps, forwardRef } from 'react';
 
-export type TextareaProps = ComponentProps<'textarea'> & {
+export type TextareaProps = Omit<ComponentProps<'textarea'>, 'placeholder'> & {
   isError?: boolean;
+  placeholder?: never;
 };
 
 export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>((props, ref) => {

@@ -149,8 +149,7 @@ Represent state via `data-*` on the root; children react via `group-data-[...]/n
 
 - Every component has a `Playground` Story. Tests reuse it via `composeStories`.
 - Story export names match the HTML file names (`spinner-loop.html` → `SpinnerLoop`, display name in Japanese).
-- Add `tags: ['autodocs']` to the meta.
-- For the autodocs page itself, follow the [`write-component-docs`](../write-component-docs/SKILL.md) skill.
+- For the docs page (a dedicated `<Name>.mdx` file), follow the [`write-component-docs`](../write-component-docs/SKILL.md) skill.
 
 ## Testing
 

@@ -21,7 +21,7 @@ Run each command and report pass/fail. If any command fails, stop and surface th
 
 These cannot be automated; list them so the user can confirm before merging:
 
-- [ ] Storybook started locally (`npm run storybook`) and each affected Story (including autodocs) was visually verified.
+- [ ] Storybook started locally (`npm run storybook`) and each affected Story (including its `.mdx` docs page, if any) was visually verified.
 - [ ] For ports: compared against the HTML reference side-by-side.
 - [ ] WCAG 2.2 AA criteria relevant to the change are satisfied.
 - [ ] Keyboard navigation works end-to-end for any interactive element added or changed.

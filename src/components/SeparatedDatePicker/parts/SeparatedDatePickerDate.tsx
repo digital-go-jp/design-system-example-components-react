@@ -1,6 +1,8 @@
 import { type ComponentProps, forwardRef } from 'react';
 
-export type SeparatedDatePickerDateProps = ComponentProps<'input'> & {};
+export type SeparatedDatePickerDateProps = Omit<ComponentProps<'input'>, 'placeholder'> & {
+  placeholder?: never;
+};
 
 export const SeparatedDatePickerDate = forwardRef<HTMLInputElement, SeparatedDatePickerDateProps>(
   (props, ref) => {

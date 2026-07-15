@@ -20,7 +20,7 @@ Two buckets, decided by what is being verified:
 |---|---|---|---|
 | UI / interaction | `<Name>.test.tsx` | `storybook` (or `unit` for non-Story tests) | Rendering, ARIA, focus, keyboard nav, drag & drop, event handlers |
 | Unit | `<Name>.test.ts` (hook/util) | `unit` | Pure functions, hook logic in isolation |
-| Visual | (covered by Storybook autodocs + manual review) | — | Mirrors the HTML reference; verified manually via `npm run storybook` |
+| Visual | (covered by Storybook docs page + manual review) | — | Mirrors the HTML reference; verified manually via `npm run storybook` |
 
 There is no VRT pipeline in this project — visual parity is checked manually against the HTML reference. Do not invent VRT setup.
 
@@ -32,7 +32,7 @@ Not every component needs a `<Name>.test.tsx`. Skip it when **all** of the follo
 - It is a pass-through wrapper around native elements with `data-*` attributes for styling, with no logic in the body.
 - The HTML reference has no behavior tests of its own (only VRT under `*.test.js` calling `resetCssVrt`).
 
-In those cases, visual parity via Storybook + the autodocs page is sufficient. Adding assertions like "data-current is set when current=true" only re-tests JSX prop-passing — the build's type check already covers it.
+In those cases, visual parity via Storybook + the component's `.mdx` docs page is sufficient. Adding assertions like "data-current is set when current=true" only re-tests JSX prop-passing — the build's type check already covers it.
 
 Add tests when the component has actual behavior to verify: focus trapping, keyboard nav, event payloads, controlled state, conditional rendering driven by interaction, etc.
 

@@ -1,116 +1,129 @@
 ---
 name: write-component-docs
-description: "Author component documentation in this project. Docs live inside the component's *.stories.tsx (Storybook autodocs), translated from the HTML reference's MDX structure into JSX, in Japanese."
+description: "Author component documentation in this project. Docs live in a standalone <Name>.mdx file next to the component's Stories, written in Japanese. Covers the React-first doc structure to write for any component, plus a short addendum for migrating content from the HTML reference's MDX."
 ---
 
 ## Where docs live
 
-This project does **not** use standalone MDX files for component docs (yet). Instead, documentation is rendered by Storybook autodocs, configured inside `<Name>.stories.tsx`:
+Documentation lives in a dedicated `src/components/<Name>/<Name>.mdx` file, sitting next to `<Name>.stories.tsx`. It attaches to that component's Stories via the `Meta` Doc Block:
 
-- Simple components → `parameters.docs.description.component` with a short Markdown string.
-- Complex components → `parameters.docs.page` with a JSX page that mirrors the HTML version's MDX structure.
+```mdx
+import * as FooStories from './Foo.stories';
 
-Reference implementations:
-- Simple: `src/components/Divider/Divider.stories.tsx`
-- Complex: `src/components/ProgressIndicator/ProgressIndicator.stories.tsx`
+<Meta of={FooStories} />
+```
 
-> **Note:** Migrating to standalone MDX (matching the HTML version's setup) is on the roadmap. Until that migration happens, write new docs in the JSX form described here. Do not introduce a one-off MDX file for a single component ahead of the project-wide switch.
+Do **not** write docs inline in `<Name>.stories.tsx` (no `parameters.docs.description.component`, no `parameters.docs.page`). The `.stories.tsx` file only defines Meta/Stories/args; all prose and layout goes in the `.mdx` file.
 
-## When to use which form
+**Remove `tags: ['autodocs']` from `<Name>.stories.tsx`'s `meta`** whenever a component gets a `.mdx` file. The MDX file becomes the attached docs page; leaving the `autodocs` tag creates a duplicate, conflicting "Docs" entry (Storybook's own guidance is to remove it once a docs page is manually attached).
 
-| Form | Use when |
-|---|---|
-| `description.component` only | The component has minimal API surface (1–2 props), no notable variants, no specific usage notes. |
-| Full `docs.page` JSX | The component has multiple sub-components, multiple variants worth tabling, JS-driven behavior, accessibility caveats, or paired hooks/utils. |
+## How to structure a component's docs (React-first)
 
-If in doubt, start with `description.component` and expand later.
+Write the docs to describe the React component as it stands on its own — do not treat the HTML reference's MDX as the primary source of truth or structure. (If the component was ported from the HTML reference, see the short addendum at the end of this skill for what to carry over.)
 
-## Source of structure: the HTML version's MDX
+### Section order
 
-Use the HTML version's `.mdx` for the same component (https://github.com/digital-go-jp/design-system-example-components-html) as the **content** source — variant tables, behavior descriptions, usage recipes. Translate it into Japanese suitable for a React API surface (drop CSS class names, `data-*` attributes that don't exist on the React side, raw HTML markup, etc.).
-
-The **section order is different from the HTML MDX**, because the React version uses Storybook autodocs (live components) rather than `<details>` source-code blocks. Match the React layout below, not the HTML one.
-
-### Section order (React)
-
-1. `<Title />` / `<Subtitle />` / `<Description />` (autodocs metadata)
-2. `<Primary />` + `<Controls />` (the leading interactive Story)
-3. `<Stories includePrimary={false} />` (remaining Stories — placed _before_ spec/usage in this project)
-4. **仕様** (Spec)
-   - コンポーネント構成 — list each exported component / hook with one-line role
-   - Props — one table per exported component, columns: `Props` / `説明` / `デフォルト`
-   - 機能仕様 — variants, modes, screen-reader behavior, motion handling
-5. **使い方** (Usage)
+1. `<Meta of={FooStories} />`
+2. `<Title />` / `<Subtitle />` / `<Description />` (autodocs metadata blocks)
+3. `<Canvas of={FooStories.Playground} withToolbar />` + `<Controls of={FooStories.Playground} />` (the leading interactive Story, explicitly pointed at the `Playground` story — see note below)
+4. `<Stories includePrimary={false} />` (remaining Stories)
+5. **仕様** (Spec)
+   - コンポーネント構成 — list each exported component / hook with a one-line role (skip this if there's only one exported component)
+   - Props — one table per exported component that has component-specific props, columns: `Props` / `説明` / `デフォルト`. If a component adds no props beyond the native element's (e.g. it's a thin wrapper over `ComponentProps<'div'>`), skip the table entirely and write a one-line paragraph instead (see Props tables below) — don't fake a row with `colSpan={3}` just to have a table.
+   - 機能仕様 — variants, modes, screen-reader behavior, motion handling, and other non-obvious behavior
+6. **使い方** (Usage)
    - 基本的な使い方 — minimum working snippet
    - 〜する — recipe-style snippets for common patterns (control state, customize messages, etc.)
-   - Customization sub-sections (e.g. メッセージのカスタマイズ, 通知間隔のカスタマイズ) live as `<h3>` inside 使い方 — not as a separate top-level section.
-6. **参考情報** (References) — external links (WAI, WCAG, etc.) when relevant
+   - Customization sub-sections (e.g. メッセージのカスタマイズ) live as `###` inside 使い方, not as their own top-level section
+7. **参考情報** (References) — external links (WAI, WCAG, etc.), only when relevant
 
-### What to omit from the HTML MDX
+Skip 仕様/使い方/参考情報 sections that don't apply. A component with a single prop and no notable behavior can be just sections 1–4 plus a short 使い方 snippet — don't pad docs with empty headings.
 
-- **ソースコード section (`<details>` with HTML/CSS/JS source)** — the React version exposes live components instead; do not include raw source dumps.
-- **CSS class names and `data-*` attributes** that do not exist on the React API.
-- **Raw HTML markup blocks** showing internal SVG / element structure — replace with the React component name.
-- **JavaScript API tables** (HTML version's `start()`, `stop()`, `value`) — replaced by props and hooks; describe the React equivalents.
+**Use `Canvas`/`Controls`, not `Primary`.** In this project's Storybook setup, the `<Primary />` doc block (and a bare `<Controls />` with no `of`) silently render nothing when used inside a `.mdx` file attached via `<Meta of={FooStories} />` — no error, just an empty slot. This reproduces even in a minimal file, so treat it as environment-specific rather than something to debug per component. Always use `<Canvas of={FooStories.Playground} withToolbar />` + `<Controls of={FooStories.Playground} />` instead, explicitly pointed at the component's `Playground` story (or whatever its leading/primary Story export is called). This also matches how the HTML reference's own MDX docs call these blocks.
 
-### HTML MDX → React docs mapping
+### Skeleton
 
-| HTML MDX | React equivalent |
-|---|---|
-| `<Canvas of={...Playground} withToolbar />` | `<Primary />` |
-| `<Controls of={...Playground} />` | `<Controls />` |
-| `<Stories title="デモ" includePrimary={false} />` (placed at end) | `<Stories includePrimary={false} />` (placed near top, after Primary/Controls) |
-| `## ソースコード` `<details>` blocks | _omit_ |
-| `## カスタマイズ` (top-level) | `### 〜のカスタマイズ` (under 使い方) |
-| `data-foo` attribute table | Props table per exported component |
-| HTML element JS API table | Hook signature + options table |
-
-## Skeleton for `docs.page` (complex components)
-
-```tsx
+````mdx
 import {
+  Canvas,
   Controls,
   Description,
-  Primary,
+  Meta,
   Stories,
   Subtitle,
   Title,
   Unstyled,
 } from '@storybook/addon-docs/blocks';
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import * as FooStories from './Foo.stories';
+
+<Meta of={FooStories} />
+
+<Unstyled>
+<div className='prose'>
+
+<Title />
+<Subtitle />
+<Description />
+<Canvas of={FooStories.Playground} withToolbar />
+<Controls of={FooStories.Playground} />
+<Stories includePrimary={false} />
+
+## 仕様
+
+### コンポーネント構成
+
+- `Foo`: ルートコンテナ
+- `FooItem`: 子要素
+
+### Props
+
+#### `Foo`
+
+<table className='w-full'>
+  <thead>
+    <tr>
+      <th scope='col' className='whitespace-nowrap'>Props</th>
+      <th scope='col'>説明</th>
+      <th scope='col' className='whitespace-nowrap'>デフォルト</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className='whitespace-nowrap'><code>size</code></td>
+      <td>
+        <div><code>'lg' | 'sm'</code></div>
+        コンポーネントのサイズ
+      </td>
+      <td><code>'lg'</code></td>
+    </tr>
+  </tbody>
+</table>
+
+### 機能仕様
+
+説明...
+
+## 使い方
+
+### 基本的な使い方
+
+```tsx
 import { Foo } from './Foo';
 
-const meta = {
-  id: 'Component/DADS v2/Foo',
-  title: 'Component/フー',
-  component: Foo,
-  tags: ['autodocs'],
-  parameters: {
-    docs: {
-      page: () => (
-        <Unstyled>
-          <div className='prose'>
-            <Title />
-            <Subtitle />
-            <Description />
-            <Primary />
-            <Controls />
-            <Stories includePrimary={false} />
-
-            <h2>仕様</h2>
-            {/* ... */}
-
-            <h2>使い方</h2>
-            {/* ... */}
-          </div>
-        </Unstyled>
-      ),
-    },
-  },
-} satisfies Meta<typeof Foo>;
+<Foo size='lg' />
 ```
 
-**Required wrapper:** `<Unstyled>` + `<div className='prose'>`. Without these, autodocs styles bleed into the documentation content.
+## 参考情報
+
+- [WAI-ARIA ...](https://www.w3.org/WAI/...)
+
+</div>
+</Unstyled>
+````
+
+**Required wrapper:** `<Unstyled>` + `<div className='prose'>` around everything after `<Meta />`. Without these, autodocs styles bleed into the documentation content.
+
+**Blank lines matter.** MDX distinguishes Markdown from JSX by surrounding blank lines. Always leave a blank line before/after headings, lists, and JSX blocks (including the opening `<div className='prose'>` and `<Title />` etc.) or the parser will misparse them.
 
 ## Conventions
 
@@ -120,17 +133,31 @@ const meta = {
 - Identifier names, type signatures, code samples: as in code (English).
 - Keep prose concise and noun-ending where natural (`〜の追加`, `〜を実装` style).
 
+### Prefer native Markdown, fall back to JSX only where needed
+
+Since docs are real MDX (not JSX embedded in a `.stories.tsx`), prefer plain Markdown syntax over raw HTML tags wherever Markdown covers it:
+
+| Content | Use |
+|---|---|
+| Headings | `##`, `###`, `####` (not `<h2>`/`<h3>`/`<h4>`) |
+| Bullet / numbered lists | `-` / `1.` (not `<ul>`/`<ol>`) |
+| Bold / inline code | `**text**`, `` `code` `` |
+| Code samples | fenced code blocks with a language tag (` ```tsx `), not `<pre><code>` |
+| Tables | raw `<table>` JSX (see below) — this project doesn't enable the GFM plugin, so pipe-style Markdown tables (`\| a \| b \|`) won't render |
+
 ### Props tables
 
-Three columns: `Props` / `説明` / `デフォルト`. The `説明` cell starts with the type in `<code>`, then a one-line description.
+Tables must stay as raw `<table>` JSX (no GFM configured). Three columns: `Props` / `説明` / `デフォルト`. The `説明` cell starts with the type in `<code>`, then a one-line description.
 
-```tsx
-<table aria-labelledby='foo-props' className='w-full'>
+**Required props:** put `（必須）` in the `デフォルト` cell instead of a value — a prop that's genuinely required has no default to show, so this column doubles as the required/optional indicator without adding a fourth column.
+
+```mdx
+<table className='w-full'>
   <thead>
     <tr>
-      <th scope='col' className='text-nowrap'>Props</th>
+      <th scope='col' className='whitespace-nowrap'>Props</th>
       <th scope='col'>説明</th>
-      <th scope='col' className='text-nowrap'>デフォルト</th>
+      <th scope='col' className='whitespace-nowrap'>デフォルト</th>
     </tr>
   </thead>
   <tbody>
@@ -142,56 +169,61 @@ Three columns: `Props` / `説明` / `デフォルト`. The `説明` cell starts 
       </td>
       <td><code>'lg'</code></td>
     </tr>
+    <tr>
+      <td className='whitespace-nowrap'><code>title</code></td>
+      <td>
+        <div><code>string</code></div>
+        バナーの見出しテキスト
+      </td>
+      <td>（必須）</td>
+    </tr>
   </tbody>
 </table>
 ```
 
-Use `aria-labelledby` to tie the table to a preceding `<h4 id='...'>`. When the table sits under an inline heading (no preceding labeled heading), fall back to a regular table caption or omit `aria-labelledby` rather than inventing IDs.
+**No table when there are no component-specific props.** If a component only forwards a native element's props without adding anything of its own, write a plain sentence:
+
+```mdx
+コンポーネント特有のPropsはありません。ネイティブの `<details>` 要素と同じ属性がそのまま利用できます。
+```
 
 ### Code samples
 
-Use `<pre><code>` with template literals for multi-line samples. No syntax highlighting (Storybook autodocs renders as-is).
+Use fenced code blocks with a language tag; MDX/Storybook syntax-highlights these automatically.
 
+````mdx
 ```tsx
-<pre>
-  <code>
-    {`import { Foo } from './Foo';
+import { Foo } from './Foo';
 
-<Foo size='lg' />`}
-  </code>
-</pre>
+<Foo size='lg' />
 ```
+````
 
 ### Headings
 
-- `<h2>` for top-level sections (仕様, 使い方, 参考情報).
-- `<h3>` for sub-sections (Props, バリエーション, 基本的な使い方).
-- `<h4>` for nested entries (e.g. each exported component's Props block).
+- `##` for top-level sections (仕様, 使い方, 参考情報).
+- `###` for sub-sections (Props, バリエーション, 基本的な使い方).
+- `####` for nested entries (e.g. each exported component's Props block).
 
 Markuplint enforces no heading-level skips — verify with `npm run lint:markup`.
 
-## Skeleton for simple components
+**Don't hand-write a table of contents.** This project enables Storybook's built-in docs table of contents.
 
-```tsx
-parameters: {
-  docs: {
-    description: {
-      component: `<コンポーネント名>の概要を1〜2文で。
+## Addendum: migrating docs from the HTML reference
 
-詳細な使い分けは別段落で書いてもよい。`,
-    },
-  },
-},
-```
-
-This renders into the autodocs `<Description />` slot. No JSX page needed.
+When the component was ported from the HTML reference (digital-go-jp/design-system-example-components-html), its `.mdx` file is a useful source of **content** — variant tables, behavior descriptions, usage recipes — but not of structure. Fit that content into the section order above; do not follow the HTML MDX's section order or layout.
 
 ## Pre-flight
 
-- [ ] Section order matches the HTML version's MDX (where the HTML version exists).
-- [ ] Wrapped in `<Unstyled>` + `<div className='prose'>` for JSX page form.
+- [ ] Docs live in `<Name>.mdx`, not in `<Name>.stories.tsx`.
+- [ ] `tags: ['autodocs']` was removed from `<Name>.stories.tsx`'s `meta` (MDX now supplies the attached docs page).
+- [ ] `<Meta of={FooStories} />` references the full Stories module import (`import * as FooStories from './Foo.stories'`), not the component itself.
+- [ ] `<Canvas />` and `<Controls />` are called with an explicit `of={FooStories.Playground}` (or the actual leading story's export), not bare `<Primary />` / `<Controls />` — those silently render nothing in this project's setup.
+- [ ] Section order matches this skill's React-first structure — the HTML version's MDX (if any) was used only for content, not layout.
+- [ ] Wrapped in `<Unstyled>` + `<div className='prose'>`.
+- [ ] Headings/lists/bold use native Markdown; tables use raw `<table>` JSX; code samples use fenced ` ```tsx ` blocks.
 - [ ] All prose is in Japanese; identifiers/types remain English.
-- [ ] Each table has a header row with the right column count and uses `<th scope='col'>`.
+- [ ] Each table has a header row with the right column count and uses `<th scope='col'>`. Components with no component-specific props use a one-line sentence instead of a table with a fake `colSpan={3}` row. Required props show `（必須）` in the `デフォルト` cell instead of a value.
 - [ ] Heading levels are sequential (no skips). `npm run lint:markup` passes.
 - [ ] Code samples are runnable (correct imports, props that actually exist).
-- [ ] `npm run storybook` renders the docs tab without runtime errors.
+- [ ] `npm run storybook` renders the docs tab without runtime errors, and shows no duplicate "Docs" entry for the component.
