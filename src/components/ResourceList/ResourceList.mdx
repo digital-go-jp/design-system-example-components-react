@@ -1,0 +1,212 @@
+import {
+  Canvas,
+  Controls,
+  Description,
+  Meta,
+  Stories,
+  Subtitle,
+  Title,
+  Unstyled,
+} from '@storybook/addon-docs/blocks';
+import * as ResourceListStories from './ResourceList.stories';
+
+<Meta of={ResourceListStories} />
+
+<Unstyled>
+<div className='prose'>
+
+<Title />
+<Subtitle />
+<Description />
+<Canvas of={ResourceListStories.Playground} withToolbar />
+<Controls of={ResourceListStories.Playground} />
+<Stories includePrimary={false} />
+
+## 仕様
+
+### コンポーネント構成
+
+- `ResourceList`: ルートとなるコンテナ要素
+- `ResourceListBody`: ボディ領域（`div` 要素）。`asChild` prop を渡すと子要素の要素型でレンダリングする
+- `ResourceListControl`: `Checkbox` / `Radio` をボディ内に配置するためのラッパー
+- `ResourceListContents`: タイトル・ラベル・サポートテキストをまとめるコンテナ
+- `ResourceListTitle`: タイトル要素。`as` prop（必須）で見出しレベルや `p` 要素に切り替える
+- `ResourceListLabel`: ラベルエリア。視覚的にタイトルより上に表示される
+- `ResourceListSupport`: サポートテキストコンテナ
+- `ResourceListSub`: サブラベル（右端に表示）
+- `ResourceListAction`: アクションボタンのコンテナ
+- `ResourceListActionButton`: アクション用ボタン（メニュー、ダウンロードなど）
+
+### Props
+
+#### `ResourceList`
+
+<table className='w-full'>
+  <thead>
+    <tr>
+      <th scope='col' className='whitespace-nowrap'>Props</th>
+      <th scope='col'>説明</th>
+      <th scope='col' className='whitespace-nowrap'>デフォルト</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className='whitespace-nowrap'><code>variant</code></td>
+      <td>
+        <div><code>'list' | 'frame'</code></div>
+        スタイルのバリエーション。<code>list</code>は下線のみ、<code>frame</code>は枠線で囲む
+      </td>
+      <td>（必須）</td>
+    </tr>
+    <tr>
+      <td className='whitespace-nowrap'><code>interaction</code></td>
+      <td>
+        <div><code>'whole' | undefined</code></div>
+        チェックボックス／ラジオボタン付きのとき、<code>'whole'</code> を指定して行全体をクリック可能にする
+      </td>
+      <td><code>undefined</code></td>
+    </tr>
+  </tbody>
+</table>
+
+#### `ResourceListBody`
+
+<table className='w-full'>
+  <thead>
+    <tr>
+      <th scope='col' className='whitespace-nowrap'>Props</th>
+      <th scope='col'>説明</th>
+      <th scope='col' className='whitespace-nowrap'>デフォルト</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className='whitespace-nowrap'><code>asChild</code></td>
+      <td>
+        <div><code>boolean</code></div>
+        <code>true</code> にすると唯一の子要素の型でレンダリングされる（Slot パターン）。行全体をリンクや Next.js の <code>{'<Link>'}</code> にする場合に使用する
+      </td>
+      <td><code>false</code></td>
+    </tr>
+  </tbody>
+</table>
+
+#### `ResourceListTitle`
+
+<table className='w-full'>
+  <thead>
+    <tr>
+      <th scope='col' className='whitespace-nowrap'>Props</th>
+      <th scope='col'>説明</th>
+      <th scope='col' className='whitespace-nowrap'>デフォルト</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className='whitespace-nowrap'><code>as</code></td>
+      <td>
+        <div><code>'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p'</code></div>
+        レンダリングする HTML 要素。ページの見出し構造に合わせて変更する。チェックボックス／ラジオボタン付きの場合は <code>'p'</code> を使用する
+      </td>
+      <td>（必須）</td>
+    </tr>
+  </tbody>
+</table>
+
+## 使い方
+
+### 基本的な使い方
+
+```tsx
+import { ResourceList, ResourceListBody, ResourceListContents, ResourceListTitle } from './ResourceList';
+
+<ResourceList variant='list'>
+  <ResourceListBody>
+    <ResourceListContents>
+      <ResourceListTitle as='h2'>リストタイトル</ResourceListTitle>
+    </ResourceListContents>
+  </ResourceListBody>
+</ResourceList>
+```
+
+### フロントアイコンを追加する
+
+アイコンはコンポーネントに内蔵していません。`ResourceListBody` の直下に `<svg>` を配置し、`shrink-0` クラスを付与してください。
+
+### タイトルをリンクにする
+
+タイトルをリンクにする方法は2種類あります。
+
+#### タイトル部分のみをリンクにする
+
+`ResourceListTitle` の子要素として `<a>` を配置します。
+
+```tsx
+<ResourceListTitle as='h2'>
+  <a href="#">リストタイトル</a>
+</ResourceListTitle>
+```
+
+#### 行全体をリンクにする
+
+`ResourceListBody` に `asChild` を指定し、子要素に `<a>` を渡します。Next.js の `<Link>` など任意の要素に差し替えられます。
+
+```tsx
+<ResourceListBody asChild>
+  <a href="#">
+    <ResourceListContents>
+      <ResourceListTitle as='h2'>リストタイトル</ResourceListTitle>
+    </ResourceListContents>
+  </a>
+</ResourceListBody>
+```
+
+### チェックボックス／ラジオボタンを追加する
+
+`ResourceListControl` で `Checkbox` または `Radio` を囲み、`ResourceListBody` の先頭に配置します。タイトルは見出し要素ではなく `as='p'` を使用し、`<label htmlFor="...">` でコントロールと関連付けます。
+
+```tsx
+<ResourceList variant='list'>
+  <ResourceListBody>
+    <ResourceListControl>
+      <Checkbox id='item-1' size='md' />
+    </ResourceListControl>
+    <ResourceListContents>
+      <ResourceListTitle as='p'>
+        <label htmlFor='item-1'>リストタイトル</label>
+      </ResourceListTitle>
+    </ResourceListContents>
+  </ResourceListBody>
+</ResourceList>
+```
+
+### 行全体をクリック可能にする
+
+チェックボックス／ラジオボタン付きで行全体をクリック可能にするには、`ResourceList` に `interaction='whole'` を指定します。
+
+### 角丸をカスタマイズする
+
+`variant='frame'` の角丸はインラインスタイルで上書きできます。隣接する複数アイテムを角丸なしで並べる場合に使用します。
+
+```tsx
+<ResourceList variant='frame' style={{ borderRadius: 0 }}>
+  ...
+</ResourceList>
+```
+
+### 見出しレベルを指定する
+
+タイトルはページ内の見出し構造に応じて `as` prop で適切なレベルを指定してください。チェックボックス／ラジオボタン付きの場合は `as='p'` を使用します。
+
+### オプション要素を省略する
+
+以下の要素は必要に応じて省略できます。
+
+- フロントアイコン（SVG）
+- `ResourceListLabel`
+- `ResourceListSupport`
+- `ResourceListSub`
+- `ResourceListAction` / `ResourceListActionButton`
+
+</div>
+</Unstyled>
