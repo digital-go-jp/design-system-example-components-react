@@ -44,5 +44,17 @@
         "useUniqueElementIds": "off"
       }
     }
-  }
+  },
+  "overrides": [
+    {
+      "includes": ["src/components/SearchBox/search-box.css"],
+      "linter": {
+        "rules": {
+          "correctness": {
+            "noUnknownPseudoElement": "off"
+          }
+        }
+      }
+    }
+  ]
 }
