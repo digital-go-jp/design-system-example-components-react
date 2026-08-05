@@ -189,33 +189,21 @@ export const LinkButtons = {
       <div className='flex flex-col gap-8'>
         <div>
           <h2 className='mb-6 text-std-32B-150'>ボタンの見た目をしたリンク（Solid Fill）</h2>
-          <div className='flex items-center gap-4'>
-            <Button asChild variant='solid-fill' size='lg'>
-              <a className='inline-flex items-center justify-center' href={href}>
-                ラベル
-              </a>
-            </Button>
-          </div>
+          <Button asChild variant='solid-fill' size='lg'>
+            <a href={href}>ラベル</a>
+          </Button>
         </div>
         <div>
           <h2 className='mb-6 text-std-32B-150'>ボタンの見た目をしたリンク（Outline）</h2>
-          <div className='flex items-center gap-4'>
-            <Button asChild variant='outline' size='lg'>
-              <a className='inline-flex items-center justify-center' href={href}>
-                ラベル
-              </a>
-            </Button>
-          </div>
+          <Button asChild variant='outline' size='lg'>
+            <a href={href}>ラベル</a>
+          </Button>
         </div>
         <div>
           <h2 className='mb-6 text-std-32B-150'>ボタンの見た目をしたリンク（Text）</h2>
-          <div className='flex items-center gap-4'>
-            <Button asChild variant='text' size='lg'>
-              <a className='inline-flex items-center justify-center' href={href}>
-                ラベル
-              </a>
-            </Button>
-          </div>
+          <Button asChild variant='text' size='lg'>
+            <a href={href}>ラベル</a>
+          </Button>
         </div>
       </div>
     );
