@@ -1,0 +1,285 @@
+import {
+  Canvas,
+  Controls,
+  Description,
+  Meta,
+  Stories,
+  Subtitle,
+  Title,
+  Unstyled,
+} from '@storybook/addon-docs/blocks';
+import * as SearchBoxStories from './SearchBox.stories';
+
+<Meta of={SearchBoxStories} />
+
+<Unstyled>
+<div className='prose'>
+
+<Title />
+<Subtitle />
+<Description />
+<Canvas of={SearchBoxStories.Playground} withToolbar />
+<Controls of={SearchBoxStories.Playground} />
+<Stories includePrimary={false} />
+
+## 仕様
+
+### コンポーネント構成
+
+- `SearchBox`: ルート要素
+- `SearchBoxFields`: 絞り込みオプションと検索フィールドをまとめるコンテナ
+- `SearchBoxSelect`: 絞り込みオプション(任意)
+- `SearchBoxInput`: 検索フィールド
+- `SearchBoxSubmit`: 検索送信ボタン(`Button` のラッパー)
+- `SearchBoxDetail`: 詳細検索パネル(任意)。開閉可能な `details` 要素
+- `SearchBoxDetailActions`: 詳細検索パネル内のアクションボタン群のコンテナ
+
+### Props
+
+#### `SearchBox`
+
+<table className='w-full'>
+  <thead>
+    <tr>
+      <th scope='col' className='whitespace-nowrap'>Props</th>
+      <th scope='col'>説明</th>
+      <th scope='col' className='whitespace-nowrap'>デフォルト</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className='whitespace-nowrap'><code>size</code></td>
+      <td>
+        <div><code>'lg' | 'md' | 'sm'</code></div>
+        検索ボックス全体のサイズ。
+      </td>
+      <td><code>'lg'</code></td>
+    </tr>
+  </tbody>
+</table>
+
+#### `SearchBoxSelect`
+
+`<select>` が受け付けるすべての props（`name`、`required`、`onChange` など）をそのまま渡せます。`children` には `<option>` 要素を渡します。
+
+<table className='w-full'>
+  <thead>
+    <tr>
+      <th scope='col' className='whitespace-nowrap'>Props</th>
+      <th scope='col'>説明</th>
+      <th scope='col' className='whitespace-nowrap'>デフォルト</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className='whitespace-nowrap'><code>label</code></td>
+      <td>
+        <div><code>string</code></div>
+        セレクトボックス上部に表示するラベルテキスト。<code>sm</code> サイズでは視覚的に非表示になる(DOM には存在する)。
+      </td>
+      <td>(必須)</td>
+    </tr>
+  </tbody>
+</table>
+
+#### `SearchBoxInput`
+
+`<input>` が受け付けるすべての props（`type`、`name`、`value`、`onChange`、`aria-labelledby` など）をそのまま渡せます。
+
+<table className='w-full'>
+  <thead>
+    <tr>
+      <th scope='col' className='whitespace-nowrap'>Props</th>
+      <th scope='col'>説明</th>
+      <th scope='col' className='whitespace-nowrap'>デフォルト</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className='whitespace-nowrap'><code>label</code></td>
+      <td>
+        <div><code>string</code></div>
+        検索フィールドの visually-hidden ラベル。画面上のラベルがない場合に指定する。<code>aria-labelledby</code> と排他で、いずれか一方の指定が必須。
+      </td>
+      <td>(必須。<code>aria-labelledby</code> 指定時は省略)</td>
+    </tr>
+    <tr>
+      <td className='whitespace-nowrap'><code>aria-labelledby</code></td>
+      <td>
+        <div><code>string</code></div>
+        画面上の見出しなど、既存の要素をラベルとして参照する場合の参照先 <code>id</code>。<code>label</code> と排他で、いずれか一方の指定が必須。
+      </td>
+      <td>(必須。<code>label</code> 指定時は省略)</td>
+    </tr>
+  </tbody>
+</table>
+
+#### `SearchBoxSubmit`
+
+`Button` をラップしたコンポーネントで、`Button` が受け付けるすべての props(`variant`、`size`、`onClick` など)をそのまま渡せます。`variant` を省略した場合は `'solid-fill'` になります。
+
+#### `SearchBoxDetail`
+
+<table className='w-full'>
+  <thead>
+    <tr>
+      <th scope='col' className='whitespace-nowrap'>Props</th>
+      <th scope='col'>説明</th>
+      <th scope='col' className='whitespace-nowrap'>デフォルト</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className='whitespace-nowrap'><code>summary</code></td>
+      <td>
+        <div><code>string</code></div>
+        開閉ボタンに表示するテキスト(例:「詳細検索」)。
+      </td>
+      <td>(必須)</td>
+    </tr>
+  </tbody>
+</table>
+
+### 機能仕様
+
+#### バリエーション
+
+<table className='w-full'>
+  <thead>
+    <tr>
+      <th scope='col'><code>size</code></th>
+      <th scope='col'>説明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>'lg'</code>（デフォルト）</td>
+      <td>標準サイズ。</td>
+    </tr>
+    <tr>
+      <td><code>'md'</code></td>
+      <td>中サイズ。</td>
+    </tr>
+    <tr>
+      <td><code>'sm'</code></td>
+      <td>小サイズ。絞り込みオプションのラベルテキストが視覚的に非表示になる。</td>
+    </tr>
+  </tbody>
+</table>
+
+## 使い方
+
+### 基本的な使い方
+
+`SearchBoxFields` に `SearchBoxSelect`(任意)と `SearchBoxInput` を配置し、`SearchBoxSubmit` で送信ボタンを添えるのが基本の構成です。
+
+```tsx
+import {
+  SearchBox,
+  SearchBoxFields,
+  SearchBoxInput,
+  SearchBoxSelect,
+  SearchBoxSubmit,
+} from './SearchBox';
+
+<SearchBox size="lg">
+  <SearchBoxFields>
+    <SearchBoxSelect label="検索対象" name="scope">
+      <option value="">すべて</option>
+      <option value="images">画像</option>
+    </SearchBoxSelect>
+    <SearchBoxInput label="検索" type="search" name="q" />
+  </SearchBoxFields>
+  <SearchBoxSubmit size="lg" type="submit">検索</SearchBoxSubmit>
+</SearchBox>
+```
+
+その検索ボックスがページやアプリケーション内の主要な機能である場合は、HTML の `search` 要素で囲むことを検討してください。`search` 要素は、検索機能であることを示すランドマークとしてブラウザや支援技術に伝わります。
+
+```tsx
+<search>
+  <SearchBox size="lg">
+    ...
+  </SearchBox>
+</search>
+```
+
+### ラベルを付ける
+
+検索フィールドには必ずラベルを付けてください。
+
+#### 画面上にラベルがある場合
+
+画面上の見出しなどをラベルとして使う場合は、その要素に `id` を設定し、`input` に `aria-labelledby` を指定します。`SearchBoxInput` は `label` と `aria-labelledby` のどちらか一方を必ず指定する必要があります(両方の同時指定はできません)。
+
+```tsx
+<h1 id="site-search-heading">サイト内検索</h1>
+
+<SearchBoxInput type="search" name="q" aria-labelledby="site-search-heading" />
+```
+
+#### 画面上にラベルがない場合
+
+`label` prop を指定してください。視覚的には非表示ですが、スクリーンリーダーにラベルが提供されます。
+
+```tsx
+<SearchBoxInput label="サイト内検索" type="search" name="q" />
+```
+
+### 絞り込みオプションを非表示にする
+
+絞り込みオプションが不要な場合は `SearchBoxSelect` を省略します。
+
+```tsx
+<SearchBox size="lg">
+  <SearchBoxFields>
+    <SearchBoxInput label="検索" type="search" name="q" />
+  </SearchBoxFields>
+  <SearchBoxSubmit size="lg" type="submit">検索</SearchBoxSubmit>
+</SearchBox>
+```
+
+### 詳細検索パネルを追加する
+
+`SearchBoxDetail` を `SearchBox` の子要素として配置することで、開閉可能な詳細検索パネルを追加できます。内容は自由にカスタマイズ可能です。
+
+```tsx
+import {
+  SearchBox,
+  SearchBoxDetail,
+  SearchBoxDetailActions,
+  SearchBoxFields,
+  SearchBoxInput,
+  SearchBoxSelect,
+  SearchBoxSubmit,
+} from './SearchBox';
+
+<SearchBox size="lg">
+  <SearchBoxFields>
+    <SearchBoxSelect label="検索対象" name="scope">
+      <option value="">すべて</option>
+    </SearchBoxSelect>
+    <SearchBoxInput label="検索" type="search" name="q" />
+  </SearchBoxFields>
+  <SearchBoxDetail summary="詳細検索">
+    {/* 任意のフィルタ内容 */}
+    <SearchBoxDetailActions>
+      <Button variant="solid-fill" size="lg" type="submit"
+        className="w-full md:w-fit md:min-w-[50%]">
+        検索
+      </Button>
+      <Button variant="text" size="sm" type="reset">
+        検索条件をクリア
+      </Button>
+    </SearchBoxDetailActions>
+  </SearchBoxDetail>
+  <SearchBoxSubmit size="lg" type="submit">検索</SearchBoxSubmit>
+</SearchBox>
+```
+
+### `search-box.css` によるセレクトボックスのスタイル拡張
+
+`search-box.css` をインポートすると、`appearance: base-select` 対応ブラウザでセレクトボックスのドロップダウンの外観がカスタマイズされます。このCSS無しでも動作上の問題はありません。
+
+</div>
+</Unstyled>

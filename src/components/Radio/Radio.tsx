@@ -19,7 +19,7 @@ export const Radio = forwardRef<HTMLInputElement, RadioProps>((props, ref) => {
       className={`
         flex items-center justify-center shrink-0 rounded-full
         data-[size=sm]:size-6 data-[size=md]:size-8 data-[size=lg]:size-11
-        has-[input:hover:not(:focus):not([aria-disabled="true"])]:bg-solid-gray-420
+        has-[input:hover:not(:focus):not(:disabled):not([aria-disabled="true"])]:bg-solid-gray-420
       `}
       data-size={size}
     >
@@ -36,7 +36,8 @@ export const Radio = forwardRef<HTMLInputElement, RadioProps>((props, ref) => {
           data-[size=lg]:border-[calc(3/16*1rem)]
           data-[error]:border-error-1 data-[error]:hover:border-red-1000 data-[error]:checked:before:bg-error-1 data-[error]:checked:hover:before:bg-red-1000
           aria-disabled:!border-solid-gray-300 aria-disabled:!bg-solid-gray-50 aria-disabled:checked:before:!bg-solid-gray-300
-          forced-colors:!border-[ButtonText] forced-colors:checked:!border-[Highlight] forced-colors:checked:before:!bg-[Highlight] forced-colors:aria-disabled:!border-[GrayText] forced-colors:aria-disabled:checked:before:!bg-[GrayText]
+          disabled:!border-solid-gray-300 disabled:!bg-solid-gray-50 disabled:checked:before:!bg-solid-gray-300
+          forced-colors:!border-[ButtonText] forced-colors:checked:!border-[Highlight] forced-colors:checked:before:!bg-[Highlight] forced-colors:aria-disabled:!border-[GrayText] forced-colors:aria-disabled:checked:before:!bg-[GrayText] forced-colors:disabled:!border-[GrayText] forced-colors:disabled:checked:before:!bg-[GrayText]
         `}
         ref={ref}
         type='radio'

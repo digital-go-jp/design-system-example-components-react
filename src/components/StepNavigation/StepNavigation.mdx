@@ -1,0 +1,356 @@
+import {
+  Canvas,
+  Controls,
+  Description,
+  Meta,
+  Stories,
+  Subtitle,
+  Title,
+  Unstyled,
+} from '@storybook/addon-docs/blocks';
+import * as StepNavigationStories from './StepNavigation.stories';
+
+<Meta of={StepNavigationStories} />
+
+<Unstyled>
+<div className='prose'>
+
+<Title />
+<Subtitle />
+<Description />
+
+## Playground (Single)
+
+<Canvas of={StepNavigationStories.PlaygroundSingle} withToolbar />
+<Controls of={StepNavigationStories.PlaygroundSingle} />
+
+## Playground (Full)
+
+<Canvas of={StepNavigationStories.PlaygroundFull} withToolbar />
+<Controls of={StepNavigationStories.PlaygroundFull} />
+
+## 仕様
+
+### コンポーネント構成
+
+- `StepNavigation`: ルートコンテナ。向き・サイズを管理する。`asChild` で `<nav>` への切り替えが可能
+- `StepNavigationList`: ステップ一覧を包む `<ul>`
+- `StepNavigationStep`: 各ステップの `<li>`。状態・位置属性を管理する
+- `StepNavigationStepHeader`: ステップのヘッダー。`asChild` で `<a>`/`<button>` への切り替えが可能。スクリーンリーダー向け「ステップ」テキストを自動挿入
+- `StepNavigationNumber`: 番号の丸要素
+- `StepNavigationStateIndicator`: 完了・編集中・エラーの状態アイコンとラベル。`StepNavigationStep` の `state` に応じて表示内容が自動で切り替わる
+- `StepNavigationTitle`: ステップのタイトル
+- `StepNavigationDescription`: ステップの説明文
+
+### Props
+
+#### `StepNavigation`
+
+<table className='w-full'>
+  <thead>
+    <tr>
+      <th scope='col' className='whitespace-nowrap'>Props</th>
+      <th scope='col'>説明</th>
+      <th scope='col' className='whitespace-nowrap'>デフォルト</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className='whitespace-nowrap'><code>orientation</code></td>
+      <td>
+        <div><code>'horizontal' | 'vertical'</code></div>
+        ステップナビゲーションの向き
+      </td>
+      <td><code>'horizontal'</code></td>
+    </tr>
+    <tr>
+      <td className='whitespace-nowrap'><code>size</code></td>
+      <td>
+        <div><code>'normal' | 'small'</code></div>
+        ステップナビゲーションのサイズ
+      </td>
+      <td><code>'normal'</code></td>
+    </tr>
+    <tr>
+      <td className='whitespace-nowrap'><code>asChild</code></td>
+      <td>
+        <div><code>boolean</code></div>
+        <code>true</code> のとき、子要素（<code>{'<nav>'}</code> 等）に props を委譲する
+      </td>
+      <td><code>false</code></td>
+    </tr>
+  </tbody>
+</table>
+
+#### `StepNavigationStep`
+
+<table className='w-full'>
+  <thead>
+    <tr>
+      <th scope='col' className='whitespace-nowrap'>Props</th>
+      <th scope='col'>説明</th>
+      <th scope='col' className='whitespace-nowrap'>デフォルト</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className='whitespace-nowrap'><code>state</code></td>
+      <td>
+        <div><code>'reached' | 'completed' | 'editing' | 'error' | 'skipped'</code></div>
+        ステップの状態。未設定は「デフォルト（未到達）」状態
+      </td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td className='whitespace-nowrap'><code>first</code></td>
+      <td>
+        <div><code>boolean</code></div>
+        最初のステップであることを示す（上部/左部のコネクターラインを非表示）
+      </td>
+      <td><code>false</code></td>
+    </tr>
+    <tr>
+      <td className='whitespace-nowrap'><code>last</code></td>
+      <td>
+        <div><code>boolean</code></div>
+        最後のステップであることを示す（下部/右部のコネクターラインを非表示）
+      </td>
+      <td><code>false</code></td>
+    </tr>
+    <tr>
+      <td className='whitespace-nowrap'><code>aria-current</code></td>
+      <td>
+        <div><code>boolean | 'true' | 'false' | ...</code></div>
+        現在のステップには <code>aria-current="true"</code> を設定する
+      </td>
+      <td>—</td>
+    </tr>
+  </tbody>
+</table>
+
+#### `StepNavigationStepHeader`
+
+<table className='w-full'>
+  <thead>
+    <tr>
+      <th scope='col' className='whitespace-nowrap'>Props</th>
+      <th scope='col'>説明</th>
+      <th scope='col' className='whitespace-nowrap'>デフォルト</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className='whitespace-nowrap'><code>asChild</code></td>
+      <td>
+        <div><code>boolean</code></div>
+        <code>true</code> のとき、子要素（<code>{'<a>'}</code>/<code>{'<button>'}</code> 等）に props を委譲し、<code>data-interactive</code> を自動付与する
+      </td>
+      <td><code>false</code></td>
+    </tr>
+  </tbody>
+</table>
+
+### 機能仕様
+
+#### ステップの状態
+
+<table className='w-full'>
+  <thead>
+    <tr>
+      <th scope='col'>state</th>
+      <th scope='col'>説明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>（なし）</td>
+      <td>デフォルト状態（未到達）</td>
+    </tr>
+    <tr>
+      <td><code>reached</code></td>
+      <td>到達済み</td>
+    </tr>
+    <tr>
+      <td><code>completed</code></td>
+      <td>完了済み</td>
+    </tr>
+    <tr>
+      <td><code>editing</code></td>
+      <td>編集中</td>
+    </tr>
+    <tr>
+      <td><code>error</code></td>
+      <td>エラー</td>
+    </tr>
+    <tr>
+      <td><code>skipped</code></td>
+      <td>スキップ</td>
+    </tr>
+  </tbody>
+</table>
+
+## 使い方
+
+### 基本的な使い方
+
+```tsx
+<StepNavigation orientation="horizontal" size="normal">
+  <p className="sr-only">全3ステップ中、1ステップ目まで到達済み</p>
+  <StepNavigationList>
+    <StepNavigationStep state="reached" first aria-current="true">
+      <StepNavigationStepHeader>
+        <StepNavigationNumber>1</StepNavigationNumber>
+        <StepNavigationTitle>ステップのタイトル</StepNavigationTitle>
+      </StepNavigationStepHeader>
+      <StepNavigationDescription>ステップの説明が入ります。</StepNavigationDescription>
+    </StepNavigationStep>
+    <StepNavigationStep>
+      <StepNavigationStepHeader>
+        <StepNavigationNumber>2</StepNavigationNumber>
+        <StepNavigationTitle>ステップのタイトル</StepNavigationTitle>
+      </StepNavigationStepHeader>
+    </StepNavigationStep>
+    <StepNavigationStep last>
+      <StepNavigationStepHeader>
+        <StepNavigationNumber>3</StepNavigationNumber>
+        <StepNavigationTitle>ステップのタイトル</StepNavigationTitle>
+      </StepNavigationStepHeader>
+    </StepNavigationStep>
+  </StepNavigationList>
+</StepNavigation>
+```
+
+### 現在のステップを示す
+
+現在のステップには `aria-current="true"` を設定します。
+
+```tsx
+<StepNavigationStep state="reached" aria-current="true">
+  ...
+</StepNavigationStep>
+```
+
+### 状態アイコンを表示する
+
+`completed`、`editing`、`error` 状態では、`StepNavigationNumber` の中に `StepNavigationStateIndicator` を配置して、番号の右上に状態アイコンを表示できます。`state` props に `StepNavigationStep` と同じ状態を渡すと、対応するアイコンとラベルが表示されます。対応する状態でなければ何も描画されません。
+
+#### 完了状態
+
+```tsx
+<StepNavigationNumber>
+  1
+  <StepNavigationStateIndicator state="completed" />
+</StepNavigationNumber>
+```
+
+#### 編集中状態
+
+```tsx
+<StepNavigationNumber>
+  1
+  <StepNavigationStateIndicator state="editing" />
+</StepNavigationNumber>
+```
+
+#### エラー状態
+
+```tsx
+<StepNavigationNumber>
+  1
+  <StepNavigationStateIndicator state="error" />
+</StepNavigationNumber>
+```
+
+### リンク付きで使用する（ナビゲーションとして）
+
+ルートを `<nav>` にするには `asChild` を使い、`aria-label` を設定します。各ステップのヘッダーは `StepNavigationStepHeader asChild` で `<a>` に変更します。
+
+```tsx
+<StepNavigation asChild orientation="horizontal" size="normal">
+  <nav aria-label="ステップ">
+    <p className="sr-only">全3ステップ中、2ステップ目まで到達済み</p>
+    <StepNavigationList>
+      <StepNavigationStep state="completed" first>
+        <StepNavigationStepHeader asChild>
+          <a href="/step1">
+            <StepNavigationNumber>
+              1
+              <StepNavigationStateIndicator state="completed" />
+            </StepNavigationNumber>
+            <StepNavigationTitle>ステップのタイトル</StepNavigationTitle>
+          </a>
+        </StepNavigationStepHeader>
+      </StepNavigationStep>
+    </StepNavigationList>
+  </nav>
+</StepNavigation>
+```
+
+### ステップをボタンにする
+
+```tsx
+<StepNavigationStepHeader asChild>
+  <button type="button" onClick={() => goToStep(1)}>
+    <StepNavigationNumber>1</StepNavigationNumber>
+    <StepNavigationTitle>ステップのタイトル</StepNavigationTitle>
+  </button>
+</StepNavigationStepHeader>
+```
+
+### 番号のみで使用する
+
+タイトルと説明を省略し、番号のみのステップナビゲーションにできます。
+
+```tsx
+<StepNavigationStep state="reached" first aria-current="true">
+  <StepNavigationStepHeader>
+    <StepNavigationNumber>1</StepNavigationNumber>
+  </StepNavigationStepHeader>
+</StepNavigationStep>
+```
+
+### ステップ幅をカスタマイズする（水平方向のみ）
+
+水平方向のステップナビゲーションでは、CSS カスタムプロパティでステップの幅を調整できます。
+
+```tsx
+<StepNavigation
+  orientation="horizontal"
+  style={{ '--step-width': '200', '--step-min-width': '120' } as React.CSSProperties}
+>
+  ...
+</StepNavigation>
+```
+
+<table className='w-full'>
+  <thead>
+    <tr>
+      <th scope='col'>プロパティ</th>
+      <th scope='col'>デフォルト値</th>
+      <th scope='col'>説明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>--step-width</code></td>
+      <td><code>320</code></td>
+      <td>ステップの幅（px 単位の数値、単位なし）</td>
+    </tr>
+    <tr>
+      <td><code>--step-min-width</code></td>
+      <td><code>160</code></td>
+      <td>ステップの最小幅（px 単位の数値、単位なし）</td>
+    </tr>
+  </tbody>
+</table>
+
+### アクセシビリティ
+
+全体の進捗状況をスクリーンリーダーに伝えるため、コンポーネント冒頭に非表示テキストで進捗状況の概要を記述してください。
+
+```tsx
+<p className="sr-only">全3ステップ中、2ステップ目まで到達済み</p>
+```
+
+</div>
+</Unstyled>
