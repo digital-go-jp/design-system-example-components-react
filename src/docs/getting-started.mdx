@@ -1,0 +1,74 @@
+import { Meta, Unstyled } from "@storybook/addon-docs/blocks";
+
+<Meta title="Documents/導入方法" />
+
+<Unstyled>
+<div className="prose">
+
+# 導入方法
+
+本コードスニペットは、npmパッケージとして配布するものではなく、必要なコンポーネントのソースコードを直接プロジェクトにコピーして利用することを想定しています。ここでは、ご自身のプロジェクトへの導入手順を説明します。
+
+## 前提条件・環境要件
+
+コードスニペットを組み込むプロジェクトには、以下の環境が必要です。
+
+- React（v18）
+- Tailwind CSS（v3）
+- TypeScript
+
+また、デジタル庁デザインシステムのデザイントークンをベースにしたTailwind CSSのプラグインが必要です。
+
+- [@digital-go-jp/tailwind-theme-plugin](https://www.npmjs.com/package/@digital-go-jp/tailwind-theme-plugin)
+
+React v19のプロジェクトに取り込む場合、軽微な型エラーが表示されることがあります。必要に応じて修正を行なってください。
+
+## 導入手順
+
+### ステップ1：Tailwind Theme Pluginのインストール
+
+```bash
+npm install @digital-go-jp/tailwind-theme-plugin
+```
+
+### ステップ2：Tailwind CSSの設定
+
+`tailwind.config.js` の `plugins` にプラグインを追加してください。
+
+```js
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ['./src/**/*.{ts,tsx}'],
+  theme: {
+    extend: {},
+  },
+  plugins: [require('@digital-go-jp/tailwind-theme-plugin')],
+};
+```
+
+### ステップ3：コンポーネントの取得および使用
+
+コンポーネントのソースコードは、以下のいずれかの方法で取得してください。
+
+- [GitHubのリポジトリ](https://github.com/digital-go-jp/design-system-example-components-react)をクローンし、`src/components`配下から利用したいコンポーネントのファイルを直接取得する
+- GitHub上で該当コンポーネントのソースコードを直接コピーする
+
+一部のコンポーネントは、`parts/`ディレクトリ内のサブコンポーネントや、他のコンポーネント（例：`Slot`、`Disclosure`など）に依存しています。コピーの際は対象コンポーネントのimport文を確認し、依存するコンポーネントも合わせて取得してください。
+
+各コンポーネントの使用方法は、Storybookのコンポーネントごとのドキュメントページおよびストーリーファイル（`*.stories.tsx`）を参照してください。
+
+### ステップ4：動作確認
+
+配置したコンポーネントをプロジェクトにインポートし、想定通りに表示・動作することを確認してください。
+
+## スタイルやふるまいをカスタマイズする
+
+デジタル庁デザインシステム コードスニペット（HTML版）は、**あらゆるカスタマイズが許容される**設計思想に基づいています。
+
+当コードスニペットはパッケージとしての配布を前提としていません。コピーして導入されたコードはプロジェクト固有の資産として扱われ、継続的なバージョンアップは想定されていません。
+
+- キーカラーを差し替えたい場合は、`tailwind.config.js`の`theme.extend.colors.key`でkeyカラートークンを上書きしてください。
+- それ以上の見た目や挙動のカスタマイズが必要な場合は、コピーしたコンポーネントのコードを直接書き換えてください。
+
+</div>
+</Unstyled>
