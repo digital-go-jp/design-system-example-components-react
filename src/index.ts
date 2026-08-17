@@ -37,6 +37,7 @@ export * from './components/SeparatedDatePicker';
 export * from './components/StatusBadge';
 export * from './components/StepNavigation';
 export * from './components/SupportText';
+export * from './components/Switch';
 export * from './components/Tab';
 export * from './components/Textarea';
 export * from './components/UtilityLink';
