@@ -9,9 +9,9 @@ export type ListProps = ComponentProps<'ul'> & {
 };
 
 export const listBaseStyle = `
-  [&>li]:py-[var(--spacing,0px)]
-  data-[spacing='4']:[--spacing:0.25rem] data-[spacing='8']:[--spacing:0.5rem] data-[spacing='12']:[--spacing:0.75rem]
-  [&_ul]:mt-[var(--spacing,0px)] [&_ul]:mb-[calc(-1*var(--spacing,0px))]
+  [&>li]:py-[var(--list-spacing,0px)]
+  data-[spacing='4']:[--list-spacing:0.25rem] data-[spacing='8']:[--list-spacing:0.5rem] data-[spacing='12']:[--list-spacing:0.75rem]
+  [&_ul]:mt-[var(--list-spacing,0px)] [&_ul]:mb-[calc(-1*var(--list-spacing,0px))]
 `;
 
 export const listDefaultStyle = 'pl-8 list-[revert]';

@@ -11,7 +11,7 @@ import {
 
 const meta = {
   id: 'Component/DADS v2/Breadcrumbs',
-  title: 'Component/パンくずリスト',
+  title: 'Component/パンくずナビゲーション',
   component: Breadcrumbs,
   tags: ['autodocs'],
 } satisfies Meta<typeof Breadcrumbs>;

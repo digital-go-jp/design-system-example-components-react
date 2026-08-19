@@ -36,6 +36,7 @@ description: "Port a component from the HTML reference (digital-go-jp/design-sys
      - `[data-js-*]` selectors — these are **JS-only hooks** for `querySelector`. The React port doesn't need them; express the same wiring through component structure / props instead.
    - The React port has to reproduce this behavior **without** `useState` / `useEffect` / `useRef` in the component body (see [`component-rules`](../component-rules/SKILL.md) § _No logic in the component body_). Plan where each piece goes: Story-side demo state, a separate hook file (`useFooAnnouncer.ts` etc.), or pure `data-*` + CSS.
    - Note `prefers-reduced-motion: reduce` and `forced-colors` handling — mirror them as-is.
+   - **`@media (hover: hover)` does not need to be ported.** The HTML reference wraps hover styles in `@media (hover: hover)` to prevent sticky-hover on touch devices, but Tailwind's `hover:` variant is the accepted equivalent in this project. Use plain `hover:` utilities.
    - **Don't port the reset CSS** that the HTML reference uses to normalize elements — Preflight already covers it. See [`component-rules`](../component-rules/SKILL.md) § _Don't re-implement Preflight_.
 
 3. **Write a port plan and get user approval before coding** — required.
@@ -59,9 +60,9 @@ description: "Port a component from the HTML reference (digital-go-jp/design-sys
 
 5. **Build the Storybook entries**
    - Follow [`component-rules`](../component-rules/SKILL.md) § _Storybook conventions_ for the basics (Playground Story, export-name → HTML-file-name mapping).
-   - Mirror the HTML Storybook layout: one Story per HTML file. Display `name` in Japanese.
+   - Mirror the HTML Storybook layout: one Story per HTML file. Story export names (and the `name` field when set) stay in English — only user-visible UI copy (button labels, captions, etc.) is in Japanese.
    - Author the `<Name>.mdx` docs file following the [`write-component-docs`](../write-component-docs/SKILL.md) skill.
-   - **Register the component in `.storybook/preview.ts` story sort order**, in Japanese 50音順 (gojūon). The list under `parameters.options.storySort.order > 'Component'` is ordered by each title's kana reading — insert the new title at the right position (e.g. `ボタン` falls after `プログレスインジケーター` (ぷ) and before `見出し` (み), not next to `パンくずリスト`). Re-read the surrounding entries to confirm placement.
+   - **Register the component in `.storybook/preview.ts` story sort order**, in Japanese 50音順 (gojūon). The list under `parameters.options.storySort.order > 'Component'` is ordered by each title's kana reading — insert the new title at the right position (e.g. `ボタン` falls after `プログレスインジケーター` (ぷ) and before `見出し` (み), not next to `パンくずナビゲーション`). Re-read the surrounding entries to confirm placement.
    - **Add the component to `src/index.ts`** with `export * from './components/<Name>';`, keeping the list alphabetized.
 
 6. **Tests**
@@ -75,7 +76,7 @@ description: "Port a component from the HTML reference (digital-go-jp/design-sys
 
 - Branch: `feature/<component-name>` (lowercase, hyphenated).
 - Commit scope: component PascalCase, e.g. `feat(ProgressIndicator): ...`.
-- UI copy and Story display names: Japanese. Code, types, comments: English.
+- UI copy: Japanese. Code, types, comments, Story export names, Story `name` fields: English.
 
 ## Checklist
 

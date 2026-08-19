@@ -1,7 +1,7 @@
 import type { ComponentProps } from 'react';
 import { Slot } from '../Slot';
 
-export type BreadcrumbItemProps = ComponentProps<'li'> & {
+export type BreadcrumbItemProps = ComponentProps<'span'> & {
   isCurrent?: boolean;
 };
 
@@ -13,17 +13,17 @@ export const BreadcrumbItem = ({
 }: BreadcrumbItemProps) => {
   if (isCurrent) {
     return (
-      <li
+      <span
         aria-current='page'
         className={`inline break-words text-oln-16N-100 ${className ?? ''}`}
         {...rest}
       >
         {children}
-      </li>
+      </span>
     );
   }
   return (
-    <li className={`inline break-words ${className ?? ''}`}>
+    <span className={`inline break-words ${className ?? ''}`}>
       {children}
       <svg
         aria-hidden={true}
@@ -38,7 +38,7 @@ export const BreadcrumbItem = ({
           fill='currentColor'
         />
       </svg>
-    </li>
+    </span>
   );
 };
 
@@ -71,15 +71,15 @@ export const BreadcrumbLink = (props: BreadcrumbLinkProps) => {
   );
 };
 
-export type BreadcrumbListProps = ComponentProps<'ol'>;
+export type BreadcrumbListProps = ComponentProps<'p'>;
 
 export const BreadcrumbList = (props: BreadcrumbListProps) => {
   const { children, className, ...rest } = props;
 
   return (
-    <ol className={`inline ${className ?? ''}`} {...rest}>
+    <p className={`inline ${className ?? ''}`} {...rest}>
       {children}
-    </ol>
+    </p>
   );
 };
 
