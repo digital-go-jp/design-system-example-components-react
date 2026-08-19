@@ -62,7 +62,7 @@ description: "Port a component from the HTML reference (digital-go-jp/design-sys
    - Follow [`component-rules`](../component-rules/SKILL.md) § _Storybook conventions_ for the basics (Playground Story, export-name → HTML-file-name mapping).
    - Mirror the HTML Storybook layout: one Story per HTML file. Story export names (and the `name` field when set) stay in English — only user-visible UI copy (button labels, captions, etc.) is in Japanese.
    - Author the `<Name>.mdx` docs file following the [`write-component-docs`](../write-component-docs/SKILL.md) skill.
-   - **Register the component in `.storybook/preview.ts` story sort order**, in Japanese 50音順 (gojūon). The list under `parameters.options.storySort.order > 'Component'` is ordered by each title's kana reading — insert the new title at the right position (e.g. `ボタン` falls after `プログレスインジケーター` (ぷ) and before `見出し` (み), not next to `パンくずリスト`). Re-read the surrounding entries to confirm placement.
+   - **Register the component in `.storybook/preview.ts` story sort order**, in Japanese 50音順 (gojūon). The list under `parameters.options.storySort.order > 'Component'` is ordered by each title's kana reading — insert the new title at the right position (e.g. `ボタン` falls after `プログレスインジケーター` (ぷ) and before `見出し` (み), not next to `パンくずナビゲーション`). Re-read the surrounding entries to confirm placement.
    - **Add the component to `src/index.ts`** with `export * from './components/<Name>';`, keeping the list alphabetized.
 
 6. **Tests**
