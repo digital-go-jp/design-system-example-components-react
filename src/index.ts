@@ -27,6 +27,7 @@ export * from './components/MenuList';
 export * from './components/MenuListBox';
 export * from './components/ModalDialog';
 export * from './components/NotificationBanner';
+export * from './components/PageNavigation';
 export * from './components/ProgressIndicator';
 export * from './components/Radio';
 export * from './components/RequirementBadge';
