@@ -67,7 +67,7 @@ const preview: Preview = {
             'リンク',
             '*',
             'Parts',
-            'DADS v1',
+            'Deprecated',
           ],
         ],
       },
