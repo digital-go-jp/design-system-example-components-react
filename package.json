@@ -81,6 +81,12 @@
   },
   "engineStrict": true,
   "overrides": {
-    "minimatch": ">=10.2.3"
+    "minimatch": ">=10.2.3",
+    "@markuplint/selector": {
+      "postcss-selector-parser": ">=7.1.3"
+    },
+    "@markuplint/parser-utils": {
+      "uuid": ">=13.0.1"
+    }
   }
 }
