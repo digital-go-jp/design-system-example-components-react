@@ -1,14 +1,48 @@
+import {
+  Controls,
+  Description,
+  Primary,
+  Stories,
+  Subtitle,
+  Title,
+  Unstyled,
+} from '@storybook/addon-docs/blocks';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useId, useRef } from 'react';
 import { Divider } from '../Divider';
 import { CloseIcon, HamburgerIcon, HamburgerMenuButton } from '../HamburgerMenuButton';
+import { Link } from '../Link';
 
 const meta = {
   id: 'Component/DADS v2/Drawer',
   title: 'Component/ドロワー',
+  tags: ['autodocs'],
   argTypes: {},
   parameters: {
     layout: 'fullscreen',
+    docs: {
+      page: () => (
+        <>
+          <Title />
+          <Subtitle />
+          <Description />
+          <Primary />
+          <Controls />
+          <Stories includePrimary={false} />
+
+          <Unstyled>
+            <div className='prose'>
+              <h2>コンポーネントのガイドライン</h2>
+              <p>
+                <Link href='https://design.digital.go.jp/dads/components/drawer/' target='_blank'>
+                  ドロワー（概要）｜デジタル庁デザインシステムβ版
+                </Link>
+              </p>
+            </div>
+          </Unstyled>
+        </>
+      ),
+    },
   },
 } satisfies Meta;
 

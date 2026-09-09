@@ -11,6 +11,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useState } from 'react';
 import { userEvent, within } from 'storybook/test';
 import { Button } from '../Button';
+import { Link } from '../Link';
 import {
   ModalDialog,
   ModalDialogActions,
@@ -42,6 +43,16 @@ const meta = {
             <Primary />
             <Controls />
             <Stories includePrimary={false} />
+
+            <h2>コンポーネントのガイドライン</h2>
+            <p>
+              <Link
+                href='https://design.digital.go.jp/dads/components/modal-dialog/'
+                target='_blank'
+              >
+                モーダルダイアログ（概要）｜デジタル庁デザインシステムβ版
+              </Link>
+            </p>
 
             <h2>仕様</h2>
 

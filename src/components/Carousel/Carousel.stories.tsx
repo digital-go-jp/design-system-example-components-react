@@ -84,6 +84,13 @@ const meta = {
                 を参照してください。
               </p>
 
+              <h2>コンポーネントのガイドライン</h2>
+              <p>
+                <Link href='https://design.digital.go.jp/dads/components/carousel/' target='_blank'>
+                  カルーセル（概要）｜デジタル庁デザインシステムβ版
+                </Link>
+              </p>
+
               <h2>使い方</h2>
               <p>
                 カルーセルコンポーネントは、マルチ（複数スライド）とシングル（1枚のみ）の2つの構成をサポートしています。

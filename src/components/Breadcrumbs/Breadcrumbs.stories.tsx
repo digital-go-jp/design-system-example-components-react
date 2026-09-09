@@ -1,3 +1,12 @@
+import {
+  Controls,
+  Description,
+  Primary,
+  Stories,
+  Subtitle,
+  Title,
+  Unstyled,
+} from '@storybook/addon-docs/blocks';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
 import { Link } from '../Link';
@@ -14,6 +23,34 @@ const meta = {
   title: 'Component/パンくずナビゲーション',
   component: Breadcrumbs,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Title />
+          <Subtitle />
+          <Description />
+          <Primary />
+          <Controls />
+          <Stories includePrimary={false} />
+
+          <Unstyled>
+            <div className='prose'>
+              <h2>コンポーネントのガイドライン</h2>
+              <p>
+                <Link
+                  href='https://design.digital.go.jp/dads/components/breadcrumb/'
+                  target='_blank'
+                >
+                  パンくずナビゲーション（概要）｜デジタル庁デザインシステムβ版
+                </Link>
+              </p>
+            </div>
+          </Unstyled>
+        </>
+      ),
+    },
+  },
 } satisfies Meta<typeof Breadcrumbs>;
 
 export default meta;

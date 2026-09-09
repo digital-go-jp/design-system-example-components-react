@@ -8,6 +8,7 @@ import {
   Unstyled,
 } from '@storybook/addon-docs/blocks';
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import { Link } from '../Link';
 import { Image, ImageArea, ImageAreaLink, ImageCaption } from './Image';
 
 // @ts-expect-error: Ignore import of image files in Storybook
@@ -35,6 +36,13 @@ const meta = {
             <Primary />
             <Controls />
             <Stories includePrimary={false} />
+
+            <h2>コンポーネントのガイドライン</h2>
+            <p>
+              <Link href='https://design.digital.go.jp/dads/components/image/' target='_blank'>
+                画像（概要）｜デジタル庁デザインシステムβ版
+              </Link>
+            </p>
 
             <h2>仕様</h2>
 

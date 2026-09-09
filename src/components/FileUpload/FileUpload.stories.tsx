@@ -54,6 +54,16 @@ const meta = {
               <Controls />
               <Stories includePrimary={false} />
 
+              <h2>コンポーネントのガイドライン</h2>
+              <p>
+                <Link
+                  href='https://design.digital.go.jp/dads/components/file-upload/'
+                  target='_blank'
+                >
+                  ファイルアップロード／ドロップエリア（概要）｜デジタル庁デザインシステムβ版
+                </Link>
+              </p>
+
               <h2>使い方</h2>
               <h3>基本的な使い方</h3>
               <p>

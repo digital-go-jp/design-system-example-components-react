@@ -1,4 +1,4 @@
-import { Description, Stories, Subtitle, Title } from '@storybook/addon-docs/blocks';
+import { Description, Stories, Subtitle, Title, Unstyled } from '@storybook/addon-docs/blocks';
 import { type ChangeEvent, useEffect, useRef, useState } from 'react';
 import { Checkbox } from '../Checkbox';
 import { Link, linkActiveStyle, linkDefaultStyle, linkHoverStyle, linkVisitedStyle } from '../Link';
@@ -15,6 +15,18 @@ const meta = {
           <Title />
           <Subtitle />
           <Description />
+
+          <Unstyled>
+            <div className='prose'>
+              <h2>コンポーネントのガイドライン</h2>
+              <p>
+                <Link href='https://design.digital.go.jp/dads/components/table/' target='_blank'>
+                  テーブル／データテーブル（概要）｜デジタル庁デザインシステムβ版
+                </Link>
+              </p>
+            </div>
+          </Unstyled>
+
           <Stories />
         </>
       ),
