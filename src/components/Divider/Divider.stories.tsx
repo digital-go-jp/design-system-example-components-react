@@ -1,4 +1,14 @@
+import {
+  Controls,
+  Description,
+  Primary,
+  Stories,
+  Subtitle,
+  Title,
+  Unstyled,
+} from '@storybook/addon-docs/blocks';
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import { Link } from '../Link';
 import { Divider } from './Divider';
 
 const meta = {
@@ -19,6 +29,27 @@ const meta = {
   },
   parameters: {
     docs: {
+      page: () => (
+        <>
+          <Title />
+          <Subtitle />
+          <Description />
+          <Primary />
+          <Controls />
+          <Stories includePrimary={false} />
+
+          <Unstyled>
+            <div className='prose'>
+              <h2>コンポーネントのガイドライン</h2>
+              <p>
+                <Link href='https://design.digital.go.jp/dads/components/divider/' target='_blank'>
+                  ディバイダー（概要）｜デジタル庁デザインシステムβ版
+                </Link>
+              </p>
+            </div>
+          </Unstyled>
+        </>
+      ),
       description: {
         component: `
 Default では線の太さは\`1px\`、スタイルは\`solid\`に設定されています。変更したい場合は Tailwind CSS のクラスを使って上書きしてください。`,

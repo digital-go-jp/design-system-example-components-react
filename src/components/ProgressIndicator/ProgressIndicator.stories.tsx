@@ -10,6 +10,7 @@ import {
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { type ReactNode, useEffect, useId, useRef, useState } from 'react';
 import { Button } from '../Button';
+import { Link } from '../Link';
 import {
   ProgressIndicator,
   ProgressIndicatorLinear,
@@ -36,6 +37,16 @@ const meta = {
               <Primary />
               <Controls />
               <Stories includePrimary={false} />
+
+              <h2>コンポーネントのガイドライン</h2>
+              <p>
+                <Link
+                  href='https://design.digital.go.jp/dads/components/progress-indicator/'
+                  target='_blank'
+                >
+                  プログレスインジケーター（概要）｜デジタル庁デザインシステムβ版
+                </Link>
+              </p>
 
               <h2>仕様</h2>
 

@@ -1,4 +1,4 @@
-import { Description, Stories, Subtitle, Title } from '@storybook/addon-docs/blocks';
+import { Description, Stories, Subtitle, Title, Unstyled } from '@storybook/addon-docs/blocks';
 import { type ChangeEvent, useEffect, useRef, useState } from 'react';
 import { Checkbox } from '../Checkbox';
 import { Link, linkActiveStyle, linkDefaultStyle, linkHoverStyle, linkVisitedStyle } from '../Link';
@@ -15,6 +15,18 @@ const meta = {
           <Title />
           <Subtitle />
           <Description />
+
+          <Unstyled>
+            <div className='prose'>
+              <h2>コンポーネントのガイドライン</h2>
+              <p>
+                <Link href='https://design.digital.go.jp/dads/components/table/' target='_blank'>
+                  テーブル／データテーブル（概要）｜デジタル庁デザインシステムβ版
+                </Link>
+              </p>
+            </div>
+          </Unstyled>
+
           <Stories />
         </>
       ),
@@ -843,7 +855,7 @@ export const SelectableTable = {
           </tr>
         </thead>
         <tbody>
-          <tr className='border-b border-solid-gray-500 [&:has(input:checked)]:bg-key-100'>
+          <tr className='border-b border-solid-gray-500 [&:has(input:checked)>*]:bg-key-100 [&:has(input:checked)>*]:bg-origin-padding [&:has(input:checked)>*]:bg-no-repeat [&:has(input:checked)>*]:bg-top [&:has(input:checked)>*]:bg-[length:100%_1px] [&:has(input:checked)>*]:[background-image:linear-gradient(#fff,#fff)]'>
             <td className='relative'>
               <label className='absolute inset-0 grid justify-center pt-2.5'>
                 <Checkbox
@@ -863,7 +875,7 @@ export const SelectableTable = {
             <td className='px-4 py-3 align-top'>公開中</td>
             <td className='px-4 py-3 align-top'>10</td>
           </tr>
-          <tr className='border-b border-solid-gray-500 [&:has(input:checked)]:bg-key-100'>
+          <tr className='border-b border-solid-gray-500 [&:has(input:checked)>*]:bg-key-100 [&:has(input:checked)>*]:bg-origin-padding [&:has(input:checked)>*]:bg-no-repeat [&:has(input:checked)>*]:bg-top [&:has(input:checked)>*]:bg-[length:100%_1px] [&:has(input:checked)>*]:[background-image:linear-gradient(#fff,#fff)]'>
             <td className='relative'>
               <label className='absolute inset-0 grid justify-center pt-2.5'>
                 <Checkbox
@@ -883,7 +895,7 @@ export const SelectableTable = {
             <td className='px-4 py-3 align-top'>下書き</td>
             <td className='px-4 py-3 align-top'>0</td>
           </tr>
-          <tr className='border-b border-solid-gray-500 [&:has(input:checked)]:bg-key-100'>
+          <tr className='border-b border-solid-gray-500 [&:has(input:checked)>*]:bg-key-100 [&:has(input:checked)>*]:bg-origin-padding [&:has(input:checked)>*]:bg-no-repeat [&:has(input:checked)>*]:bg-top [&:has(input:checked)>*]:bg-[length:100%_1px] [&:has(input:checked)>*]:[background-image:linear-gradient(#fff,#fff)]'>
             <td className='relative'>
               <label className='absolute inset-0 grid justify-center pt-2.5'>
                 <Checkbox

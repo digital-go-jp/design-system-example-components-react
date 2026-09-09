@@ -1,3 +1,12 @@
+import {
+  Controls,
+  Description,
+  Primary,
+  Stories,
+  Subtitle,
+  Title,
+  Unstyled,
+} from '@storybook/addon-docs/blocks';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { fn } from 'storybook/test';
 import { Link } from '../Link';
@@ -34,6 +43,31 @@ const meta = {
         defaultValue: { summary: 'false' },
         type: { summary: 'boolean' },
       },
+    },
+  },
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Title />
+          <Subtitle />
+          <Description />
+          <Primary />
+          <Controls />
+          <Stories includePrimary={false} />
+
+          <Unstyled>
+            <div className='prose'>
+              <h2>コンポーネントのガイドライン</h2>
+              <p>
+                <Link href='https://design.digital.go.jp/dads/components/button/' target='_blank'>
+                  ボタン（概要）｜デジタル庁デザインシステムβ版
+                </Link>
+              </p>
+            </div>
+          </Unstyled>
+        </>
+      ),
     },
   },
 } satisfies Meta<typeof Button>;

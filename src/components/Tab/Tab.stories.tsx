@@ -8,7 +8,8 @@ import {
   Unstyled,
 } from '@storybook/addon-docs/blocks';
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Dl, Dt, Dd } from '../Dl';
+import { Dd, Dl, Dt } from '../Dl';
+import { Link } from '../Link';
 import { List } from '../List';
 import { Tab, TabItem, TabList, TabPanel } from './Tab';
 import { useTab } from './useTab';
@@ -29,6 +30,13 @@ const meta = {
             <Primary />
             <Controls />
             <Stories includePrimary={false} />
+
+            <h2>コンポーネントのガイドライン</h2>
+            <p>
+              <Link href='https://design.digital.go.jp/dads/components/tab/' target='_blank'>
+                タブ（概要）｜デジタル庁デザインシステムβ版
+              </Link>
+            </p>
 
             <h2>仕様</h2>
 

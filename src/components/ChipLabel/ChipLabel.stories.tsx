@@ -1,4 +1,14 @@
+import {
+  Controls,
+  Description,
+  Primary,
+  Stories,
+  Subtitle,
+  Title,
+  Unstyled,
+} from '@storybook/addon-docs/blocks';
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import { Link } from '../Link';
 import { ChipLabel, type ChipLabelColor, type ChipLabelVariant } from './ChipLabel';
 
 const meta = {
@@ -42,6 +52,34 @@ const meta = {
     },
     children: {
       table: { disable: true },
+    },
+  },
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Title />
+          <Subtitle />
+          <Description />
+          <Primary />
+          <Controls />
+          <Stories includePrimary={false} />
+
+          <Unstyled>
+            <div className='prose'>
+              <h2>コンポーネントのガイドライン</h2>
+              <p>
+                <Link
+                  href='https://design.digital.go.jp/dads/components/chip-label/'
+                  target='_blank'
+                >
+                  チップラベル（概要）｜デジタル庁デザインシステムβ版
+                </Link>
+              </p>
+            </div>
+          </Unstyled>
+        </>
+      ),
     },
   },
 } satisfies Meta<typeof ChipLabel>;

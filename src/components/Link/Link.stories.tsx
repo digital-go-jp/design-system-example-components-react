@@ -1,3 +1,11 @@
+import {
+  Controls,
+  Description,
+  Primary,
+  Stories,
+  Subtitle,
+  Title,
+} from '@storybook/addon-docs/blocks';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Link, LinkExternalLinkIcon } from './Link';
 
@@ -6,6 +14,20 @@ const meta = {
   title: 'Component/リンク',
   component: Link,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Title />
+          <Subtitle />
+          <Description />
+          <Primary />
+          <Controls />
+          <Stories includePrimary={false} />
+        </>
+      ),
+    },
+  },
 } satisfies Meta<typeof Link>;
 
 export default meta;

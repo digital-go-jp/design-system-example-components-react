@@ -1,4 +1,14 @@
+import {
+  Controls,
+  Description,
+  Primary,
+  Stories,
+  Subtitle,
+  Title,
+  Unstyled,
+} from '@storybook/addon-docs/blocks';
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import { Link } from '../Link';
 import { UtilityLink, UtilityLinkExternalLinkIcon } from './UtilityLink';
 
 const meta = {
@@ -6,6 +16,34 @@ const meta = {
   title: 'Component/ユーティリティリンク',
   component: UtilityLink,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Title />
+          <Subtitle />
+          <Description />
+          <Primary />
+          <Controls />
+          <Stories includePrimary={false} />
+
+          <Unstyled>
+            <div className='prose'>
+              <h2>コンポーネントのガイドライン</h2>
+              <p>
+                <Link
+                  href='https://design.digital.go.jp/dads/components/utility-link/'
+                  target='_blank'
+                >
+                  ユーティリティリンク（概要）｜デジタル庁デザインシステムβ版
+                </Link>
+              </p>
+            </div>
+          </Unstyled>
+        </>
+      ),
+    },
+  },
 } satisfies Meta<typeof UtilityLink>;
 
 export default meta;

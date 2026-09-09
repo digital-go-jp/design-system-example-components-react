@@ -1,7 +1,17 @@
+import {
+  Controls,
+  Description,
+  Primary,
+  Stories,
+  Subtitle,
+  Title,
+  Unstyled,
+} from '@storybook/addon-docs/blocks';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { type ChangeEvent, useEffect, useRef, useState } from 'react';
 import { ErrorText } from '../ErrorText';
 import { Legend } from '../Legend';
+import { Link } from '../Link';
 import { RequirementBadge } from '../RequirementBadge';
 import { SupportText } from '../SupportText';
 import { Checkbox } from './Checkbox';
@@ -38,6 +48,31 @@ const meta = {
         defaultValue: { summary: 'false' },
         type: { summary: 'boolean' },
       },
+    },
+  },
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Title />
+          <Subtitle />
+          <Description />
+          <Primary />
+          <Controls />
+          <Stories includePrimary={false} />
+
+          <Unstyled>
+            <div className='prose'>
+              <h2>コンポーネントのガイドライン</h2>
+              <p>
+                <Link href='https://design.digital.go.jp/dads/components/checkbox/' target='_blank'>
+                  チェックボックス（概要）｜デジタル庁デザインシステムβ版
+                </Link>
+              </p>
+            </div>
+          </Unstyled>
+        </>
+      ),
     },
   },
 } satisfies Meta<typeof Checkbox>;

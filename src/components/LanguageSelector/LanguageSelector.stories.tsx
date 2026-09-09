@@ -1,6 +1,14 @@
-import { Controls, Description, Stories, Subtitle, Title } from '@storybook/addon-docs/blocks';
+import {
+  Controls,
+  Description,
+  Stories,
+  Subtitle,
+  Title,
+  Unstyled,
+} from '@storybook/addon-docs/blocks';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
+import { Link } from '../Link';
 import { LanguageSelector } from './LanguageSelector';
 import { LanguageSelectorArrowIcon } from './parts/ArrowIcon';
 import { LanguageSelectorButton } from './parts/Button';
@@ -23,6 +31,20 @@ const meta = {
           <Description />
           <Controls />
           <Stories />
+
+          <Unstyled>
+            <div className='prose'>
+              <h2>コンポーネントのガイドライン</h2>
+              <p>
+                <Link
+                  href='https://design.digital.go.jp/dads/components/language-selector/'
+                  target='_blank'
+                >
+                  ランゲージセレクター（概要）｜デジタル庁デザインシステムβ版
+                </Link>
+              </p>
+            </div>
+          </Unstyled>
         </>
       ),
     },

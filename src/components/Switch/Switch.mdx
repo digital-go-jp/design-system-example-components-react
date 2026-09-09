@@ -1,0 +1,176 @@
+import {
+  Canvas,
+  Controls,
+  Description,
+  Meta,
+  Stories,
+  Subtitle,
+  Title,
+  Unstyled,
+} from '@storybook/addon-docs/blocks';
+import * as SwitchStories from './Switch.stories';
+import { Link } from '../Link';
+
+<Meta of={SwitchStories} />
+
+<Unstyled>
+<div className='prose'>
+
+<Title />
+<Subtitle />
+<Description />
+
+### オン／オフスイッチ
+
+<Canvas of={SwitchStories.PlaygroundOnOff} withToolbar />
+<Controls of={SwitchStories.PlaygroundOnOff} />
+
+### モードスイッチ
+
+<Canvas of={SwitchStories.PlaygroundMode} withToolbar />
+<Controls of={SwitchStories.PlaygroundMode} />
+
+<Stories includePrimary={false} />
+
+## コンポーネントのガイドライン
+
+<p>
+  <Link href='https://design.digital.go.jp/dads/components/switch/' target='_blank'>スイッチ（概要）｜デジタル庁デザインシステムβ版</Link>
+</p>
+
+## 仕様
+
+スイッチには用途が異なる2タイプがあります。
+
+<table className='w-full'>
+  <thead>
+    <tr>
+      <th scope='col' className='whitespace-nowrap'>タイプ</th>
+      <th scope='col'>説明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className='whitespace-nowrap'><code>SwitchOnOff</code></td>
+      <td>オン・オフの2値を切り替える</td>
+    </tr>
+    <tr>
+      <td className='whitespace-nowrap'><code>SwitchMode</code></td>
+      <td>2つの選択肢を左右のラベル付きで切り替える</td>
+    </tr>
+  </tbody>
+</table>
+
+### コンポーネント構成
+
+- `SwitchOnOff`: オン／オフスイッチ本体。`<button role="switch">` 要素。トラック・つまみ・チェックアイコンを内蔵する
+- `SwitchMode`: モードスイッチ本体。`<div>` 要素。2つの選択肢（`<button role="switch">`）とレール・つまみを内蔵する
+
+### Props
+
+#### `SwitchOnOff`
+
+コンポーネント特有の Props はありません。ネイティブの `<button>` 要素と同じ属性がそのまま利用できます（`aria-disabled` は除外しています）。`aria-checked` で選択状態を、`disabled` で無効状態を表現します。
+
+#### `SwitchMode`
+
+<table className='w-full'>
+  <thead>
+    <tr>
+      <th scope='col' className='whitespace-nowrap'>Prop</th>
+      <th scope='col'>説明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className='whitespace-nowrap'><code>leftLabel</code></td>
+      <td>
+        <div><code>string</code></div>
+        左側の選択肢のラベル
+      </td>
+    </tr>
+    <tr>
+      <td className='whitespace-nowrap'><code>rightLabel</code></td>
+      <td>
+        <div><code>string</code></div>
+        右側の選択肢のラベル
+      </td>
+    </tr>
+    <tr>
+      <td className='whitespace-nowrap'><code>value</code></td>
+      <td>
+        <div><code>string</code></div>
+        現在選択中の側のラベル（<code>leftLabel</code> または <code>rightLabel</code> のいずれかと一致する値）
+      </td>
+    </tr>
+    <tr>
+      <td className='whitespace-nowrap'><code>onChange</code></td>
+      <td>
+        <div><code>(value: string) =&gt; void</code></div>
+        クリック時に呼ばれる。クリックされた側に関わらず、反転後に選択される側のラベルが渡される
+      </td>
+    </tr>
+    <tr>
+      <td className='whitespace-nowrap'><code>disabled</code></td>
+      <td>
+        <div><code>boolean?</code></div>
+        両方の選択肢を無効化する
+      </td>
+    </tr>
+    <tr>
+      <td className='whitespace-nowrap'><code>aria-describedby</code></td>
+      <td>
+        <div><code>string?</code></div>
+        両方の選択肢に付与する
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+`className` / `id` などその他の `<div>` 属性はルート要素にそのまま渡されます。
+
+### 機能仕様
+
+`SwitchOnOff`・`SwitchMode` 内部の選択肢はネイティブの `<button>` 要素のため、クリックだけでなく、フォーカスした状態でのスペースキー・エンターキーによる操作も同様に機能します。
+
+## 使い方
+
+### 基本的な使い方（オン／オフスイッチ）
+
+```tsx
+import { useState } from 'react';
+import { SwitchOnOff } from './Switch';
+
+const [checked, setChecked] = useState(false);
+
+<label>
+  <SwitchOnOff aria-checked={checked} onClick={() => setChecked((prev) => !prev)} />
+  ラベル
+</label>;
+```
+
+**必ずラベルを指定してください**。`<button>` はラベル付け可能な要素のため、`<label>` で囲むか、`Label` コンポーネントの `htmlFor` で `id` を指定して関連付けます。
+
+### 基本的な使い方（モードスイッチ）
+
+```tsx
+import { useState } from 'react';
+import { SwitchMode } from './Switch';
+
+const [value, setValue] = useState('モード1');
+
+<SwitchMode leftLabel='モード1' rightLabel='モード2' value={value} onChange={setValue} />;
+```
+
+モードスイッチは、各選択肢のラベルが `leftLabel` / `rightLabel` として設定済みのため、追加のラベル設定は必要ではありません。`Legend` / `SupportText` と組み合わせる場合は `<fieldset>` で囲み、`aria-describedby` でサポートテキストを関連付けます（両方の選択肢に同じ `aria-describedby` が適用されます）。
+
+### disabled 状態にする
+
+disabled 状態は非推奨です。
+
+やむを得ず disabled 状態にする場合、`SwitchOnOff` には `disabled` 属性を、`SwitchMode` には `disabled` prop を付与することで無効状態になります。
+
+`SwitchMode` の `disabled` は常に両方の選択肢に適用されます。片方だけを無効化する API は提供していません。
+
+</div>
+</Unstyled>

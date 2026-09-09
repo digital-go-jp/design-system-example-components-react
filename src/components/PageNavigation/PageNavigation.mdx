@@ -1,0 +1,195 @@
+import {
+  Canvas,
+  Controls,
+  Description,
+  Meta,
+  Subtitle,
+  Title,
+  Unstyled,
+} from '@storybook/addon-docs/blocks';
+
+import * as PageNavigationStories from './PageNavigation.stories';
+import { Link } from '../Link';
+
+<Meta of={PageNavigationStories} />
+
+<Unstyled>
+<div className='prose'>
+
+<Title />
+<Subtitle />
+<Description />
+
+## コンポーネントのガイドライン
+
+<p>
+  <Link href='https://design.digital.go.jp/dads/components/page-navigation/' target='_blank'>ページナビゲーション（概要）｜デジタル庁デザインシステムβ版</Link>
+</p>
+
+## 仕様
+
+### コンポーネント構成
+
+- `PageNavigation`: ルートの `nav` 要素
+- `PageNavigationCounter`: 現在ページ表示（例: `5 / 9`）
+- `PageNavigationButton`: テキスト型・アウトライン型のページ送りボタン（`Button` コンポーネントを利用）
+- `PageNavigationArrowButton`: 矢印型（円形）のページ送りボタン
+
+### Props
+
+#### `PageNavigation`
+
+コンポーネント特有のPropsはありません。ネイティブの `<nav>` 要素と同じ属性がそのまま利用できます。`aria-label` にはナビゲーションの対象が伝わるラベルを指定してください（詳しくは「アクセシビリティ」を参照）。
+
+#### `PageNavigationCounter`
+
+コンポーネント特有のPropsはありません。ネイティブの `<span>` 要素と同じ属性がそのまま利用できます。ページ数の書式（`toLocaleString` 等）は children としてそのまま渡してください。
+
+#### `PageNavigationButton`
+
+<table className='w-full'>
+  <thead>
+    <tr>
+      <th scope='col' className='whitespace-nowrap'>Props</th>
+      <th scope='col'>説明</th>
+      <th scope='col' className='whitespace-nowrap'>デフォルト</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className='whitespace-nowrap'><code>control</code></td>
+      <td>
+        <div><code>'prev' | 'next'</code></div>
+        前/次どちらのページへの操作かを指定します。アイコンとは反対側の余白を調整するために使われます。
+      </td>
+      <td>（必須）</td>
+    </tr>
+    <tr>
+      <td className='whitespace-nowrap'><code>variant</code></td>
+      <td>
+        <div><code>'solid-fill' | 'outline' | 'text'</code></div>
+        見た目のスタイル。ページナビゲーションでは <code>'text'</code> または <code>'outline'</code> を使用します。
+      </td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td className='whitespace-nowrap'><code>size</code></td>
+      <td>
+        <div><code>'lg' | 'md' | 'sm' | 'xs'</code></div>
+        ボタンのサイズ。
+      </td>
+      <td>（必須）</td>
+    </tr>
+    <tr>
+      <td className='whitespace-nowrap'><code>asChild</code></td>
+      <td>
+        <div><code>boolean</code></div>
+        <code>true</code> のとき、子要素（<code>&lt;a&gt;</code> 等）に見た目を適用します。
+      </td>
+      <td><code>false</code></td>
+    </tr>
+  </tbody>
+</table>
+
+`variant`・`size`・`asChild` は `Button` コンポーネントの Props をそのまま継承しています。詳細は[ボタン](?path=/docs/component-dads-v2-button--docs)を参照してください。
+
+#### `PageNavigationArrowButton`
+
+<table className='w-full'>
+  <thead>
+    <tr>
+      <th scope='col' className='whitespace-nowrap'>Props</th>
+      <th scope='col'>説明</th>
+      <th scope='col' className='whitespace-nowrap'>デフォルト</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className='whitespace-nowrap'><code>size</code></td>
+      <td>
+        <div><code>'lg' | 'md' | 'sm' | 'xs'</code></div>
+        円形ボタンのサイズ。
+      </td>
+      <td>（必須）</td>
+    </tr>
+    <tr>
+      <td className='whitespace-nowrap'><code>label</code></td>
+      <td>
+        <div><code>string</code></div>
+        スクリーンリーダー向けのラベルテキスト（例: 「前のページ」）。<code>asChild</code> が <code>false</code>（デフォルト）のときに必須で、内部で <code>sr-only</code> の <code>&lt;span&gt;</code> として自動描画されます。
+      </td>
+      <td>（必須。<code>asChild</code> が <code>true</code> のときは不要）</td>
+    </tr>
+    <tr>
+      <td className='whitespace-nowrap'><code>asChild</code></td>
+      <td>
+        <div><code>boolean</code></div>
+        <code>true</code> のとき、子要素（<code>&lt;a&gt;</code> 等）に見た目を適用します。この場合、スクリーンリーダー向けテキストは children 側で用意してください。
+      </td>
+      <td><code>false</code></td>
+    </tr>
+  </tbody>
+</table>
+
+### 機能仕様
+
+#### 見た目のバリエーション
+
+ページナビゲーションには3種類の見た目があります。
+
+##### テキスト型
+
+`PageNavigationButton` + `variant="text"`。アイコン＋下線付きテキストの組み合わせ。
+
+<Canvas of={PageNavigationStories.Text} withToolbar />
+<Controls of={PageNavigationStories.Text} />
+
+##### アウトライン型
+
+`PageNavigationButton` + `variant="outline"`。アイコン＋枠線付きボタンの組み合わせ。
+
+<Canvas of={PageNavigationStories.Outlined} withToolbar />
+<Controls of={PageNavigationStories.Outlined} />
+
+##### 矢印型
+
+`PageNavigationArrowButton`。アイコンのみの円形ボタン。可視テキストがないため、`asChild` を使わない場合は `label` prop が必須（`asChild` で `<a>` 等に切り替える場合は children 側にスクリーンリーダー向けテキストを含める）。
+
+<Canvas of={PageNavigationStories.Arrow} withToolbar />
+<Controls of={PageNavigationStories.Arrow} />
+
+#### ボタンまたはリンクを使用する
+
+ページ遷移がURLの変化を伴う場合は `asChild` を使って `<a>` 要素を使用します。
+
+<Canvas of={PageNavigationStories.TextLink} withToolbar />
+<Canvas of={PageNavigationStories.OutlinedLink} withToolbar />
+<Canvas of={PageNavigationStories.ArrowLink} withToolbar />
+
+#### ページ数に応じた表示制御
+
+以下の表示制御はコンポーネントの外（呼び出し側）で行います。
+
+- 合計1ページのとき、`PageNavigation` 自体を描画しない
+- 最初のページのとき、「前のページ」ボタンを描画しない
+- 最後のページのとき、「次のページ」ボタンを描画しない
+
+いずれの場合も `disabled` 属性は使用しません。
+
+#### アイコンについて
+
+前後のアイコン（矢印の SVG）はコンポーネント化されていません。利用側で任意の SVG を用意し、以下のクラスを付与してください。
+
+- テキスト型・アウトライン型（`PageNavigationButton` の子）: `shrink-0`
+- 矢印型（`PageNavigationArrowButton` の子）: 特別なクラスは不要ですが、サイズに応じて以下の目安で SVG の `width`/`height` を指定してください
+  - `size="lg"`: 24px
+  - `size="md"`: 20px
+  - `size="sm"` / `size="xs"`: 16px
+
+### アクセシビリティ
+
+- `PageNavigation` の `aria-label` には、ナビゲーションの対象が伝わるラベルを指定してください。ロール名（「ナビゲーション」）と読み上げが重複しないよう、「ページネーション」のような冗長な表現は避けることを推奨します（例: 「記事一覧」「検索結果」など）。
+- 矢印型はボタンに可視テキストがないため、`PageNavigationArrowButton` の `label` prop を必ず指定してください（`asChild` を使う場合は children 側に `sr-only` のテキストを含めてください）。
+
+</div>
+</Unstyled>

@@ -9,6 +9,7 @@ import {
 } from '@storybook/addon-docs/blocks';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useId } from 'react';
+import { Link } from '../Link';
 import { MenuList, MenuListItem, MenuListItemButton } from '../MenuList';
 import {
   MenuListBox,
@@ -44,6 +45,16 @@ const meta = {
             <Primary />
             <Controls />
             <Stories includePrimary={false} />
+
+            <h2>コンポーネントのガイドライン</h2>
+            <p>
+              <Link
+                href='https://design.digital.go.jp/dads/components/menu-list-box/'
+                target='_blank'
+              >
+                メニューリストボックス（概要）｜デジタル庁デザインシステムβ版
+              </Link>
+            </p>
 
             <h2>仕様</h2>
 

@@ -1,5 +1,15 @@
+import {
+  Controls,
+  Description,
+  Primary,
+  Stories,
+  Subtitle,
+  Title,
+  Unstyled,
+} from '@storybook/addon-docs/blocks';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useId, useRef, useState } from 'react';
+import { Link } from '../Link';
 import {
   CloseIcon,
   CloseWithLabelIcon,
@@ -14,6 +24,34 @@ const meta = {
   title: 'Component/ハンバーガーメニューボタン',
   component: HamburgerMenuButton,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Title />
+          <Subtitle />
+          <Description />
+          <Primary />
+          <Controls />
+          <Stories includePrimary={false} />
+
+          <Unstyled>
+            <div className='prose'>
+              <h2>コンポーネントのガイドライン</h2>
+              <p>
+                <Link
+                  href='https://design.digital.go.jp/dads/components/hamburger-menu-button/'
+                  target='_blank'
+                >
+                  ハンバーガーメニューボタン（概要）｜デジタル庁デザインシステムβ版
+                </Link>
+              </p>
+            </div>
+          </Unstyled>
+        </>
+      ),
+    },
+  },
 } satisfies Meta<typeof HamburgerMenuButton>;
 
 export default meta;

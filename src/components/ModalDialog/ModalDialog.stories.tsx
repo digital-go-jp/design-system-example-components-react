@@ -11,6 +11,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useState } from 'react';
 import { userEvent, within } from 'storybook/test';
 import { Button } from '../Button';
+import { Link } from '../Link';
 import {
   ModalDialog,
   ModalDialogActions,
@@ -42,6 +43,16 @@ const meta = {
             <Primary />
             <Controls />
             <Stories includePrimary={false} />
+
+            <h2>コンポーネントのガイドライン</h2>
+            <p>
+              <Link
+                href='https://design.digital.go.jp/dads/components/modal-dialog/'
+                target='_blank'
+              >
+                モーダルダイアログ（概要）｜デジタル庁デザインシステムβ版
+              </Link>
+            </p>
 
             <h2>仕様</h2>
 
@@ -542,27 +553,10 @@ export const FixedWidth: Story = {
         <ModalDialog {...dialogProps} width='800px'>
           <ModalDialogContent>
             <ModalDialogHeader>
-              <ModalDialogHeading {...headingProps}>プライバシーポリシー</ModalDialogHeading>
+              <ModalDialogHeading {...headingProps}>タイトル</ModalDialogHeading>
               <ModalDialogClose {...closeButtonProps} />
             </ModalDialogHeader>
-            <ModalDialogBody>
-              <h3 className='mt-6 text-std-20B-160'>第3条（利用目的）</h3>
-              <p className='my-4'>
-                当サイトが取得した個人情報は、当サイトが提供する行政手続に関する情報提供、申請書作成支援機能、入力内容の整理および文章生成補助、ならびにこれらに付随する利用者サポートを円滑に実施する目的のために利用します。これには、利用者から寄せられた問い合わせへの回答、内容確認のための連絡、利用状況に応じた画面表示や案内内容の調整等が含まれます。
-              </p>
-              <p className='my-4'>
-                また、当サイトは、利用者の入力内容や操作履歴、閲覧情報等を分析し、当サイトの構成、表示方法、機能内容および操作性の改善を図る目的で個人情報を利用する場合があります。これらの分析および検討は、原則として特定の個人を識別できない形で行い、個々の利用者の思想、信条、社会的立場等を推測または評価する目的で行うものではありません。
-              </p>
-              <p className='my-4'>
-                当サイトは、取得した個人情報を、あらかじめ明示した利用目的、またはこれと合理的な関連性を有すると認められる範囲内でのみ取り扱うものとし、当該範囲を超えて利用することはありません。利用目的を変更する必要が生じた場合には、法令に基づき、当サイト上での公表その他適切な方法により、利用者に対して周知を行います。
-              </p>
-              <p className='my-4'>
-                なお、当サイトは架空の行政支援サイトとして設計されており、取得した個人情報を用いて、実際の行政機関への申請手続、審査、決定、または公的な判断を行うものではありません。当サイトにおける支援は、あくまで情報提供および作成補助を目的としたものであり、利用者は、その内容を参考情報として、自らの判断と責任において活用するものとします。
-              </p>
-              <p className='my-4'>
-                当サイトが取得した個人情報は、利用者に対するサービス提供および当サイトの適正な運営に必要な期間に限り利用され、利用目的が達成された後は、適切な方法により管理、廃棄または消去されます。
-              </p>
-            </ModalDialogBody>
+            <ModalDialogBody>コンテンツ</ModalDialogBody>
             <ModalDialogActions className='flex justify-end'>
               <Button size='lg' variant='solid-fill' {...closeButtonProps}>
                 OK

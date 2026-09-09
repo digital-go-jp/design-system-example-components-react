@@ -1,4 +1,14 @@
+import {
+  Controls,
+  Description,
+  Primary,
+  Stories,
+  Subtitle,
+  Title,
+  Unstyled,
+} from '@storybook/addon-docs/blocks';
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import { Link } from '../Link';
 import { Dd, Dl, Dt } from './Dl';
 
 const meta = {
@@ -11,6 +21,34 @@ const meta = {
       options: ['none', 'bullet'],
       control: { type: 'radio' },
       description: '説明リストのマーカーの種類を指定します。',
+    },
+  },
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Title />
+          <Subtitle />
+          <Description />
+          <Primary />
+          <Controls />
+          <Stories includePrimary={false} />
+
+          <Unstyled>
+            <div className='prose'>
+              <h2>コンポーネントのガイドライン</h2>
+              <p>
+                <Link
+                  href='https://design.digital.go.jp/dads/components/description-list/'
+                  target='_blank'
+                >
+                  説明リスト（概要）｜デジタル庁デザインシステムβ版
+                </Link>
+              </p>
+            </div>
+          </Unstyled>
+        </>
+      ),
     },
   },
 } satisfies Meta<typeof Dl>;

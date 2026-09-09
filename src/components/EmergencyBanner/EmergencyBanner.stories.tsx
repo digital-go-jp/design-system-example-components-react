@@ -1,4 +1,14 @@
+import {
+  Controls,
+  Description,
+  Primary,
+  Stories,
+  Subtitle,
+  Title,
+  Unstyled,
+} from '@storybook/addon-docs/blocks';
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import { Link } from '../Link';
 import { EmergencyBanner } from './EmergencyBanner';
 import { EmergencyBannerBody } from './parts/Body';
 import { EmergencyBannerButton } from './parts/Button';
@@ -12,6 +22,30 @@ const meta = {
   argTypes: {},
   parameters: {
     docs: {
+      page: () => (
+        <>
+          <Title />
+          <Subtitle />
+          <Description />
+          <Primary />
+          <Controls />
+          <Stories includePrimary={false} />
+
+          <Unstyled>
+            <div className='prose'>
+              <h2>コンポーネントのガイドライン</h2>
+              <p>
+                <Link
+                  href='https://design.digital.go.jp/dads/components/emergency-banner/'
+                  target='_blank'
+                >
+                  緊急時バナー（概要）｜デジタル庁デザインシステムβ版
+                </Link>
+              </p>
+            </div>
+          </Unstyled>
+        </>
+      ),
       description: {
         component:
           '緊急時バナーは緊急性の高い通知のため、すべてのユーザーが確実に認知できる必要があります。そのため`body`要素や`main`要素内の先頭など、できるだけページの先頭に近い場所に配置してください。\n\nリンク先がある場合は`EmergencyBannerButton`コンポーネントを使ってバナー内にアクションボタンを配置してください。',

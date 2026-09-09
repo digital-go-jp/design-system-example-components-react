@@ -1,5 +1,15 @@
+import {
+  Controls,
+  Description,
+  Primary,
+  Stories,
+  Subtitle,
+  Title,
+  Unstyled,
+} from '@storybook/addon-docs/blocks';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Button } from '../Button';
+import { Link } from '../Link';
 import { NotificationBanner } from './NotificationBanner';
 import { NotificationBannerBody } from './parts/Body';
 import { NotificationBannerClose } from './parts/Close';
@@ -26,6 +36,34 @@ const meta = {
       table: {
         type: { summary: "'info1' | 'info2' | 'warning' | 'error' | 'success'" },
       },
+    },
+  },
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Title />
+          <Subtitle />
+          <Description />
+          <Primary />
+          <Controls />
+          <Stories includePrimary={false} />
+
+          <Unstyled>
+            <div className='prose'>
+              <h2>コンポーネントのガイドライン</h2>
+              <p>
+                <Link
+                  href='https://design.digital.go.jp/dads/components/notification-banner/'
+                  target='_blank'
+                >
+                  ノティフィケーションバナー（概要）｜デジタル庁デザインシステムβ版
+                </Link>
+              </p>
+            </div>
+          </Unstyled>
+        </>
+      ),
     },
   },
 } satisfies Meta<typeof NotificationBanner>;
