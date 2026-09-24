@@ -6,7 +6,7 @@ description: "Review changed code in this repo against the project's review chec
 ## Context
 
 - Current branch: !`git branch --show-current`
-- Diff against base: !`git diff --stat $(git merge-base HEAD v2)..HEAD`
+- Diff against base: !`git diff --stat $(git merge-base HEAD develop)..HEAD`
 - Unstaged changes: !`git diff --stat`
 
 ## How to review
