@@ -224,30 +224,41 @@ function addGuide(totalSlides) {
   addFooter(slide, 2, totalSlides);
 }
 
-function addIndex(stories, totalSlides) {
-  const slide = pptx.addSlide();
-  slide.background = { color: COLORS.white };
-  addText(slide, "INVENTORY", { x: 0.5, y: 0.42, w: 12, h: 0.17, fontSize: 8.5, bold: true, color: COLORS.blue800, charSpacing: 1.2 });
-  addText(slide, "Storybookストーリー一覧", { x: 0.5, y: 0.78, w: 11.8, h: 0.42, fontSize: 26, bold: true, color: COLORS.black });
-  addText(slide, `${stories.length}件のストーリーを実表示。スライド番号は目次を除くため、資料内の番号で確認します。`, { x: 0.5, y: 1.37, w: 12, h: 0.18, fontSize: 9.5, color: COLORS.gray600 });
+const INDEX_COLUMNS = 4;
+const INDEX_ROWS_PER_COLUMN = 13;
+const INDEX_ITEMS_PER_PAGE = INDEX_COLUMNS * INDEX_ROWS_PER_COLUMN;
+
+function countIndexPages(stories) {
+  const titles = new Set(stories.map((story) => story.title));
+  return Math.max(1, Math.ceil(titles.size / INDEX_ITEMS_PER_PAGE));
+}
+
+function addIndexPages(stories, totalSlides) {
   const grouped = stories.reduce((groups, story) => {
     const name = story.title.replace(/^Component\//, "");
     if (!groups.has(name)) groups.set(name, []);
     groups.get(name).push(story.name);
     return groups;
   }, new Map());
-  const columns = 3;
   const items = [...grouped.entries()];
-  const rowsPerColumn = Math.ceil(items.length / columns);
-  items.forEach(([component, names], index) => {
-    const column = Math.floor(index / rowsPerColumn);
-    const row = index % rowsPerColumn;
-    const x = 0.55 + column * 4.2;
-    const y = 1.92 + row * 0.34;
-    addText(slide, component, { x, y, w: 2.62, h: 0.15, fontSize: 8.7, bold: true, color: COLORS.gray800 });
-    addText(slide, `${names.length} stories`, { x: x + 2.78, y, w: 0.75, h: 0.14, fontSize: 7.4, bold: true, align: "right", color: COLORS.blue800 });
-  });
-  addFooter(slide, 3, totalSlides);
+  const pages = Math.max(1, Math.ceil(items.length / INDEX_ITEMS_PER_PAGE));
+
+  for (let pageIndex = 0; pageIndex < pages; pageIndex += 1) {
+    const slide = pptx.addSlide();
+    slide.background = { color: COLORS.white };
+    addText(slide, "INVENTORY", { x: 0.5, y: 0.42, w: 12, h: 0.17, fontSize: 8.5, bold: true, color: COLORS.blue800, charSpacing: 1.2 });
+    addText(slide, "Storybookストーリー一覧", { x: 0.5, y: 0.78, w: 11.8, h: 0.42, fontSize: 26, bold: true, color: COLORS.black });
+    addText(slide, `${stories.length}件のストーリーを実表示。スライド番号は目次を除くため、資料内の番号で確認します。（${pageIndex + 1}/${pages}ページ）`, { x: 0.5, y: 1.37, w: 12, h: 0.18, fontSize: 9.5, color: COLORS.gray600 });
+    items.slice(pageIndex * INDEX_ITEMS_PER_PAGE, (pageIndex + 1) * INDEX_ITEMS_PER_PAGE).forEach(([component, names], index) => {
+      const column = Math.floor(index / INDEX_ROWS_PER_COLUMN);
+      const row = index % INDEX_ROWS_PER_COLUMN;
+      const x = 0.55 + column * 3.1;
+      const y = 1.92 + row * 0.36;
+      addText(slide, component, { x, y, w: 2.16, h: 0.15, fontSize: 8.7, bold: true, color: COLORS.gray800 });
+      addText(slide, `${names.length} stories`, { x: x + 2.3, y, w: 0.72, h: 0.14, fontSize: 7.4, bold: true, align: "right", color: COLORS.blue800 });
+    });
+    addFooter(slide, 3 + pageIndex, totalSlides);
+  }
 }
 
 function addStorySlide(story, captures, page, totalSlides) {
@@ -297,7 +308,8 @@ async function captureStory(page, baseUrl, story) {
 async function main() {
   const stories = loadStories();
   const components = new Set(stories.map((story) => story.title));
-  const totalSlides = stories.length + 3;
+  const indexPages = countIndexPages(stories);
+  const totalSlides = stories.length + 2 + indexPages;
   fs.mkdirSync(OUTPUT_DIR, { recursive: true });
   const reuseCaptures = process.env.REUSE_CAPTURES === "1";
   if (!reuseCaptures) {
@@ -350,8 +362,8 @@ async function main() {
 
   addCover(totalSlides, stories.length, components.size);
   addGuide(totalSlides);
-  addIndex(stories, totalSlides);
-  stories.forEach((story, index) => addStorySlide(story, captures.get(story.id), index + 4, totalSlides));
+  addIndexPages(stories, totalSlides);
+  stories.forEach((story, index) => addStorySlide(story, captures.get(story.id), index + 3 + indexPages, totalSlides));
   await pptx.writeFile({ fileName: OUTPUT_FILE });
   console.log(`Generated ${OUTPUT_FILE}`);
   console.log(`Components: ${components.size}; Stories: ${stories.length}; Slides: ${totalSlides}`);
