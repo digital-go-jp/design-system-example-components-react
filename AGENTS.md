@@ -69,3 +69,4 @@ Skills under `.agents/skills/`:
 - [`pre-completion-check`](.agents/skills/pre-completion-check/SKILL.md) — run lint, markup lint, build, and tests before declaring a task done.
 - [`review`](.agents/skills/review/SKILL.md) — review changed code against the project's review checklist.
 - [`create-commit`](.agents/skills/create-commit/SKILL.md) — stage, draft a Conventional Commits message in this repo's style, and commit after user approval.
+- [`create-powerpoint`](.agents/skills/create-powerpoint/SKILL.md) — create or update DADS-based PowerPoint decks (component catalogs and general documents) from this repo's implementation.
