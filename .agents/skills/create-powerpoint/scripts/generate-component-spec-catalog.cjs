@@ -448,7 +448,7 @@ function addFoundationSlide(totalSlides) {
     ["キーカラー", "--color-key-50 〜 --color-key-1200（Blue階調）"],
     ["フォーカス", "4px black outline + 2px yellow-300 outer ring"],
     ["エレベーション", "--elevation-1 〜 --elevation-8"],
-    ["基準ブレークポイント", "md: 768px、モバイルファースト"],
+    ["基準ブレークポイント", "desktop: 48em（768px）、モバイルファースト"],
     ["アクセシビリティ", "WCAG 2.2 A/AA、強制カラー・視覚効果低減に配慮"],
   ];
   tokenRows.forEach(([label, value], index) => {

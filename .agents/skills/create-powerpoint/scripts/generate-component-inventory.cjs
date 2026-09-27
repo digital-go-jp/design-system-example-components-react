@@ -80,7 +80,7 @@ function collectAria(content) {
 
 function collectResponsivePrefixes(content) {
   const prefixes = [];
-  for (const match of content.matchAll(/(?<![\w/@-])(@?)(sm|md|lg|xl):[a-z[]/g)) {
+  for (const match of content.matchAll(/(?<![\w/@-])(@?)(sm|md|lg|xl|desktop(?:-admin)?):[a-z[]/g)) {
     prefixes.push(`${match[1]}${match[2]}:`);
   }
   return unique(prefixes);
@@ -178,7 +178,7 @@ ${markdownList(component.accessibility, "Use native semantics and inspect source
 - [ ] Include every Storybook story listed above (or the documented variation set in the MDX / component-spec.md).
 - [ ] Include every data modifier listed above.
 - [ ] Show every listed state as an individually labeled static specimen.
-- [ ] ${component.responsive.length ? "Show mobile and desktop specimens with their viewport widths (mobile-first; `md:` = 768px)." : "Do not imply a responsive layout change unless the source adds a responsive variant."}
+- [ ] ${component.responsive.length ? "Show mobile and desktop specimens with their viewport widths (mobile-first; `desktop:` = 48em = 768px)." : "Do not imply a responsive layout change unless the source adds a responsive variant."}
 - [ ] Note interactive or assistive-technology behavior (react-aria-components) that PowerPoint cannot reproduce.
 `;
 }

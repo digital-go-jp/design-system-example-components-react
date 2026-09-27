@@ -100,7 +100,7 @@ States and modifiers are extracted heuristically from Tailwind variant prefixes,
 
 ### Responsive and container query prefixes
 
-- 基本表示のみ（対象ソースを確認）
+- `desktop:`
 
 ### Accessibility signals to preserve
 
@@ -111,7 +111,7 @@ States and modifiers are extracted heuristically from Tailwind variant prefixes,
 - [ ] Include every Storybook story listed above (or the documented variation set in the MDX / component-spec.md).
 - [ ] Include every data modifier listed above.
 - [ ] Show every listed state as an individually labeled static specimen.
-- [ ] Do not imply a responsive layout change unless the source adds a responsive variant.
+- [ ] Show mobile and desktop specimens with their viewport widths (mobile-first; `desktop:` = 48em = 768px).
 - [ ] Note interactive or assistive-technology behavior (react-aria-components) that PowerPoint cannot reproduce.
 
 ## Blockquote
@@ -809,7 +809,7 @@ States and modifiers are extracted heuristically from Tailwind variant prefixes,
 
 ### Responsive and container query prefixes
 
-- 基本表示のみ（対象ソースを確認）
+- `desktop:`
 
 ### Accessibility signals to preserve
 
@@ -821,7 +821,7 @@ States and modifiers are extracted heuristically from Tailwind variant prefixes,
 - [ ] Include every Storybook story listed above (or the documented variation set in the MDX / component-spec.md).
 - [ ] Include every data modifier listed above.
 - [ ] Show every listed state as an individually labeled static specimen.
-- [ ] Do not imply a responsive layout change unless the source adds a responsive variant.
+- [ ] Show mobile and desktop specimens with their viewport widths (mobile-first; `desktop:` = 48em = 768px).
 - [ ] Note interactive or assistive-technology behavior (react-aria-components) that PowerPoint cannot reproduce.
 
 ## ErrorText
@@ -1250,7 +1250,7 @@ States and modifiers are extracted heuristically from Tailwind variant prefixes,
 
 ### Responsive and container query prefixes
 
-- 基本表示のみ（対象ソースを確認）
+- `desktop:`
 
 ### Accessibility signals to preserve
 
@@ -1266,7 +1266,7 @@ States and modifiers are extracted heuristically from Tailwind variant prefixes,
 - [ ] Include every Storybook story listed above (or the documented variation set in the MDX / component-spec.md).
 - [ ] Include every data modifier listed above.
 - [ ] Show every listed state as an individually labeled static specimen.
-- [ ] Do not imply a responsive layout change unless the source adds a responsive variant.
+- [ ] Show mobile and desktop specimens with their viewport widths (mobile-first; `desktop:` = 48em = 768px).
 - [ ] Note interactive or assistive-technology behavior (react-aria-components) that PowerPoint cannot reproduce.
 
 ## Legend
@@ -1557,7 +1557,7 @@ States and modifiers are extracted heuristically from Tailwind variant prefixes,
 - [ ] Include every Storybook story listed above (or the documented variation set in the MDX / component-spec.md).
 - [ ] Include every data modifier listed above.
 - [ ] Show every listed state as an individually labeled static specimen.
-- [ ] Show mobile and desktop specimens with their viewport widths (mobile-first; `md:` = 768px).
+- [ ] Show mobile and desktop specimens with their viewport widths (mobile-first; `desktop:` = 48em = 768px).
 - [ ] Note interactive or assistive-technology behavior (react-aria-components) that PowerPoint cannot reproduce.
 
 ## NotificationBanner
@@ -1611,7 +1611,7 @@ States and modifiers are extracted heuristically from Tailwind variant prefixes,
 
 ### Responsive and container query prefixes
 
-- 基本表示のみ（対象ソースを確認）
+- `desktop:`
 
 ### Accessibility signals to preserve
 
@@ -1624,7 +1624,7 @@ States and modifiers are extracted heuristically from Tailwind variant prefixes,
 - [ ] Include every Storybook story listed above (or the documented variation set in the MDX / component-spec.md).
 - [ ] Include every data modifier listed above.
 - [ ] Show every listed state as an individually labeled static specimen.
-- [ ] Do not imply a responsive layout change unless the source adds a responsive variant.
+- [ ] Show mobile and desktop specimens with their viewport widths (mobile-first; `desktop:` = 48em = 768px).
 - [ ] Note interactive or assistive-technology behavior (react-aria-components) that PowerPoint cannot reproduce.
 
 ## PageNavigation
@@ -1929,7 +1929,7 @@ States and modifiers are extracted heuristically from Tailwind variant prefixes,
 - [ ] Include every Storybook story listed above (or the documented variation set in the MDX / component-spec.md).
 - [ ] Include every data modifier listed above.
 - [ ] Show every listed state as an individually labeled static specimen.
-- [ ] Show mobile and desktop specimens with their viewport widths (mobile-first; `md:` = 768px).
+- [ ] Show mobile and desktop specimens with their viewport widths (mobile-first; `desktop:` = 48em = 768px).
 - [ ] Note interactive or assistive-technology behavior (react-aria-components) that PowerPoint cannot reproduce.
 
 ## Select
@@ -2397,7 +2397,7 @@ States and modifiers are extracted heuristically from Tailwind variant prefixes,
 - [ ] Include every Storybook story listed above (or the documented variation set in the MDX / component-spec.md).
 - [ ] Include every data modifier listed above.
 - [ ] Show every listed state as an individually labeled static specimen.
-- [ ] Show mobile and desktop specimens with their viewport widths (mobile-first; `md:` = 768px).
+- [ ] Show mobile and desktop specimens with their viewport widths (mobile-first; `desktop:` = 48em = 768px).
 - [ ] Note interactive or assistive-technology behavior (react-aria-components) that PowerPoint cannot reproduce.
 
 ## Textarea
