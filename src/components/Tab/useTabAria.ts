@@ -8,7 +8,7 @@ type UseTabAriaOptions = {
 };
 
 type TabAriaGetListProps = {
-  ref: React.RefObject<HTMLUListElement>;
+  ref: React.RefObject<HTMLUListElement | null>;
   role: 'tablist';
   onClick: React.MouseEventHandler<HTMLUListElement>;
   onKeyDown: React.KeyboardEventHandler<HTMLUListElement>;

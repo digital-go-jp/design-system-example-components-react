@@ -9,7 +9,7 @@ export const Slot = (props: SlotProps) => {
 
   // https://react.dev/reference/react/isValidElement
   // https://react.dev/reference/react/cloneElement
-  if (isValidElement(children)) {
+  if (isValidElement<HTMLAttributes<HTMLElement>>(children)) {
     return cloneElement(children, {
       ...rest,
       ...children.props,

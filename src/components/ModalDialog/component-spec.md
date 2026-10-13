@@ -35,7 +35,7 @@
 **`useModalDialog` hook**
 - 入力: `{ open: boolean; onOpenChange: (open: boolean) => void; onRequestClose?: (event: ModalDialogRequestCloseEvent) => void; }`
   - `ModalDialogRequestCloseEvent`: `{ defaultPrevented: boolean; preventDefault: () => void; }` — `preventDefault()` を呼ぶとダイアログを閉じない
-- 出力: `{ dialogProps: { ref: RefObject<HTMLDialogElement>; 'aria-labelledby': string; }; headingProps: { ref: RefObject<HTMLHeadingElement>; id: string; }; closeButtonProps: { onClick: () => void; } }`
+- 出力: `{ dialogProps: { ref: RefObject<HTMLDialogElement | null>; 'aria-labelledby': string; }; headingProps: { ref: RefObject<HTMLHeadingElement | null>; id: string; }; closeButtonProps: { onClick: () => void; } }`
   - `dialogProps` を `ModalDialog` に、`headingProps` を `ModalDialogHeading` に、`closeButtonProps` を `ModalDialogClose` にスプレッドする
 - 内部で `useEffect` を使い `open` → `showModal()`/`close()` を同期
 - `showModal()` 後、`headingRef.current?.focus()` で見出しへ初期フォーカスを移す

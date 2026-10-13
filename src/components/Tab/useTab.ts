@@ -7,7 +7,7 @@ type UseTabOptions = {
 };
 
 type TabGetListProps = {
-  ref: React.RefObject<HTMLUListElement>;
+  ref: React.RefObject<HTMLUListElement | null>;
   onClick: React.MouseEventHandler<HTMLUListElement>;
   onAuxClick: React.MouseEventHandler<HTMLUListElement>;
 };
