@@ -58,7 +58,7 @@ export const ImageCaption = (props: ImageCaptionProps) => {
   const { children, className, captionStyle, ...rest } = props;
   return (
     <figcaption
-      className={`mt-2 [contain:inline-size] py-2 px-6 text-solid-gray-900 text-std-16N-170 data-[style=dashed]:border data-[style=dashed]:border-dashed data-[style=dashed]:border-solid-gray-700 data-[style=solid]:border data-[style=solid]:border-solid-gray-420 ${className ?? ''}`}
+      className={`mt-2 mb-10 [contain:inline-size] py-2 px-6 text-solid-gray-700 text-std-16N-170 data-[style=dashed]:border data-[style=dashed]:border-dashed data-[style=dashed]:border-solid-gray-700 data-[style=solid]:border data-[style=solid]:border-solid-gray-420 ${className ?? ''}`}
       data-style={captionStyle}
       {...rest}
     >
