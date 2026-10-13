@@ -1,14 +1,11 @@
-import { type ComponentProps, forwardRef } from 'react';
+import type { ComponentProps } from 'react';
 
 export type LanguageSelectorMenuItemProps = ComponentProps<'a'> & {
   isCurrent?: boolean;
   isCondensed?: boolean;
 };
 
-export const LanguageSelectorMenuItem = forwardRef<
-  HTMLAnchorElement,
-  LanguageSelectorMenuItemProps
->((props, ref) => {
+export const LanguageSelectorMenuItem = (props: LanguageSelectorMenuItemProps) => {
   const { children, className, isCurrent, isCondensed, ...rest } = props;
 
   return (
@@ -24,7 +21,6 @@ export const LanguageSelectorMenuItem = forwardRef<
         `}
         data-current={isCurrent || undefined}
         data-condensed={isCondensed || undefined}
-        ref={ref}
         {...rest}
       >
         <svg
@@ -41,4 +37,4 @@ export const LanguageSelectorMenuItem = forwardRef<
       </a>
     </li>
   );
-});
+};

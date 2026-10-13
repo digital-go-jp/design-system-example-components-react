@@ -1,4 +1,4 @@
-import { type ComponentProps, forwardRef } from 'react';
+import type { ComponentProps } from 'react';
 
 export type RadioSize = 'sm' | 'md' | 'lg';
 
@@ -7,7 +7,7 @@ export type RadioProps = Omit<ComponentProps<'input'>, 'size'> & {
   isError?: boolean;
 };
 
-export const Radio = forwardRef<HTMLInputElement, RadioProps>((props, ref) => {
+export const Radio = (props: RadioProps) => {
   const { children, isError, onClick, size = 'sm', ...rest } = props;
 
   const handleDisabled = (e: React.MouseEvent<HTMLInputElement, MouseEvent>) => {
@@ -39,7 +39,6 @@ export const Radio = forwardRef<HTMLInputElement, RadioProps>((props, ref) => {
           disabled:!border-solid-gray-300 disabled:!bg-solid-gray-50 disabled:checked:before:!bg-solid-gray-300
           forced-colors:!border-[ButtonText] forced-colors:checked:!border-[Highlight] forced-colors:checked:before:!bg-[Highlight] forced-colors:aria-disabled:!border-[GrayText] forced-colors:aria-disabled:checked:before:!bg-[GrayText] forced-colors:disabled:!border-[GrayText] forced-colors:disabled:checked:before:!bg-[GrayText]
         `}
-        ref={ref}
         type='radio'
         onClick={props['aria-disabled'] ? handleDisabled : onClick}
         data-size={size}
@@ -65,4 +64,4 @@ export const Radio = forwardRef<HTMLInputElement, RadioProps>((props, ref) => {
   ) : (
     radio
   );
-});
+};

@@ -1,13 +1,12 @@
-import { type ComponentProps, forwardRef } from 'react';
+import type { ComponentProps } from 'react';
 
 export type SwitchOnOffProps = Omit<ComponentProps<'button'>, 'aria-disabled'>;
 
-export const SwitchOnOff = forwardRef<HTMLButtonElement, SwitchOnOffProps>((props, ref) => {
+export const SwitchOnOff = (props: SwitchOnOffProps) => {
   const { className, 'aria-checked': ariaChecked = false, ...rest } = props;
 
   return (
     <button
-      ref={ref}
       {...rest}
       type='button'
       role='switch'
@@ -58,16 +57,13 @@ export const SwitchOnOff = forwardRef<HTMLButtonElement, SwitchOnOffProps>((prop
             height='24'
             aria-hidden='true'
           >
-            <path
-              d='m10.4 16.3-4.1-4.1 1.2-1.3 2.9 2.9 6-6.1 1.3 1.2z'
-              fill='currentcolor'
-            />
+            <path d='m10.4 16.3-4.1-4.1 1.2-1.3 2.9 2.9 6-6.1 1.3 1.2z' fill='currentcolor' />
           </svg>
         </span>
       </span>
     </button>
   );
-});
+};
 
 export type SwitchModeProps = Omit<ComponentProps<'div'>, 'onChange' | 'aria-describedby'> & {
   leftLabel: string;

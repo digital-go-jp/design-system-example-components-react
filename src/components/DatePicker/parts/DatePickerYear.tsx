@@ -1,10 +1,10 @@
-import { type ComponentProps, forwardRef } from 'react';
+import type { ComponentProps } from 'react';
 
 export type DatePickerYearProps = Omit<ComponentProps<'input'>, 'placeholder'> & {
   placeholder?: never;
 };
 
-export const DatePickerYear = forwardRef<HTMLInputElement, DatePickerYearProps>((props, ref) => {
+export const DatePickerYear = (props: DatePickerYearProps) => {
   const { className, 'aria-disabled': ariaDisabled, readOnly, ...rest } = props;
 
   return (
@@ -17,9 +17,8 @@ export const DatePickerYear = forwardRef<HTMLInputElement, DatePickerYearProps>(
         pattern='\d+'
         readOnly={ariaDisabled === 'true' || ariaDisabled === true || readOnly}
         aria-disabled={ariaDisabled}
-        ref={ref}
         {...rest}
       />
     </label>
   );
-});
+};

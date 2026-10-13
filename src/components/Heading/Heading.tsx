@@ -1,11 +1,4 @@
-import {
-  Children,
-  type ComponentProps,
-  forwardRef,
-  type HTMLAttributes,
-  isValidElement,
-  type RefObject,
-} from 'react';
+import { Children, type ComponentProps, isValidElement, type Ref } from 'react';
 
 export type HeadingSize = '64' | '57' | '45' | '36' | '32' | '28' | '24' | '20' | '18' | '16';
 export type RuleSize = '8' | '6' | '4' | '2';
@@ -62,23 +55,23 @@ export type HeadingTitleProps = ComponentProps<'h2'> & {
   level: HeadingLevel;
 };
 
-export const HeadingTitle = forwardRef<HTMLHeadingElement, HeadingTitleProps>((props, ref) => {
+export const HeadingTitle = (props: HeadingTitleProps) => {
   const { level: Component, className, children, ...rest } = props;
   return (
-    <Component ref={ref} className={`${className ?? ''}`} {...rest}>
+    <Component className={`${className ?? ''}`} {...rest}>
       {children}
     </Component>
   );
-});
+};
 
-export type HeadingProps = HTMLAttributes<HTMLElement> & {
+export type HeadingProps = ComponentProps<'hgroup'> & {
   size: HeadingSize;
   hasChip?: boolean;
   rule?: RuleSize;
 };
 
-export const Heading = forwardRef<HTMLElement, HeadingProps>((props, ref) => {
-  const { size, hasChip, rule, className, children, ...rest } = props;
+export const Heading = (props: HeadingProps) => {
+  const { size, hasChip, rule, className, children, ref, ...rest } = props;
 
   const hasShoulder = Children.toArray(children).some(
     (child) => isValidElement(child) && child.type === HeadingShoulder,
@@ -88,7 +81,7 @@ export const Heading = forwardRef<HTMLElement, HeadingProps>((props, ref) => {
 
   return (
     <Component
-      ref={ref as RefObject<HTMLDivElement>}
+      ref={ref as Ref<HTMLDivElement>}
       className={`
         text-solid-gray-800
         ${sizeClasses[size]}
@@ -102,4 +95,4 @@ export const Heading = forwardRef<HTMLElement, HeadingProps>((props, ref) => {
       {children}
     </Component>
   );
-});
+};

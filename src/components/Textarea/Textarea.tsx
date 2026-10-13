@@ -1,11 +1,11 @@
-import { type ComponentProps, forwardRef } from 'react';
+import type { ComponentProps } from 'react';
 
 export type TextareaProps = Omit<ComponentProps<'textarea'>, 'placeholder'> & {
   isError?: boolean;
   placeholder?: never;
 };
 
-export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>((props, ref) => {
+export const Textarea = (props: TextareaProps) => {
   const { className, isError, readOnly, ...rest } = props;
 
   return (
@@ -21,8 +21,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>((props, r
       `}
       aria-invalid={isError || undefined}
       readOnly={props['aria-disabled'] ? true : readOnly}
-      ref={ref}
       {...rest}
     />
   );
-});
+};

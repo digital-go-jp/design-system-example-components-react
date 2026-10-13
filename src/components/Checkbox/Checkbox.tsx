@@ -1,4 +1,4 @@
-import { type ComponentProps, forwardRef } from 'react';
+import type { ComponentProps } from 'react';
 
 export type CheckboxSize = 'sm' | 'md' | 'lg';
 
@@ -7,7 +7,7 @@ export type CheckboxProps = Omit<ComponentProps<'input'>, 'size'> & {
   isError?: boolean;
 };
 
-export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>((props, ref) => {
+export const Checkbox = (props: CheckboxProps) => {
   const { children, isError, onClick, size = 'sm', ...rest } = props;
 
   const handleDisabled = (e: React.MouseEvent<HTMLInputElement, MouseEvent>) => {
@@ -42,7 +42,6 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>((props, ref)
           forced-colors:!border-[ButtonText] forced-colors:checked:!bg-[Highlight] forced-colors:checked:!border-[Highlight] forced-colors:indeterminate:!bg-[Highlight] forced-colors:indeterminate:!border-[Highlight] forced-colors:before:!bg-[HighlightText] forced-colors:aria-disabled:!border-[GrayText] forced-colors:aria-disabled:checked:!bg-[GrayText] forced-colors:disabled:!border-[GrayText] forced-colors:disabled:checked:!bg-[GrayText]
         `}
         onClick={props['aria-disabled'] ? handleDisabled : onClick}
-        ref={ref}
         type='checkbox'
         data-size={size}
         data-error={isError || null}
@@ -67,4 +66,4 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>((props, ref)
   ) : (
     checkbox
   );
-});
+};

@@ -1,4 +1,4 @@
-import { type ComponentProps, forwardRef } from 'react';
+import type { ComponentProps } from 'react';
 
 export type SelectBlockSize = 'lg' | 'md' | 'sm';
 
@@ -7,7 +7,7 @@ export type SelectProps = ComponentProps<'select'> & {
   blockSize?: SelectBlockSize;
 };
 
-export const Select = forwardRef<HTMLSelectElement, SelectProps>((props, ref) => {
+export const Select = (props: SelectProps) => {
   const { children, className, isError, blockSize = 'lg', onKeyDown, onMouseDown, ...rest } = props;
 
   const handleDisabledKeyDown = (e: React.KeyboardEvent<HTMLSelectElement>) => {
@@ -36,7 +36,6 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>((props, ref) =>
         data-size={blockSize}
         onMouseDown={props['aria-disabled'] ? handleDisabledMouseDown : onMouseDown}
         onKeyDown={props['aria-disabled'] ? handleDisabledKeyDown : onKeyDown}
-        ref={ref}
         {...rest}
       >
         {children}
@@ -59,4 +58,4 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>((props, ref) =>
       </svg>
     </span>
   );
-});
+};
