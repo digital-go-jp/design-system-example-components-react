@@ -25,9 +25,8 @@ import {
 
 import { Button } from '../Button';
 import { ErrorText } from '../ErrorText';
-import { Legend } from '../Legend';
+import { Legend, RequirementBadge, SupportText } from '../FormControlLabel';
 import { Link } from '../Link';
-import { RequirementBadge } from '../RequirementBadge';
 import { Select } from '../Select';
 import {
   SeparatedDatePicker,
@@ -36,7 +35,6 @@ import {
   SeparatedDatePickerMonth,
   SeparatedDatePickerYear,
 } from '../SeparatedDatePicker';
-import { SupportText } from '../SupportText';
 
 /**
  * Separatedタイプのデートピッカー。

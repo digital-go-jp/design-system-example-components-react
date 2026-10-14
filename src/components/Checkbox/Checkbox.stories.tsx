@@ -10,10 +10,8 @@ import {
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { type ChangeEvent, useEffect, useRef, useState } from 'react';
 import { ErrorText } from '../ErrorText';
-import { Legend } from '../Legend';
+import { Legend, RequirementBadge, SupportText } from '../FormControlLabel';
 import { Link } from '../Link';
-import { RequirementBadge } from '../RequirementBadge';
-import { SupportText } from '../SupportText';
 import { Checkbox } from './Checkbox';
 
 const meta = {

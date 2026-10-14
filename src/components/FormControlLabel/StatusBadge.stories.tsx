@@ -1,11 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { StatusBadge } from './StatusBadge';
+import { StatusBadge } from './FormControlLabel';
 
 const meta = {
   id: 'Component/DADS v2/StatusBadge',
   title: 'Component/フォームコントロールラベル/StatusBadge',
   component: StatusBadge,
-  tags: ['autodocs'],
 } satisfies Meta;
 
 export default meta;

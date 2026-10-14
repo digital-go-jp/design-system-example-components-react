@@ -1,9 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useId, useState } from 'react';
-import { Label } from '../Label';
-import { Legend } from '../Legend';
-import { RequirementBadge } from '../RequirementBadge';
-import { SupportText } from '../SupportText';
+import { Label, Legend, RequirementBadge, SupportText } from '../FormControlLabel';
 import { SwitchMode, SwitchOnOff } from './Switch';
 
 const meta = {

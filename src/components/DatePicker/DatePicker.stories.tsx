@@ -33,10 +33,8 @@ import {
   DatePickerYear,
 } from '../DatePicker';
 import { ErrorText } from '../ErrorText';
-import { Legend } from '../Legend';
-import { RequirementBadge } from '../RequirementBadge';
+import { Legend, RequirementBadge, SupportText } from '../FormControlLabel';
 import { Select } from '../Select';
-import { SupportText } from '../SupportText';
 
 /**
  * Defaultタイプのデートピッカー。

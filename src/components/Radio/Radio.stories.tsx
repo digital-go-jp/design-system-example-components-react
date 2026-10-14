@@ -9,10 +9,8 @@ import {
 } from '@storybook/addon-docs/blocks';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { ErrorText } from '../ErrorText';
-import { Legend } from '../Legend';
+import { Legend, RequirementBadge, SupportText } from '../FormControlLabel';
 import { Link } from '../Link';
-import { RequirementBadge } from '../RequirementBadge';
-import { SupportText } from '../SupportText';
 import { Radio } from './Radio';
 
 const meta = {

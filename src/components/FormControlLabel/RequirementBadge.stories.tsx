@@ -1,11 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { RequirementBadge } from './RequirementBadge';
+import { RequirementBadge } from './FormControlLabel';
 
 const meta = {
   id: 'Component/DADS v2/RequirementBadge',
   title: 'Component/フォームコントロールラベル/RequirementBadge',
   component: RequirementBadge,
-  tags: ['autodocs'],
   argTypes: {
     isOptional: {
       description: '任意項目の場合に `true` を指定します。',

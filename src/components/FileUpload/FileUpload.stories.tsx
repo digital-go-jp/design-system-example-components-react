@@ -11,10 +11,8 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useId } from 'react';
 import { Button } from '../Button';
 import { Checkbox } from '../Checkbox';
-import { Label } from '../Label';
+import { Label, RequirementBadge, SupportText } from '../FormControlLabel';
 import { Link } from '../Link';
-import { RequirementBadge } from '../RequirementBadge';
-import { SupportText } from '../SupportText';
 import {
   FileUpload,
   FileUploadDropArea,
