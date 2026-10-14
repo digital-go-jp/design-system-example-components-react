@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Legend } from './FormControlLabel';
+import { useId } from 'react';
+import { Radio } from '../Radio';
+import { FormControlLabel, Legend } from './FormControlLabel';
 
 const meta = {
   id: 'Component/DADS v2/Legend',
@@ -22,6 +24,23 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Playground: Story = {
+  render: (args) => {
+    const name = useId();
+
+    return (
+      <FormControlLabel as='fieldset'>
+        <Legend {...args} />
+        <div>
+          <Radio name={name} value='email' size='md'>
+            メール
+          </Radio>
+          <Radio name={name} value='phone' size='md'>
+            電話
+          </Radio>
+        </div>
+      </FormControlLabel>
+    );
+  },
   args: {
     size: 'md',
     children: '凡例',

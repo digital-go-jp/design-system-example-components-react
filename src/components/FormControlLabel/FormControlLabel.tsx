@@ -17,7 +17,7 @@ export const FormControlLabel = (props: FormControlLabelProps) => {
     <Tag
       className={`
         flex flex-col text-std-16N-170 text-solid-gray-800
-        data-[size=sm]:gap-1 data-[size=md]:gap-2 data-[size=lg]:gap-2
+        data-[size=sm]:gap-y-1 data-[size=md]:gap-y-2 data-[size=lg]:gap-y-2
         [&>legend]:mb-2
         ${className ?? ''}
       `}
@@ -41,7 +41,7 @@ export const Label = (props: LabelProps) => {
   return (
     <label
       className={`
-        justify-self-start text-solid-gray-800
+        self-start text-solid-gray-800
         data-[size=sm]:text-std-16B-170 data-[size=md]:text-std-17B-170 data-[size=lg]:text-std-18B-160
         ${className ?? ''}
       `}
@@ -65,7 +65,7 @@ export const Legend = (props: LegendProps) => {
   return (
     <legend
       className={`
-        flex w-fit items-center justify-self-start gap-2 text-solid-gray-800
+        inline self-start text-solid-gray-800
         data-[size=sm]:text-std-16B-170 data-[size=md]:text-std-17B-170 data-[size=lg]:text-std-18B-160
         ${className ?? ''}
       `}
@@ -87,7 +87,7 @@ export const RequirementBadge = (props: RequirementBadgeProps) => {
   return (
     <span
       className={`
-        ml-2 inline-block text-oln-16N-100 text-red-800
+        ml-1 text-std-16N-170 text-error-1 before:content-['_']
         data-[is-optional]:text-solid-gray-800
         ${className ?? ''}
       `}
@@ -104,7 +104,7 @@ export const StatusBadge = (props: ComponentProps<'span'>) => {
 
   return (
     <span
-      className={`ml-2 inline-block rounded-8 bg-solid-gray-536 p-2 text-oln-16N-100 text-white outline-1 outline-transparent ${className ?? ''}`}
+      className={`ml-1 inline-block rounded-8 bg-solid-gray-536 p-2 text-oln-16N-100 text-white outline outline-1 outline-transparent ${className ?? ''}`}
       {...rest}
     >
       {children}

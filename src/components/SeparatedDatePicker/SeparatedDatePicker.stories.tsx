@@ -140,15 +140,17 @@ export const WithFieldset: Story = {
           日付<RequirementBadge>※必須</RequirementBadge>
         </Legend>
         <SupportText id='date-picker-2-support-text'>西暦、半角</SupportText>
-        <SeparatedDatePicker {...args}>
-          {({ ...rest }) => (
-            <>
-              <SeparatedDatePickerYear aria-describedby='date-picker-2-support-text' {...rest} />
-              <SeparatedDatePickerMonth aria-describedby='date-picker-2-support-text' {...rest} />
-              <SeparatedDatePickerDate aria-describedby='date-picker-2-support-text' {...rest} />
-            </>
-          )}
-        </SeparatedDatePicker>
+        <div>
+          <SeparatedDatePicker {...args}>
+            {({ ...rest }) => (
+              <>
+                <SeparatedDatePickerYear aria-describedby='date-picker-2-support-text' {...rest} />
+                <SeparatedDatePickerMonth aria-describedby='date-picker-2-support-text' {...rest} />
+                <SeparatedDatePickerDate aria-describedby='date-picker-2-support-text' {...rest} />
+              </>
+            )}
+          </SeparatedDatePicker>
+        </div>
       </FormControlLabel>
     );
   },
@@ -170,26 +172,28 @@ export const Errored: Story = {
           日付<RequirementBadge>※必須</RequirementBadge>
         </Legend>
         <SupportText id='date-picker-4-support-text'>西暦、半角</SupportText>
-        <SeparatedDatePicker {...args}>
-          {({ ...rest }) => (
-            <>
-              <SeparatedDatePickerYear
-                aria-describedby='date-picker-4-error-text date-picker-4-support-text'
-                {...rest}
-              />
-              <SeparatedDatePickerMonth
-                defaultValue={10}
-                aria-describedby='date-picker-4-support-text'
-                {...rest}
-              />
-              <SeparatedDatePickerDate
-                defaultValue={28}
-                aria-describedby='date-picker-4-support-text'
-                {...rest}
-              />
-            </>
-          )}
-        </SeparatedDatePicker>
+        <div>
+          <SeparatedDatePicker {...args}>
+            {({ ...rest }) => (
+              <>
+                <SeparatedDatePickerYear
+                  aria-describedby='date-picker-4-error-text date-picker-4-support-text'
+                  {...rest}
+                />
+                <SeparatedDatePickerMonth
+                  defaultValue={10}
+                  aria-describedby='date-picker-4-support-text'
+                  {...rest}
+                />
+                <SeparatedDatePickerDate
+                  defaultValue={28}
+                  aria-describedby='date-picker-4-support-text'
+                  {...rest}
+                />
+              </>
+            )}
+          </SeparatedDatePicker>
+        </div>
         <ErrorText id='date-picker-4-error-text'>＊正しい日付を入力してください。</ErrorText>
       </FormControlLabel>
     );
@@ -214,15 +218,17 @@ export const Disabled: Story = {
         <SupportText id='date-picker-5-support-text'>
           〜の理由により、この項目は編集できません。
         </SupportText>
-        <SeparatedDatePicker {...args}>
-          {({ ...rest }) => (
-            <>
-              <SeparatedDatePickerYear aria-describedby='date-picker-5-support-text' {...rest} />
-              <SeparatedDatePickerMonth aria-describedby='date-picker-5-support-text' {...rest} />
-              <SeparatedDatePickerDate aria-describedby='date-picker-5-support-text' {...rest} />
-            </>
-          )}
-        </SeparatedDatePicker>
+        <div>
+          <SeparatedDatePicker {...args}>
+            {({ ...rest }) => (
+              <>
+                <SeparatedDatePickerYear aria-describedby='date-picker-5-support-text' {...rest} />
+                <SeparatedDatePickerMonth aria-describedby='date-picker-5-support-text' {...rest} />
+                <SeparatedDatePickerDate aria-describedby='date-picker-5-support-text' {...rest} />
+              </>
+            )}
+          </SeparatedDatePicker>
+        </div>
       </FormControlLabel>
     );
   },
@@ -244,27 +250,29 @@ export const Readonly: Story = {
         <SupportText id='date-picker-6-support-text'>
           〜の理由により、この項目は編集できません。
         </SupportText>
-        <SeparatedDatePicker {...args}>
-          {({ ...rest }) => (
-            <>
-              <SeparatedDatePickerYear
-                value={2025}
-                aria-describedby='date-picker-6-support-text'
-                {...rest}
-              />
-              <SeparatedDatePickerMonth
-                value={10}
-                aria-describedby='date-picker-6-support-text'
-                {...rest}
-              />
-              <SeparatedDatePickerDate
-                value={28}
-                aria-describedby='date-picker-6-support-text'
-                {...rest}
-              />
-            </>
-          )}
-        </SeparatedDatePicker>
+        <div>
+          <SeparatedDatePicker {...args}>
+            {({ ...rest }) => (
+              <>
+                <SeparatedDatePickerYear
+                  value={2025}
+                  aria-describedby='date-picker-6-support-text'
+                  {...rest}
+                />
+                <SeparatedDatePickerMonth
+                  value={10}
+                  aria-describedby='date-picker-6-support-text'
+                  {...rest}
+                />
+                <SeparatedDatePickerDate
+                  value={28}
+                  aria-describedby='date-picker-6-support-text'
+                  {...rest}
+                />
+              </>
+            )}
+          </SeparatedDatePicker>
+        </div>
       </FormControlLabel>
     );
   },

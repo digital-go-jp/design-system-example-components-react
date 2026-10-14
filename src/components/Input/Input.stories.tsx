@@ -93,13 +93,15 @@ export const Playground: Story = {
           ラベル<RequirementBadge>※必須</RequirementBadge>
         </Label>
         <SupportText id={supportTextId}>サポートテキスト</SupportText>
-        <Input
-          aria-describedby={describedBy}
-          defaultValue='入力テキスト'
-          id={formId}
-          name='playground'
-          {...args}
-        />
+        <div>
+          <Input
+            aria-describedby={describedBy}
+            defaultValue='入力テキスト'
+            id={formId}
+            name='playground'
+            {...args}
+          />
+        </div>
         {isError && <ErrorText id={errorTextId}>＊エラーテキスト</ErrorText>}
       </FormControlLabel>
     );
@@ -124,7 +126,9 @@ export const Errored: Story = {
           ラベル<RequirementBadge>※必須</RequirementBadge>
         </Label>
         <SupportText id={supportTextId}>サポートテキスト</SupportText>
-        <Input aria-describedby={describedBy} id={formId} name='error' {...args} />
+        <div>
+          <Input aria-describedby={describedBy} id={formId} name='error' {...args} />
+        </div>
         <ErrorText id={errorTextId}>＊エラーテキスト</ErrorText>
       </FormControlLabel>
     );
@@ -150,14 +154,16 @@ export const Disabled: Story = {
           <StatusBadge>無効</StatusBadge>
         </Label>
         <SupportText id={supportTextId}>〜の理由により、この項目は無効化されています。</SupportText>
-        <Input
-          aria-describedby={supportTextId}
-          aria-disabled={true}
-          defaultValue='入力テキスト'
-          id={formId}
-          name='disabled'
-          {...args}
-        />
+        <div>
+          <Input
+            aria-describedby={supportTextId}
+            aria-disabled={true}
+            defaultValue='入力テキスト'
+            id={formId}
+            name='disabled'
+            {...args}
+          />
+        </div>
       </FormControlLabel>
     );
   },
@@ -181,14 +187,16 @@ export const Readonly: Story = {
           <StatusBadge>編集不可</StatusBadge>
         </Label>
         <SupportText id={supportTextId}>〜の理由により、この項目は編集できません。</SupportText>
-        <Input
-          aria-describedby={supportTextId}
-          defaultValue='入力テキスト'
-          id={controlId}
-          name='readonly'
-          readOnly
-          {...args}
-        />
+        <div>
+          <Input
+            aria-describedby={supportTextId}
+            defaultValue='入力テキスト'
+            id={controlId}
+            name='readonly'
+            readOnly
+            {...args}
+          />
+        </div>
       </FormControlLabel>
     );
   },

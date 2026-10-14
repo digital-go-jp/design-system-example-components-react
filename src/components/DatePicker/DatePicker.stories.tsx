@@ -140,15 +140,17 @@ export const WithFieldset: Story = {
           日付<RequirementBadge>※必須</RequirementBadge>
         </Legend>
         <SupportText id='date-picker-1-support-text'>例：2025年01月20日</SupportText>
-        <DatePicker {...args}>
-          {({ yearRef, monthRef, dateRef, ...rest }) => (
-            <>
-              <DatePickerYear ref={yearRef} {...rest} />
-              <DatePickerMonth ref={monthRef} {...rest} />
-              <DatePickerDate ref={dateRef} {...rest} />
-            </>
-          )}
-        </DatePicker>
+        <div>
+          <DatePicker {...args}>
+            {({ yearRef, monthRef, dateRef, ...rest }) => (
+              <>
+                <DatePickerYear ref={yearRef} {...rest} />
+                <DatePickerMonth ref={monthRef} {...rest} />
+                <DatePickerDate ref={dateRef} {...rest} />
+              </>
+            )}
+          </DatePicker>
+        </div>
       </FormControlLabel>
     );
   },
@@ -170,29 +172,31 @@ export const Errored: Story = {
           日付<RequirementBadge>※必須</RequirementBadge>
         </Legend>
         <SupportText id='date-picker-3-support-text'>例：2025年01月20日</SupportText>
-        <DatePicker {...args}>
-          {({ yearRef, monthRef, dateRef, ...rest }) => (
-            <>
-              <DatePickerYear
-                ref={yearRef}
-                aria-describedby='date-picker-3-support-text date-picker-3-error-text'
-                {...rest}
-              />
-              <DatePickerMonth
-                ref={monthRef}
-                defaultValue={10}
-                aria-describedby='date-picker-3-support-text date-picker-3-error-text'
-                {...rest}
-              />
-              <DatePickerDate
-                ref={dateRef}
-                defaultValue={28}
-                aria-describedby='date-picker-3-support-text date-picker-3-error-text'
-                {...rest}
-              />
-            </>
-          )}
-        </DatePicker>
+        <div>
+          <DatePicker {...args}>
+            {({ yearRef, monthRef, dateRef, ...rest }) => (
+              <>
+                <DatePickerYear
+                  ref={yearRef}
+                  aria-describedby='date-picker-3-support-text date-picker-3-error-text'
+                  {...rest}
+                />
+                <DatePickerMonth
+                  ref={monthRef}
+                  defaultValue={10}
+                  aria-describedby='date-picker-3-support-text date-picker-3-error-text'
+                  {...rest}
+                />
+                <DatePickerDate
+                  ref={dateRef}
+                  defaultValue={28}
+                  aria-describedby='date-picker-3-support-text date-picker-3-error-text'
+                  {...rest}
+                />
+              </>
+            )}
+          </DatePicker>
+        </div>
         <ErrorText id='date-picker-3-error-text'>＊正しい日付を入力してください。</ErrorText>
       </FormControlLabel>
     );
@@ -215,27 +219,29 @@ export const Disabled: Story = {
         <SupportText id='date-picker-5-support-text'>
           〜の理由により、この項目は編集できません。
         </SupportText>
-        <DatePicker {...args}>
-          {({ yearRef, monthRef, dateRef, ...rest }) => (
-            <>
-              <DatePickerYear
-                ref={yearRef}
-                aria-describedby='date-picker-5-support-text'
-                {...rest}
-              />
-              <DatePickerMonth
-                ref={monthRef}
-                aria-describedby='date-picker-5-support-text'
-                {...rest}
-              />
-              <DatePickerDate
-                ref={dateRef}
-                aria-describedby='date-picker-5-support-text'
-                {...rest}
-              />
-            </>
-          )}
-        </DatePicker>
+        <div>
+          <DatePicker {...args}>
+            {({ yearRef, monthRef, dateRef, ...rest }) => (
+              <>
+                <DatePickerYear
+                  ref={yearRef}
+                  aria-describedby='date-picker-5-support-text'
+                  {...rest}
+                />
+                <DatePickerMonth
+                  ref={monthRef}
+                  aria-describedby='date-picker-5-support-text'
+                  {...rest}
+                />
+                <DatePickerDate
+                  ref={dateRef}
+                  aria-describedby='date-picker-5-support-text'
+                  {...rest}
+                />
+              </>
+            )}
+          </DatePicker>
+        </div>
       </FormControlLabel>
     );
   },
@@ -257,30 +263,32 @@ export const Readonly: Story = {
         <SupportText id='date-picker-6-support-text'>
           〜の理由により、この項目は編集できません。
         </SupportText>
-        <DatePicker {...args}>
-          {({ yearRef, monthRef, dateRef, ...rest }) => (
-            <>
-              <DatePickerYear
-                ref={yearRef}
-                value={2025}
-                aria-describedby='date-picker-6-support-text'
-                {...rest}
-              />
-              <DatePickerMonth
-                ref={monthRef}
-                value={10}
-                aria-describedby='date-picker-6-support-text'
-                {...rest}
-              />
-              <DatePickerDate
-                ref={dateRef}
-                value={28}
-                aria-describedby='date-picker-6-support-text'
-                {...rest}
-              />
-            </>
-          )}
-        </DatePicker>
+        <div>
+          <DatePicker {...args}>
+            {({ yearRef, monthRef, dateRef, ...rest }) => (
+              <>
+                <DatePickerYear
+                  ref={yearRef}
+                  value={2025}
+                  aria-describedby='date-picker-6-support-text'
+                  {...rest}
+                />
+                <DatePickerMonth
+                  ref={monthRef}
+                  value={10}
+                  aria-describedby='date-picker-6-support-text'
+                  {...rest}
+                />
+                <DatePickerDate
+                  ref={dateRef}
+                  value={28}
+                  aria-describedby='date-picker-6-support-text'
+                  {...rest}
+                />
+              </>
+            )}
+          </DatePicker>
+        </div>
       </FormControlLabel>
     );
   },

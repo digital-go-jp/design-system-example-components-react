@@ -103,7 +103,7 @@ export const Stacked: Story = {
         ラベル<RequirementBadge>※必須</RequirementBadge>
       </Legend>
       <SupportText id='stacked-support-text'>サポートテキスト</SupportText>
-      <div className='flex flex-col gap-2'>
+      <div className='flex flex-col'>
         <Checkbox aria-describedby='stacked-support-text' {...args}>
           選択肢1
         </Checkbox>
