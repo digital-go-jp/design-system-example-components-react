@@ -1,4 +1,33 @@
-import type { ComponentProps } from 'react';
+import type { ComponentProps, ElementType } from 'react';
+
+export type FormControlLabelSize = 'sm' | 'md' | 'lg';
+
+export type FormControlLabelProps = (
+  | (ComponentProps<'div'> & { as?: 'div' })
+  | (ComponentProps<'fieldset'> & { as: 'fieldset' })
+) & {
+  size?: FormControlLabelSize;
+};
+
+export const FormControlLabel = (props: FormControlLabelProps) => {
+  const { as: As = 'div', children, className, size = 'md', ...rest } = props;
+  const Tag = As as ElementType;
+
+  return (
+    <Tag
+      className={`
+        flex flex-col text-std-16N-170 text-solid-gray-800
+        data-[size=sm]:gap-1 data-[size=md]:gap-2 data-[size=lg]:gap-2
+        [&>legend]:mb-2
+        ${className ?? ''}
+      `}
+      data-size={size}
+      {...rest}
+    >
+      {children}
+    </Tag>
+  );
+};
 
 export type LabelSize = 'lg' | 'md' | 'sm';
 
@@ -12,7 +41,7 @@ export const Label = (props: LabelProps) => {
   return (
     <label
       className={`
-        text-solid-gray-800
+        justify-self-start text-solid-gray-800
         data-[size=sm]:text-std-16B-170 data-[size=md]:text-std-17B-170 data-[size=lg]:text-std-18B-160
         ${className ?? ''}
       `}
@@ -36,7 +65,7 @@ export const Legend = (props: LegendProps) => {
   return (
     <legend
       className={`
-        flex w-fit items-center gap-2 text-solid-gray-800
+        flex w-fit items-center justify-self-start gap-2 text-solid-gray-800
         data-[size=sm]:text-std-16B-170 data-[size=md]:text-std-17B-170 data-[size=lg]:text-std-18B-160
         ${className ?? ''}
       `}

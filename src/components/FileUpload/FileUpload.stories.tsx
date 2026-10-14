@@ -11,7 +11,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useId } from 'react';
 import { Button } from '../Button';
 import { Checkbox } from '../Checkbox';
-import { Label, RequirementBadge, SupportText } from '../FormControlLabel';
+import { FormControlLabel, Label, RequirementBadge, SupportText } from '../FormControlLabel';
 import { Link } from '../Link';
 import {
   FileUpload,
@@ -655,7 +655,7 @@ export const Playground: StoryObj<FileUploadPlaygroundProps> = {
     );
 
     return (
-      <div className='flex flex-col gap-2'>
+      <FormControlLabel>
         <Label id={labelId} htmlFor={inputId}>
           参照する画像・ドキュメント
           <RequirementBadge isOptional>※任意</RequirementBadge>
@@ -672,7 +672,7 @@ export const Playground: StoryObj<FileUploadPlaygroundProps> = {
             ? `合計${maxTotalSize}（${maxTotalSizeBytes.toLocaleString()}バイト）まで`
             : ''}
         </SupportText>
-        <FileUpload className='mt-2' maxFiles={maxFiles} hasError={hasError} droppable={droppable}>
+        <FileUpload maxFiles={maxFiles} hasError={hasError} droppable={droppable}>
           <FileUploadInput
             id={inputId}
             name='file-upload-1'
@@ -738,7 +738,7 @@ export const Playground: StoryObj<FileUploadPlaygroundProps> = {
             </FileUploadViewportOverlay>
           )}
         </FileUpload>
-      </div>
+      </FormControlLabel>
     );
   },
 };
@@ -830,7 +830,7 @@ export const WithExistingFiles: Story = {
     });
 
     return (
-      <div className='flex flex-col gap-2'>
+      <FormControlLabel>
         <Label id={labelId} htmlFor={inputId}>
           参照する画像・ドキュメント
           <RequirementBadge isOptional>※任意</RequirementBadge>
@@ -847,7 +847,7 @@ export const WithExistingFiles: Story = {
             ? `合計${maxTotalSize}（${maxTotalSizeBytes.toLocaleString()}バイト）まで`
             : ''}
         </SupportText>
-        <FileUpload className='mt-2' maxFiles={maxFiles} hasError={hasError} droppable>
+        <FileUpload maxFiles={maxFiles} hasError={hasError} droppable>
           <FileUploadInput
             id={inputId}
             name='file-upload-2'
@@ -970,7 +970,7 @@ export const WithExistingFiles: Story = {
             </FileUploadViewportOverlay>
           )}
         </FileUpload>
-      </div>
+      </FormControlLabel>
     );
   },
 };

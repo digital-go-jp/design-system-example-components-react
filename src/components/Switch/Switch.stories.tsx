@@ -1,6 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useId, useState } from 'react';
-import { Label, Legend, RequirementBadge, SupportText } from '../FormControlLabel';
+import {
+  FormControlLabel,
+  Label,
+  Legend,
+  RequirementBadge,
+  SupportText,
+} from '../FormControlLabel';
 import { SwitchMode, SwitchOnOff } from './Switch';
 
 const meta = {
@@ -58,7 +64,7 @@ export const WithFormControlLabelOnOff: StoryObj<SwitchOnOffPlaygroundArgs> = {
     const supportTextId = useId();
 
     return (
-      <div className='flex flex-col items-start gap-2'>
+      <FormControlLabel>
         <Label htmlFor={formId}>
           ラベル<RequirementBadge>※必須</RequirementBadge>
         </Label>
@@ -70,7 +76,7 @@ export const WithFormControlLabelOnOff: StoryObj<SwitchOnOffPlaygroundArgs> = {
           disabled={disabled}
           onClick={() => setChecked((prev) => !prev)}
         />
-      </div>
+      </FormControlLabel>
     );
   },
   args: {
@@ -145,7 +151,7 @@ export const WithFormControlLabelMode: StoryObj<SwitchModePlaygroundArgs> = {
     const supportTextId = useId();
 
     return (
-      <fieldset className='flex flex-col items-start gap-2'>
+      <FormControlLabel as='fieldset'>
         <Legend>
           ラベル<RequirementBadge>※必須</RequirementBadge>
         </Legend>
@@ -158,7 +164,7 @@ export const WithFormControlLabelMode: StoryObj<SwitchModePlaygroundArgs> = {
           aria-describedby={supportTextId}
           disabled={disabled}
         />
-      </fieldset>
+      </FormControlLabel>
     );
   },
   args: {

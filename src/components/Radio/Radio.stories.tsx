@@ -9,7 +9,7 @@ import {
 } from '@storybook/addon-docs/blocks';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { ErrorText } from '../ErrorText';
-import { Legend, RequirementBadge, SupportText } from '../FormControlLabel';
+import { FormControlLabel, Legend, RequirementBadge, SupportText } from '../FormControlLabel';
 import { Link } from '../Link';
 import { Radio } from './Radio';
 
@@ -97,14 +97,12 @@ export const Standalone: Story = {
 
 export const Stacked: Story = {
   render: ({ ...args }) => (
-    <fieldset>
+    <FormControlLabel as='fieldset'>
       <Legend>
         ラベル<RequirementBadge>※必須</RequirementBadge>
       </Legend>
-      <SupportText className='mt-2' id='stacked-support-text'>
-        サポートテキスト
-      </SupportText>
-      <div className='mt-1 flex flex-col'>
+      <SupportText id='stacked-support-text'>サポートテキスト</SupportText>
+      <div className='flex flex-col'>
         <Radio aria-describedby='stacked-support-text' name='a' {...args}>
           選択肢1
         </Radio>
@@ -115,7 +113,7 @@ export const Stacked: Story = {
           選択肢3
         </Radio>
       </div>
-    </fieldset>
+    </FormControlLabel>
   ),
   args: {
     size: 'sm',
@@ -126,14 +124,12 @@ export const Stacked: Story = {
 
 export const Inline: Story = {
   render: ({ ...args }) => (
-    <fieldset>
+    <FormControlLabel as='fieldset'>
       <Legend>
         ラベル<RequirementBadge>※必須</RequirementBadge>
       </Legend>
-      <SupportText className='mt-2' id='inline-support-text'>
-        サポートテキスト
-      </SupportText>
-      <div className='mt-1 flex flex-wrap gap-x-4'>
+      <SupportText id='inline-support-text'>サポートテキスト</SupportText>
+      <div className='flex flex-wrap gap-x-4'>
         <Radio aria-describedby='inline-support-text' name='d' {...args}>
           選択肢1
         </Radio>
@@ -144,7 +140,7 @@ export const Inline: Story = {
           選択肢3
         </Radio>
       </div>
-    </fieldset>
+    </FormControlLabel>
   ),
   args: {
     size: 'sm',
@@ -157,14 +153,12 @@ export const Errored: Story = {
   render: ({ ...args }) => {
     return (
       <div className='flex flex-col gap-16'>
-        <fieldset>
+        <FormControlLabel as='fieldset'>
           <Legend>
             ラベル<RequirementBadge>※必須</RequirementBadge>
           </Legend>
-          <SupportText className='mt-2' id='error-1-support-text'>
-            サポートテキスト
-          </SupportText>
-          <div className='mt-1 flex flex-col'>
+          <SupportText id='error-1-support-text'>サポートテキスト</SupportText>
+          <div className='flex flex-col'>
             <Radio aria-describedby='error-1-support-text error-1-text' name='g' {...args}>
               選択肢1
             </Radio>
@@ -180,18 +174,14 @@ export const Errored: Story = {
               選択肢3
             </Radio>
           </div>
-          <ErrorText className='mt-2' id='error-1-text'>
-            ＊エラーテキストが入ります。
-          </ErrorText>
-        </fieldset>
-        <fieldset>
+          <ErrorText id='error-1-text'>＊エラーテキストが入ります。</ErrorText>
+        </FormControlLabel>
+        <FormControlLabel as='fieldset'>
           <Legend>
             ラベル<RequirementBadge>※必須</RequirementBadge>
           </Legend>
-          <SupportText className='mt-2' id='error-2-support-text'>
-            サポートテキスト
-          </SupportText>
-          <div className='mt-1 flex flex-wrap gap-x-4'>
+          <SupportText id='error-2-support-text'>サポートテキスト</SupportText>
+          <div className='flex flex-wrap gap-x-4'>
             <Radio aria-describedby='error-2-support-text error-2-text' name='h' {...args}>
               選択肢1
             </Radio>
@@ -207,10 +197,8 @@ export const Errored: Story = {
               選択肢3
             </Radio>
           </div>
-          <ErrorText className='mt-2' id='error-2-text'>
-            ＊エラーテキストが入ります。
-          </ErrorText>
-        </fieldset>
+          <ErrorText id='error-2-text'>＊エラーテキストが入ります。</ErrorText>
+        </FormControlLabel>
       </div>
     );
   },
@@ -232,14 +220,14 @@ export const Disabled: Story = {
   render: ({ ...args }) => {
     return (
       <div className='flex flex-col gap-16'>
-        <fieldset>
+        <FormControlLabel as='fieldset'>
           <Legend>
             ラベル<RequirementBadge>※必須</RequirementBadge>
           </Legend>
-          <SupportText className='mt-2' id='disabled-1-support-text'>
+          <SupportText id='disabled-1-support-text'>
             〜の理由により、この項目は無効化されています。
           </SupportText>
-          <div className='mt-1 flex flex-col'>
+          <div className='flex flex-col'>
             <Radio aria-describedby='disabled-1-support-text' name='i' {...args}>
               選択肢1
             </Radio>
@@ -250,15 +238,15 @@ export const Disabled: Story = {
               選択肢3
             </Radio>
           </div>
-        </fieldset>
-        <fieldset>
+        </FormControlLabel>
+        <FormControlLabel as='fieldset'>
           <Legend>
             ラベル<RequirementBadge>※必須</RequirementBadge>
           </Legend>
-          <SupportText className='mt-2' id='disabled-2-support-text'>
+          <SupportText id='disabled-2-support-text'>
             〜の理由により、この項目は無効化されています。
           </SupportText>
-          <div className='mt-1 flex flex-wrap gap-x-4'>
+          <div className='flex flex-wrap gap-x-4'>
             <Radio aria-describedby='disabled-2-support-text' name='j' {...args}>
               選択肢1
             </Radio>
@@ -269,7 +257,7 @@ export const Disabled: Story = {
               選択肢3
             </Radio>
           </div>
-        </fieldset>
+        </FormControlLabel>
       </div>
     );
   },

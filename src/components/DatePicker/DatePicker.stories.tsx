@@ -24,7 +24,6 @@ import {
 } from 'react-aria-components';
 
 import { Button } from '../Button';
-import { Link } from '../Link';
 import {
   DatePicker,
   DatePickerCalendarButton,
@@ -33,7 +32,8 @@ import {
   DatePickerYear,
 } from '../DatePicker';
 import { ErrorText } from '../ErrorText';
-import { Legend, RequirementBadge, SupportText } from '../FormControlLabel';
+import { FormControlLabel, Legend, RequirementBadge, SupportText } from '../FormControlLabel';
+import { Link } from '../Link';
 import { Select } from '../Select';
 
 /**
@@ -135,7 +135,7 @@ export const Playground: Story = {};
 export const WithFieldset: Story = {
   render({ ...args }) {
     return (
-      <fieldset className='flex flex-col gap-2 items-start'>
+      <FormControlLabel as='fieldset'>
         <Legend>
           日付<RequirementBadge>※必須</RequirementBadge>
         </Legend>
@@ -149,7 +149,7 @@ export const WithFieldset: Story = {
             </>
           )}
         </DatePicker>
-      </fieldset>
+      </FormControlLabel>
     );
   },
 };
@@ -165,7 +165,7 @@ export const Errored: Story = {
   },
   render({ ...args }) {
     return (
-      <fieldset className='flex flex-col gap-2 items-start'>
+      <FormControlLabel as='fieldset'>
         <Legend>
           日付<RequirementBadge>※必須</RequirementBadge>
         </Legend>
@@ -194,7 +194,7 @@ export const Errored: Story = {
           )}
         </DatePicker>
         <ErrorText id='date-picker-3-error-text'>＊正しい日付を入力してください。</ErrorText>
-      </fieldset>
+      </FormControlLabel>
     );
   },
 };
@@ -208,7 +208,7 @@ export const Disabled: Story = {
   },
   render({ ...args }) {
     return (
-      <fieldset className='flex flex-col gap-2 items-start'>
+      <FormControlLabel as='fieldset'>
         <Legend>
           日付<RequirementBadge isOptional>※任意</RequirementBadge>
         </Legend>
@@ -236,7 +236,7 @@ export const Disabled: Story = {
             </>
           )}
         </DatePicker>
-      </fieldset>
+      </FormControlLabel>
     );
   },
 };
@@ -250,7 +250,7 @@ export const Readonly: Story = {
   },
   render({ ...args }) {
     return (
-      <fieldset className='flex flex-col gap-2 items-start'>
+      <FormControlLabel as='fieldset'>
         <Legend>
           日付<RequirementBadge isOptional>※任意</RequirementBadge>
         </Legend>
@@ -281,7 +281,7 @@ export const Readonly: Story = {
             </>
           )}
         </DatePicker>
-      </fieldset>
+      </FormControlLabel>
     );
   },
 };

@@ -10,7 +10,13 @@ import {
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
 import { ErrorText } from '../ErrorText';
-import { Label, Legend, RequirementBadge, SupportText } from '../FormControlLabel';
+import {
+  FormControlLabel,
+  Label,
+  Legend,
+  RequirementBadge,
+  SupportText,
+} from '../FormControlLabel';
 import { Link } from '../Link';
 import { Select } from './Select';
 
@@ -80,13 +86,13 @@ type Story = StoryObj<typeof meta>;
 export const Playground: Story = {
   decorators: [
     (Story, context) => (
-      <div className='flex flex-col items-start gap-2'>
+      <FormControlLabel>
         <Label htmlFor={context.args.id}>
           ラベル{context.args.required && <RequirementBadge>※必須</RequirementBadge>}
         </Label>
         <SupportText id={context.args['aria-describedby']}>サポートテキスト</SupportText>
         <Story />
-      </div>
+      </FormControlLabel>
     ),
   ],
   args: {
@@ -113,11 +119,11 @@ export const InlineWithGrouping: Story = {
 
     return (
       <div className='flex flex-col gap-8'>
-        <fieldset className='flex flex-col gap-2'>
-          <Legend size='lg'>フォームコントロールグループ</Legend>
+        <FormControlLabel as='fieldset'>
+          <Legend>フォームコントロールグループ</Legend>
           <SupportText id='inline-group-support-text'>サポートテキスト</SupportText>
           <div className='flex gap-4'>
-            <div className='flex flex-col gap-2'>
+            <FormControlLabel>
               <Label htmlFor={`${formId}-inline-group-1`}>ラベル1</Label>
               <Select
                 aria-describedby='inline-group-support-text'
@@ -129,9 +135,9 @@ export const InlineWithGrouping: Story = {
                 <option value='2'>選択肢2</option>
                 <option value='3'>選択肢3</option>
               </Select>
-            </div>
+            </FormControlLabel>
 
-            <div className='flex flex-col gap-2'>
+            <FormControlLabel>
               <Label htmlFor={`${formId}-inline-group-2`}>ラベル2</Label>
               <Select
                 aria-describedby='inline-group-support-text'
@@ -143,9 +149,9 @@ export const InlineWithGrouping: Story = {
                 <option value='2'>選択肢2</option>
                 <option value='3'>選択肢3</option>
               </Select>
-            </div>
+            </FormControlLabel>
 
-            <div className='flex flex-col gap-2'>
+            <FormControlLabel>
               <Label htmlFor={`${formId}-inline-group-3`}>ラベル3</Label>
               <Select
                 aria-describedby='inline-group-support-text'
@@ -157,9 +163,9 @@ export const InlineWithGrouping: Story = {
                 <option value='2'>選択肢2</option>
                 <option value='3'>選択肢3</option>
               </Select>
-            </div>
+            </FormControlLabel>
           </div>
-        </fieldset>
+        </FormControlLabel>
       </div>
     );
   },
@@ -171,7 +177,7 @@ export const Errored: Story = {
 
     return (
       <div className='flex flex-col gap-8'>
-        <div className='flex flex-col gap-2'>
+        <FormControlLabel>
           <Label htmlFor={`${formId}-error`}>
             ラベル<RequirementBadge>※必須</RequirementBadge>
           </Label>
@@ -190,7 +196,7 @@ export const Errored: Story = {
             <option value='3'>選択肢3</option>
           </Select>
           <ErrorText id='error-text'>＊エラーテキスト</ErrorText>
-        </div>
+        </FormControlLabel>
       </div>
     );
   },
@@ -202,7 +208,7 @@ export const Disabled: Story = {
 
     return (
       <div className='flex flex-col gap-8'>
-        <div className='flex flex-col gap-2'>
+        <FormControlLabel>
           <Label htmlFor={`${formId}-disabled`}>ラベル</Label>
           <SupportText id='disabled-support-text'>
             〜の理由により、この項目は無効化されています。
@@ -218,7 +224,7 @@ export const Disabled: Story = {
             <option value='2'>選択肢2</option>
             <option value='3'>選択肢3</option>
           </Select>
-        </div>
+        </FormControlLabel>
       </div>
     );
   },
@@ -230,7 +236,7 @@ export const WidthExamples: Story = {
 
     return (
       <div className='flex flex-col gap-8'>
-        <div className='flex flex-col gap-2'>
+        <FormControlLabel>
           <Label htmlFor={`${formId}-full-width`}>100%幅のセレクトボックス</Label>
           <SupportText id='full-width-support-text'>サポートテキスト</SupportText>
           <Select
@@ -245,8 +251,8 @@ export const WidthExamples: Story = {
             <option value='2'>選択肢2</option>
             <option value='3'>選択肢3</option>
           </Select>
-        </div>
-        <div className='flex flex-col gap-2'>
+        </FormControlLabel>
+        <FormControlLabel>
           <Label htmlFor={`${formId}-specific-width`}>
             特定の幅（256 CSS px）を指定したセレクトボックス
           </Label>
@@ -265,8 +271,8 @@ export const WidthExamples: Story = {
               <option value='3'>選択肢3</option>
             </Select>
           </div>
-        </div>
-        <div className='flex flex-col gap-2'>
+        </FormControlLabel>
+        <FormControlLabel>
           <Label htmlFor={`${formId}-fit-width`}>内容にフィットしたセレクトボックス</Label>
           <SupportText id='fit-width-support-text'>サポートテキスト</SupportText>
           <div className='w-fit'>
@@ -283,7 +289,7 @@ export const WidthExamples: Story = {
               <option value='3'>選択肢3</option>
             </Select>
           </div>
-        </div>
+        </FormControlLabel>
       </div>
     );
   },

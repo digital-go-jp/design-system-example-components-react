@@ -10,7 +10,7 @@ import {
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { type ChangeEvent, useEffect, useRef, useState } from 'react';
 import { ErrorText } from '../ErrorText';
-import { Legend, RequirementBadge, SupportText } from '../FormControlLabel';
+import { FormControlLabel, Legend, RequirementBadge, SupportText } from '../FormControlLabel';
 import { Link } from '../Link';
 import { Checkbox } from './Checkbox';
 
@@ -98,14 +98,12 @@ export const Standalone: Story = {
 
 export const Stacked: Story = {
   render: ({ ...args }) => (
-    <fieldset>
+    <FormControlLabel as='fieldset'>
       <Legend>
         ラベル<RequirementBadge>※必須</RequirementBadge>
       </Legend>
-      <SupportText className='mt-2' id='stacked-support-text'>
-        サポートテキスト
-      </SupportText>
-      <div className='mt-2 flex flex-col gap-2'>
+      <SupportText id='stacked-support-text'>サポートテキスト</SupportText>
+      <div className='flex flex-col gap-2'>
         <Checkbox aria-describedby='stacked-support-text' {...args}>
           選択肢1
         </Checkbox>
@@ -116,7 +114,7 @@ export const Stacked: Story = {
           選択肢3
         </Checkbox>
       </div>
-    </fieldset>
+    </FormControlLabel>
   ),
   args: {
     size: 'sm',
@@ -127,14 +125,12 @@ export const Stacked: Story = {
 
 export const Inline: Story = {
   render: ({ ...args }) => (
-    <fieldset>
+    <FormControlLabel as='fieldset'>
       <Legend>
         ラベル<RequirementBadge>※必須</RequirementBadge>
       </Legend>
-      <SupportText className='mt-2' id='inline-support-text'>
-        サポートテキスト
-      </SupportText>
-      <div className='mt-1 flex flex-wrap gap-x-4'>
+      <SupportText id='inline-support-text'>サポートテキスト</SupportText>
+      <div className='flex flex-wrap gap-x-4'>
         <Checkbox aria-describedby='inline-support-text' {...args}>
           選択肢1
         </Checkbox>
@@ -145,7 +141,7 @@ export const Inline: Story = {
           選択肢3
         </Checkbox>
       </div>
-    </fieldset>
+    </FormControlLabel>
   ),
   args: {
     size: 'sm',
@@ -158,14 +154,12 @@ export const Errored: Story = {
   render: ({ ...args }) => {
     return (
       <div className='flex flex-col gap-16'>
-        <fieldset>
+        <FormControlLabel as='fieldset'>
           <Legend>
             ラベル<RequirementBadge>※必須</RequirementBadge>
           </Legend>
-          <SupportText className='mt-2' id='error-1-support-text'>
-            サポートテキスト
-          </SupportText>
-          <div className='mt-1 flex flex-col'>
+          <SupportText id='error-1-support-text'>サポートテキスト</SupportText>
+          <div className='flex flex-col'>
             <Checkbox aria-describedby='error-1-support-text error-1-text' {...args}>
               選択肢1
             </Checkbox>
@@ -176,18 +170,14 @@ export const Errored: Story = {
               選択肢3
             </Checkbox>
           </div>
-          <ErrorText className='mt-2' id='error-1-text'>
-            ＊エラーテキストが入ります。
-          </ErrorText>
-        </fieldset>
-        <fieldset>
+          <ErrorText id='error-1-text'>＊エラーテキストが入ります。</ErrorText>
+        </FormControlLabel>
+        <FormControlLabel as='fieldset'>
           <Legend>
             ラベル<RequirementBadge>※必須</RequirementBadge>
           </Legend>
-          <SupportText className='mt-2' id='error-2-support-text'>
-            サポートテキスト
-          </SupportText>
-          <div className='mt-1 flex flex-wrap gap-x-4'>
+          <SupportText id='error-2-support-text'>サポートテキスト</SupportText>
+          <div className='flex flex-wrap gap-x-4'>
             <Checkbox aria-describedby='error-2-support-text error-2-text' {...args}>
               選択肢1
             </Checkbox>
@@ -198,10 +188,8 @@ export const Errored: Story = {
               選択肢3
             </Checkbox>
           </div>
-          <ErrorText className='mt-2' id='error-2-text'>
-            ＊エラーテキストが入ります。
-          </ErrorText>
-        </fieldset>
+          <ErrorText id='error-2-text'>＊エラーテキストが入ります。</ErrorText>
+        </FormControlLabel>
       </div>
     );
   },
@@ -223,14 +211,14 @@ export const Disabled: Story = {
   render: ({ ...args }) => {
     return (
       <div className='flex flex-col gap-16'>
-        <fieldset>
+        <FormControlLabel as='fieldset'>
           <Legend>
             ラベル<RequirementBadge>※必須</RequirementBadge>
           </Legend>
-          <SupportText className='mt-2' id='disabled-1-support-text'>
+          <SupportText id='disabled-1-support-text'>
             〜の理由により、この項目は無効化されています。
           </SupportText>
-          <div className='mt-1 flex flex-col'>
+          <div className='flex flex-col'>
             <Checkbox aria-describedby='disabled-1-support-text' {...args}>
               選択肢1
             </Checkbox>
@@ -241,15 +229,15 @@ export const Disabled: Story = {
               選択肢3
             </Checkbox>
           </div>
-        </fieldset>
-        <fieldset>
+        </FormControlLabel>
+        <FormControlLabel as='fieldset'>
           <Legend>
             ラベル<RequirementBadge>※必須</RequirementBadge>
           </Legend>
-          <SupportText className='mt-2' id='disabled-2-support-text'>
+          <SupportText id='disabled-2-support-text'>
             〜の理由により、この項目は無効化されています。
           </SupportText>
-          <div className='mt-1 flex flex-wrap gap-x-4'>
+          <div className='flex flex-wrap gap-x-4'>
             <Checkbox aria-describedby='disabled-2-support-text' {...args}>
               選択肢1
             </Checkbox>
@@ -260,7 +248,7 @@ export const Disabled: Story = {
               選択肢3
             </Checkbox>
           </div>
-        </fieldset>
+        </FormControlLabel>
       </div>
     );
   },

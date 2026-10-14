@@ -10,7 +10,13 @@ import {
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
 import { ErrorText } from '../ErrorText';
-import { Label, RequirementBadge, StatusBadge, SupportText } from '../FormControlLabel';
+import {
+  FormControlLabel,
+  Label,
+  RequirementBadge,
+  StatusBadge,
+  SupportText,
+} from '../FormControlLabel';
 import { Link } from '../Link';
 import { Textarea } from './Textarea';
 
@@ -70,7 +76,7 @@ export const Playground: Story = {
     const describedBy = isError ? `${errorTextId} ${supportTextId}` : supportTextId;
 
     return (
-      <div className='flex flex-col items-start gap-2'>
+      <FormControlLabel>
         <Label htmlFor={formId}>
           ラベル<RequirementBadge>※必須</RequirementBadge>
         </Label>
@@ -83,7 +89,7 @@ export const Playground: Story = {
           {...args}
         />
         {isError && <ErrorText id={errorTextId}>＊エラーテキスト</ErrorText>}
-      </div>
+      </FormControlLabel>
     );
   },
   args: {
@@ -100,14 +106,14 @@ export const Errored: Story = {
     const describedBy = `${errorTextId} ${supportTextId}`;
 
     return (
-      <div className='flex flex-col items-start gap-2'>
+      <FormControlLabel>
         <Label htmlFor={formId}>
           ラベル<RequirementBadge>※必須</RequirementBadge>
         </Label>
         <SupportText id={supportTextId}>サポートテキスト</SupportText>
         <Textarea aria-describedby={describedBy} id={formId} name='error' {...args} />
         <ErrorText id={errorTextId}>＊エラーテキスト</ErrorText>
-      </div>
+      </FormControlLabel>
     );
   },
   argTypes: {
@@ -124,7 +130,7 @@ export const Disabled: Story = {
     const supportTextId = React.useId();
 
     return (
-      <div className='flex flex-col items-start gap-2'>
+      <FormControlLabel>
         <Label htmlFor={formId}>
           ラベル
           <StatusBadge>無効</StatusBadge>
@@ -138,7 +144,7 @@ export const Disabled: Story = {
           name='disabled'
           {...args}
         />
-      </div>
+      </FormControlLabel>
     );
   },
   argTypes: {
@@ -152,7 +158,7 @@ export const Readonly: Story = {
     const supportTextId = React.useId();
 
     return (
-      <div className='flex flex-col items-start gap-2'>
+      <FormControlLabel>
         <Label htmlFor={controlId}>
           ラベル
           <StatusBadge>編集不可</StatusBadge>
@@ -166,7 +172,7 @@ export const Readonly: Story = {
           readOnly
           {...args}
         />
-      </div>
+      </FormControlLabel>
     );
   },
   argTypes: {
@@ -180,7 +186,7 @@ export const WithFieldSizing: Story = {
     const supportTextId = React.useId();
 
     return (
-      <div className='flex flex-col items-start gap-2'>
+      <FormControlLabel>
         <Label htmlFor={formId}>field-sizing を使用したテキストエリア</Label>
         <SupportText id={supportTextId}>
           field-sizing: content を使用し、内容に応じて高さが3行〜10行まで可変するテキストエリアの例
@@ -192,7 +198,7 @@ export const WithFieldSizing: Story = {
           name='field-sizing'
           {...args}
         />
-      </div>
+      </FormControlLabel>
     );
   },
   argTypes: {
@@ -206,7 +212,7 @@ export const WithColsAndRowsAttribute: Story = {
     const supportTextId = React.useId();
 
     return (
-      <div className='flex flex-col items-start gap-2'>
+      <FormControlLabel>
         <Label htmlFor={formId}>cols, rows 属性を使用したテキストエリア</Label>
         <SupportText id={supportTextId}>
           cols 属性の値に30、rows 属性の値に4を指定したテキストエリアの例
@@ -219,7 +225,7 @@ export const WithColsAndRowsAttribute: Story = {
           cols={30}
           {...args}
         />
-      </div>
+      </FormControlLabel>
     );
   },
   argTypes: {

@@ -25,7 +25,7 @@ import {
 
 import { Button } from '../Button';
 import { ErrorText } from '../ErrorText';
-import { Legend, RequirementBadge, SupportText } from '../FormControlLabel';
+import { FormControlLabel, Legend, RequirementBadge, SupportText } from '../FormControlLabel';
 import { Link } from '../Link';
 import { Select } from '../Select';
 import {
@@ -135,7 +135,7 @@ export const Playground: Story = {};
 export const WithFieldset: Story = {
   render({ ...args }) {
     return (
-      <fieldset className='flex flex-col gap-2 items-start'>
+      <FormControlLabel as='fieldset'>
         <Legend>
           日付<RequirementBadge>※必須</RequirementBadge>
         </Legend>
@@ -149,7 +149,7 @@ export const WithFieldset: Story = {
             </>
           )}
         </SeparatedDatePicker>
-      </fieldset>
+      </FormControlLabel>
     );
   },
 };
@@ -165,7 +165,7 @@ export const Errored: Story = {
   },
   render({ ...args }) {
     return (
-      <fieldset className='flex flex-col gap-2 items-start'>
+      <FormControlLabel as='fieldset'>
         <Legend>
           日付<RequirementBadge>※必須</RequirementBadge>
         </Legend>
@@ -191,7 +191,7 @@ export const Errored: Story = {
           )}
         </SeparatedDatePicker>
         <ErrorText id='date-picker-4-error-text'>＊正しい日付を入力してください。</ErrorText>
-      </fieldset>
+      </FormControlLabel>
     );
   },
 };
@@ -207,7 +207,7 @@ export const Disabled: Story = {
   },
   render({ ...args }) {
     return (
-      <fieldset className='flex flex-col gap-2 items-start'>
+      <FormControlLabel as='fieldset'>
         <Legend>
           日付<RequirementBadge isOptional>※任意</RequirementBadge>
         </Legend>
@@ -223,7 +223,7 @@ export const Disabled: Story = {
             </>
           )}
         </SeparatedDatePicker>
-      </fieldset>
+      </FormControlLabel>
     );
   },
 };
@@ -237,7 +237,7 @@ export const Readonly: Story = {
   },
   render({ ...args }) {
     return (
-      <fieldset className='flex flex-col gap-2 items-start'>
+      <FormControlLabel as='fieldset'>
         <Legend>
           日付<RequirementBadge isOptional>※任意</RequirementBadge>
         </Legend>
@@ -265,7 +265,7 @@ export const Readonly: Story = {
             </>
           )}
         </SeparatedDatePicker>
-      </fieldset>
+      </FormControlLabel>
     );
   },
 };

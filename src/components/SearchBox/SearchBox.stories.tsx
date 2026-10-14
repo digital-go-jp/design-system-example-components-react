@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { type ChangeEvent, useEffect, useRef } from 'react';
 import { Button } from '../Button';
 import { Checkbox } from '../Checkbox';
+import { FormControlLabel, Legend } from '../FormControlLabel';
 import { Radio } from '../Radio';
 import './search-box.css';
 import {
@@ -122,8 +123,8 @@ export const WithDetail: Story = {
 
         <SearchBoxDetail summary='詳細検索'>
           <div className='mb-8 flex flex-col gap-6'>
-            <fieldset>
-              <legend className='mb-2 text-std-16B-170'>検索対象</legend>
+            <FormControlLabel as='fieldset'>
+              <Legend>検索対象</Legend>
               <div className='flex flex-wrap gap-4'>
                 <label className='flex items-center gap-2 text-std-16N-170'>
                   <Radio size='sm' name='search-target' value='current' defaultChecked />
@@ -134,10 +135,10 @@ export const WithDetail: Story = {
                   時点指定
                 </label>
               </div>
-            </fieldset>
+            </FormControlLabel>
 
-            <fieldset>
-              <legend className='mb-2 text-std-16B-170'>法令種別</legend>
+            <FormControlLabel as='fieldset'>
+              <Legend>法令種別</Legend>
               <div className='flex flex-wrap gap-4'>
                 <label className='flex items-center gap-2 text-std-16N-170'>
                   <Checkbox
@@ -193,10 +194,10 @@ export const WithDetail: Story = {
                   規則
                 </label>
               </div>
-            </fieldset>
+            </FormControlLabel>
 
-            <fieldset>
-              <legend className='mb-2 text-std-16B-170'>並び順</legend>
+            <FormControlLabel as='fieldset'>
+              <Legend>並び順</Legend>
               <div className='flex flex-wrap gap-4'>
                 <label className='flex items-center gap-2 text-std-16N-170'>
                   <Radio size='sm' name='sort-order' value='relevance' defaultChecked />
@@ -207,10 +208,10 @@ export const WithDetail: Story = {
                   更新日時順
                 </label>
               </div>
-            </fieldset>
+            </FormControlLabel>
 
-            <fieldset>
-              <legend className='mb-2 text-std-16B-170'>表示件数</legend>
+            <FormControlLabel as='fieldset'>
+              <Legend>表示件数</Legend>
               <div className='flex flex-wrap gap-4'>
                 <label className='flex items-center gap-2 text-std-16N-170'>
                   <Radio size='sm' name='display-count' value='10' defaultChecked />
@@ -225,7 +226,7 @@ export const WithDetail: Story = {
                   100件
                 </label>
               </div>
-            </fieldset>
+            </FormControlLabel>
           </div>
 
           <SearchBoxDetailActions>

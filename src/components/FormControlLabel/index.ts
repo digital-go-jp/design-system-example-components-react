@@ -1,1 +1,8 @@
-export { Label, Legend, RequirementBadge, StatusBadge, SupportText } from './FormControlLabel';
+export {
+  FormControlLabel,
+  Label,
+  Legend,
+  RequirementBadge,
+  StatusBadge,
+  SupportText,
+} from './FormControlLabel';
