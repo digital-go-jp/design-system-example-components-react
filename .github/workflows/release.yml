@@ -1,0 +1,69 @@
+name: Create Release
+
+on:
+  pull_request:
+    types: [closed]
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: create-release
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.pull_request.merged == true &&
+        github.event.pull_request.head.repo.full_name == github.repository &&
+        startsWith(github.event.pull_request.head.ref, 'update-'))
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          ref: main
+
+      - name: Create tag and GitHub Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          TZ: Asia/Tokyo
+        run: |
+          set -e
+
+          # Target the latest main, as in the HTML repository, so queued merges
+          # are included even if concurrency replaces a pending run.
+          target="$(git rev-parse HEAD)"
+          existing_tag="$(git tag --points-at HEAD -l 'v[0-9]*' | sort -V | tail -n 1)"
+          if [ -n "$existing_tag" ]; then
+            echo "Already tagged as $existing_tag; skipping release creation"
+            exit 0
+          fi
+
+          date="$(git log -1 --date=format-local:%Y%m%d --format=%cd HEAD)"
+          base="v${date}"
+          tag="$base"
+          n=2
+          while git show-ref --verify --quiet "refs/tags/$tag"; do
+            tag="${base}-${n}"
+            n=$((n + 1))
+          done
+
+          previous_tag="$(git tag --merged HEAD -l 'v[0-9]*' | sort -V | while IFS= read -r candidate; do
+            if [ "$candidate" != "$tag" ]; then
+              echo "$candidate"
+            fi
+          done | tail -n 1)"
+          notes_args=(--generate-notes)
+          if [ -n "$previous_tag" ]; then
+            notes_args+=(--notes-start-tag "$previous_tag")
+          fi
+          gh release create "$tag" \
+            --target "$target" \
+            --title "$tag" \
+            "${notes_args[@]}"
