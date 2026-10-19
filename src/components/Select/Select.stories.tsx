@@ -241,6 +241,7 @@ export const WidthExamples: Story = {
           <SupportText id='full-width-support-text'>サポートテキスト</SupportText>
           <Select
             aria-describedby='full-width-support-text'
+            className='w-full'
             id={`${formId}-full-width`}
             name='full-width'
           >
@@ -257,38 +258,35 @@ export const WidthExamples: Story = {
             特定の幅（256 CSS px）を指定したセレクトボックス
           </Label>
           <SupportText id='specific-width-support-text'>サポートテキスト</SupportText>
-          <div className='w-64'>
-            <Select
-              aria-describedby='specific-width-support-text'
-              id={`${formId}-specific-width`}
-              name='specific-width'
-            >
-              <option hidden value=''>
-                選択してください
-              </option>
-              <option value='1'>選択肢1</option>
-              <option value='2'>選択肢2</option>
-              <option value='3'>選択肢3</option>
-            </Select>
-          </div>
+          <Select
+            aria-describedby='specific-width-support-text'
+            className='w-64'
+            id={`${formId}-specific-width`}
+            name='specific-width'
+          >
+            <option hidden value=''>
+              選択してください
+            </option>
+            <option value='1'>選択肢1</option>
+            <option value='2'>選択肢2</option>
+            <option value='3'>選択肢3</option>
+          </Select>
         </FormControlLabel>
         <FormControlLabel>
           <Label htmlFor={`${formId}-fit-width`}>内容にフィットしたセレクトボックス</Label>
           <SupportText id='fit-width-support-text'>サポートテキスト</SupportText>
-          <div className='w-fit'>
-            <Select
-              aria-describedby='fit-width-support-text'
-              id={`${formId}-fit-width`}
-              name='fit-width'
-            >
-              <option hidden value=''>
-                選択してください
-              </option>
-              <option value='1'>選択肢1</option>
-              <option value='2'>選択肢2</option>
-              <option value='3'>選択肢3</option>
-            </Select>
-          </div>
+          <Select
+            aria-describedby='fit-width-support-text'
+            id={`${formId}-fit-width`}
+            name='fit-width'
+          >
+            <option hidden value=''>
+              選択してください
+            </option>
+            <option value='1'>選択肢1</option>
+            <option value='2'>選択肢2</option>
+            <option value='3'>選択肢3</option>
+          </Select>
         </FormControlLabel>
       </div>
     );
