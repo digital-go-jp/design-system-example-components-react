@@ -21,10 +21,10 @@ export const Select = (props: SelectProps) => {
   };
 
   return (
-    <span className='relative'>
+    <span className='relative block max-w-full'>
       <select
         className={`
-          w-full appearance-none border border-solid-gray-600 rounded-8 bg-white pl-4 pr-10 py-[calc(11/16*1rem)] text-oln-16N-100 text-solid-gray-800
+          inline-block w-full max-w-full align-baseline appearance-none border border-solid-gray-600 rounded-8 bg-white pl-4 pr-10 py-[calc(11/16*1rem)] text-oln-16N-100 text-solid-gray-800
           hover:border-black
           data-[size=sm]:h-10 data-[size=md]:h-12 data-[size=lg]:h-14
           aria-[invalid=true]:border-error-1 aria-[invalid=true]:hover:border-red-1000
