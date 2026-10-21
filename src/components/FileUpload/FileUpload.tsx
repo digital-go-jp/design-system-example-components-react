@@ -1,4 +1,4 @@
-import { type ComponentProps, forwardRef } from 'react';
+import type { ComponentProps } from 'react';
 import { createPortal } from 'react-dom';
 
 export type FileUploadProps = ComponentProps<'div'> & {
@@ -31,12 +31,11 @@ export const FileUpload = (props: FileUploadProps) => {
 
 export type FileUploadInputProps = Omit<ComponentProps<'input'>, 'type'>;
 
-export const FileUploadInput = forwardRef<HTMLInputElement, FileUploadInputProps>((props, ref) => {
+export const FileUploadInput = (props: FileUploadInputProps) => {
   const { className, ...rest } = props;
 
   return (
     <input
-      ref={ref}
       type='file'
       className={`
         hidden
@@ -45,7 +44,7 @@ export const FileUploadInput = forwardRef<HTMLInputElement, FileUploadInputProps
       {...rest}
     />
   );
-});
+};
 
 export type FileUploadDropAreaProps = ComponentProps<'div'> & {
   isDragOver?: boolean;

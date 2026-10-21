@@ -1,40 +1,36 @@
-import { type ComponentProps, forwardRef } from 'react';
+import type { ComponentProps } from 'react';
 import { Button, type ButtonProps, type ButtonVariant } from '../Button';
 import { Slot } from '../Slot';
 
 export type PageNavigationProps = ComponentProps<'nav'>;
 
-export const PageNavigation = forwardRef<HTMLElement, PageNavigationProps>((props, ref) => {
+export const PageNavigation = (props: PageNavigationProps) => {
   const { children, className, ...rest } = props;
 
   return (
     <nav
       className={`flex items-center gap-4 text-oln-16N-100 text-solid-gray-800 ${className ?? ''}`}
-      ref={ref}
       {...rest}
     >
       {children}
     </nav>
   );
-});
+};
 
 export type PageNavigationCounterProps = ComponentProps<'span'>;
 
-export const PageNavigationCounter = forwardRef<HTMLSpanElement, PageNavigationCounterProps>(
-  (props, ref) => {
-    const { children, className, ...rest } = props;
+export const PageNavigationCounter = (props: PageNavigationCounterProps) => {
+  const { children, className, ...rest } = props;
 
-    return (
-      <span
-        className={`min-w-[3.75rem] whitespace-nowrap text-center text-oln-16N-100 text-solid-gray-900 ${className ?? ''}`}
-        ref={ref}
-        {...rest}
-      >
-        {children}
-      </span>
-    );
-  },
-);
+  return (
+    <span
+      className={`min-w-[3.75rem] whitespace-nowrap text-center text-oln-16N-100 text-solid-gray-900 ${className ?? ''}`}
+      {...rest}
+    >
+      {children}
+    </span>
+  );
+};
 
 export type PageNavigationControl = 'prev' | 'next';
 
@@ -55,23 +51,20 @@ export type PageNavigationButtonProps = ButtonProps & {
   control: PageNavigationControl;
 };
 
-export const PageNavigationButton = forwardRef<HTMLButtonElement, PageNavigationButtonProps>(
-  (props, ref) => {
-    const { className, control, variant, ...rest } = props;
+export const PageNavigationButton = (props: PageNavigationButtonProps) => {
+  const { className, control, variant, ...rest } = props;
 
-    const controlStyle = variant ? pageNavigationButtonControlStyle[variant]?.[control] : undefined;
+  const controlStyle = variant ? pageNavigationButtonControlStyle[variant]?.[control] : undefined;
 
-    return (
-      <Button
-        className={`${controlStyle ?? ''} ${className ?? ''}`}
-        data-control={control}
-        ref={ref}
-        variant={variant}
-        {...(rest as ButtonProps)}
-      />
-    );
-  },
-);
+  return (
+    <Button
+      className={`${controlStyle ?? ''} ${className ?? ''}`}
+      data-control={control}
+      variant={variant}
+      {...(rest as ButtonProps)}
+    />
+  );
+};
 
 export type PageNavigationArrowButtonSize = 'lg' | 'md' | 'sm' | 'xs';
 
@@ -105,10 +98,7 @@ export type PageNavigationArrowButtonProps = {
   | { asChild: true; children: React.ReactNode }
 );
 
-export const PageNavigationArrowButton = forwardRef<
-  HTMLButtonElement,
-  PageNavigationArrowButtonProps
->((props, ref) => {
+export const PageNavigationArrowButton = (props: PageNavigationArrowButtonProps) => {
   const { size, className } = props;
 
   const classNames = `
@@ -131,9 +121,9 @@ export const PageNavigationArrowButton = forwardRef<
   const { asChild: _asChild, children, className: _className, label, size: _size, ...rest } = props;
 
   return (
-    <button className={classNames} type='button' {...rest} ref={ref}>
+    <button className={classNames} type='button' {...rest}>
       {children}
       <span className='sr-only'>{label}</span>
     </button>
   );
-});
+};

@@ -1,0 +1,257 @@
+import {
+  Canvas,
+  Controls,
+  Description,
+  Meta,
+  Stories,
+  Subtitle,
+  Title,
+  Unstyled,
+} from '@storybook/addon-docs/blocks';
+import * as FormControlLabelStories from './FormControlLabel.stories';
+
+<Meta of={FormControlLabelStories} />
+
+<Unstyled>
+<div className='prose'>
+
+<Title />
+<Subtitle />
+<Description />
+
+フォームコントロールラベルは、インプットテキストやセレクトボックス等のコントロールや、チェックボックス等をまとめたグループにラベルを付与するコンポーネントです。
+
+<Canvas of={FormControlLabelStories.Single} withToolbar />
+<Controls of={FormControlLabelStories.Single} />
+<Stories includePrimary={false} />
+
+## 仕様
+
+### コンポーネント構成
+
+- `FormControlLabel`: ラベル、説明、コントロールをまとめるコンテナ。`div` または `fieldset` を出力
+- `Label`: 単一のコントロールに付けるラベル。`label` を出力
+- `Legend`: 複数のコントロールをまとめたグループのラベル。`legend` を出力
+- `RequirementBadge`: 必須・任意を示すテキスト。`span` を出力
+- `StatusBadge`: 「編集不可」「無効」などの状態を示すバッジ。`span` を出力
+- `SupportText`: 入力方法や条件を説明するサポートテキスト。`p` を出力
+
+エラーテキストには、別コンポーネントの `ErrorText` を使用します。
+
+### Props
+
+各コンポーネントには、出力するHTML要素の属性（`id`、`className`、`aria-describedby` など）を渡せます。表示するテキストやコントロールは `children` で指定します。
+
+#### `FormControlLabel`
+
+<table className='w-full'>
+  <thead>
+    <tr>
+      <th scope='col' className='whitespace-nowrap'>Props</th>
+      <th scope='col'>説明</th>
+      <th scope='col' className='whitespace-nowrap'>デフォルト</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className='whitespace-nowrap'><code>as</code></td>
+      <td>
+        <code>'div' | 'fieldset'</code><br />
+        コンテナのHTML要素。複数のコントロールをまとめる場合は <code>'fieldset'</code> を指定
+      </td>
+      <td><code>'div'</code></td>
+    </tr>
+    <tr>
+      <td className='whitespace-nowrap'><code>size</code></td>
+      <td>
+        <code>'sm' | 'md' | 'lg'</code><br />
+        子要素間の余白のサイズ
+      </td>
+      <td><code>'md'</code></td>
+    </tr>
+  </tbody>
+</table>
+
+#### `Label`
+
+`htmlFor` に対象のコントロールの `id` を指定して関連付けます。
+
+<table className='w-full'>
+  <thead>
+    <tr>
+      <th scope='col' className='whitespace-nowrap'>Props</th>
+      <th scope='col'>説明</th>
+      <th scope='col' className='whitespace-nowrap'>デフォルト</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className='whitespace-nowrap'><code>size</code></td>
+      <td>
+        <code>'sm' | 'md' | 'lg'</code><br />
+        ラベルの文字サイズ
+      </td>
+      <td><code>'md'</code></td>
+    </tr>
+  </tbody>
+</table>
+
+#### `Legend`
+
+`FormControlLabel as='fieldset'` の最初の子要素として配置します。
+
+<table className='w-full'>
+  <thead>
+    <tr>
+      <th scope='col' className='whitespace-nowrap'>Props</th>
+      <th scope='col'>説明</th>
+      <th scope='col' className='whitespace-nowrap'>デフォルト</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className='whitespace-nowrap'><code>size</code></td>
+      <td>
+        <code>'sm' | 'md' | 'lg'</code><br />
+        グループのラベルの文字サイズ
+      </td>
+      <td><code>'md'</code></td>
+    </tr>
+  </tbody>
+</table>
+
+#### `RequirementBadge`
+
+<table className='w-full'>
+  <thead>
+    <tr>
+      <th scope='col' className='whitespace-nowrap'>Props</th>
+      <th scope='col'>説明</th>
+      <th scope='col' className='whitespace-nowrap'>デフォルト</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className='whitespace-nowrap'><code>isOptional</code></td>
+      <td>
+        <code>boolean</code><br />
+        任意項目の場合に <code>true</code> を指定。省略時と <code>false</code> の場合は必須項目の色で表示
+      </td>
+      <td>未指定</td>
+    </tr>
+  </tbody>
+</table>
+
+#### `StatusBadge`
+
+コンポーネント特有のPropsはありません。ネイティブの `<span>` 要素と同じ属性を利用できます。
+
+#### `SupportText`
+
+コンポーネント特有のPropsはありません。ネイティブの `<p>` 要素と同じ属性を利用できます。
+
+## 使い方
+
+### 基本的な使い方
+
+単一のコントロールには `Label` を使用し、`htmlFor` とコントロールの `id` を一致させます。これにより、支援技術にラベルが伝わり、ラベルをクリックしてコントロールにフォーカスできます。
+
+```tsx
+import { FormControlLabel, Label } from './FormControlLabel';
+import { Input } from './Input';
+
+<FormControlLabel size='md'>
+  <Label htmlFor='full-name' size='md'>氏名</Label>
+  <div>
+    <Input id='full-name' name='fullName' blockSize='md' />
+  </div>
+</FormControlLabel>
+```
+
+各サンプルの `id` は、同じページ内で重複しない値にします。繰り返し配置する場合は、利用側のコンポーネントでReactの `useId` などを使用して生成します。
+
+### 複数のコントロールにラベルを付ける
+
+チェックボックス、ラジオボタン、日付ピッカーなどをまとめる場合は、`as='fieldset'` と `Legend` を使用します。グループのラベルに加えて、個々のコントロールにもラベルを付けます。
+
+```tsx
+import { FormControlLabel, Legend, SupportText } from './FormControlLabel';
+import { Radio } from './Radio';
+
+<FormControlLabel as='fieldset' size='md' aria-describedby='contact-method-support'>
+  <Legend size='md'>連絡方法</Legend>
+  <SupportText id='contact-method-support'>希望する連絡方法を選択してください。</SupportText>
+  <div>
+    <Radio name='contactMethod' value='email' size='md'>メール</Radio>
+    <Radio name='contactMethod' value='phone' size='md'>電話</Radio>
+  </div>
+</FormControlLabel>
+```
+
+### 必須・任意を表示する
+
+`Label` または `Legend` の中に `RequirementBadge` を配置します。必須は「※必須」、任意は `isOptional` と「※任意」を指定します。`isOptional` を切り替えてもテキストは自動で変わりません。
+
+```tsx
+import { FormControlLabel, Label, RequirementBadge } from './FormControlLabel';
+import { Input } from './Input';
+
+<>
+  <FormControlLabel>
+    <Label htmlFor='required-name'>
+      氏名<RequirementBadge>※必須</RequirementBadge>
+    </Label>
+    <div>
+      <Input id='required-name' name='fullName' required blockSize='md' />
+    </div>
+  </FormControlLabel>
+  <FormControlLabel>
+    <Label htmlFor='optional-building'>
+      建物名<RequirementBadge isOptional>※任意</RequirementBadge>
+    </Label>
+    <div>
+      <Input id='optional-building' name='building' blockSize='md' />
+    </div>
+  </FormControlLabel>
+</>
+```
+
+チェックボックスのグループで「1つ以上の選択」を必須にする場合、すべてのチェックボックスに `required` を設定すると全項目の選択が必須になります。グループとしての検証は利用側で実装します。
+
+### 横並びに配置する
+
+詳細は [Horizontalストーリー](?path=/story/component-dads-v2-formcontrollabel--horizontal) を参照してください。
+
+### アクセシビリティ
+
+#### サポートテキストとエラーテキストの関連付け
+
+- サポートテキストがある場合、サポートテキストに`id`属性を付与し、`aria-describedby`属性を使用してコントロールまたはグループを関連付けます。
+- エラーテキストがある場合、エラーテキストに`id`属性を付与し、`aria-describedby`属性を使用してコントロールまたはグループを関連付けます。
+- サポートテキストおよびエラーテキストがある場合、両方の`id`をスペースで区切って`aria-describedby`属性に指定します。
+
+#### チェックボックスと`<fieldset>`要素の組み合わせにおける読み上げについて
+
+チェックボックスを`<fieldset aria-describedby="...">`要素に含める場合において、ブラウザ、支援技術、またはそれらの組み合わせによっては、サポートテキストおよびエラーテキストを適切に読み上げない問題が確認されています。
+
+現時点で回避策はありません。各チェックボックスに`aria-describedby`属性を使用してサポートテキストおよびエラーテキストのIDを指定することで、支援技術がチェックボックスに関連付けられたサポートテキストおよびエラーテキストを読み上げることができますが、フォーカスを移動するたびに同一のテキストが読み上げられ冗長であるため、この方法は推奨していません。
+
+<dl>
+  <dt>問題を確認した環境</dt>
+  <dd>NVDA日本語版 2024.4.2 + Chrome 137</dd>
+  <dt>再現手順</dt>
+  <dd>
+    1. 当ページで提供しているコードスニペットを使用する。サポートテキストおよびチェックボックスを含む`<fieldset>`要素を作成し、`<fieldset>`要素に`aria-describedby="{サポートテキストのID}"`を付与する。<br />
+    2. Tabキーを押してチェックボックスにフォーカスを移動する。<br />
+    3. `<fieldset>`要素に紐づくサポートテキストが読み上げられないことを確認する。
+  </dd>
+</dl>
+
+なお、ラジオボタンやその他のフォームコントロールにおいては、上記の問題は確認されていません。
+
+##### 参考情報
+
+- [aria-describedby not reported for group in browse mode - Issue #12718 - nvaccess/nvda](https://github.com/nvaccess/nvda/issues/12718)
+
+</div>
+</Unstyled>

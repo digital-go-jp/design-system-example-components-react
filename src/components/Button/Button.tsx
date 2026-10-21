@@ -1,4 +1,4 @@
-import { type ComponentProps, forwardRef } from 'react';
+import type { ComponentProps } from 'react';
 import { Slot } from '../Slot';
 
 export type ButtonVariant = 'solid-fill' | 'outline' | 'text';
@@ -70,7 +70,7 @@ export type ButtonProps = {
   | { asChild: true; children: React.ReactNode }
 );
 
-export const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
+export const Button = (props: ButtonProps) => {
   const { asChild, children, className, variant, size, ...rest } = props;
 
   const classNames = `${buttonBaseStyle} ${buttonSizeStyle[size]} ${
@@ -94,9 +94,8 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) =>
       className={classNames}
       onClick={props['aria-disabled'] ? handleDisabled : props.onClick}
       {...rest}
-      ref={ref}
     >
       {children}
     </button>
   );
-});
+};

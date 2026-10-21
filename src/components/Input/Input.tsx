@@ -1,4 +1,4 @@
-import { type ComponentProps, forwardRef } from 'react';
+import type { ComponentProps } from 'react';
 
 export type InputBlockSize = 'lg' | 'md' | 'sm';
 
@@ -8,7 +8,7 @@ export type InputProps = Omit<ComponentProps<'input'>, 'placeholder'> & {
   placeholder?: never;
 };
 
-export const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
+export const Input = (props: InputProps) => {
   const { className, readOnly, isError, blockSize = 'lg', ...rest } = props;
 
   return (
@@ -26,8 +26,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
       aria-invalid={isError || undefined}
       data-size={blockSize}
       readOnly={props['aria-disabled'] ? true : readOnly}
-      ref={ref}
       {...rest}
     />
   );
-});
+};

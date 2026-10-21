@@ -24,7 +24,6 @@ import {
 } from 'react-aria-components';
 
 import { Button } from '../Button';
-import { Link } from '../Link';
 import {
   DatePicker,
   DatePickerCalendarButton,
@@ -33,10 +32,9 @@ import {
   DatePickerYear,
 } from '../DatePicker';
 import { ErrorText } from '../ErrorText';
-import { Legend } from '../Legend';
-import { RequirementBadge } from '../RequirementBadge';
+import { FormControlLabel, Legend, RequirementBadge, SupportText } from '../FormControlLabel';
+import { Link } from '../Link';
 import { Select } from '../Select';
-import { SupportText } from '../SupportText';
 
 /**
  * Defaultタイプのデートピッカー。
@@ -137,21 +135,23 @@ export const Playground: Story = {};
 export const WithFieldset: Story = {
   render({ ...args }) {
     return (
-      <fieldset className='flex flex-col gap-2 items-start'>
+      <FormControlLabel as='fieldset'>
         <Legend>
           日付<RequirementBadge>※必須</RequirementBadge>
         </Legend>
         <SupportText id='date-picker-1-support-text'>例：2025年01月20日</SupportText>
-        <DatePicker {...args}>
-          {({ yearRef, monthRef, dateRef, ...rest }) => (
-            <>
-              <DatePickerYear ref={yearRef} {...rest} />
-              <DatePickerMonth ref={monthRef} {...rest} />
-              <DatePickerDate ref={dateRef} {...rest} />
-            </>
-          )}
-        </DatePicker>
-      </fieldset>
+        <div>
+          <DatePicker {...args}>
+            {({ yearRef, monthRef, dateRef, ...rest }) => (
+              <>
+                <DatePickerYear ref={yearRef} {...rest} />
+                <DatePickerMonth ref={monthRef} {...rest} />
+                <DatePickerDate ref={dateRef} {...rest} />
+              </>
+            )}
+          </DatePicker>
+        </div>
+      </FormControlLabel>
     );
   },
 };
@@ -167,36 +167,38 @@ export const Errored: Story = {
   },
   render({ ...args }) {
     return (
-      <fieldset className='flex flex-col gap-2 items-start'>
+      <FormControlLabel as='fieldset'>
         <Legend>
           日付<RequirementBadge>※必須</RequirementBadge>
         </Legend>
         <SupportText id='date-picker-3-support-text'>例：2025年01月20日</SupportText>
-        <DatePicker {...args}>
-          {({ yearRef, monthRef, dateRef, ...rest }) => (
-            <>
-              <DatePickerYear
-                ref={yearRef}
-                aria-describedby='date-picker-3-support-text date-picker-3-error-text'
-                {...rest}
-              />
-              <DatePickerMonth
-                ref={monthRef}
-                defaultValue={10}
-                aria-describedby='date-picker-3-support-text date-picker-3-error-text'
-                {...rest}
-              />
-              <DatePickerDate
-                ref={dateRef}
-                defaultValue={28}
-                aria-describedby='date-picker-3-support-text date-picker-3-error-text'
-                {...rest}
-              />
-            </>
-          )}
-        </DatePicker>
+        <div>
+          <DatePicker {...args}>
+            {({ yearRef, monthRef, dateRef, ...rest }) => (
+              <>
+                <DatePickerYear
+                  ref={yearRef}
+                  aria-describedby='date-picker-3-support-text date-picker-3-error-text'
+                  {...rest}
+                />
+                <DatePickerMonth
+                  ref={monthRef}
+                  defaultValue={10}
+                  aria-describedby='date-picker-3-support-text date-picker-3-error-text'
+                  {...rest}
+                />
+                <DatePickerDate
+                  ref={dateRef}
+                  defaultValue={28}
+                  aria-describedby='date-picker-3-support-text date-picker-3-error-text'
+                  {...rest}
+                />
+              </>
+            )}
+          </DatePicker>
+        </div>
         <ErrorText id='date-picker-3-error-text'>＊正しい日付を入力してください。</ErrorText>
-      </fieldset>
+      </FormControlLabel>
     );
   },
 };
@@ -210,35 +212,37 @@ export const Disabled: Story = {
   },
   render({ ...args }) {
     return (
-      <fieldset className='flex flex-col gap-2 items-start'>
+      <FormControlLabel as='fieldset'>
         <Legend>
           日付<RequirementBadge isOptional>※任意</RequirementBadge>
         </Legend>
         <SupportText id='date-picker-5-support-text'>
           〜の理由により、この項目は編集できません。
         </SupportText>
-        <DatePicker {...args}>
-          {({ yearRef, monthRef, dateRef, ...rest }) => (
-            <>
-              <DatePickerYear
-                ref={yearRef}
-                aria-describedby='date-picker-5-support-text'
-                {...rest}
-              />
-              <DatePickerMonth
-                ref={monthRef}
-                aria-describedby='date-picker-5-support-text'
-                {...rest}
-              />
-              <DatePickerDate
-                ref={dateRef}
-                aria-describedby='date-picker-5-support-text'
-                {...rest}
-              />
-            </>
-          )}
-        </DatePicker>
-      </fieldset>
+        <div>
+          <DatePicker {...args}>
+            {({ yearRef, monthRef, dateRef, ...rest }) => (
+              <>
+                <DatePickerYear
+                  ref={yearRef}
+                  aria-describedby='date-picker-5-support-text'
+                  {...rest}
+                />
+                <DatePickerMonth
+                  ref={monthRef}
+                  aria-describedby='date-picker-5-support-text'
+                  {...rest}
+                />
+                <DatePickerDate
+                  ref={dateRef}
+                  aria-describedby='date-picker-5-support-text'
+                  {...rest}
+                />
+              </>
+            )}
+          </DatePicker>
+        </div>
+      </FormControlLabel>
     );
   },
 };
@@ -252,38 +256,40 @@ export const Readonly: Story = {
   },
   render({ ...args }) {
     return (
-      <fieldset className='flex flex-col gap-2 items-start'>
+      <FormControlLabel as='fieldset'>
         <Legend>
           日付<RequirementBadge isOptional>※任意</RequirementBadge>
         </Legend>
         <SupportText id='date-picker-6-support-text'>
           〜の理由により、この項目は編集できません。
         </SupportText>
-        <DatePicker {...args}>
-          {({ yearRef, monthRef, dateRef, ...rest }) => (
-            <>
-              <DatePickerYear
-                ref={yearRef}
-                value={2025}
-                aria-describedby='date-picker-6-support-text'
-                {...rest}
-              />
-              <DatePickerMonth
-                ref={monthRef}
-                value={10}
-                aria-describedby='date-picker-6-support-text'
-                {...rest}
-              />
-              <DatePickerDate
-                ref={dateRef}
-                value={28}
-                aria-describedby='date-picker-6-support-text'
-                {...rest}
-              />
-            </>
-          )}
-        </DatePicker>
-      </fieldset>
+        <div>
+          <DatePicker {...args}>
+            {({ yearRef, monthRef, dateRef, ...rest }) => (
+              <>
+                <DatePickerYear
+                  ref={yearRef}
+                  value={2025}
+                  aria-describedby='date-picker-6-support-text'
+                  {...rest}
+                />
+                <DatePickerMonth
+                  ref={monthRef}
+                  value={10}
+                  aria-describedby='date-picker-6-support-text'
+                  {...rest}
+                />
+                <DatePickerDate
+                  ref={dateRef}
+                  value={28}
+                  aria-describedby='date-picker-6-support-text'
+                  {...rest}
+                />
+              </>
+            )}
+          </DatePicker>
+        </div>
+      </FormControlLabel>
     );
   },
 };

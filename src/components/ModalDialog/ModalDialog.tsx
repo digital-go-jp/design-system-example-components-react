@@ -1,41 +1,45 @@
-import { type ComponentProps, type CSSProperties, forwardRef } from 'react';
+import type { ComponentProps, CSSProperties } from 'react';
 
 export type ModalDialogProps = ComponentProps<'dialog'> & {
   scroll?: 'inner' | 'outer';
   width?: string;
 };
 
-export const ModalDialog = forwardRef<HTMLDialogElement, ModalDialogProps>(
-  ({ children, className, scroll, width, style, ...rest }, ref) => {
-    const mergedStyle: CSSProperties = {
-      ...style,
-      ['--modal-dialog-width' as string]: width ?? 'fit-content',
-    };
+export const ModalDialog = ({
+  children,
+  className,
+  scroll,
+  width,
+  style,
+  ...rest
+}: ModalDialogProps) => {
+  const mergedStyle: CSSProperties = {
+    ...style,
+    ['--modal-dialog-width' as string]: width ?? 'fit-content',
+  };
 
-    return (
-      <dialog
-        ref={ref}
-        className={`
-          group/modal-dialog
-          inset-0 w-auto h-auto max-w-none max-h-none border-0 bg-transparent px-4
-          [container-type:inline-size] [color-scheme:dark] break-words
-          text-std-16N-170
-          [&:modal]:flex [&:modal]:flex-col [&:modal]:items-center
-          backdrop:bg-opacity-gray-600 forced-colors:backdrop:bg-[#000b]
-          [scrollbar-gutter:stable] data-[scroll=inner]:[scrollbar-gutter:auto]
-          ${className ?? ''}
-        `}
-        data-scroll={scroll}
-        style={mergedStyle}
-        {...rest}
-      >
-        <div className='shrink-[9999] w-px h-[calc(120/16*1rem)] min-h-4'></div>
-        {children}
-        <div className='shrink-[9999] w-px h-[calc(120/16*1rem)] min-h-4'></div>
-      </dialog>
-    );
-  },
-);
+  return (
+    <dialog
+      className={`
+        group/modal-dialog
+        inset-0 w-auto h-auto max-w-none max-h-none border-0 bg-transparent px-4
+        [container-type:inline-size] [color-scheme:dark] break-words
+        text-std-16N-170
+        [&:modal]:flex [&:modal]:flex-col [&:modal]:items-center
+        backdrop:bg-opacity-gray-600 forced-colors:backdrop:bg-[#000b]
+        [scrollbar-gutter:stable] data-[scroll=inner]:[scrollbar-gutter:auto]
+        ${className ?? ''}
+      `}
+      data-scroll={scroll}
+      style={mergedStyle}
+      {...rest}
+    >
+      <div className='shrink-[9999] w-px h-[calc(120/16*1rem)] min-h-4'></div>
+      {children}
+      <div className='shrink-[9999] w-px h-[calc(120/16*1rem)] min-h-4'></div>
+    </dialog>
+  );
+};
 
 export type ModalDialogContentProps = ComponentProps<'div'>;
 
@@ -64,19 +68,20 @@ export const ModalDialogHeader = ({ className, ...rest }: ModalDialogHeaderProps
 
 export type ModalDialogHeadingProps = ComponentProps<'h2'>;
 
-export const ModalDialogHeading = forwardRef<HTMLHeadingElement, ModalDialogHeadingProps>(
-  ({ className, tabIndex = -1, ...rest }, ref) => (
-    <h2
-      ref={ref}
-      tabIndex={tabIndex}
-      className={`
-        grow min-w-0 text-std-24B-150 md:text-std-28B-150
-        focus-visible:outline-none focus-visible:rounded-none focus-visible:shadow-none
-        ${className ?? ''}
-      `}
-      {...rest}
-    />
-  ),
+export const ModalDialogHeading = ({
+  className,
+  tabIndex = -1,
+  ...rest
+}: ModalDialogHeadingProps) => (
+  <h2
+    tabIndex={tabIndex}
+    className={`
+      grow min-w-0 text-std-24B-150 md:text-std-28B-150
+      focus-visible:outline-none focus-visible:rounded-none focus-visible:shadow-none
+      ${className ?? ''}
+    `}
+    {...rest}
+  />
 );
 
 export type ModalDialogCloseProps = Omit<ComponentProps<'button'>, 'children'>;

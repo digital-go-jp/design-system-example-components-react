@@ -360,7 +360,7 @@ export const WithPopoverAPI: Story = {
           <LanguageSelectorButton
             className='[anchor-name:--trigger]'
             onKeyDown={handleOpenerKeyDown}
-            popovertarget={`${sampleId}-menu`}
+            popoverTarget={`${sampleId}-menu`}
             ref={buttonRef}
           >
             <LanguageSelectorGlobeIcon />

@@ -1,4 +1,4 @@
-import { type ComponentProps, forwardRef } from 'react';
+import type { ComponentProps } from 'react';
 
 // Types
 
@@ -35,25 +35,22 @@ export const Tab = ({ position = 'top', className, children, ...rest }: TabProps
 
 export type TabListProps = ComponentProps<'ul'>;
 
-export const TabList = forwardRef<HTMLUListElement, TabListProps>(
-  ({ className, children, ...rest }, ref) => (
-    <ul
-      ref={ref}
-      className={`
-        relative z-0 -m-1.5 overflow-hidden flex
-        pt-[calc(7/16*1rem)] pr-1.5 pb-1.5 pl-[calc(7/16*1rem)]
-        after:relative after:flex-grow after:border-0 after:border-solid after:border-solid-gray-420 after:content-['']
-        group-data-[position=top]/tab:flex-wrap group-data-[position=top]/tab:after:-ml-px group-data-[position=top]/tab:after:w-px group-data-[position=top]/tab:after:border-b
-        group-data-[position=bottom]/tab:flex-wrap-reverse group-data-[position=bottom]/tab:after:-mt-px group-data-[position=bottom]/tab:after:-ml-px group-data-[position=bottom]/tab:after:w-px group-data-[position=bottom]/tab:after:border-t
-        group-data-[position=left]/tab:flex-col group-data-[position=left]/tab:shrink-0 group-data-[position=left]/tab:after:-mt-px group-data-[position=left]/tab:after:h-px group-data-[position=left]/tab:after:border-r
-        group-data-[position=right]/tab:flex-col group-data-[position=right]/tab:shrink-0 group-data-[position=right]/tab:after:-mt-px group-data-[position=right]/tab:after:-ml-px group-data-[position=right]/tab:after:h-px group-data-[position=right]/tab:after:border-l
-        ${className ?? ''}
-      `}
-      {...rest}
-    >
-      {children}
-    </ul>
-  ),
+export const TabList = ({ className, children, ...rest }: TabListProps) => (
+  <ul
+    className={`
+      relative z-0 -m-1.5 overflow-hidden flex
+      pt-[calc(7/16*1rem)] pr-1.5 pb-1.5 pl-[calc(7/16*1rem)]
+      after:relative after:flex-grow after:border-0 after:border-solid after:border-solid-gray-420 after:content-['']
+      group-data-[position=top]/tab:flex-wrap group-data-[position=top]/tab:after:-ml-px group-data-[position=top]/tab:after:w-px group-data-[position=top]/tab:after:border-b
+      group-data-[position=bottom]/tab:flex-wrap-reverse group-data-[position=bottom]/tab:after:-mt-px group-data-[position=bottom]/tab:after:-ml-px group-data-[position=bottom]/tab:after:w-px group-data-[position=bottom]/tab:after:border-t
+      group-data-[position=left]/tab:flex-col group-data-[position=left]/tab:shrink-0 group-data-[position=left]/tab:after:-mt-px group-data-[position=left]/tab:after:h-px group-data-[position=left]/tab:after:border-r
+      group-data-[position=right]/tab:flex-col group-data-[position=right]/tab:shrink-0 group-data-[position=right]/tab:after:-mt-px group-data-[position=right]/tab:after:-ml-px group-data-[position=right]/tab:after:h-px group-data-[position=right]/tab:after:border-l
+      ${className ?? ''}
+    `}
+    {...rest}
+  >
+    {children}
+  </ul>
 );
 
 // TabItem
@@ -155,24 +152,21 @@ export const TabItem = ({
 
 export type TabPanelProps = ComponentProps<'div'>;
 
-export const TabPanel = forwardRef<HTMLDivElement, TabPanelProps>(
-  ({ className, children, ...rest }, ref) => (
-    <div
-      ref={ref}
-      className={`
-        border border-solid-gray-420 bg-white p-4
-        focus-visible:z-[1] focus-visible:outline focus-visible:outline-4 focus-visible:outline-black
-        focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:rounded-[calc(4/16*1rem)]
-        focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300
-        group-data-[position=top]/tab:border-t-0
-        group-data-[position=bottom]/tab:border-b-0
-        group-data-[position=left]/tab:flex-grow group-data-[position=left]/tab:min-w-0 group-data-[position=left]/tab:border-l-0
-        group-data-[position=right]/tab:flex-grow group-data-[position=right]/tab:min-w-0 group-data-[position=right]/tab:border-r-0
-        ${className ?? ''}
-      `}
-      {...rest}
-    >
-      {children}
-    </div>
-  ),
+export const TabPanel = ({ className, children, ...rest }: TabPanelProps) => (
+  <div
+    className={`
+      border border-solid-gray-420 bg-white p-4
+      focus-visible:z-[1] focus-visible:outline focus-visible:outline-4 focus-visible:outline-black
+      focus-visible:outline-offset-[calc(2/16*1rem)] focus-visible:rounded-[calc(4/16*1rem)]
+      focus-visible:ring-[calc(2/16*1rem)] focus-visible:ring-yellow-300
+      group-data-[position=top]/tab:border-t-0
+      group-data-[position=bottom]/tab:border-b-0
+      group-data-[position=left]/tab:flex-grow group-data-[position=left]/tab:min-w-0 group-data-[position=left]/tab:border-l-0
+      group-data-[position=right]/tab:flex-grow group-data-[position=right]/tab:min-w-0 group-data-[position=right]/tab:border-r-0
+      ${className ?? ''}
+    `}
+    {...rest}
+  >
+    {children}
+  </div>
 );

@@ -250,7 +250,7 @@ export const StandardWithButton = {
             ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。
             <div className='grid mt-2 gap-2 desktop:grid-flow-col desktop:gap-4 desktop:justify-end'>
               <Button
-                className='text-solid-gray-800 hover:text-solid-gray-900 hover:bg-solid-gray-200 active:!text-black active:bg-solid-gray-300'
+                className='!text-solid-gray-800 hover:!text-solid-gray-900 hover:!bg-solid-gray-200 active:!text-black active:!bg-solid-gray-300'
                 size='md'
                 type='button'
                 variant='outline'
@@ -258,7 +258,7 @@ export const StandardWithButton = {
                 アクションボタン
               </Button>
               <Button
-                className='bg-solid-gray-800 hover:bg-solid-gray-900 active:!bg-black'
+                className='!bg-solid-gray-800 hover:!bg-solid-gray-900 active:!bg-black'
                 size='md'
                 type='button'
                 variant='solid-fill'
@@ -278,7 +278,7 @@ export const StandardWithButton = {
             ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。
             <div className='grid mt-2 gap-2 desktop:grid-flow-col desktop:gap-4 desktop:justify-end'>
               <Button
-                className='text-warning-yellow-2 hover:text-yellow-1000 hover:bg-yellow-200 active:text-yellow-1200 active:bg-yellow-300'
+                className='!text-warning-yellow-2 hover:!text-yellow-1000 hover:!bg-yellow-200 active:!text-yellow-1200 active:!bg-yellow-300'
                 size='md'
                 type='button'
                 variant='outline'
@@ -286,7 +286,7 @@ export const StandardWithButton = {
                 アクションボタン
               </Button>
               <Button
-                className='bg-warning-yellow-2 hover:bg-yellow-1100 active:bg-yellow-1200'
+                className='!bg-warning-yellow-2 hover:!bg-yellow-1100 active:!bg-yellow-1200'
                 size='md'
                 type='button'
                 variant='solid-fill'
@@ -306,7 +306,7 @@ export const StandardWithButton = {
             ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。
             <div className='grid mt-2 gap-2 desktop:grid-flow-col desktop:gap-4 desktop:justify-end'>
               <Button
-                className='text-error-1 hover:text-red-1000 hover:bg-red-200 active:text-red-1200 active:bg-red-300'
+                className='!text-error-1 hover:!text-red-1000 hover:!bg-red-200 active:!text-red-1200 active:!bg-red-300'
                 size='md'
                 type='button'
                 variant='outline'
@@ -314,7 +314,7 @@ export const StandardWithButton = {
                 アクションボタン
               </Button>
               <Button
-                className='bg-error-1 hover:bg-red-1000 active:bg-red-1200'
+                className='!bg-error-1 hover:!bg-red-1000 active:!bg-red-1200'
                 size='md'
                 type='button'
                 variant='solid-fill'
@@ -334,7 +334,7 @@ export const StandardWithButton = {
             ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。
             <div className='grid mt-2 gap-2 desktop:grid-flow-col desktop:gap-4 desktop:justify-end'>
               <Button
-                className='text-success-2 hover:text-green-1000 hover:bg-green-200 active:text-green-1200 active:bg-green-300'
+                className='!text-success-2 hover:!text-green-1000 hover:!bg-green-200 active:!text-green-1200 active:!bg-green-300'
                 size='md'
                 type='button'
                 variant='outline'
@@ -342,7 +342,7 @@ export const StandardWithButton = {
                 アクションボタン
               </Button>
               <Button
-                className='bg-success-2 hover:bg-green-1000 active:bg-green-1200'
+                className='!bg-success-2 hover:!bg-green-1000 active:!bg-green-1200'
                 size='md'
                 type='button'
                 variant='solid-fill'
@@ -389,7 +389,7 @@ export const ColorChipWithButton = {
             ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。
             <div className='grid mt-2 gap-2 desktop:grid-flow-col desktop:gap-4 desktop:justify-end'>
               <Button
-                className='text-solid-gray-800 hover:text-solid-gray-900 hover:bg-solid-gray-200 active:text-black active:bg-solid-gray-300'
+                className='!text-solid-gray-800 hover:!text-solid-gray-900 hover:!bg-solid-gray-200 active:!text-black active:!bg-solid-gray-300'
                 size='md'
                 type='button'
                 variant='outline'
@@ -397,7 +397,7 @@ export const ColorChipWithButton = {
                 アクションボタン
               </Button>
               <Button
-                className='bg-solid-gray-800 hover:bg-solid-gray-900 active:bg-black'
+                className='!bg-solid-gray-800 hover:!bg-solid-gray-900 active:!bg-black'
                 size='md'
                 type='button'
                 variant='solid-fill'
@@ -417,7 +417,7 @@ export const ColorChipWithButton = {
             ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。
             <div className='grid mt-2 gap-2 desktop:grid-flow-col desktop:gap-4 desktop:justify-end'>
               <Button
-                className='text-warning-yellow-2 hover:text-yellow-1000 hover:bg-yellow-200 active:text-yellow-1200 active:bg-yellow-300'
+                className='!text-warning-yellow-2 hover:!text-yellow-1000 hover:!bg-yellow-200 active:!text-yellow-1200 active:!bg-yellow-300'
                 size='md'
                 type='button'
                 variant='outline'
@@ -425,7 +425,7 @@ export const ColorChipWithButton = {
                 アクションボタン
               </Button>
               <Button
-                className='bg-warning-yellow-2 hover:bg-yellow-1100 active:bg-yellow-1200'
+                className='!bg-warning-yellow-2 hover:!bg-yellow-1100 active:!bg-yellow-1200'
                 size='md'
                 type='button'
                 variant='solid-fill'
@@ -445,7 +445,7 @@ export const ColorChipWithButton = {
             ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。
             <div className='grid mt-2 gap-2 desktop:grid-flow-col desktop:gap-4 desktop:justify-end'>
               <Button
-                className='text-error-1 hover:text-red-1000 hover:bg-red-200 active:text-red-1200 active:bg-red-300'
+                className='!text-error-1 hover:!text-red-1000 hover:!bg-red-200 active:!text-red-1200 active:!bg-red-300'
                 size='md'
                 type='button'
                 variant='outline'
@@ -453,7 +453,7 @@ export const ColorChipWithButton = {
                 アクションボタン
               </Button>
               <Button
-                className='bg-error-1 hover:bg-red-1000 active:bg-red-1200'
+                className='!bg-error-1 hover:!bg-red-1000 active:!bg-red-1200'
                 size='md'
                 type='button'
                 variant='solid-fill'
@@ -473,7 +473,7 @@ export const ColorChipWithButton = {
             ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。
             <div className='grid mt-2 gap-2 desktop:grid-flow-col desktop:gap-4 desktop:justify-end'>
               <Button
-                className='text-success-2 hover:text-green-1000 hover:bg-green-200 active:text-green-1200 active:bg-green-300'
+                className='!text-success-2 hover:!text-green-1000 hover:!bg-green-200 active:!text-green-1200 active:!bg-green-300'
                 size='md'
                 type='button'
                 variant='outline'
@@ -481,7 +481,7 @@ export const ColorChipWithButton = {
                 アクションボタン
               </Button>
               <Button
-                className='bg-success-2 hover:bg-green-1000 active:bg-green-1200'
+                className='!bg-success-2 hover:!bg-green-1000 active:!bg-green-1200'
                 size='md'
                 type='button'
                 variant='solid-fill'
@@ -528,7 +528,7 @@ export const StandardWithButtonMobileHoriz = {
             ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。
             <div className='grid mt-2 gap-2 grid-flow-col grid-cols-2 desktop:grid-cols-none desktop:gap-4 desktop:justify-end'>
               <Button
-                className='!px-3 text-solid-gray-800 hover:text-solid-gray-900 hover:bg-solid-gray-200 active:text-black active:bg-solid-gray-300 desktop:!px-4'
+                className='!px-3 !text-solid-gray-800 hover:!text-solid-gray-900 hover:!bg-solid-gray-200 active:!text-black active:!bg-solid-gray-300 desktop:!px-4'
                 size='md'
                 type='button'
                 variant='outline'
@@ -536,7 +536,7 @@ export const StandardWithButtonMobileHoriz = {
                 アクションボタン
               </Button>
               <Button
-                className='!px-3 bg-solid-gray-800 hover:bg-solid-gray-900 active:bg-black desktop:!px-4'
+                className='!px-3 !bg-solid-gray-800 hover:!bg-solid-gray-900 active:!bg-black desktop:!px-4'
                 size='md'
                 type='button'
                 variant='solid-fill'
@@ -556,7 +556,7 @@ export const StandardWithButtonMobileHoriz = {
             ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。
             <div className='grid mt-2 gap-2 grid-flow-col grid-cols-2 desktop:grid-cols-none desktop:gap-4 desktop:justify-end'>
               <Button
-                className='!px-3 text-warning-yellow-2 hover:text-yellow-1000 hover:bg-yellow-200 active:text-yellow-1200 active:bg-yellow-300 desktop:!px-4'
+                className='!px-3 !text-warning-yellow-2 hover:!text-yellow-1000 hover:!bg-yellow-200 active:!text-yellow-1200 active:!bg-yellow-300 desktop:!px-4'
                 size='md'
                 type='button'
                 variant='outline'
@@ -564,7 +564,7 @@ export const StandardWithButtonMobileHoriz = {
                 アクションボタン
               </Button>
               <Button
-                className='!px-3 bg-warning-yellow-2 hover:bg-yellow-1100 active:bg-yellow-1200 desktop:!px-4'
+                className='!px-3 !bg-warning-yellow-2 hover:!bg-yellow-1100 active:!bg-yellow-1200 desktop:!px-4'
                 size='md'
                 type='button'
                 variant='solid-fill'
@@ -584,7 +584,7 @@ export const StandardWithButtonMobileHoriz = {
             ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。
             <div className='grid mt-2 gap-2 grid-flow-col grid-cols-2 desktop:grid-cols-none desktop:gap-4 desktop:justify-end'>
               <Button
-                className='!px-3 text-error-1 hover:text-red-1000 hover:bg-red-200 active:text-red-1200 active:bg-red-300 desktop:!px-4'
+                className='!px-3 !text-error-1 hover:!text-red-1000 hover:!bg-red-200 active:!text-red-1200 active:!bg-red-300 desktop:!px-4'
                 size='md'
                 type='button'
                 variant='outline'
@@ -592,7 +592,7 @@ export const StandardWithButtonMobileHoriz = {
                 アクションボタン
               </Button>
               <Button
-                className='!px-3 bg-error-1 hover:bg-red-1000 active:bg-red-1200 desktop:!px-4'
+                className='!px-3 !bg-error-1 hover:!bg-red-1000 active:!bg-red-1200 desktop:!px-4'
                 size='md'
                 type='button'
                 variant='solid-fill'
@@ -612,7 +612,7 @@ export const StandardWithButtonMobileHoriz = {
             ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。
             <div className='grid mt-2 gap-2 grid-flow-col grid-cols-2 desktop:grid-cols-none desktop:gap-4 desktop:justify-end'>
               <Button
-                className='!px-3 text-success-2 hover:text-green-1000 hover:bg-green-200 active:text-green-1200 active:bg-green-300 desktop:!px-4'
+                className='!px-3 !text-success-2 hover:!text-green-1000 hover:!bg-green-200 active:!text-green-1200 active:!bg-green-300 desktop:!px-4'
                 size='md'
                 type='button'
                 variant='outline'
@@ -620,7 +620,7 @@ export const StandardWithButtonMobileHoriz = {
                 アクションボタン
               </Button>
               <Button
-                className='!px-3 bg-success-2 hover:bg-green-1000 active:bg-green-1200 desktop:!px-4'
+                className='!px-3 !bg-success-2 hover:!bg-green-1000 active:!bg-green-1200 desktop:!px-4'
                 size='md'
                 type='button'
                 variant='solid-fill'
@@ -667,7 +667,7 @@ export const ColorChipWithButtonMobileHoriz = {
             ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。
             <div className='grid mt-2 gap-2 grid-flow-col grid-cols-2 desktop:grid-cols-none desktop:gap-4 desktop:justify-end'>
               <Button
-                className='!px-3 text-solid-gray-800 hover:text-solid-gray-900 hover:bg-solid-gray-200 active:text-black active:bg-solid-gray-300 desktop:!px-4'
+                className='!px-3 !text-solid-gray-800 hover:!text-solid-gray-900 hover:!bg-solid-gray-200 active:!text-black active:!bg-solid-gray-300 desktop:!px-4'
                 size='md'
                 type='button'
                 variant='outline'
@@ -675,7 +675,7 @@ export const ColorChipWithButtonMobileHoriz = {
                 アクションボタン
               </Button>
               <Button
-                className='!px-3 bg-solid-gray-800 hover:bg-solid-gray-900 active:bg-black desktop:!px-4'
+                className='!px-3 !bg-solid-gray-800 hover:!bg-solid-gray-900 active:!bg-black desktop:!px-4'
                 size='md'
                 type='button'
                 variant='solid-fill'
@@ -695,7 +695,7 @@ export const ColorChipWithButtonMobileHoriz = {
             ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。
             <div className='grid mt-2 gap-2 grid-flow-col grid-cols-2 desktop:grid-cols-none desktop:gap-4 desktop:justify-end'>
               <Button
-                className='!px-3 text-warning-yellow-2 hover:text-yellow-1000 hover:bg-yellow-200 active:text-yellow-1200 active:bg-yellow-300 desktop:!px-4'
+                className='!px-3 !text-warning-yellow-2 hover:!text-yellow-1000 hover:!bg-yellow-200 active:!text-yellow-1200 active:!bg-yellow-300 desktop:!px-4'
                 size='md'
                 type='button'
                 variant='outline'
@@ -703,7 +703,7 @@ export const ColorChipWithButtonMobileHoriz = {
                 アクションボタン
               </Button>
               <Button
-                className='!px-3 bg-warning-yellow-2 hover:bg-yellow-1100 active:bg-yellow-1200 desktop:!px-4'
+                className='!px-3 !bg-warning-yellow-2 hover:!bg-yellow-1100 active:!bg-yellow-1200 desktop:!px-4'
                 size='md'
                 type='button'
                 variant='solid-fill'
@@ -723,7 +723,7 @@ export const ColorChipWithButtonMobileHoriz = {
             ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。
             <div className='grid mt-2 gap-2 grid-flow-col grid-cols-2 desktop:grid-cols-none desktop:gap-4 desktop:justify-end'>
               <Button
-                className='!px-3 text-error-1 hover:text-red-1000 hover:bg-red-200 active:text-red-1200 active:bg-red-300 desktop:!px-4'
+                className='!px-3 !text-error-1 hover:!text-red-1000 hover:!bg-red-200 active:!text-red-1200 active:!bg-red-300 desktop:!px-4'
                 size='md'
                 type='button'
                 variant='outline'
@@ -731,7 +731,7 @@ export const ColorChipWithButtonMobileHoriz = {
                 アクションボタン
               </Button>
               <Button
-                className='!px-3 bg-error-1 hover:bg-red-1000 active:bg-red-1200 desktop:!px-4'
+                className='!px-3 !bg-error-1 hover:!bg-red-1000 active:!bg-red-1200 desktop:!px-4'
                 size='md'
                 type='button'
                 variant='solid-fill'
@@ -751,7 +751,7 @@ export const ColorChipWithButtonMobileHoriz = {
             ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。ダミーテキストは、デザインの作成時に使用される仮の文章です。
             <div className='grid mt-2 gap-2 grid-flow-col grid-cols-2 desktop:grid-cols-none desktop:gap-4 desktop:justify-end'>
               <Button
-                className='!px-3 text-success-2 hover:text-green-1000 hover:bg-green-200 active:text-green-1200 active:bg-green-300 desktop:!px-4'
+                className='!px-3 !text-success-2 hover:!text-green-1000 hover:!bg-green-200 active:!text-green-1200 active:!bg-green-300 desktop:!px-4'
                 size='md'
                 type='button'
                 variant='outline'
@@ -759,7 +759,7 @@ export const ColorChipWithButtonMobileHoriz = {
                 アクションボタン
               </Button>
               <Button
-                className='!px-3 bg-success-2 hover:bg-green-1000 active:bg-green-1200 desktop:!px-4'
+                className='!px-3 !bg-success-2 hover:!bg-green-1000 active:!bg-green-1200 desktop:!px-4'
                 size='md'
                 type='button'
                 variant='solid-fill'

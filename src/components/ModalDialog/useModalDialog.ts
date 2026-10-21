@@ -13,11 +13,11 @@ export type UseModalDialogOptions = {
 
 export type UseModalDialogResult = {
   dialogProps: {
-    ref: RefObject<HTMLDialogElement>;
+    ref: RefObject<HTMLDialogElement | null>;
     'aria-labelledby': string;
   };
   headingProps: {
-    ref: RefObject<HTMLHeadingElement>;
+    ref: RefObject<HTMLHeadingElement | null>;
     id: string;
   };
   closeButtonProps: {

@@ -15,7 +15,7 @@
 
 本コードスニペットは以下の技術をベースに実装しています。
 
-- React（v18）
+- React（v19）
 - Tailwind CSS（v3）
 - TypeScript
 
@@ -25,11 +25,14 @@
 
 - [@digital-go-jp/tailwind-theme-plugin](https://www.npmjs.com/package/@digital-go-jp/tailwind-theme-plugin)
 
-### React v19 での利用について
+### React v18 での利用について
 
-本コードスニペットは React v18 上に実装しています。React v19 のプロジェクトに取り込む場合は軽微な型エラーが表示されることがあります。必要に応じて修正を行なってください。
+本コードスニペットは React v19 を前提に実装しています。React v18 のプロジェクトに取り込む場合は、以下の修正が必要です。
 
-なお、コードスニペットの React v19 へのアップデートも検討しています。
+- `ref` を受け取るコンポーネントは `forwardRef` で包む
+- 一部の hooks（`useModalDialog`、`useTab`、`useTabAria`）の戻り値の型 `RefObject<T | null>` を `RefObject<T>` に変更する
+
+詳しい手順は [React v18 で使用する場合](./docs/using-with-react-v18.md) を参照してください。
 
 ## ローカルでコンポーネントを確認する
 
@@ -97,3 +100,10 @@ npm run format
 ## 不具合報告・機能要望について
 
 本コードスニペットに関する不具合や機能要望は、Issueを作成して報告してください。Pull Requestは現時点では受け付けておりません。
+
+## 採用情報
+
+デジタル庁デザインシステムのチームメンバーを募集しています。行政のデジタル環境を支える基盤づくりに、あなたのスキルや経験を活かしてみませんか？　求人ページからご応募ください。
+
+- [【G_07】プロダクトデザイナー（デザインシステム）](https://herp.careers/v1/digitalsaiyo/aOOi7VfkWj7x)
+- [【G_08】デザインエンジニア（デザインシステム）](https://herp.careers/v1/digitalsaiyo/P5T1syjM8ulE)

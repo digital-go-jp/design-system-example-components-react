@@ -1,4 +1,4 @@
-import { type ComponentProps, forwardRef } from 'react';
+import type { ComponentProps } from 'react';
 
 export type CheckboxSize = 'sm' | 'md' | 'lg';
 
@@ -7,7 +7,7 @@ export type CheckboxProps = Omit<ComponentProps<'input'>, 'size'> & {
   isError?: boolean;
 };
 
-export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>((props, ref) => {
+export const Checkbox = (props: CheckboxProps) => {
   const { children, isError, onClick, size = 'sm', ...rest } = props;
 
   const handleDisabled = (e: React.MouseEvent<HTMLInputElement, MouseEvent>) => {
@@ -18,6 +18,8 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>((props, ref)
     <span
       className={`
         flex items-center justify-center shrink-0 rounded-[calc(1/8*100%)]
+        [&:not(:only-child)]:relative [&:not(:only-child)]:top-[--baseline-offset] [&:not(:only-child)]:-mt-[--baseline-offset] [&:not(:only-child)]:mb-[--baseline-offset]
+        data-[size=sm]:[--baseline-offset:calc(3/16*1rem)] data-[size=md]:[--baseline-offset:calc(6/16*1rem)] data-[size=lg]:[--baseline-offset:calc(10/16*1rem)]
         data-[size=sm]:size-6 data-[size=md]:size-8 data-[size=lg]:size-11
         has-[input:hover:not(:focus):not(:disabled):not([aria-disabled="true"])]:bg-solid-gray-420
       `}
@@ -42,7 +44,6 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>((props, ref)
           forced-colors:!border-[ButtonText] forced-colors:checked:!bg-[Highlight] forced-colors:checked:!border-[Highlight] forced-colors:indeterminate:!bg-[Highlight] forced-colors:indeterminate:!border-[Highlight] forced-colors:before:!bg-[HighlightText] forced-colors:aria-disabled:!border-[GrayText] forced-colors:aria-disabled:checked:!bg-[GrayText] forced-colors:disabled:!border-[GrayText] forced-colors:disabled:checked:!bg-[GrayText]
         `}
         onClick={props['aria-disabled'] ? handleDisabled : onClick}
-        ref={ref}
         type='checkbox'
         data-size={size}
         data-error={isError || null}
@@ -53,12 +54,12 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>((props, ref)
 
   return children ? (
     <label
-      className='flex w-fit items-start py-2 data-[size=sm]:gap-1 data-[size=md]:gap-2 data-[size=lg]:gap-2'
+      className='flex w-fit items-baseline py-2 data-[size=sm]:gap-1 data-[size=md]:gap-2 data-[size=lg]:gap-2'
       data-size={size}
     >
       {checkbox}
       <span
-        className='text-solid-gray-800 data-[size=sm]:pt-px data-[size=sm]:text-dns-16N-130 data-[size=md]:pt-1 data-[size=md]:text-dns-16N-130 data-[size=lg]:pt-2.5 data-[size=lg]:text-dns-17N-130'
+        className='text-solid-gray-800 data-[size=sm]:text-dns-16N-130 data-[size=md]:text-dns-16N-130 data-[size=lg]:text-dns-17N-130'
         data-size={size}
       >
         {children}
@@ -67,4 +68,4 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>((props, ref)
   ) : (
     checkbox
   );
-});
+};

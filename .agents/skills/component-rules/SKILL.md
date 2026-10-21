@@ -54,6 +54,11 @@ type ButtonProps = ComponentProps<'button'> & {
 };
 ```
 
+### React version
+
+- Target React 19. Do not use `forwardRef`; `ComponentProps<'x'>` already includes `ref`, so spreading `rest` onto the element forwards it.
+- Avoid React 19-only APIs (`use`, `useActionState`, `useOptimistic`, `useEffectEvent`, `<Activity>`, ref cleanup functions, etc.). React 18 users should only need the changes described in [`docs/using-with-react-v18.md`](../../../docs/using-with-react-v18.md). If one is truly needed, add the React 18 workaround to that document.
+
 ### No cross-component references or premature abstraction
 
 - Component A must not import component B (Slot-like primitives excepted).

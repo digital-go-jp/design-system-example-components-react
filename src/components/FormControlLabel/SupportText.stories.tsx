@@ -1,11 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { SupportText } from './SupportText';
+import { SupportText } from './FormControlLabel';
 
 const meta = {
   id: 'Component/DADS v2/SupportText',
   title: 'Component/フォームコントロールラベル/SupportText',
   component: SupportText,
-  tags: ['autodocs'],
 } satisfies Meta<typeof SupportText>;
 
 export default meta;

@@ -1,1 +1,0 @@
-export { Legend } from './Legend';

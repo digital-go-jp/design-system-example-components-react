@@ -10,11 +10,14 @@ import {
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
 import { ErrorText } from '../ErrorText';
-import { Label } from '../Label';
+import {
+  FormControlLabel,
+  Label,
+  RequirementBadge,
+  StatusBadge,
+  SupportText,
+} from '../FormControlLabel';
 import { Link } from '../Link';
-import { RequirementBadge } from '../RequirementBadge';
-import { StatusBadge } from '../StatusBadge';
-import { SupportText } from '../SupportText';
 import { Input } from './Input';
 
 const meta = {
@@ -85,20 +88,22 @@ export const Playground: Story = {
     const describedBy = isError ? `${errorTextId} ${supportTextId}` : supportTextId;
 
     return (
-      <div className='flex flex-col items-start gap-2'>
+      <FormControlLabel>
         <Label htmlFor={formId}>
           ラベル<RequirementBadge>※必須</RequirementBadge>
         </Label>
         <SupportText id={supportTextId}>サポートテキスト</SupportText>
-        <Input
-          aria-describedby={describedBy}
-          defaultValue='入力テキスト'
-          id={formId}
-          name='playground'
-          {...args}
-        />
+        <div>
+          <Input
+            aria-describedby={describedBy}
+            defaultValue='入力テキスト'
+            id={formId}
+            name='playground'
+            {...args}
+          />
+        </div>
         {isError && <ErrorText id={errorTextId}>＊エラーテキスト</ErrorText>}
-      </div>
+      </FormControlLabel>
     );
   },
   args: {
@@ -116,14 +121,16 @@ export const Errored: Story = {
     const describedBy = `${errorTextId} ${supportTextId}`;
 
     return (
-      <div className='flex flex-col items-start gap-2'>
+      <FormControlLabel>
         <Label htmlFor={formId}>
           ラベル<RequirementBadge>※必須</RequirementBadge>
         </Label>
         <SupportText id={supportTextId}>サポートテキスト</SupportText>
-        <Input aria-describedby={describedBy} id={formId} name='error' {...args} />
+        <div>
+          <Input aria-describedby={describedBy} id={formId} name='error' {...args} />
+        </div>
         <ErrorText id={errorTextId}>＊エラーテキスト</ErrorText>
-      </div>
+      </FormControlLabel>
     );
   },
   argTypes: {
@@ -141,21 +148,23 @@ export const Disabled: Story = {
     const supportTextId = React.useId();
 
     return (
-      <div className='flex flex-col items-start gap-2'>
+      <FormControlLabel>
         <Label htmlFor={formId}>
           ラベル
           <StatusBadge>無効</StatusBadge>
         </Label>
         <SupportText id={supportTextId}>〜の理由により、この項目は無効化されています。</SupportText>
-        <Input
-          aria-describedby={supportTextId}
-          aria-disabled={true}
-          defaultValue='入力テキスト'
-          id={formId}
-          name='disabled'
-          {...args}
-        />
-      </div>
+        <div>
+          <Input
+            aria-describedby={supportTextId}
+            aria-disabled={true}
+            defaultValue='入力テキスト'
+            id={formId}
+            name='disabled'
+            {...args}
+          />
+        </div>
+      </FormControlLabel>
     );
   },
   argTypes: {
@@ -172,21 +181,23 @@ export const Readonly: Story = {
     const supportTextId = React.useId();
 
     return (
-      <div className='flex flex-col items-start gap-2'>
+      <FormControlLabel>
         <Label htmlFor={controlId}>
           ラベル
           <StatusBadge>編集不可</StatusBadge>
         </Label>
         <SupportText id={supportTextId}>〜の理由により、この項目は編集できません。</SupportText>
-        <Input
-          aria-describedby={supportTextId}
-          defaultValue='入力テキスト'
-          id={controlId}
-          name='readonly'
-          readOnly
-          {...args}
-        />
-      </div>
+        <div>
+          <Input
+            aria-describedby={supportTextId}
+            defaultValue='入力テキスト'
+            id={controlId}
+            name='readonly'
+            readOnly
+            {...args}
+          />
+        </div>
+      </FormControlLabel>
     );
   },
   argTypes: {

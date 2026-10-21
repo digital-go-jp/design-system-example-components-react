@@ -15,7 +15,7 @@ Read these before making design decisions:
 
 ## Tech stack
 
-- React 18
+- React 19
 - TailwindCSS 3 with `@digital-go-jp/tailwind-theme-plugin`
 - Storybook 10
 - TypeScript, Biome, Markuplint, Vitest
